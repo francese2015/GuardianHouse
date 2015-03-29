@@ -1,5 +1,5 @@
 # Guardian House
-Questa è la repository del progetto Guardian House.
+Questo è il repository ufficiale del progetto Guardian House.
 
 Progetto del corso di Interazione Uomo Macchina e Sviluppo di Applicazioni Mobile @ Unisa 2014/2015.
 
@@ -13,4 +13,4 @@ Luigi Vecchione
 
 Cosmo D'uva
 
-Nae Valisica
+Vasilica Nae
