@@ -76,7 +76,7 @@ public class AccountActivity extends ActionBarActivity {
 		birthdateRelative.setOnClickListener(new View.OnClickListener() { 
             public void onClick(View view) {
             	String title = "Modifica data di nascita";
-            	String hint = "Inserisci la nuova data";
+            	String hint = "Inserisci la nuova data di nascita";
             	showInputDialog(title, hint);
             } 
         });
@@ -100,7 +100,7 @@ public class AccountActivity extends ActionBarActivity {
 		phoneRelative.setOnClickListener(new View.OnClickListener() { 
             public void onClick(View view) {
             	String title = "Modifica telefono";
-            	String hint = "Inserisci il nuovo numero";
+            	String hint = "Inserisci il nuovo telefono";
             	showInputDialog(title, hint);
             } 
         });
@@ -126,8 +126,7 @@ public class AccountActivity extends ActionBarActivity {
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(AccountActivity.this);
 		alertDialogBuilder.setView(promptView);
 
-		final TextView dialogTitle = (TextView) promptView.findViewById(R.id.textView);
-		dialogTitle.setText(title);
+		alertDialogBuilder.setTitle(title);
 		final EditText dialogHint = (EditText) promptView.findViewById(R.id.editText);
 		dialogHint.setHint(hint);
 		// setup a dialog window
@@ -160,14 +159,14 @@ public class AccountActivity extends ActionBarActivity {
 			alertDialogBuilder
 				.setMessage("Sei sicuro di voler eliminare l'account?")
 				.setCancelable(false)
-				.setPositiveButton("Si",new DialogInterface.OnClickListener() {
+				.setPositiveButton("SI",new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog,int id) {
 						// if this button is clicked, close
 						// current activity
 						AccountActivity.this.finish();
 					}
 				  })
-				.setNegativeButton("No",new DialogInterface.OnClickListener() {
+				.setNegativeButton("NO",new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog,int id) {
 						// if this button is clicked, just close
 						// the dialog box and do nothing
