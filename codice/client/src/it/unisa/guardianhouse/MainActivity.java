@@ -1,23 +1,58 @@
 package it.unisa.guardianhouse;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends ActionBarActivity {
+	
+	private Button btnRegister;
+	private Button btnLogin;
+	private Button btnLoginWithFacebook;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		btnRegister = (Button) findViewById(R.id.button1);
+		btnLogin = (Button) findViewById(R.id.button2);
+		btnLoginWithFacebook = (Button) findViewById(R.id.button3);
+		
+		// bottone registrazione
+		btnRegister.setOnClickListener(new View.OnClickListener() {			 
+            public void onClick(View view) {
+            	Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+        		startActivity(intent);
+            } 
+        });
+		
+		// bottone login
+		btnLogin.setOnClickListener(new View.OnClickListener() {			 
+            public void onClick(View view) {
+            	Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        		startActivity(intent);
+            } 
+        });
+		
+		// bottone login with facebook
+		btnLoginWithFacebook.setOnClickListener(new View.OnClickListener() {			 
+		    public void onClick(View view) {
+		    		// inserire codice login con facebook
+		        } 
+		});
+		
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
+		return true;	
 	}
 
 	@Override

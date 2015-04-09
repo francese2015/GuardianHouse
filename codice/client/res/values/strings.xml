@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Stringhe globali -->
     <string name="app_name">Guardian House</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Impostazioni</string>
 
+    <!-- Acritivy Main -->
+    <string name="button_register">REGISTRATI</string>
+    <string name="button_login">ACCEDI</string>
+    <string name="button_login_facebook">ACCEDI CON FACEBOOK</string>
+    <string name="text_copyright">Registrandoti, accetti i Termini del Servizio, Informativa sulla Privacy etc.</string>
+
+    <!-- Activity Register -->
+    <string name="title_activity_register">Registrazione</string>
+    <string name="form_email">Indirizzo email</string>
+    <string name="form_username">Username</string>
+    <string name="form_password">Password</string>
+    <string name="button_register1">REGISTRATI</string>
+    <string name="button_login1">Sei gia membro? Accedi!</string>
+
+    <!-- Activity Login -->
+    <string name="title_activity_login">Accedi con Email</string>
+    <string name="text_forgot_password">Hai dimenticato la password?</string>
+    <string name="form_email2">Indirizzo email</string>
+    <string name="form_password2">Password</string>
+    <string name="button_login2">ACCEDI</string>
+    <string name="button_register2">Non sei membro? Registrati!</string>
+    
+	    <!-- Activity Home -->
+    <string name="title_activity_home">Home</string>
+	<string name="button_account">ACCOUNT</string>
+    <string name="button_logout">LOGOUT</string>
+    
+    <!-- Activity Account -->
+
+    
 </resources>
