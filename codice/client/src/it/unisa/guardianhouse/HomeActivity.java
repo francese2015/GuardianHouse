@@ -1,6 +1,7 @@
 package it.unisa.guardianhouse;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,7 +24,8 @@ public class HomeActivity extends ActionBarActivity {
         // bottone account
         btnAccount.setOnClickListener(new View.OnClickListener() { 
             public void onClick(View view) {
-            	
+            	Intent intent = new Intent(getApplicationContext(), AccountActivity.class);
+        		startActivity(intent);
             } 
         });
         

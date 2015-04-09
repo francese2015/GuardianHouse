@@ -26,13 +26,37 @@
     <string name="form_password2">Password</string>
     <string name="button_login2">ACCEDI</string>
     <string name="button_register2">Non sei membro? Registrati!</string>
-    
-	    <!-- Activity Home -->
+
+    <!-- Activity Home -->
     <string name="title_activity_home">Home</string>
-	<string name="button_account">ACCOUNT</string>
+    <string name="button_account">ACCOUNT</string>
     <string name="button_logout">LOGOUT</string>
-    
+
     <!-- Activity Account -->
 
-    
+    <string name="title_activity_account">Account</string>
+    <string name="img_descr1">user_pic</string>    
+    <string name="account_name_label">Nome</string>
+    <string name="account_surname_label">Cognome</string>
+    <string name="account_email_label">Indirizzo email</string>
+    <string name="account_username_label">Username</string>
+    <string name="account_password_label">Password</string>
+    <string name="account_birthdate_label">Data di nascita</string>
+    <string name="account_birthplace_label">Luogo di nascita</string>
+    <string name="account_address_label">Indirizzo</string>
+    <string name="account_phone_label">Telefono</string>
+    <string name="account_accountType_label">Account</string>        
+    <string name="account_name">Mario</string>
+    <string name="account_surname">Rossi</string>
+    <string name="account_email">m.rossi@email.it</string>
+    <string name="account_username">m.rossi</string>
+    <string name="account_password">**********</string>
+    <string name="account_birthdate">06/03/1990</string>
+    <string name="account_birthplace">Roma</string>
+    <string name="account_address">Via Garibaldi 12</string>
+    <string name="account_phone">3387468765</string>
+    <string name="account_accountType">admin</string>
+    <string name="edit_icon">edit_icon</string>
+    <string name="button_delete_account">ELIMINA ACCOUNT</string>  
+
 </resources>
