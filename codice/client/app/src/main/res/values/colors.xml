@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- colori del tema material design -->
+    <color name="ColorPrimary">#03A9F4</color>
+    <color name="ColorPrimaryDark">#039BE5</color>
+
+    <!-- colori vari -->
+    <color name="grigio_scuro" type="color">#4c4c4c</color>
+    <color name="bianco" type="color">#ffffff</color>
+    <color name="azzurro_chiaro" type="color">#33b5e5</color>
+
+</resources>
