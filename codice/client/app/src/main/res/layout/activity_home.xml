@@ -36,8 +36,13 @@
                     android:id="@+id/button_account"
                     android:layout_width="230dp"
                     android:layout_height="wrap_content"
-                    android:onClick="showAccount"
                     android:text="@string/button_account" />
+
+                <Button
+                    android:id="@+id/button_get_users"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_get_users" />
 
                 <Button
                     android:id="@+id/button_logout"

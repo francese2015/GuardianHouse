@@ -44,6 +44,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="it.unisa.guardianhouse.HomeActivity" />
         </activity>
+        <activity
+            android:name=".GetUsersActivity"
+            android:label="@string/title_activity_get_users"
+            android:parentActivityName=".HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.unisa.guardianhouse.HomeActivity" />
+        </activity>
     </application>
 
 </manifest>

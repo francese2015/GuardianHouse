@@ -3,6 +3,7 @@
     <!-- Globali -->
     <string name="app_name">Guardian House</string>
     <string name="action_settings">Impostazioni</string>
+    <string name="hello_world">Hello world!</string>
 
     <!-- Acritivy Main -->
     <string name="button_register">REGISTRATI</string>
@@ -29,6 +30,7 @@
     <!-- Activity Home -->
     <string name="title_activity_home">Home</string>
     <string name="button_account">ACCOUNT</string>
+    <string name="button_get_users">VISUALIZZA UTENTI</string>
     <string name="button_logout">LOGOUT</string>
 
     <!-- Activity Account -->
@@ -57,6 +59,10 @@
     <string name="edit_icon">edit_icon</string>
     <string name="button_delete_account">ELIMINA ACCOUNT</string>
 
-    <string name="hello_world">Hello world!</string>
+    <!-- Activity Get users -->
+    <string name="title_activity_get_users">Visualizza utenti</string>
+    <string name="label_username">Username:</string>
+    <string name="label_name">Nome:</string>
+    <string name="label_surname">Cognome:</string>
 
 </resources>
