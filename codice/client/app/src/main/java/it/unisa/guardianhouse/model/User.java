@@ -123,7 +123,7 @@ public class User {
         return role;
     }
 
-    public void setPremium_user(String role) {
+    public void setRole(String role) {
         this.role = role;
     }
 
