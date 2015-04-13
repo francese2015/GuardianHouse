@@ -53,6 +53,10 @@
                 android:value="it.unisa.guardianhouse.HomeActivity" />
         </activity>
         <activity
+            android:name=".ApartmentActivity"
+            android:label="@string/title_activity_apartment" >
+        </activity>
+        <activity
             android:name=".visualizza_recensione"
             android:label="@string/title_activity_visualizza_recensione" >
         </activity>

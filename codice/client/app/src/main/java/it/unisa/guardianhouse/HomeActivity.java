@@ -14,6 +14,7 @@ public class HomeActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
     private Button btnAccount;
+    private Button btnGetUsers;
     private Button btnLogout;
     private Button btnApartment;
 
@@ -29,6 +30,7 @@ public class HomeActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         btnAccount = (Button) findViewById(R.id.button_account);
+        btnGetUsers = (Button) findViewById(R.id.button_get_users);
         btnLogout = (Button) findViewById(R.id.button_logout);
         btnApartment = (Button) findViewById(R.id.button_apartment);
 
@@ -40,14 +42,15 @@ public class HomeActivity extends ActionBarActivity {
             }
         });
 
-        // bottone logout
-        btnLogout.setOnClickListener(new View.OnClickListener() {
+        // bottone get users
+        btnGetUsers.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-
+                Intent intent = new Intent(getApplicationContext(), GetUsersActivity.class);
+                startActivity(intent);
             }
         });
 
-        // bottone apartment
+// bottone apartment
 
         btnApartment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +63,13 @@ public class HomeActivity extends ActionBarActivity {
                 // gli altri
                 // startActivity(new Intent(
                 //       "android.intent.action.ApartmentActivity"));
+
+            }
+        });
+
+        // bottone logout
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
 
             }
         });
