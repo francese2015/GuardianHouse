@@ -64,5 +64,6 @@
     <string name="label_username">Username:</string>
     <string name="label_name">Nome:</string>
     <string name="label_surname">Cognome:</string>
+    <string name="title_activity_visualizza_recensione">visualizza_recensione</string>
 
 </resources>

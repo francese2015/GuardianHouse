@@ -52,6 +52,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="it.unisa.guardianhouse.HomeActivity" />
         </activity>
+        <activity
+            android:name=".visualizza_recensione"
+            android:label="@string/title_activity_visualizza_recensione" >
+        </activity>
     </application>
 
 </manifest>
