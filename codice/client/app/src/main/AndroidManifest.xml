@@ -60,6 +60,22 @@
             android:name=".visualizza_recensione"
             android:label="@string/title_activity_visualizza_recensione" >
         </activity>
+
+        <activity
+            android:name=".ApartmentActivity"
+            android:label="@string/title_activity_apartment"
+            android:parentActivityName=".HomeActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.unisa.guardianhouse.HomeActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>
