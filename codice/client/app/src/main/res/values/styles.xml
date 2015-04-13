@@ -7,8 +7,10 @@
         <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
     </style>
 
-    <style name="ToolbarTheme" parent="Theme.AppCompat.NoActionBar">
+
+    <style name="CustomThemeToolbar" parent="Theme.AppCompat.NoActionBar">
         <item name="android:textColorPrimary">@color/bianco</item>
+        <item name="actionMenuTextColor">@color/bianco</item>
         <item name="android:textColorSecondary">@color/bianco</item>
     </style>
 
