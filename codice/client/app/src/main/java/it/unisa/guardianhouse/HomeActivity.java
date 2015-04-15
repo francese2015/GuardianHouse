@@ -17,6 +17,7 @@ public class HomeActivity extends ActionBarActivity {
     private Button btnGetUsers;
     private Button btnLogout;
     private Button btnApartment;
+    private Button btnReview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class HomeActivity extends ActionBarActivity {
         btnGetUsers = (Button) findViewById(R.id.button_get_users);
         btnLogout = (Button) findViewById(R.id.button_logout);
         btnApartment = (Button) findViewById(R.id.button_apartment);
+        btnReview = (Button) findViewById(R.id.button_review);
 
         // bottone account
         btnAccount.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +52,7 @@ public class HomeActivity extends ActionBarActivity {
             }
         });
 
-// bottone apartment
+        // bottone apartment
 
         btnApartment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,12 +69,24 @@ public class HomeActivity extends ActionBarActivity {
             }
         });
 
+        //bottone review
+        btnReview.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(), VisualizeReviewActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
         // bottone logout
         btnLogout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
             }
         });
+
+
 
     }
 
