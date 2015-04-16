@@ -97,6 +97,9 @@
 
     <string name="title_activity_visualizza_recensione">Visualizza recensione</string>
 
+    <!-- gestione_recensione Value -->
+    <string name="button_recensione_appartamento">Visualizza Recensione Appartamento</string>
+    <string name="title_activity_reviewaccount">Recensione</string>
 
     <!-- Normativa Privacy -->
 
