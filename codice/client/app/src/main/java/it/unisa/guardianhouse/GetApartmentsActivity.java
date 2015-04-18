@@ -1,5 +1,8 @@
 package it.unisa.guardianhouse;
 
+/**
+ * Created by Nae on 18.04.2015.
+ */
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
@@ -14,23 +17,20 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.unisa.guardianhouse.adapter.UserListAdapter;
-import it.unisa.guardianhouse.model.User;
+import it.unisa.guardianhouse.adapter.ApartmentListAdapter;
+import it.unisa.guardianhouse.model.Apartment;
 
-/**
- * Created by Carlo on 12/04/2015.
- */
-public class GetUsersActivity extends ActionBarActivity {
+public class GetApartmentsActivity extends ActionBarActivity{
 
     private Toolbar toolbar;
-    private List<User> userList = new ArrayList<User>();
+    private List<Apartment> apartmentList = new ArrayList<Apartment>();
     private ListView listView;
-    UserListAdapter adapter;
+    ApartmentListAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_get_users);
+        setContentView(R.layout.activity_pre_search);
 
         // setto la toolbar come action bar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -38,13 +38,13 @@ public class GetUsersActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
-        listView = (ListView) findViewById(R.id.listView1);
-        adapter = new UserListAdapter(this, userList);
+        listView = (ListView) findViewById(R.id.listView2);
+        adapter = new ApartmentListAdapter(this, apartmentList);
         listView.setAdapter(adapter);
 
-        try {
+        /*try {
             // simulo il response del server
-            String stringJsonUsersList = "{\"users\":[{\"id\":\"37\",\"api_key\":\"bf45c093e542f057caee68c4" +
+            String stringJsonApartmentList = "{\"users\":[{\"id\":\"37\",\"api_key\":\"bf45c093e542f057caee68c4" +
                     "77dbt7zg\",\"username\":\"m.rossi\",\"encrypted_password\":\"t6lGmFNmZCP9xibSb48" +
                     "xCFGraPc0Y2FkZjbTdfRz\",\"salt\":\"4cadf5f986\",\"email\":\"m.rossi@email.it\"," +
                     "\"name\":\"Mario\",\"surname\":\"Rossi\",\"birthdate\":\"1989-03-02\",\"birthpla" +
@@ -55,10 +55,10 @@ public class GetUsersActivity extends ActionBarActivity {
                     "\",\"name\":\"Claudio\",\"surname\":\"Tranzollo\",\"birthdate\":\"1989-06-02\"" +
                     ",\"birthplace\":\"Campobasso\",\"address\":\"Via Colvento 12\",\"phone\":\"33874" +
                     "83647\",\"role\":\"admin\"}]}";
-            JSONObject jsonUserList = new JSONObject(stringJsonUsersList);
+            JSONObject jsonUserList = new JSONObject(stringJsonApartmentList);
 
             // estraggo l'array users dal response del server
-            JSONArray usersArray = jsonUserList.getJSONArray("users");
+            JSONArray apartmentArray = jsonUserList.getJSONArray("users");
             for (int i = 0; i < usersArray.length(); i++) {
                 JSONObject singleUser = usersArray.getJSONObject(i);
                 User user = new User();
@@ -70,13 +70,13 @@ public class GetUsersActivity extends ActionBarActivity {
             }
         } catch (JSONException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_get_users, menu);
+        getMenuInflater().inflate(R.menu.menu_get_apartments, menu);
         return true;
     }
 
@@ -94,4 +94,6 @@ public class GetUsersActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

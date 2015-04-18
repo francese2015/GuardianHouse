@@ -65,4 +65,11 @@
     <string name="label_name">Nome:</string>
     <string name="label_surname">Cognome:</string>
 
+    <!-- Activity PreSearchApp -->
+    <string name="hint">Search...</string>
+    <string name="app1_descr">First most searched app</string>
+    <string name="appart_name">Favorito</string>
+
+
+
 </resources>
