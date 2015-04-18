@@ -16,6 +16,7 @@ public class HomeActivity extends ActionBarActivity {
     private Button btnAccount;
     private Button btnGetUsers;
     private Button btnLogout;
+    private Button btnApartment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,7 @@ public class HomeActivity extends ActionBarActivity {
         btnAccount = (Button) findViewById(R.id.button_account);
         btnGetUsers = (Button) findViewById(R.id.button_get_users);
         btnLogout = (Button) findViewById(R.id.button_logout);
+        btnApartment = (Button) findViewById(R.id.button_apartment);
 
         // bottone account
         btnAccount.setOnClickListener(new View.OnClickListener() {
@@ -48,12 +50,30 @@ public class HomeActivity extends ActionBarActivity {
             }
         });
 
+// bottone apartment
+
+        btnApartment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(), ApartmentActivity.class);
+                startActivity(intent);
+
+                // force su ApartmentActivity per non entrare in conflitto con
+                // gli altri
+                // startActivity(new Intent(
+                //       "android.intent.action.ApartmentActivity"));
+
+            }
+        });
+
         // bottone logout
         btnLogout.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
             }
         });
+
     }
 
 

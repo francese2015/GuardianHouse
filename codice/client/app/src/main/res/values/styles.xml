@@ -9,6 +9,7 @@
 
     <style name="ToolbarTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:textColorPrimary">@color/bianco</item>
+        <item name="actionMenuTextColor">@color/bianco</item>
         <item name="android:textColorSecondary">@color/bianco</item>
     </style>
 
