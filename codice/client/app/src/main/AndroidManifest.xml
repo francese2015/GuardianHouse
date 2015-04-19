@@ -54,8 +54,8 @@
         </activity>
         
         <activity
-            android:name=".visualizza_recensione"
-            android:label="@string/title_activity_visualizza_recensione" >
+            android:name=".VisualizeReviewActivity"
+            android:label="@string/title_activity_recensione" >
         </activity>
 
         <activity

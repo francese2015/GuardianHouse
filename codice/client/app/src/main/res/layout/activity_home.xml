@@ -48,10 +48,14 @@
                     android:id="@+id/button_apartment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
                     android:onClick="showApartment"
-                    android:text="@string/button_apartment"
-                    />
+                    android:text="@string/button_apartment" />
+
+                <Button
+                    android:id="@+id/button_review"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/button_review" />
 
                 <Button
                     android:id="@+id/button_logout"
@@ -60,7 +64,9 @@
                     android:layout_marginTop="30dp"
                     android:text="@string/button_logout" />
 
-                
+
+
+
 
             </LinearLayout>
 

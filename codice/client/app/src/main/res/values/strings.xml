@@ -32,7 +32,9 @@
     <string name="title_activity_home">Home</string>
     <string name="button_account">ACCOUNT</string>
     <string name="button_get_users">VISUALIZZA UTENTI</string>
+    <string name="button_review">VISUALIZZA RECENSIONE</string>
     <string name="button_logout">LOGOUT</string>
+
 
     <!-- Activity Account -->
     <string name="title_activity_account">Account</string>
@@ -101,7 +103,19 @@
     <string name="button_delete_apartment">Elimina Scheda Appartamento</string>
     <string name="img_descr2">apartment_pic</string>
 
-    <string name="title_activity_visualizza_recensione">Visualizza recensione</string>
+    <!-- Review Value -->
+    <string name="title_activity_recensione">Visualizza recensione</string>
+    <string name="apartment_address">Via Crispi 8</string>
+    <string name="apartment_city">Campobasso</string>
+    <string name="apartment_number">8</string>
+    <string name="apartment_forniture">Arredamento</string>
+    <string name="apartment_thermic_capacity">Capacità Termica</string>
+    <string name="apartment_honesty">Onestà Padrone di Casa</string>
+    <string name="apartment_security">Sicurezza Appartamento</string>
+    <string name="apartment_buses">Collegamento con Bus</string>
+    <string name="apartment_neighbours">Vicini</string>
+    <string name="apartment_distanceCC">Distanza Centro Città</string>
+    <string name="apartment_tools">Qualità Elettrodomestici</string>
 
 
     <!-- Normativa Privacy -->
