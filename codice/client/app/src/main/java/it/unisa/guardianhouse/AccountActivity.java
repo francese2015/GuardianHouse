@@ -29,6 +29,7 @@ public class AccountActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
+        // richiamo i vari relative layout
         RelativeLayout nameRelative = (RelativeLayout) findViewById(R.id.relative_name);
         RelativeLayout surnameRelative = (RelativeLayout) findViewById(R.id.relative_surname);
         RelativeLayout emailRelative = (RelativeLayout) findViewById(R.id.relative_email);
