@@ -40,14 +40,7 @@
                 android:layout_marginTop="12dp"
                 android:text="@string/apartment_city" />
 
-            <TextView
-                android:id="@+id/apartment_Rating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="12dp"
-                android:layout_below="@+id/apartment_img"
-                android:text="Rating \nGenerale" />
+
 
             <TextView
                 android:id="@+id/apartment_address"
@@ -60,18 +53,7 @@
                 android:layout_below="@+id/apartment_city"
                 android:text="@string/apartment_address" />
 
-            <RatingBar
-                android:id="@+id/ratingBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/apartment_img"
-                android:layout_toRightOf="@id/apartment_Rating"
-                android:layout_marginLeft="10dp"
-                android:clickable="false"
-                android:indeterminate="false"
-                android:longClickable="false"
-                android:numStars="5"
-                android:rating="3" />
+
 
 
 
@@ -79,7 +61,7 @@
                 android:id="@+id/separator_line_1"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_below="@+id/ratingBar"
+                android:layout_below="@+id/apartment_img"
                 android:layout_marginTop="16dp"
                 android:background="#dfdfdf" />
 
@@ -122,7 +104,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_centerVertical="true"
                         android:contentDescription="@string/edit_icon"
-                        android:src="@mipmap/ic_action_edit" />
+                        android:src="@mipmap/ic_action_storage" />
 
                     <RatingBar
                         android:id="@+id/ratingBar1"
@@ -166,7 +148,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_centerVertical="true"
                         android:contentDescription="@string/edit_icon"
-                        android:src="@mipmap/ic_action_edit" />
+                        android:src="@mipmap/ic_action_bightness_low" />
 
                     <RatingBar
                         android:id="@+id/ratingBar2"
@@ -182,6 +164,91 @@
 
                 </RelativeLayout>
 
+                <RelativeLayout
+
+                    android:id="@+id/relative_dimension2"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="false">
+
+
+
+                    <TextView
+                        android:id="@+id/honesty_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/apartment_honesty"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/img_honesty"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_action_cc_bcc" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBar4"
+                        android:layout_width="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:clickable="false"
+                        android:indeterminate="false"
+                        android:longClickable="false"
+                        android:numStars="5"
+                        android:rating="4" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+
+                    android:id="@+id/relative_dimension3"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="false">
+
+
+
+                    <TextView
+                        android:id="@+id/secure_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/apartment_honesty"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/img_security"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_action_secure" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBar3"
+                        android:layout_width="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:clickable="false"
+                        android:indeterminate="false"
+                        android:longClickable="false"
+                        android:numStars="5"
+                        android:rating="4" />
+
+                </RelativeLayout>
 
 
             </LinearLayout>
