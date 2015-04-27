@@ -27,9 +27,9 @@
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="110dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_weight="0.12"
+                    android:layout_weight="1"
                     >
 
                     <ImageView
@@ -49,62 +49,58 @@
                         android:id="@+id/textView"
                         android:layout_gravity="center"
                         android:textColor="#000000" />
+
+
+                    <RelativeLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/layout_selector"
+                        android:padding="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:clickable="false">
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="wrap_content"
+                            android:paddingRight="5dp"
+                            android:id="@+id/imageView2"
+                            android:src="@drawable/armadio"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18dp"
+                            android:text="Qualità Mobili 3/5"
+                            android:id="@+id/textView2"
+                            android:layout_gravity="center"
+                            android:layout_toRightOf="@+id/imageView2"
+                            android:layout_toEndOf="@+id/imageView2" />
+
+
+                    </RelativeLayout>
                 </LinearLayout>
 
                 <RatingBar
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:id="@+id/ratingBar"
                     android:layout_below="@+id/tableRow"
                     android:layout_gravity="center"
                     android:layout_centerHorizontal="true"
-                    android:rating="3" />
+                    android:rating="3"
+                    android:layout_weight="1" />
 
                 <View
-                    android:id="@+id/separator_line_1"
+                    android:id="@+id/separator_line_3"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:background="#dfdfdf" />
+                    android:background="#dfdfdf"
+                    />
 
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="68dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector"
-                    android:padding="10dp"
-                    android:layout_marginBottom="5dp"
+                <!-- Qualità Mobili -->
 
-                    >
-
-
-                    <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="wrap_content"
-                        android:paddingRight="5dp"
-                        android:id="@+id/imageView2"
-                        android:src="@drawable/armadio"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="18dp"
-                        android:text="Qualità Mobili 3/5"
-                        android:id="@+id/textView2"
-                        android:layout_below="@+id/tableRow"
-                        android:layout_gravity="center"
-
-                        />
-
-                </LinearLayout>
-
-                <View
-                    android:id="@+id/separator_line_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:background="#dfdfdf" />
-
-                <LinearLayout
+                <RelativeLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
@@ -112,8 +108,63 @@
                     android:background="@drawable/layout_selector"
                     android:padding="10dp"
                     android:layout_marginBottom="5dp"
+                    android:clickable="false"
+                    android:layout_weight="1">
 
-                    >
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:id="@+id/imageView3"
+                        android:src="@drawable/armadio"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Qualità mobili 3/5"
+                        android:id="@+id/textView3"
+                        android:layout_gravity="center"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/imageView3"
+                        android:layout_toEndOf="@+id/imageView3" />
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/abc_dropdownitem_text_padding_right"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit"
+                        android:id="@+id/imageView7" />
+
+                </RelativeLayout>
+
+
+                <View
+                    android:id="@+id/separator_line_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#dfdfdf"
+                    />
+
+                <!-- Capacità Termica -->
+
+                <RelativeLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/layout_selector"
+                    android:padding="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:clickable="false"
+                    android:layout_weight="1">
 
                     <ImageView
                         android:layout_width="35dp"
@@ -128,19 +179,37 @@
                         android:textSize="18dp"
                         android:text="Capacità Termica 2/5"
                         android:id="@+id/textView3"
-                        android:layout_below="@+id/tableRow"
                         android:layout_gravity="center"
-                        />
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/imageView3"
+                        android:layout_toEndOf="@+id/imageView3" />
 
-                </LinearLayout>
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/abc_dropdownitem_text_padding_right"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit"
+                        android:id="@+id/imageView7" />
+
+                </RelativeLayout>
 
                 <View
                     android:id="@+id/separator_line_3"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:background="#dfdfdf" />
+                    android:background="#dfdfdf"
+                     />
 
-                <LinearLayout
+                <!-- Onestà Padrone di Casa -->
+
+                <RelativeLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
@@ -149,7 +218,7 @@
                     android:padding="10dp"
                     android:layout_marginBottom="5dp"
 
-                    >
+                    android:layout_weight="1">
 
                     <ImageView
                         android:layout_width="35dp"
@@ -164,19 +233,37 @@
                         android:textSize="18dp"
                         android:text="Onestà Padrone di Casa 4/5"
                         android:id="@+id/textView4"
-                        android:layout_below="@+id/tableRow"
                         android:layout_gravity="center"
-                        />
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/imageView4"
+                        android:layout_toEndOf="@+id/imageView4" />
 
-                </LinearLayout>
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/abc_dropdownitem_text_padding_right"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit"
+                        android:id="@+id/imageView7" />
+
+                </RelativeLayout>
 
                 <View
-                    android:id="@+id/separator_line_4"
+                    android:id="@+id/separator_line_3"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:background="#dfdfdf" />
+                    android:background="#dfdfdf"
+                    />
 
-                <LinearLayout
+                <!-- Sicurezza -->
+
+                <RelativeLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
@@ -184,8 +271,7 @@
                     android:background="@drawable/layout_selector"
                     android:padding="10dp"
                     android:layout_marginBottom="5dp"
-
-                    >
+                    android:layout_weight="1">
 
                     <ImageView
                         android:layout_width="35dp"
@@ -198,21 +284,39 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
-                        android:text="Onestà Padrone di Casa 3/5"
+                        android:text="Sicurezza Appartamento 3/5"
                         android:id="@+id/textView5"
-                        android:layout_below="@+id/tableRow"
                         android:layout_gravity="center"
-                        />
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/imageView5"
+                        android:layout_toEndOf="@+id/imageView5" />
 
-                </LinearLayout>
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/abc_dropdownitem_text_padding_right"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit"
+                        android:id="@+id/imageView7" />
+
+                </RelativeLayout>
 
                 <View
-                    android:id="@+id/separator_line_5"
+                    android:id="@+id/separator_line_3"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:background="#dfdfdf" />
+                    android:background="#dfdfdf"
+                    />
 
-                <LinearLayout
+                <!-- Collegamento con Bus -->
+
+                <RelativeLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
@@ -220,34 +324,247 @@
                     android:background="@drawable/layout_selector"
                     android:padding="10dp"
                     android:layout_marginBottom="5dp"
-
-                    >
+                    android:layout_weight="1">
 
                     <ImageView
                         android:layout_width="35dp"
                         android:layout_height="wrap_content"
                         android:paddingRight="5dp"
-                        android:id="@+id/imageView7"
-                        android:src="@drawable/bus"/>
+                        android:id="@+id/imageView5"
+                        android:src="@drawable/bus" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dp"
-                        android:text="Collegamento con Bus 3/5"
-                        android:id="@+id/textView7"
-                        android:layout_below="@+id/tableRow"
+                        android:text="Collegamento con bus 3/5"
+                        android:id="@+id/textView5"
                         android:layout_gravity="center"
-                        />
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/imageView5"
+                        android:layout_toEndOf="@+id/imageView5" />
 
-                </LinearLayout>
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/abc_dropdownitem_text_padding_right"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit"
+                        android:id="@+id/imageView7" />
+
+                </RelativeLayout>
 
 
                 <View
-                    android:id="@+id/separator_line_6"
+                    android:id="@+id/separator_line_3"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:background="#dfdfdf" />
+                    android:background="#dfdfdf"
+                    />
+
+                <RelativeLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/layout_selector"
+                    android:padding="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:id="@+id/imageView5"
+                        android:src="@drawable/vicini" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Vicini 3/5"
+                        android:id="@+id/textView5"
+                        android:layout_gravity="center"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/imageView5"
+                        android:layout_toEndOf="@+id/imageView5" />
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/abc_dropdownitem_text_padding_right"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit"
+                        android:id="@+id/imageView7" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/separator_line_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#dfdfdf"
+                    />
+
+                <RelativeLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/layout_selector"
+                    android:padding="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:id="@+id/imageView5"
+                        android:src="@drawable/tv" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Distanza Centro Città 3/5"
+                        android:id="@+id/textView5"
+                        android:layout_gravity="center"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/imageView5"
+                        android:layout_toEndOf="@+id/imageView5" />
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/abc_dropdownitem_text_padding_right"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit"
+                        android:id="@+id/imageView7" />
+
+                </RelativeLayout>
+
+
+                <View
+                    android:id="@+id/separator_line_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#dfdfdf"
+                    />
+
+                <RelativeLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/layout_selector"
+                    android:padding="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:id="@+id/imageView5"
+                        android:src="@drawable/tv" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Qualità Elettrodomestici 3/5"
+                        android:id="@+id/textView5"
+                        android:layout_gravity="center"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/imageView5"
+                        android:layout_toEndOf="@+id/imageView5" />
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/abc_dropdownitem_text_padding_right"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit"
+                        android:id="@+id/imageView7" />
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/separator_line_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#dfdfdf"
+                    />
+
+                <RelativeLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/layout_selector"
+                    android:padding="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="5dp"
+                        android:id="@+id/imageView5"
+                        android:src="@drawable/note" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Descrizione Generale"
+                        android:id="@+id/textView5"
+                        android:layout_gravity="center"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/imageView5"
+                        android:layout_toEndOf="@+id/imageView5" />
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/abc_dropdownitem_text_padding_right"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit"
+                        android:id="@+id/imageView7" />
+
+                </RelativeLayout>
 
             </LinearLayout>
 
