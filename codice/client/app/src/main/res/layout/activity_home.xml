@@ -6,69 +6,71 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"
-        ></include>
+        layout="@layout/toolbar"></include>
 
     <RelativeLayout
-        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:gravity="center"
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:gravity="center"
-        >
+        android:paddingTop="@dimen/activity_vertical_margin">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center" >
 
-            <LinearLayout
-                android:id="@+id/home_buttons1"
-                android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/home_buttons1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/button_nav_drawer"
+                android:layout_width="230dp"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:orientation="vertical" >
+                android:text="NAVIGATION DRAWER" />
 
-                <Button
-                    android:id="@+id/button_account"
-                    android:layout_width="230dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/button_account" />
+            <Button
+                android:id="@+id/button_account"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:text="@string/button_account" />
 
-                <Button
-                    android:id="@+id/button_get_users"
-                    android:layout_width="230dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/button_get_users" />
+            <Button
+                android:id="@+id/button_get_users"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:text="@string/button_get_users" />
 
-		        <Button
-                    android:id="@+id/button_apartment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="showApartment"
-                    android:text="@string/button_apartment" />
+            <Button
+                android:id="@+id/button_apartment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="showApartment"
+                android:text="@string/button_apartment" />
 
-                <Button
-                    android:id="@+id/button_recensione_appartamento"
-                    android:layout_width="230dp"
-                    android:layout_height="wrap_content"
-                    android:text="@string/button_recensione_appartamento" />
+            <Button
+                android:id="@+id/button_review"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:text="@string/button_review" />
 
-                <Button
-                    android:id="@+id/button_logout"
-                    android:layout_width="230dp"
-                    android:layout_height="wrap_content"
+            <Button
+                android:id="@+id/button_search"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:text="CERCA APPARTAMENTO" />
 
-                    android:text="@string/button_logout" />
+            <Button
+                android:id="@+id/button_logout"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/button_logout" />
 
-                
-
-            </LinearLayout>
-
-        </RelativeLayout>
+        </LinearLayout>
 
     </RelativeLayout>
 

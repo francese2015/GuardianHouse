@@ -52,26 +52,36 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="it.unisa.guardianhouse.HomeActivity" />
         </activity>
-        
         <activity
+<<<<<<< HEAD
             android:name=".ReviewActivity"
             android:label="@string/title_activity_visualizza_recensione" >
-        </activity>
-
-        <activity
-            android:name=".ApartmentActivity"
-            android:label="@string/title_activity_apartment"
-            android:parentActivityName=".HomeActivity">
+=======
+            android:name=".VisualizeReviewActivity"
+            android:label="@string/title_activity_recensione" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="it.unisa.guardianhouse.HomeActivity" />
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-
+>>>>>>> 4d4c8711a7e6f6354c643bcaab11792b019e2b53
+        </activity>
+        <activity
+            android:name=".ApartmentActivity"
+            android:label="@string/title_activity_apartment" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.unisa.guardianhouse.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".PreSearchAppActivity"
+            android:label="Ricerca appartamento" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.unisa.guardianhouse.HomeActivity" />
+        </activity>
+        <activity
+            android:name=".NavDrawerActivity"
+            android:label="@string/title_activity_nav_drawer"
+            android:theme="@style/MyNavigationDrawerTheme">
         </activity>
     </application>
 

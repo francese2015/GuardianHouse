@@ -2,8 +2,8 @@ package it.unisa.guardianhouse;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -29,6 +29,7 @@ public class AccountActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
+        // richiamo i vari relative layout
         RelativeLayout nameRelative = (RelativeLayout) findViewById(R.id.relative_name);
         RelativeLayout surnameRelative = (RelativeLayout) findViewById(R.id.relative_surname);
         RelativeLayout emailRelative = (RelativeLayout) findViewById(R.id.relative_email);

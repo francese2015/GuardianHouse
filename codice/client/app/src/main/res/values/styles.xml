@@ -13,4 +13,10 @@
         <item name="android:textColorSecondary">@color/bianco</item>
     </style>
 
+    <style name="MyNavigationDrawerTheme" parent="MaterialNavigationDrawerTheme">
+        <item name="colorPrimary">@color/ColorPrimary</item>
+        <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
+        <item name="colorAccent">@color/bianco</item>
+    </style>
+
 </resources>
