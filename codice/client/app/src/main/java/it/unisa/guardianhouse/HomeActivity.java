@@ -20,6 +20,7 @@ public class HomeActivity extends ActionBarActivity {
     private Button btnApartment;
     private Button btnReview;
     private Button btnSearch;
+    private Button btnMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,7 @@ public class HomeActivity extends ActionBarActivity {
         btnApartment = (Button) findViewById(R.id.button_apartment);
         btnReview = (Button) findViewById(R.id.button_review);
         btnSearch = (Button) findViewById(R.id.button_search);
+        btnMap = (Button) findViewById(R.id.button_map);
         btnLogout = (Button) findViewById(R.id.button_logout);
 
 
@@ -96,6 +98,14 @@ public class HomeActivity extends ActionBarActivity {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), PreSearchAppActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //bottone map
+        btnMap.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MapActivity.class);
                 startActivity(intent);
             }
         });

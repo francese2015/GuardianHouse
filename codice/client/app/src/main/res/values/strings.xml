@@ -141,6 +141,7 @@
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_nav_drawer">NavDrawerActivity</string>
+    <string name="title_activity_map">MapActivity</string>
 >>>>>>> 313843f35c92eed14666b440b941860d9223b985
 
 

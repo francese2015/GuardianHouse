@@ -64,6 +64,12 @@
                 android:text="CERCA APPARTAMENTO" />
 
             <Button
+                android:id="@+id/button_map"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:text="GOOGLE MAPS API TEST" />
+
+            <Button
                 android:id="@+id/button_logout"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
