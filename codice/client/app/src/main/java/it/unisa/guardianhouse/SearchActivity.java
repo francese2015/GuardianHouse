@@ -1,25 +1,9 @@
 package it.unisa.guardianhouse;
 
-import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
-
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import android.app.Activity;
-import android.content.Context;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,22 +14,35 @@ import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.ArrayList;
 
 public class SearchActivity extends ActionBarActivity implements OnItemClickListener {
 
     private Toolbar toolbar;
 
-    private static final String LOG_TAG = "Google Places Autocomplete";
+    private static final String LOG_TAG = "ExampleApp";
+
     private static final String PLACES_API_BASE = "https://maps.googleapis.com/maps/api/place";
     private static final String TYPE_AUTOCOMPLETE = "/autocomplete";
     private static final String OUT_JSON = "/json";
 
-    private static final String API_KEY = "AIzaSyDnFern-unCAF63iz3_NkDmzOlgo7BboUM";
+    //------------ make your specific key ------------
+    private static final String API_KEY = "AIzaSyAU9ShujnIg3IDQxtPr7Q1qOvFVdwNmWc4";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pre_search);
+        setContentView(R.layout.activity_search);
 
         // setto la toolbar come action bar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -59,24 +56,25 @@ public class SearchActivity extends ActionBarActivity implements OnItemClickList
         autoCompView.setOnItemClickListener(this);
     }
 
-    public void onItemClick(AdapterView adapterView, View view, int position, long id) {
+    public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         String str = (String) adapterView.getItemAtPosition(position);
         Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
     }
 
-    @SuppressLint("LongLogTag")
-    public static ArrayList autocomplete(String input) {
-        ArrayList resultList = null;
+    public static ArrayList<String> autocomplete(String input) {
+        ArrayList<String> resultList = null;
 
         HttpURLConnection conn = null;
         StringBuilder jsonResults = new StringBuilder();
         try {
             StringBuilder sb = new StringBuilder(PLACES_API_BASE + TYPE_AUTOCOMPLETE + OUT_JSON);
             sb.append("?key=" + API_KEY);
-            sb.append("&components=country:gr");
+            //sb.append("&components=country:gr");
             sb.append("&input=" + URLEncoder.encode(input, "utf8"));
 
             URL url = new URL(sb.toString());
+
+            System.out.println("URL: "+url);
             conn = (HttpURLConnection) url.openConnection();
             InputStreamReader in = new InputStreamReader(conn.getInputStream());
 
@@ -99,12 +97,13 @@ public class SearchActivity extends ActionBarActivity implements OnItemClickList
         }
 
         try {
+
             // Create a JSON object hierarchy from the results
             JSONObject jsonObj = new JSONObject(jsonResults.toString());
             JSONArray predsJsonArray = jsonObj.getJSONArray("predictions");
 
             // Extract the Place descriptions from the results
-            resultList = new ArrayList(predsJsonArray.length());
+            resultList = new ArrayList<String>(predsJsonArray.length());
             for (int i = 0; i < predsJsonArray.length(); i++) {
                 System.out.println(predsJsonArray.getJSONObject(i).getString("description"));
                 System.out.println("============================================================");
@@ -117,8 +116,8 @@ public class SearchActivity extends ActionBarActivity implements OnItemClickList
         return resultList;
     }
 
-    class GooglePlacesAutocompleteAdapter extends ArrayAdapter implements Filterable {
-        private ArrayList resultList;
+    class GooglePlacesAutocompleteAdapter extends ArrayAdapter<String> implements Filterable {
+        private ArrayList<String> resultList;
 
         public GooglePlacesAutocompleteAdapter(Context context, int textViewResourceId) {
             super(context, textViewResourceId);
@@ -131,7 +130,7 @@ public class SearchActivity extends ActionBarActivity implements OnItemClickList
 
         @Override
         public String getItem(int index) {
-            return (String) resultList.get(index);
+            return resultList.get(index);
         }
 
         @Override

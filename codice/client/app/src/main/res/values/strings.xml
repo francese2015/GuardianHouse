@@ -35,7 +35,6 @@
     <string name="button_review">VISUALIZZA RECENSIONE</string>
     <string name="button_logout">LOGOUT</string>
 
-
     <!-- Activity Account -->
     <string name="title_activity_account">Account</string>
     <string name="img_descr1">user_pic</string>
@@ -69,16 +68,15 @@
     <string name="label_name">Nome:</string>
     <string name="label_surname">Cognome:</string>
 
-<!--HEAD-->
-    <!-- Activity PreSearchApp -->
+    <!-- Activity Search -->
     <string name="hint">Search...</string>
     <string name="app1_descr">First most searched app</string>
-    <string name="appart_name">Favorito</string>
-=======
+    <string name="apart_name">Favorito</string>
+
 	<!-- Activity apartment -->
 
     <!-- Apartment Label -->
-    <string name="button_apartment">Visualizza Scheda Appartamento</string>
+    <string name="button_apartment">Visualizza scheda appartamento</string>
     <string name="title_activity_simple_list_view">SimpleListViewActivity</string>
     <string name="apartment_dimension_label">Dimensioni</string>
     <string name="apartment_status_label">Status</string>
@@ -120,30 +118,27 @@
 
     <!-- Normativa Privacy -->
 
-    <string name="prvacy_agreement">
+    <string name="privacy_agreement">
         CONSENSO AI SENSI DEL CODICE IN MATERIA DI PROTEZIONE DEI DATI PERSONALI INFORMATIVA AI SENSI DELL\'ART.13 DEL T.U. PRIVACY (D.LGS 196/2003)
         \nAi sensi del D.Lgs. n. 196 del 30 giugno 2003 (\"Codice in materia di protezione dei dati personali\"), il trattamento delle informazioni personali che La riguardano sarà improntato ai principi di correttezza, liceità e trasparenza e di tutela della Sua riservatezza e dei Suoi diritti.
-\nAi sensi dell\'art. 13 del D.lgs. n.196/2003 ed in relazione ai dati personali dei quali entreremo in possesso, La informiamo di quanto segue:
-\n1.FINALITA\' DEL TRATTAMENTO
-\nIl trattamento dei dati da Lei forniti è ﬁnalizzato alla pubblicazione di Nome e Cognome all\'interno della scheda dedicata alla recensione da Lei inviata, inoltre si autorizza l\'invio di eventuali comunicazioni istituzionali relative ad iniziative di carattere informativo rappresentata da questa applicazione;
-\n2.MODALITA\' DEL TRATTAMENTO
-\nI dati verranno archiviati su supporti, informatici e/o telematici, nel rispetto della normativa vigente e con logiche strettamente correlate alle finalità;
-\n
-\n3. NATURA FACOLTATIVA DEL CONFERIMENTO DEI DATI E CONSEGUENZE DI UN EVENTUALE RIFIUTO DI RISPONDERE
-\nIl conferimento dei dati è facoltativo, l\'eventuale riﬁuto di fornire tali dati non inficia l\'invio della segnalazione che sarà, in questo caso, anonima.
-\n4. AMBITO DI COMUNICAZIONE E DIFFUSIONE
-\nI dati personali potranno venire a conoscenza degli incaricati del trattamento. I dati personali non saranno comunicati ad altri soggetti, né saranno oggetto di diffusione.
-\n5. ESTREMI IDENTIFICATIVI DEL TITOLARE, DEL RESPONSABILE E DEL RAPPRESENTANTE DEL TITOLARE NEL TERRITORIO DELLO STATO
-\nil Titolare del trattamento è il team GuardianHouse Project. L\'nteressato può esercitare i diritti di cui all\'art. 7 del D. Lgs. n.196/2003 cui espressamente si rinvia.
-\n6. DIRITTI DELL\'INTERESSATO
-\nIn ogni momento potrà esercitare i Suoi diritti nei confronti del titolare del trattamento, ai sensi dell\'art.7 del D.Lgs.196/2003.\n\n</string>
+        \nAi sensi dell\'art. 13 del D.lgs. n.196/2003 ed in relazione ai dati personali dei quali entreremo in possesso, La informiamo di quanto segue:
+        \n1.FINALITA\' DEL TRATTAMENTO
+        \nIl trattamento dei dati da Lei forniti è ﬁnalizzato alla pubblicazione di Nome e Cognome all\'interno della scheda dedicata alla recensione da Lei inviata, inoltre si autorizza l\'invio di eventuali comunicazioni istituzionali relative ad iniziative di carattere informativo rappresentata da questa applicazione;
+        \n2.MODALITA\' DEL TRATTAMENTO
+        \nI dati verranno archiviati su supporti, informatici e/o telematici, nel rispetto della normativa vigente e con logiche strettamente correlate alle finalità;
+        \n
+        \n3. NATURA FACOLTATIVA DEL CONFERIMENTO DEI DATI E CONSEGUENZE DI UN EVENTUALE RIFIUTO DI RISPONDERE
+        \nIl conferimento dei dati è facoltativo, l\'eventuale riﬁuto di fornire tali dati non inficia l\'invio della segnalazione che sarà, in questo caso, anonima.
+        \n4. AMBITO DI COMUNICAZIONE E DIFFUSIONE
+        \nI dati personali potranno venire a conoscenza degli incaricati del trattamento. I dati personali non saranno comunicati ad altri soggetti, né saranno oggetto di diffusione.
+        \n5. ESTREMI IDENTIFICATIVI DEL TITOLARE, DEL RESPONSABILE E DEL RAPPRESENTANTE DEL TITOLARE NEL TERRITORIO DELLO STATO
+        \nil Titolare del trattamento è il team GuardianHouse Project. L\'nteressato può esercitare i diritti di cui all\'art. 7 del D. Lgs. n.196/2003 cui espressamente si rinvia.
+        \n6. DIRITTI DELL\'INTERESSATO
+        \nIn ogni momento potrà esercitare i Suoi diritti nei confronti del titolare del trattamento, ai sensi dell\'art.7 del D.Lgs.196/2003.\n\n
+    </string>
 
-<!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_nav_drawer">NavDrawerActivity</string>
-    <string name="title_activity_map">MapActivity</string>
->>>>>>> 313843f35c92eed14666b440b941860d9223b985
-
-
+    <string name="title_activity_nav_drawer">Navigation drawer</string>
+    <string name="title_activity_map">Mappa appartamenti</string>
 
 </resources>

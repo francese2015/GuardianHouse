@@ -10,10 +10,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +26,7 @@ public class GetApartmentsActivity extends ActionBarActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pre_search);
+        setContentView(R.layout.activity_search);
 
         // setto la toolbar come action bar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
