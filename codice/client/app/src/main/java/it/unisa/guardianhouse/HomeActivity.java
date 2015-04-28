@@ -107,14 +107,7 @@ public class HomeActivity extends ActionBarActivity {
             }
         });
 
-        // bottone recensione
-        // bottone get users
-        btnReview.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ReviewActivity.class);
-                startActivity(intent);
-            }
-        });
+
 
     }
 

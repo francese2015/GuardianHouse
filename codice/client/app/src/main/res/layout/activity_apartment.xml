@@ -1,0 +1,476 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sfondosfumato"
+    tools:context="it.unisa.guardianhouse.AccountActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar">
+
+    </include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+            <ImageView
+                android:id="@+id/apartment_img"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/img_descr2"
+                android:src="@drawable/appartamento" />
+
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/apartment_img"
+                android:layout_centerHorizontal="true"
+                android:clickable="false"
+                android:indeterminate="false"
+                android:longClickable="false"
+                android:numStars="5"
+                android:rating="3" />
+
+            <View
+                android:id="@+id/separator_line_1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/ratingBar"
+                android:layout_marginTop="16dp"
+                android:background="#dfdfdf" />
+
+            <LinearLayout
+                android:id="@+id/apartment_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/separator_line_1"
+                android:divider="@drawable/divider"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <!-- Dimensione -->
+
+                <RelativeLayout
+                    android:id="@+id/relative_dimension"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/dimension_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/apartment_dimension_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/dimension_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/dimension_label"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/apartment_dimension" />
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit" />
+
+                </RelativeLayout>
+
+                <!-- Status -->
+
+                <RelativeLayout
+                    android:id="@+id/relative_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/status_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/apartment_status_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/status_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/status_label"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/apartment_status" />
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit" />
+
+                </RelativeLayout>
+
+                <!-- Prezzo -->
+
+                <RelativeLayout
+                    android:id="@+id/relative_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/price_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/apartment_price_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/price_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/price_label"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/apartment_price" />
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit" />
+
+                </RelativeLayout>
+
+                <!-- Descrizione -->
+
+                <RelativeLayout
+                    android:id="@+id/relative_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/description_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/apartment_text_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/text_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/description_label"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/apartment_text" />
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit" />
+
+                </RelativeLayout>
+
+                <!-- Posizione -->
+
+                <RelativeLayout
+                    android:id="@+id/relative_position"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/position_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/apartment_position_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/position_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/position_label"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/apartment_position" />
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit" />
+
+                </RelativeLayout>
+
+                <!-- Punti d'interesse-->
+
+                <RelativeLayout
+                    android:id="@+id/relative_poi"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/poi_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/apartment_poi_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/poi_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/poi_label"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/apartment_poi" />
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit" />
+
+                </RelativeLayout>
+
+                <!-- Capacità Termica-->
+
+                <RelativeLayout
+                    android:id="@+id/relative_thermic"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/thermic_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/apartment_thermic_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/thermic_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/thermic_label"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/apartment_thermic" />
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit" />
+
+                </RelativeLayout>
+
+                <!-- Servizi Standard -->
+
+                <RelativeLayout
+                    android:id="@+id/relative_services"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/service_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/apartment_services_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/service_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/service_label"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/apartment_services" />
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit" />
+
+                </RelativeLayout>
+
+                <!-- TEST -->
+
+                <RelativeLayout
+                    android:id="@+id/relative_test"
+                    android:layout_width="match_parent"
+                    android:layout_height="68dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="true">
+
+                    <TextView
+                        android:id="@+id/letizia_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/apartment_letizia_label"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/letizia_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/letizia_label"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/apartment_letizia" />
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_edit" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/separator_line_2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/apartment_data"
+                android:background="#dfdfdf" />
+
+            <Button
+                android:id="@+id/button_delete_apartment"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/separator_line_2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="28dp"
+
+                android:text="@string/button_delete_apartment" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

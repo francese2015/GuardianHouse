@@ -117,9 +117,6 @@
     <string name="apartment_distanceCC">Distanza Centro Città</string>
     <string name="apartment_tools">Qualità Elettrodomestici</string>
 
-    <!-- gestione_recensione Value -->
-    <string name="button_recensione_appartamento">Visualizza Recensione Appartamento</string>
-    <string name="title_activity_reviewaccount">Recensione</string>
 
     <!-- Normativa Privacy -->
 
