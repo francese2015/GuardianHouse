@@ -88,7 +88,7 @@ public class HomeActivity extends ActionBarActivity {
         btnReview.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
-                Intent intent = new Intent(getApplicationContext(), VisualizeReviewActivity.class);
+                Intent intent = new Intent(getApplicationContext(), GetReviewActivity.class);
                 startActivity(intent);
 
             }
@@ -97,7 +97,7 @@ public class HomeActivity extends ActionBarActivity {
         //bottone search
         btnSearch.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), PreSearchAppActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
                 startActivity(intent);
             }
         });

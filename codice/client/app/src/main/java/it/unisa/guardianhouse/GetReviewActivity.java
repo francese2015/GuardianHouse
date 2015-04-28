@@ -7,7 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class VisualizeReviewActivity extends ActionBarActivity {
+public class GetReviewActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
 

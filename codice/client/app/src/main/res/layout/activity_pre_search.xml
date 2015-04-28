@@ -16,37 +16,44 @@
         android:layout_height="match_parent"
         android:fillViewport="true" >
 
-
         <RelativeLayout
             android:id="@+id/linearlay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/searchEditText"
-                android:layout_width="120dp"
+            <RelativeLayout
+                android:id="@+id/search_bar"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint"
-                android:textSize="20sp"
-                android:textColor="#BDBDBD"
-                android:layout_marginTop="50dp"
-                android:layout_marginLeft="100dp"/>
+                android:padding="16dp">
 
-            <ImageView
-                android:id="@+id/searchimg"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="50dp"
-                android:layout_toRightOf="@+id/searchEditText"
-                android:src="@drawable/searchsign"/>
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/searchimg"
+                    android:hint="Inserisci l'indirizzo"
+                    android:ems="10" >
+                    <requestFocus />
+                </AutoCompleteTextView>
 
+                <ImageView
+                    android:id="@+id/searchimg"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/searchimg"
+                    android:src="@drawable/searchsign"/>
+
+            </RelativeLayout>
 
             <ListView
                 android:id="@+id/listView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="130dp">
+                android:layout_below="@+id/search_bar">
             </ListView>
         </RelativeLayout>
 

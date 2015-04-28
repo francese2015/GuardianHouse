@@ -64,7 +64,7 @@
                 android:value="it.unisa.guardianhouse.HomeActivity" />
         </activity>
         <activity
-            android:name=".VisualizeReviewActivity"
+            android:name=".GetReviewActivity"
             android:label="@string/title_activity_recensione" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -78,7 +78,7 @@
                 android:value="it.unisa.guardianhouse.HomeActivity" />
         </activity>
         <activity
-            android:name=".PreSearchAppActivity"
+            android:name=".SearchActivity"
             android:label="Ricerca appartamento" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
