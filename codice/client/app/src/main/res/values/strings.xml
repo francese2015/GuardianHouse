@@ -115,9 +115,12 @@
     <string name="apartment_distanceCC">Distanza Centro Città</string>
     <string name="apartment_tools">Qualità Elettrodomestici</string>
 
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_nav_drawer">Navigation drawer</string>
+    <string name="title_activity_map">Mappa appartamenti</string>
+    <string name="title_activity_get_apartments">Risultati ricerca</string>
 
     <!-- Normativa Privacy -->
-
     <string name="privacy_agreement">
         CONSENSO AI SENSI DEL CODICE IN MATERIA DI PROTEZIONE DEI DATI PERSONALI INFORMATIVA AI SENSI DELL\'ART.13 DEL T.U. PRIVACY (D.LGS 196/2003)
         \nAi sensi del D.Lgs. n. 196 del 30 giugno 2003 (\"Codice in materia di protezione dei dati personali\"), il trattamento delle informazioni personali che La riguardano sarà improntato ai principi di correttezza, liceità e trasparenza e di tutela della Sua riservatezza e dei Suoi diritti.
@@ -136,9 +139,5 @@
         \n6. DIRITTI DELL\'INTERESSATO
         \nIn ogni momento potrà esercitare i Suoi diritti nei confronti del titolare del trattamento, ai sensi dell\'art.7 del D.Lgs.196/2003.\n\n
     </string>
-
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_nav_drawer">Navigation drawer</string>
-    <string name="title_activity_map">Mappa appartamenti</string>
 
 </resources>

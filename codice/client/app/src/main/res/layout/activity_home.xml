@@ -27,12 +27,6 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button_nav_drawer"
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:text="NAVIGATION DRAWER" />
-
-            <Button
                 android:id="@+id/button_account"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
@@ -52,16 +46,23 @@
                 android:text="@string/button_apartment" />
 
             <Button
-                android:id="@+id/button_review"
-                android:layout_width="230dp"
+                android:id="@+id/button_get_apartments"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/button_review" />
+                android:onClick="showApartment"
+                android:text="Visualizza appartamenti" />
 
             <Button
                 android:id="@+id/button_search"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
                 android:text="CERCA APPARTAMENTO" />
+
+            <Button
+                android:id="@+id/button_review"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:text="@string/button_review" />
 
             <Button
                 android:id="@+id/button_map"

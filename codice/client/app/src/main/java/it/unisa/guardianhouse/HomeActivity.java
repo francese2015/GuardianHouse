@@ -13,11 +13,12 @@ import android.widget.Button;
 public class HomeActivity extends ActionBarActivity {
 
     private Toolbar toolbar;
-    private Button btnDrawer;
+    //private Button btnDrawer;
     private Button btnAccount;
     private Button btnGetUsers;
     private Button btnLogout;
     private Button btnApartment;
+    private Button btnGetApartments;
     private Button btnReview;
     private Button btnSearch;
     private Button btnMap;
@@ -33,23 +34,24 @@ public class HomeActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
-        btnDrawer = (Button) findViewById(R.id.button_nav_drawer);
+        //btnDrawer = (Button) findViewById(R.id.button_nav_drawer);
         btnAccount = (Button) findViewById(R.id.button_account);
         btnGetUsers = (Button) findViewById(R.id.button_get_users);
         btnApartment = (Button) findViewById(R.id.button_apartment);
+        btnGetApartments = (Button) findViewById(R.id.button_get_apartments);
         btnReview = (Button) findViewById(R.id.button_review);
         btnSearch = (Button) findViewById(R.id.button_search);
         btnMap = (Button) findViewById(R.id.button_map);
         btnLogout = (Button) findViewById(R.id.button_logout);
 
 
-        //bottone navigation drawer
-        btnDrawer.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), NavDrawerActivity.class);
-                startActivity(intent);
-            }
-        });
+//        //bottone navigation drawer
+//        btnDrawer.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View view) {
+//                Intent intent = new Intent(getApplicationContext(), NavDrawerActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
         // bottone account
         btnAccount.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +83,14 @@ public class HomeActivity extends ActionBarActivity {
                 // startActivity(new Intent(
                 //       "android.intent.action.ApartmentActivity"));
 
+            }
+        });
+
+        // bottone get apartments
+        btnGetApartments.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), GetApartmentsActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -78,6 +78,13 @@
                 android:value="it.unisa.guardianhouse.HomeActivity" />
         </activity>
         <activity
+            android:name=".GetApartmentsActivity"
+            android:label="@string/title_activity_get_apartments" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.unisa.guardianhouse.HomeActivity" />
+        </activity>
+        <activity
             android:name=".SearchActivity"
             android:label="Ricerca appartamento" >
             <meta-data

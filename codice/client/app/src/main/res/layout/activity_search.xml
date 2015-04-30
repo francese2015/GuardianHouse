@@ -32,29 +32,29 @@
                     android:id="@+id/autoCompleteTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_toLeftOf="@+id/searchimg"
+                    android:layout_toLeftOf="@+id/search_img"
                     android:hint="Inserisci l'indirizzo"
                     android:ems="10" >
                     <requestFocus />
                 </AutoCompleteTextView>
 
                 <ImageView
-                    android:id="@+id/searchimg"
+                    android:id="@+id/search_img"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_toLeftOf="@+id/search_by_gps"
+                    android:src="@drawable/searchsign"/>
+
+                <ImageView
+                    android:id="@+id/search_by_gps"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_below="@+id/searchimg"
-                    android:src="@drawable/searchsign"/>
+                    android:src="@mipmap/ic_action_location_found"/>
 
             </RelativeLayout>
 
-            <ListView
-                android:id="@+id/listView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/search_bar">
-            </ListView>
         </RelativeLayout>
 
 

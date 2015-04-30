@@ -19,44 +19,42 @@ import it.unisa.guardianhouse.model.Apartment;
  */
 public class ApartmentListAdapter extends BaseAdapter {
 
-    private Activity activityOne;
-    private LayoutInflater inflaterOne;
+    private Activity activity;
+    private LayoutInflater inflater;
     private List<Apartment> aptItems;
 
-    public ApartmentListAdapter(Activity activityOne, List<Apartment> aptItems) {
-        this.activityOne = activityOne;
+    public ApartmentListAdapter(Activity activity, List<Apartment> aptItems) {
+        this.activity = activity;
         this.aptItems = aptItems;
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return aptItems.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return aptItems.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (inflaterOne == null)
-            inflaterOne = (LayoutInflater) activityOne
+        if (inflater == null)
+            inflater = (LayoutInflater) activity
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
         if (convertView == null)
-            convertView = inflaterOne.inflate(R.layout.list_item_apt, null);
+            convertView = inflater.inflate(R.layout.list_item_apt, null);
 
-        TextView nameApt = (TextView) convertView.findViewById(R.id.nameApt);
-        RatingBar ratingApt = (RatingBar) convertView.findViewById(R.id.ratingApt);
+        TextView description = (TextView) convertView.findViewById(R.id.nameApt);
 
         Apartment apt = aptItems.get(position);
-        nameApt.setText(apt.getName());
+        description.setText(apt.getDescription());
 
         return convertView;
     }
