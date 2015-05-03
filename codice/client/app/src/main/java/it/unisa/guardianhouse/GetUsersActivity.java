@@ -2,7 +2,6 @@ package it.unisa.guardianhouse;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -17,12 +16,9 @@ import java.util.List;
 import it.unisa.guardianhouse.adapter.UserListAdapter;
 import it.unisa.guardianhouse.model.User;
 
-/**
- * Created by Carlo on 12/04/2015.
- */
+
 public class GetUsersActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
     private List<User> userList = new ArrayList<User>();
     private ListView listView;
     UserListAdapter adapter;
@@ -31,12 +27,7 @@ public class GetUsersActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_users);
-
-        // setto la toolbar come action bar
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         listView = (ListView) findViewById(R.id.listView1);
         adapter = new UserListAdapter(this, userList);

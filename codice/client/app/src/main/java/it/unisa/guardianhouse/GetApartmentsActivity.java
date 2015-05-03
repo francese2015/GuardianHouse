@@ -1,25 +1,38 @@
 package it.unisa.guardianhouse;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import it.unisa.guardianhouse.adapter.ApartmentListAdapter;
+import it.unisa.guardianhouse.app.AppController;
 import it.unisa.guardianhouse.model.Apartment;
+import it.unisa.guardianhouse.model.User;
 
 public class GetApartmentsActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
+    private static String TAG = MainActivity.class.getSimpleName();
+    private ProgressDialog pDialog;
+    private String url;
     private List<Apartment> apartmentList = new ArrayList<Apartment>();
     private ListView listView;
     ApartmentListAdapter adapter;
@@ -28,124 +41,73 @@ public class GetApartmentsActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_apartments);
-
-        // setto la toolbar come action bar
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         listView = (ListView) findViewById(R.id.listView1);
         adapter = new ApartmentListAdapter(this, apartmentList);
         listView.setAdapter(adapter);
 
-        try {
-            // json response del server
-            String stringJsonApartmentList = "{\n" +
-                    "    \"apartments\": [\n" +
-                    "        {\n" +
-                    "            \"_id\": {\n" +
-                    "                \"$oid\": \"5538b19fe4b07a8290702638\"\n" +
-                    "            },\n" +
-                    "            \"address\": {\n" +
-                    "                \"street_number\": \"6\",\n" +
-                    "                \"route\": \"Via Roma\",\n" +
-                    "                \"locality\": \"Campobasso\",\n" +
-                    "                \"administrative_area_level_1\": \"Molise\",\n" +
-                    "                \"administrative_area_level_2\": \"Campobasso\",\n" +
-                    "                \"postal_code\": \"86100\",\n" +
-                    "                \"country\": \"Italia\",\n" +
-                    "                \"intern_id\": \"15\"\n" +
-                    "            },\n" +
-                    "            \"location\": {\n" +
-                    "                \"type\": \"Point\",\n" +
-                    "                \"coordinates\": [\n" +
-                    "                    14.65848,\n" +
-                    "                    41.560344\n" +
-                    "                ]\n" +
-                    "            },\n" +
-                    "            \"details\": {\n" +
-                    "                \"mq\": 50,\n" +
-                    "                \"car_place\": 1,\n" +
-                    "                \"contract_time\": \"un anno\",\n" +
-                    "                \"free_rooms\": 2,\n" +
-                    "                \"cost\": 300,\n" +
-                    "                \"status\": \"restaurata\",\n" +
-                    "                \"description\": \"appartamento in zona centro\"\n" +
-                    "            },\n" +
-                    "            \"added_by\": [\n" +
-                    "                {\n" +
-                    "                    \"user_id\": \"5538b29ca4832c04cba1586b\"\n" +
-                    "                }\n" +
-                    "            ],\n" +
-                    "            \"rooms\": [\n" +
-                    "                {\n" +
-                    "                    \"room_id\": \"1\",\n" +
-                    "                    \"beds\": 1,\n" +
-                    "                    \"pvt_wc\": 1,\n" +
-                    "                    \"windows\": 1,\n" +
-                    "                    \"balcony\": 1,\n" +
-                    "                    \"sockets\": 4\n" +
-                    "                },\n" +
-                    "                {\n" +
-                    "                    \"room_id\": \"2\",\n" +
-                    "                    \"beds\": 2,\n" +
-                    "                    \"pvt_wc\": 1,\n" +
-                    "                    \"windows\": 2,\n" +
-                    "                    \"balcony\": 1,\n" +
-                    "                    \"sockets\": 4\n" +
-                    "                }\n" +
-                    "            ],\n" +
-                    "            \"receivedReviews\": [\n" +
-                    "                {\n" +
-                    "                    \"_id\": {\n" +
-                    "                        \"$oid\": \"5538b1e6a4832c04cba15864\"\n" +
-                    "                    },\n" +
-                    "                    \"appliance_status\": \"testo\",\n" +
-                    "                    \"thermic_capacity\": \"testo\",\n" +
-                    "                    \"landlord_honesty\": \"testo\",\n" +
-                    "                    \"security_level\": \"testo\",\n" +
-                    "                    \"bus_connection\": \"testo\",\n" +
-                    "                    \"neighbours\": \"testo\",\n" +
-                    "                    \"distance_cc\": \"testo\",\n" +
-                    "                    \"furniture_quality\": \"testo\",\n" +
-                    "                    \"description\": \"testo\",\n" +
-                    "                    \"reviews_mean\": 0,\n" +
-                    "                    \"releaser_id\": \"5538b29ca4832c04cba15869\"\n" +
-                    "                },\n" +
-                    "                {\n" +
-                    "                    \"_id\": {\n" +
-                    "                        \"$oid\": \"5538b1e6a4832c04cba15865\"\n" +
-                    "                    },\n" +
-                    "                    \"appliance_status\": \"testo\",\n" +
-                    "                    \"thermic_capacity\": \"testo\",\n" +
-                    "                    \"landlord_honesty\": \"testo\",\n" +
-                    "                    \"security_level\": \"testo\",\n" +
-                    "                    \"bus_connection\": \"testo\",\n" +
-                    "                    \"neighbours\": \"testo\",\n" +
-                    "                    \"distance_cc\": \"testo\",\n" +
-                    "                    \"furniture_quality\": \"testo\",\n" +
-                    "                    \"description\": \"testo\",\n" +
-                    "                    \"reviews_mean\": 0,\n" +
-                    "                    \"releaser_id\": \"5538b29ca4832c04cba1586a\"\n" +
-                    "                }\n" +
-                    "            ]\n" +
-                    "        }\n" +
-                    "    ]\n" +
-                    "}";
-            JSONObject jsonApartmentList = new JSONObject(stringJsonApartmentList);
+        Bundle b = getIntent().getExtras();
+        double latitude = b.getDouble("latitude");
+        double longitude = b.getDouble("longitude");
+        url = "http://carlo.teammolise.rocks/api/apartments/"+latitude+","+longitude+"";
 
-            // estraggo l'array apartments dal response del server
-            JSONArray apartmentArray = jsonApartmentList.getJSONArray("apartments");
-            for (int i = 0; i < apartmentArray.length(); i++) {
-                JSONObject singleApartment = apartmentArray.getJSONObject(i);
-                Apartment apartment = new Apartment();
-                apartment.setDescription(singleApartment.getJSONObject("details").getString("description"));
-                apartmentList.add(apartment);
-                adapter.notifyDataSetChanged();
+        pDialog = new ProgressDialog(this);
+        pDialog.setMessage("Loading...");
+        pDialog.show();
+
+        searchByLocation();
+
+    }
+
+    public void searchByLocation() {
+
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, url,
+                null, new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        hidePDialog();
+                        try {
+                            JSONArray apartmentArray = response.getJSONArray("apartments");
+                            for (int i = 0; i < apartmentArray.length(); i++) {
+                                JSONObject singleApartment = apartmentArray.getJSONObject(i);
+                                Apartment apartment = new Apartment();
+                                apartment.setDescription(singleApartment.getJSONObject("5538b19fe4b07a8290702638").getJSONObject("details").getString("description"));
+                                apartmentList.add(apartment);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        adapter.notifyDataSetChanged();
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Error: " + error.getMessage());
+                hidePDialog();
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
+        }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Content-Type", "application/x-www-form-urlencoded");
+                return headers;
+            }
+        };
+
+        AppController.getInstance().addToRequestQueue(jsonObjReq);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        hidePDialog();
+    }
+
+    private void hidePDialog() {
+        if (pDialog != null) {
+            pDialog.dismiss();
+            pDialog = null;
         }
     }
 

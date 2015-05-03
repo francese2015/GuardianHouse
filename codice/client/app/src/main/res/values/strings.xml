@@ -5,6 +5,8 @@
     <string name="app_name">Guardian House</string>
     <string name="action_settings">Impostazioni</string>
     <string name="hello_world">Hello world!</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
 
     <!-- Acritivy Main -->
     <string name="button_register">REGISTRATI</string>
@@ -139,5 +141,16 @@
         \n6. DIRITTI DELL\'INTERESSATO
         \nIn ogni momento potrà esercitare i Suoi diritti nei confronti del titolare del trattamento, ai sensi dell\'art.7 del D.Lgs.196/2003.\n\n
     </string>
+    <string name="title_activity_search_request">SearchRequest</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
 
 </resources>

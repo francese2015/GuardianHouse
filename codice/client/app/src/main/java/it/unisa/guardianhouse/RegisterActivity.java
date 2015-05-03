@@ -1,7 +1,6 @@
 package it.unisa.guardianhouse;
 
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,7 +13,6 @@ import android.widget.Toast;
 
 public class RegisterActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
     private Button btnRegister;
     private Button btnLinkToLogin;
     private EditText inputUsername;
@@ -28,12 +26,7 @@ public class RegisterActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-        // setto la toolbar come action bar
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         inputEmail = (EditText) findViewById(R.id.editText1);
         inputUsername = (EditText) findViewById(R.id.editText2);

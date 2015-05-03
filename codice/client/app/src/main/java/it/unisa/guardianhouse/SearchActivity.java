@@ -1,9 +1,9 @@
 package it.unisa.guardianhouse;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -26,11 +27,15 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 
+import it.unisa.guardianhouse.util.LocationTracker;
+
 public class SearchActivity extends ActionBarActivity implements OnItemClickListener {
 
-    private Toolbar toolbar;
+    private ImageButton btnSearchAddress;
+    private ImageButton btnSearchLocation;
+    LocationTracker gps;
 
-    private static final String LOG_TAG = "ExampleApp";
+    private static final String LOG_TAG = "GuardianHouseApp";
 
     private static final String PLACES_API_BASE = "https://maps.googleapis.com/maps/api/place";
     private static final String TYPE_AUTOCOMPLETE = "/autocomplete";
@@ -43,18 +48,58 @@ public class SearchActivity extends ActionBarActivity implements OnItemClickList
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-
-        // setto la toolbar come action bar
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         AutoCompleteTextView autoCompView = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
 
         autoCompView.setAdapter(new GooglePlacesAutocompleteAdapter(this, R.layout.list_item_search));
         autoCompView.setOnItemClickListener(this);
+
+        btnSearchAddress = (ImageButton) findViewById(R.id.search_img);
+        btnSearchLocation = (ImageButton) findViewById(R.id.search_by_gps);
+
+        // bottone search by address
+        btnSearchAddress.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                //
+            }
+        });
+
+        // bottone search by location
+        btnSearchLocation.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                gps = new LocationTracker(SearchActivity.this);
+
+                // check if GPS enabled
+                if (gps.canGetLocation()) {
+
+                    double latitude = gps.getLatitude();
+                    double longitude = gps.getLongitude();
+
+                    // \n is for new line
+//                    Toast.makeText(
+//                            getApplicationContext(),
+//                            "Coordinate: \nLat: " + latitude
+//                                    + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(getApplicationContext(), GetApartmentsActivity.class);
+                    Bundle b = new Bundle();
+                    b.putDouble("latitude", latitude);
+                    b.putDouble("longitude", longitude);
+                    i.putExtras(b);
+                    startActivity(i);
+                    finish();
+                } else {
+                    // can't get location
+                    // GPS or Network is not enabled
+                    // Ask user to enable GPS/network in settings
+                    gps.showSettingsAlert();
+                }
+            }
+        });
+
     }
+
+
 
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         String str = (String) adapterView.getItemAtPosition(position);

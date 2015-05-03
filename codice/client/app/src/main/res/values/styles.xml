@@ -1,22 +1,22 @@
-<resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/ColorPrimary</item>
         <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
     </style>
 
-    <style name="ToolbarTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:textColorPrimary">@color/bianco</item>
-        <item name="actionMenuTextColor">@color/bianco</item>
-        <item name="android:textColorSecondary">@color/bianco</item>
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background" tools:ignore="NewApi">@color/ColorPrimary</item>
+        <item name="background">@color/ColorPrimary</item>
+        <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
+        <item name="titleTextStyle">@style/MyActionBarTitleText</item>
     </style>
 
-    <style name="MyNavigationDrawerTheme" parent="MaterialNavigationDrawerTheme">
-        <item name="colorPrimary">@color/ColorPrimary</item>
-        <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
-        <item name="colorAccent">@color/bianco</item>
+    <style name="MyActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/bianco</item>
     </style>
 
 </resources>

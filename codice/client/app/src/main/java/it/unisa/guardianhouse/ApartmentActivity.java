@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,18 +15,11 @@ import android.widget.RelativeLayout;
 
 public class ApartmentActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apartment);
-
-        // setto la toolbar come action bar
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         RelativeLayout dimensionRelative = (RelativeLayout) findViewById(R.id.relative_dimension);
         RelativeLayout statusRelative = (RelativeLayout) findViewById(R.id.relative_status);

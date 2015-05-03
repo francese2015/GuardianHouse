@@ -4,13 +4,7 @@
     android:layout_height="match_parent"
     tools:context="it.unisa.guardianhouse.AccountActivity">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"
-        ></include>
-
     <ScrollView
-        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"

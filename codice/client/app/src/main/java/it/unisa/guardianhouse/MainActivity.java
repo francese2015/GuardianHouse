@@ -1,7 +1,6 @@
 package it.unisa.guardianhouse;
 
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,7 +11,6 @@ import android.widget.Button;
 
 public class MainActivity extends ActionBarActivity {
 
-    private Toolbar toolbar;
     private Button btnRegister;
     private Button btnLogin;
     private Button btnLoginWithFacebook;
@@ -21,10 +19,6 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // setto la toolbar come action bar
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
 
         btnRegister = (Button) findViewById(R.id.button1);
