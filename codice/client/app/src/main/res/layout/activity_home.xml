@@ -22,6 +22,12 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/button_drawer"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:text="drawer" />
+
+            <Button
                 android:id="@+id/button_account"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"

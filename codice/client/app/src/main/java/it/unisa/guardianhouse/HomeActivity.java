@@ -11,6 +11,7 @@ import android.widget.Button;
 
 public class HomeActivity extends ActionBarActivity {
 
+    private Button btnDrawer;
     private Button btnAccount;
     private Button btnGetUsers;
     private Button btnLogout;
@@ -25,6 +26,7 @@ public class HomeActivity extends ActionBarActivity {
         setContentView(R.layout.activity_home);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        btnDrawer = (Button) findViewById(R.id.button_drawer);
         btnAccount = (Button) findViewById(R.id.button_account);
         btnGetUsers = (Button) findViewById(R.id.button_get_users);
         btnApartment = (Button) findViewById(R.id.button_apartment);
@@ -32,6 +34,15 @@ public class HomeActivity extends ActionBarActivity {
         btnSearch = (Button) findViewById(R.id.button_search);
         btnMap = (Button) findViewById(R.id.button_map);
         btnLogout = (Button) findViewById(R.id.button_logout);
+
+
+        // bottone drawer
+        btnDrawer.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),DrawerActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // bottone account
         btnAccount.setOnClickListener(new View.OnClickListener() {

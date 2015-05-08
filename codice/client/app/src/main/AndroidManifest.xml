@@ -103,6 +103,15 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD-a--YGDzMUsYrKuTRTQ-mdjjyBxpTa-Y" />
+
+        <activity
+            android:name=".DrawerActivity"
+            android:label="@string/title_activity_drawer"
+            android:parentActivityName=".HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.unisa.guardianhouse.HomeActivity" />
+        </activity>
     </application>
 
 </manifest>

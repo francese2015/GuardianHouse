@@ -141,11 +141,14 @@
         \n6. DIRITTI DELL\'INTERESSATO
         \nIn ogni momento potrà esercitare i Suoi diritti nei confronti del titolare del trattamento, ai sensi dell\'art.7 del D.Lgs.196/2003.\n\n
     </string>
-    <string name="title_activity_search_request">SearchRequest</string>
 
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">Ricerca</string>
+    <string name="title_section2">Account</string>
+    <string name="title_section3">Logout</string>
+    <string name="title_section4">Visualizza utenti</string>
+    <string name="title_section5">Visualizza appartamento</string>
+    <string name="title_section6">Visualizza recensione</string>
+    <string name="title_section7">Google Maps TEST</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
