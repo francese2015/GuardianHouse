@@ -2,6 +2,8 @@ package it.unisa.guardianhouse;
 
 import android.content.Context;
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -26,6 +28,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.List;
 
 import it.unisa.guardianhouse.util.LocationTracker;
 
@@ -50,7 +53,7 @@ public class SearchActivity extends ActionBarActivity implements OnItemClickList
         setContentView(R.layout.activity_search);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        AutoCompleteTextView autoCompView = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
+        final AutoCompleteTextView autoCompView = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView);
 
         autoCompView.setAdapter(new GooglePlacesAutocompleteAdapter(this, R.layout.list_item_search));
         autoCompView.setOnItemClickListener(this);
@@ -61,7 +64,28 @@ public class SearchActivity extends ActionBarActivity implements OnItemClickList
         // bottone search by address
         btnSearchAddress.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                //
+                Geocoder gc = new Geocoder(SearchActivity.this);
+
+                if(gc.isPresent()){
+                    List<Address> list = null;
+                    try {
+                        list = gc.getFromLocationName(autoCompView.getText().toString(), 1);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    Address address = list.get(0);
+
+                    double latitude = address.getLatitude();
+                    double longitude = address.getLongitude();
+                    Intent i = new Intent(getApplicationContext(), GetApartmentsActivity.class);
+                    Bundle b = new Bundle();
+                    b.putDouble("latitude", latitude);
+                    b.putDouble("longitude", longitude);
+                    i.putExtras(b);
+                    startActivity(i);
+                    finish();
+                }
             }
         });
 

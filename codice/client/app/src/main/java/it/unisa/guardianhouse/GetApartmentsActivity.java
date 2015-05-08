@@ -2,7 +2,6 @@ package it.unisa.guardianhouse;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -44,9 +43,6 @@ public class GetApartmentsActivity extends ActionBarActivity {
         setContentView(R.layout.activity_get_apartments);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        //StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        //StrictMode.setThreadPolicy(policy);
-
         listView = (ListView) findViewById(R.id.listView1);
         adapter = new ApartmentListAdapter(this, apartmentList);
         listView.setAdapter(adapter);
@@ -67,24 +63,21 @@ public class GetApartmentsActivity extends ActionBarActivity {
     public void searchByLocation() {
 
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, url,
-                (String) null, new Response.Listener<JSONObject>() {
+                null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-
+                        hidePDialog();
                         try {
-                            JSONArray apartmentArray = response.getJSONArray("apartments");
+                            JSONArray apartmentArray = response.getJSONArray("result");
                             for (int i = 0; i < apartmentArray.length(); i++) {
                                 JSONObject singleApartment = apartmentArray.getJSONObject(i);
-                                JSONObject details = singleApartment.getJSONObject("details");
-                                String description = details.getString("description");
                                 Apartment apartment = new Apartment();
-                                apartment.setDescription(description);
+                                apartment.setDescription(singleApartment.getJSONObject("details").getString("description"));
                                 apartmentList.add(apartment);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
-                        hidePDialog();
                         adapter.notifyDataSetChanged();
                     }
                 }, new Response.ErrorListener() {
