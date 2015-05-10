@@ -63,7 +63,7 @@ public class GetApartmentsActivity extends ActionBarActivity {
     public void searchByLocation() {
 
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, url,
-                null, new Response.Listener<JSONObject>() {
+                (String) null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
                         hidePDialog();
@@ -72,7 +72,7 @@ public class GetApartmentsActivity extends ActionBarActivity {
                             for (int i = 0; i < apartmentArray.length(); i++) {
                                 JSONObject singleApartment = apartmentArray.getJSONObject(i);
                                 Apartment apartment = new Apartment();
-                                apartment.setDescription(singleApartment.getJSONObject("details").getString("description"));
+                                apartment.setDescription(singleApartment.getJSONObject("details").getString("name"));
                                 apartmentList.add(apartment);
                             }
                         } catch (JSONException e) {
