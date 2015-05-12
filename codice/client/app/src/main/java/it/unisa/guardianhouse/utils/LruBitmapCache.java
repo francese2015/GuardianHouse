@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse.util;
+package it.unisa.guardianhouse.utils;
 
 import com.android.volley.toolbox.ImageLoader.ImageCache;
 

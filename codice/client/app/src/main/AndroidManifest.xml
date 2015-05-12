@@ -19,7 +19,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,76 +28,76 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:label="@string/title_activity_login"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".activities.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="it.unisa.guardianhouse.MainActivity" />
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".activities.RegisterActivity"
             android:label="@string/title_activity_register"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".activities.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="it.unisa.guardianhouse.MainActivity" />
+                android:value=".activities.MainActivity" />
         </activity>
         <activity
-            android:name=".HomeActivity"
+            android:name=".activities.HomeActivity"
             android:label="@string/title_activity_home" >
         </activity>
         <activity
-            android:name=".AccountActivity"
+            android:name=".activities.AccountActivity"
             android:label="@string/title_activity_account"
-            android:parentActivityName=".HomeActivity" >
+            android:parentActivityName=".activities.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="it.unisa.guardianhouse.HomeActivity" />
+                android:value=".activities.HomeActivity" />
         </activity>
         <activity
-            android:name=".GetUsersActivity"
+            android:name=".activities.GetUsersActivity"
             android:label="@string/title_activity_get_users"
-            android:parentActivityName=".HomeActivity" >
+            android:parentActivityName=".activities.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="it.unisa.guardianhouse.HomeActivity" />
+                android:value=".activities.HomeActivity" />
         </activity>
         <activity
-            android:name=".GetReviewActivity"
+            android:name=".activities.GetReviewActivity"
             android:label="@string/title_activity_recensione" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="it.unisa.guardianhouse.HomeActivity" />
+                android:value=".activities.HomeActivity" />
         </activity>
         <activity
-            android:name=".ApartmentActivity"
+            android:name=".activities.ApartmentActivity"
             android:label="@string/title_activity_apartment" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="it.unisa.guardianhouse.HomeActivity" />
+                android:value=".activities.HomeActivity" />
         </activity>
         <activity
-            android:name=".GetApartmentsActivity"
+            android:name=".activities.GetApartmentsActivity"
             android:label="@string/title_activity_get_apartments" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="it.unisa.guardianhouse.HomeActivity" />
+                android:value=".activities.HomeActivity" />
         </activity>
         <activity
-            android:name=".SearchActivity"
+            android:name=".activities.SearchActivity"
             android:label="Ricerca appartamento" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="it.unisa.guardianhouse.HomeActivity" />
+                android:value=".activities.HomeActivity" />
         </activity>
         <activity
-            android:name=".MapActivity"
+            android:name=".activities.MapActivity"
             android:label="@string/title_activity_map"
-            android:parentActivityName=".HomeActivity" >
+            android:parentActivityName=".activities.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="it.unisa.guardianhouse.HomeActivity" />
+                android:value=".activities.HomeActivity" />
         </activity>
 
         <meta-data
@@ -105,12 +105,12 @@
             android:value="AIzaSyD-a--YGDzMUsYrKuTRTQ-mdjjyBxpTa-Y" />
 
         <activity
-            android:name=".DrawerActivity"
+            android:name=".activities.DrawerActivity"
             android:label="@string/title_activity_drawer"
-            android:parentActivityName=".HomeActivity" >
+            android:parentActivityName=".activities.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="it.unisa.guardianhouse.HomeActivity" />
+                android:value=".activities.HomeActivity" />
         </activity>
     </application>
 

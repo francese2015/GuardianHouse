@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse;
+package it.unisa.guardianhouse.activities;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+
+import it.unisa.guardianhouse.R;
 
 
 public class AccountActivity extends ActionBarActivity {

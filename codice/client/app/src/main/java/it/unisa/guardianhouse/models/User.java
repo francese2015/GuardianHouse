@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse.model;
+package it.unisa.guardianhouse.models;
 
 /**
  * Created by Carlo on 12/04/2015.

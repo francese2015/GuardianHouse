@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse.util;
+package it.unisa.guardianhouse.utils;
 
 import android.app.AlertDialog;
 import android.app.Service;

@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse.model;
+package it.unisa.guardianhouse.models;
 
 public class Apartment {
 

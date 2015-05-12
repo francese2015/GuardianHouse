@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse;
+package it.unisa.guardianhouse.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -11,13 +11,16 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import com.google.android.gms.maps.*;
 
+import it.unisa.guardianhouse.*;
+import it.unisa.guardianhouse.R;
+
 
 public class MapActivity extends ActionBarActivity implements OnMapReadyCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map);
+        setContentView(it.unisa.guardianhouse.R.layout.activity_map);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         MapFragment mapFragment = (MapFragment) getFragmentManager()

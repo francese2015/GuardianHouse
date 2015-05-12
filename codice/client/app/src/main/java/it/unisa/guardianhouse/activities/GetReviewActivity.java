@@ -1,9 +1,11 @@
-package it.unisa.guardianhouse;
+package it.unisa.guardianhouse.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import it.unisa.guardianhouse.R;
 
 
 public class GetReviewActivity extends ActionBarActivity {

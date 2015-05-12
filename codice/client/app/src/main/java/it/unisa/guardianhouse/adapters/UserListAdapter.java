@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse.adapter;
+package it.unisa.guardianhouse.adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import it.unisa.guardianhouse.R;
-import it.unisa.guardianhouse.model.User;
+import it.unisa.guardianhouse.models.User;
 
 /**
  * Created by Carlo on 12/04/2015.

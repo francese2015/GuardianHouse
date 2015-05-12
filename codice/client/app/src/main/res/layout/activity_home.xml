@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="it.unisa.guardianhouse.HomeActivity">
+    tools:context="it.unisa.guardianhouse.activities.HomeActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

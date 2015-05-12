@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse.adapter;
+package it.unisa.guardianhouse.adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,13 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.List;
 
 import it.unisa.guardianhouse.R;
-import it.unisa.guardianhouse.model.Apartment;
+import it.unisa.guardianhouse.models.Apartment;
 
 /**
  * Created by Nae on 13.04.2015.

@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse;
+package it.unisa.guardianhouse.activities;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -23,10 +23,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import it.unisa.guardianhouse.adapter.ApartmentListAdapter;
+import it.unisa.guardianhouse.R;
+import it.unisa.guardianhouse.adapters.ApartmentListAdapter;
 import it.unisa.guardianhouse.app.AppController;
-import it.unisa.guardianhouse.model.Apartment;
-import it.unisa.guardianhouse.model.User;
+import it.unisa.guardianhouse.config.Config;
+import it.unisa.guardianhouse.models.Apartment;
 
 public class GetApartmentsActivity extends ActionBarActivity {
 
@@ -50,10 +51,11 @@ public class GetApartmentsActivity extends ActionBarActivity {
         Bundle b = getIntent().getExtras();
         double latitude = b.getDouble("latitude");
         double longitude = b.getDouble("longitude");
-        url = "http://carlo.teammolise.rocks/api/apartments/search/"+latitude+","+longitude+"";
+        //double distance = 20;
+        url = Config.SEARCH_APT_URL + "/" + latitude + "," + longitude;
 
         pDialog = new ProgressDialog(this);
-        pDialog.setMessage("Loading...");
+        pDialog.setMessage("Ricerca in corso...");
         pDialog.show();
 
         searchByLocation();

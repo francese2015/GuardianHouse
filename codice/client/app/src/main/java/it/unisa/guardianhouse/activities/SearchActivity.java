@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse;
+package it.unisa.guardianhouse.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -30,7 +30,8 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.unisa.guardianhouse.util.LocationTracker;
+import it.unisa.guardianhouse.R;
+import it.unisa.guardianhouse.utils.LocationTracker;
 
 public class SearchActivity extends ActionBarActivity implements OnItemClickListener {
 

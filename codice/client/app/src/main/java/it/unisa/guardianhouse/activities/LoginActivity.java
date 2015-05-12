@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse;
+package it.unisa.guardianhouse.activities;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
@@ -10,40 +10,43 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import it.unisa.guardianhouse.R;
 
-public class RegisterActivity extends ActionBarActivity {
 
-    private Button btnRegister;
-    private Button btnLinkToLogin;
-    private EditText inputUsername;
-    private EditText inputEmail;
-    private EditText inputPassword;
-    String username;
+public class LoginActivity extends ActionBarActivity {
+
+    EditText inputEmail;
+    EditText inputPassword;
+    Button btnLogin;
+    Button btnLinkToRegister;
     String email;
     String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_login);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         inputEmail = (EditText) findViewById(R.id.editText1);
-        inputUsername = (EditText) findViewById(R.id.editText2);
-        inputPassword = (EditText) findViewById(R.id.editText3);
-        btnRegister = (Button) findViewById(R.id.button1);
-        btnLinkToLogin = (Button) findViewById(R.id.button2);
+        inputPassword = (EditText) findViewById(R.id.editText2);
+        btnLogin = (Button) findViewById(R.id.button1);
+        btnLinkToRegister = (Button) findViewById(R.id.button2);
 
-        // Register Button Click event
-        btnRegister.setOnClickListener(new View.OnClickListener() {
+        // bottone login
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                username = inputUsername.getText().toString();
                 email = inputEmail.getText().toString();
                 password = inputPassword.getText().toString();
 
-                if (!username.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
+                // controllo se sono stati inseriti dati nel form
+                if (email.trim().length() > 0 && password.trim().length() > 0) {
+
+                    Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                    startActivity(intent);
 
                 } else {
+                    // chiedo all'utente di inserire i dati
                     Toast.makeText(getApplicationContext(),
                             "Riempi tutti i campi!", Toast.LENGTH_LONG)
                             .show();
@@ -51,24 +54,23 @@ public class RegisterActivity extends ActionBarActivity {
             }
         });
 
-        // Link to Login Screen
-        btnLinkToLogin.setOnClickListener(new View.OnClickListener() {
+        // link alla schermata di registrazione
+        btnLinkToRegister.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),
-                        LoginActivity.class);
+                        RegisterActivity.class);
                 startActivity(i);
                 finish();
             }
         });
-
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_register, menu);
+        getMenuInflater().inflate(R.menu.menu_login, menu);
         return true;
     }
 

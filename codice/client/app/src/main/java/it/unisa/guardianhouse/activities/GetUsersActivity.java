@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse;
+package it.unisa.guardianhouse.activities;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -13,8 +13,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.unisa.guardianhouse.adapter.UserListAdapter;
-import it.unisa.guardianhouse.model.User;
+import it.unisa.guardianhouse.R;
+import it.unisa.guardianhouse.adapters.UserListAdapter;
+import it.unisa.guardianhouse.models.User;
 
 
 public class GetUsersActivity extends ActionBarActivity {
