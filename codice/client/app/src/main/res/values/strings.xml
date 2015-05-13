@@ -64,6 +64,7 @@
     <string name="account_accountType">admin</string>
     <string name="edit_icon">edit_icon</string>
     <string name="button_delete_account">ELIMINA ACCOUNT</string>
+    <string name="button_save_apartment">Salva Modifiche</string>
     <string name="title_activity_apartment">Scheda Appartamento</string>
 
     <!-- Activity Get users -->
@@ -105,6 +106,9 @@
     <string name="button_delete_apartment">Elimina Scheda Appartamento</string>
     <string name="img_descr2">apartment_pic</string>
 
+    <!-- Insert Operations -->
+    <string name="insert_text">Insert Text</string>
+    <string name="insert_dimension">Insert Dimensions</string>
     <!-- Review Value -->
     <string name="title_activity_recensione">Visualizza recensione</string>
     <string name="apartment_address">Via Crispi 8</string>
