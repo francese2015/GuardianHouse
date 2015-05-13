@@ -106,27 +106,36 @@ public class SearchActivity extends ActionBarActivity implements OnItemClickList
             public void onClick(View view) {
                 Geocoder gc = new Geocoder(SearchActivity.this);
 
-                if(gc.isPresent()){
-                    List<Address> list = null;
-                    try {
-                        list = gc.getFromLocationName(autoCompView.getText().toString(), 1);
-                    } catch (IOException e) {
-                        e.printStackTrace();
+                String autoCompText = autoCompView.getText().toString();
+                if (autoCompText.trim().length() > 0 ) {
+
+                    if (gc.isPresent()) {
+                        List<Address> list = null;
+                        try {
+                            list = gc.getFromLocationName(autoCompText, 1);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                        Address address = list.get(0);
+
+                        double latitude = address.getLatitude();
+                        double longitude = address.getLongitude();
+                        int distance = seekbarRadius.getProgress();
+                        Intent i = new Intent(getApplicationContext(), GetApartmentsActivity.class);
+                        Bundle b = new Bundle();
+                        b.putDouble("latitude", latitude);
+                        b.putDouble("longitude", longitude);
+                        b.putInt("distance", distance);
+                        i.putExtras(b);
+                        startActivity(i);
+                        finish();
                     }
-
-                    Address address = list.get(0);
-
-                    double latitude = address.getLatitude();
-                    double longitude = address.getLongitude();
-                    int distance = seekbarRadius.getProgress();
-                    Intent i = new Intent(getApplicationContext(), GetApartmentsActivity.class);
-                    Bundle b = new Bundle();
-                    b.putDouble("latitude", latitude);
-                    b.putDouble("longitude", longitude);
-                    b.putInt("distance", distance);
-                    i.putExtras(b);
-                    startActivity(i);
-                    finish();
+                } else {
+                    // chiedo all'utente di inserire i dati
+                    Toast.makeText(getApplicationContext(),
+                            "Inserisci l'indirizzo!", Toast.LENGTH_LONG)
+                            .show();
                 }
             }
         });
