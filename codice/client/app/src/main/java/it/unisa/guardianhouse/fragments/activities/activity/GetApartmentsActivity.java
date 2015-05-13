@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse.activities;
+package it.unisa.guardianhouse.fragments.activities.activity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
