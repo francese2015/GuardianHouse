@@ -1,0 +1,257 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="it.unisa.guardianhouse.activities.AccountActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+
+            <ImageView
+                android:id="@+id/apartment_img"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:contentDescription="@string/img_descr2"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/appartamento" />
+
+            <TextView
+                android:id="@+id/apartment_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/apartment_img"
+                android:layout_toEndOf="@+id/apartment_img"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/apartment_city" />
+
+
+
+            <TextView
+                android:id="@+id/apartment_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/apartment_img"
+                android:layout_toEndOf="@+id/apartment_img"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_below="@+id/apartment_city"
+                android:text="@string/apartment_address" />
+
+
+
+
+
+            <View
+                android:id="@+id/separator_line_1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/apartment_img"
+                android:layout_marginTop="16dp"
+                android:background="#dfdfdf" />
+
+            <LinearLayout
+                android:id="@+id/apartment_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/separator_line_1"
+                android:divider="@drawable/divider"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <!-- Dimensione -->
+
+                <RelativeLayout
+
+                    android:id="@+id/relative_dimension"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="false">
+
+
+
+                    <TextView
+                        android:id="@+id/forniture_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/apartment_forniture"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/img_quality"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_storage" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBar1"
+                        android:layout_width="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:clickable="false"
+                        android:indeterminate="false"
+                        android:longClickable="false"
+                        android:numStars="5"
+                        android:rating="4" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+
+                    android:id="@+id/relative_dimension1"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="false">
+
+
+
+                    <TextView
+                        android:id="@+id/dimension_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/apartment_thermic_capacity"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/img_quality1"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/edit_icon"
+                        android:src="@mipmap/ic_action_bightness_low" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBar2"
+                        android:layout_width="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:clickable="false"
+                        android:indeterminate="false"
+                        android:longClickable="false"
+                        android:numStars="5"
+                        android:rating="4" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+
+                    android:id="@+id/relative_dimension2"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="false">
+
+
+
+                    <TextView
+                        android:id="@+id/honesty_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/apartment_honesty"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/img_honesty"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_action_cc_bcc" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBar4"
+                        android:layout_width="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:clickable="false"
+                        android:indeterminate="false"
+                        android:longClickable="false"
+                        android:numStars="5"
+                        android:rating="4" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+
+                    android:id="@+id/relative_dimension3"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="false">
+
+
+
+                    <TextView
+                        android:id="@+id/secure_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/apartment_honesty"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/img_security"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/ic_action_secure" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBar3"
+                        android:layout_width="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:clickable="false"
+                        android:indeterminate="false"
+                        android:longClickable="false"
+                        android:numStars="5"
+                        android:rating="4" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+
+    </ScrollView>
+
+</RelativeLayout>
