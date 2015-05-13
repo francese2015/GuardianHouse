@@ -103,19 +103,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyD-a--YGDzMUsYrKuTRTQ-mdjjyBxpTa-Y" />
-
-        <activity
-            android:name=".activities.DrawerActivity"
-            android:label="@string/title_activity_drawer"
-            android:parentActivityName=".activities.HomeActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HomeActivity" />
-        </activity>
-        <activity
-            android:name=".refreshlayout.SwipeRefreshActivity"
-            android:label="@string/title_activity_swipe_refresh" >
-        </activity>
     </application>
 
 </manifest>
