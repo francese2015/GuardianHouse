@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="it.unisa.guardianhouse.activities.AccountActivity">
+    tools:context="it.unisa.guardianhouse.activities.ApartmentActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -88,6 +88,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="center"
+                        android:layout_marginRight="5dp"
                         android:src="@drawable/app_logo_big" />
 
                 </LinearLayout>
@@ -121,6 +122,8 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
+                        android:textColor="#2196F3"
+                        android:textSize="18dp"
                         android:text="@string/apartment_dimension_label"
                         android:textStyle="bold" />
 
@@ -164,6 +167,8 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
+                        android:textColor="#2196F3"
+                        android:textSize="18dp"
                         android:text="@string/apartment_status_label"
                         android:textStyle="bold" />
 
@@ -207,6 +212,8 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
+                        android:textColor="#2196F3"
+                        android:textSize="18dp"
                         android:text="@string/apartment_price_label"
                         android:textStyle="bold" />
 
@@ -250,6 +257,8 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
+                        android:textColor="#2196F3"
+                        android:textSize="18dp"
                         android:text="@string/apartment_text_label"
                         android:textStyle="bold" />
 
@@ -295,6 +304,8 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
+                        android:textColor="#2196F3"
+                        android:textSize="18dp"
                         android:text="@string/apartment_position_label"
                         android:textStyle="bold" />
 
@@ -338,6 +349,8 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
+                        android:textColor="#2196F3"
+                        android:textSize="18dp"
                         android:text="@string/apartment_poi_label"
                         android:textStyle="bold" />
 
@@ -381,6 +394,8 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
+                        android:textColor="#2196F3"
+                        android:textSize="18dp"
                         android:text="@string/apartment_thermic_label"
                         android:textStyle="bold" />
 
@@ -424,6 +439,8 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
+                        android:textColor="#2196F3"
+                        android:textSize="18dp"
                         android:text="@string/apartment_services_label"
                         android:textStyle="bold" />
 
@@ -467,6 +484,8 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
+                        android:textColor="#2196F3"
+                        android:textSize="18dp"
                         android:text="@string/apartment_letizia_label"
                         android:textStyle="bold" />
 
