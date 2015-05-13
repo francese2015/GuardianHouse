@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse.fragments.activities.activity;
+package it.unisa.guardianhouse.unisa.guardianhouse;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 
 import it.unisa.guardianhouse.R;
+import it.unisa.guardianhouse.fragments.activities.activity.LoginActivity;
+import it.unisa.guardianhouse.fragments.activities.activity.RegisterActivity;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -50,6 +52,8 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+
+
     }
 
     @Override
@@ -73,4 +77,6 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
