@@ -25,22 +25,25 @@
                 android:id="@+id/button_drawer"
                 android:layout_width="230dp"
                 android:layout_height="wrap_content"
-                android:text="drawer" />
+                android:text="@string/button_drawer" />
 
             <Button
                 android:id="@+id/button_account"
                 android:layout_width="230dp"
+                android:layout_marginTop="1dp"
                 android:layout_height="wrap_content"
                 android:text="@string/button_account" />
 
             <Button
                 android:id="@+id/button_get_users"
                 android:layout_width="230dp"
+                android:layout_marginTop="1dp"
                 android:layout_height="wrap_content"
                 android:text="@string/button_get_users" />
 
             <Button
                 android:id="@+id/button_apartment"
+                android:layout_marginTop="1dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="showApartment"
@@ -49,18 +52,21 @@
             <Button
                 android:id="@+id/button_search"
                 android:layout_width="230dp"
+                android:layout_marginTop="1dp"
                 android:layout_height="wrap_content"
                 android:text="CERCA APPARTAMENTO" />
 
             <Button
                 android:id="@+id/button_review"
                 android:layout_width="230dp"
+                android:layout_marginTop="1dp"
                 android:layout_height="wrap_content"
                 android:text="@string/button_review" />
 
             <Button
                 android:id="@+id/button_map"
                 android:layout_width="230dp"
+                android:layout_marginTop="1dp"
                 android:layout_height="wrap_content"
                 android:text="GOOGLE MAPS API TEST" />
 

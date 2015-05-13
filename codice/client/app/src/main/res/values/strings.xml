@@ -36,6 +36,8 @@
     <string name="button_get_users">VISUALIZZA UTENTI</string>
     <string name="button_review">VISUALIZZA RECENSIONE</string>
     <string name="button_logout">LOGOUT</string>
+    <string name="button_drawer">DRAWER</string>
+    <string name="button_apartment">SCHEDA APPARTAMENTO</string>
 
     <!-- Activity Account -->
     <string name="title_activity_account">Account</string>
@@ -78,7 +80,7 @@
 	<!-- Activity apartment -->
 
     <!-- Apartment Label -->
-    <string name="button_apartment">Visualizza scheda appartamento</string>
+
     <string name="title_activity_simple_list_view">SimpleListViewActivity</string>
     <string name="apartment_dimension_label">Dimensioni</string>
     <string name="apartment_status_label">Status</string>
