@@ -20,6 +20,12 @@
         <item name="android:textColor">@color/bianco</item>
     </style>
 
+    <style name="MyNavigationDrawerTheme" parent="MaterialNavigationDrawerTheme">
+        <item name="colorPrimary">@color/ColorPrimary</item>
+        <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
+        <item name="colorAccent">#FFFFFF</item>
+    </style>
+
     <!-- Custom blue button -->
     <style name="BlueButton" parent="@android:style/Widget.Button">
         <item name="android:gravity">center_vertical|center_horizontal</item>

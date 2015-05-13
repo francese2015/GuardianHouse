@@ -37,6 +37,13 @@ public class HomeActivity extends ActionBarActivity {
         btnMap = (Button) findViewById(R.id.button_map);
         btnLogout = (Button) findViewById(R.id.button_logout);
 
+        // bottone drawer
+        btnDrawer.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), NavigationDrawer.class);
+                startActivity(intent);
+            }
+        });
 
         // bottone account
         btnAccount.setOnClickListener(new View.OnClickListener() {
