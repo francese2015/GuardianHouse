@@ -51,8 +51,9 @@ public class GetApartmentsActivity extends ActionBarActivity {
         Bundle b = getIntent().getExtras();
         double latitude = b.getDouble("latitude");
         double longitude = b.getDouble("longitude");
-        //double distance = 20;
-        url = Config.SEARCH_APT_URL + "/" + latitude + "," + longitude;
+        int distance = b.getInt("distance");
+
+        url = Config.SEARCH_APT_URL + "/" + latitude + "," + longitude + "," + distance;
 
         pDialog = new ProgressDialog(this);
         pDialog.setMessage("Ricerca in corso...");

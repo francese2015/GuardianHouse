@@ -1,5 +1,6 @@
 package it.unisa.guardianhouse.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Address;
@@ -12,9 +13,12 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageButton;
+import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -31,12 +35,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.unisa.guardianhouse.R;
+import it.unisa.guardianhouse.config.Config;
 import it.unisa.guardianhouse.utils.LocationTracker;
 
 public class SearchActivity extends ActionBarActivity implements OnItemClickListener {
 
-    private ImageButton btnSearchAddress;
-    private ImageButton btnSearchLocation;
+    private Button btnSearchAddress;
+    private Button btnSearchLocation;
+    private SeekBar seekbarRadius;
     LocationTracker gps;
 
     private static final String LOG_TAG = "GuardianHouseApp";
@@ -59,8 +65,41 @@ public class SearchActivity extends ActionBarActivity implements OnItemClickList
         autoCompView.setAdapter(new GooglePlacesAutocompleteAdapter(this, R.layout.list_item_search));
         autoCompView.setOnItemClickListener(this);
 
-        btnSearchAddress = (ImageButton) findViewById(R.id.search_img);
-        btnSearchLocation = (ImageButton) findViewById(R.id.search_by_gps);
+        final TextView tvRadiusText = (TextView) findViewById(R.id.tvRadiusText);
+
+        seekbarRadius = (SeekBar) findViewById(R.id.seekbarRadius);
+        seekbarRadius.setMax(Config.MAX_SEARCH_RADIUS);
+        seekbarRadius.setProgress(Config.MAX_SEARCH_RADIUS / 3);
+        seekbarRadius.setEnabled(true);
+        seekbarRadius.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+            @Override
+            public void onStopTrackingTouch(SeekBar arg0) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar arg0) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @SuppressLint("DefaultLocale")
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                // TODO Auto-generated method stub
+
+                String strSeekVal = String.format("%s: %d %s",
+                        "Distanza", progress,"Km");
+
+                tvRadiusText.setText(strSeekVal);
+            }
+        });
+
+
+        btnSearchAddress = (Button) findViewById(R.id.search_img);
+        btnSearchLocation = (Button) findViewById(R.id.search_by_gps);
 
         // bottone search by address
         btnSearchAddress.setOnClickListener(new View.OnClickListener() {
@@ -79,10 +118,12 @@ public class SearchActivity extends ActionBarActivity implements OnItemClickList
 
                     double latitude = address.getLatitude();
                     double longitude = address.getLongitude();
+                    int distance = seekbarRadius.getProgress();
                     Intent i = new Intent(getApplicationContext(), GetApartmentsActivity.class);
                     Bundle b = new Bundle();
                     b.putDouble("latitude", latitude);
                     b.putDouble("longitude", longitude);
+                    b.putInt("distance", distance);
                     i.putExtras(b);
                     startActivity(i);
                     finish();
@@ -100,6 +141,7 @@ public class SearchActivity extends ActionBarActivity implements OnItemClickList
 
                     double latitude = gps.getLatitude();
                     double longitude = gps.getLongitude();
+                    int distance = seekbarRadius.getProgress();
 
                     // \n is for new line
 //                    Toast.makeText(
@@ -110,6 +152,7 @@ public class SearchActivity extends ActionBarActivity implements OnItemClickList
                     Bundle b = new Bundle();
                     b.putDouble("latitude", latitude);
                     b.putDouble("longitude", longitude);
+                    b.putInt("distance", distance);
                     i.putExtras(b);
                     startActivity(i);
                     finish();

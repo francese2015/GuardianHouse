@@ -8,49 +8,59 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         android:fillViewport="true" >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
 
-            <RelativeLayout
-                android:id="@+id/search_bar"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            >
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:hint="Inserisci l'indirizzo"
+                android:ems="10" >
+            </AutoCompleteTextView>
+
+            <TextView
+                android:id="@+id/tvRadiusText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="16dp">
+                android:layout_marginTop="50dp"
+                android:text="Distanza"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-                <AutoCompleteTextView
-                    android:id="@+id/autoCompleteTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_toLeftOf="@+id/search_img"
-                    android:hint="Inserisci l'indirizzo"
-                    android:ems="10" >
-                </AutoCompleteTextView>
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/seekbarRadius" />
 
-                <ImageButton
-                    android:id="@+id/search_img"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_toLeftOf="@+id/search_by_gps"
-                    android:src="@mipmap/ic_action_search"/>
+            <Button
+                android:id="@+id/search_img"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="50dp"
+                android:text="Ricerca indirizzo"
+                android:drawableLeft="@mipmap/ic_action_search"/>
 
-                <ImageButton
-                    android:id="@+id/search_by_gps"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginLeft="16dp"
-                    android:src="@mipmap/ic_action_location_found"/>
+            <Button
+                android:id="@+id/search_by_gps"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="50dp"
+                android:text="Ricerca gps"
+                android:drawableLeft="@mipmap/ic_action_location_found" />
 
-            </RelativeLayout>
-
-        </RelativeLayout>
-
+        </LinearLayout>
 
     </ScrollView>
 </LinearLayout>

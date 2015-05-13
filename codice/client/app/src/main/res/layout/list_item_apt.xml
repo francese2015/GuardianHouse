@@ -12,7 +12,7 @@
         android:adjustViewBounds="true"
         android:cropToPadding="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/appartamento" />
+        android:src="@drawable/apt02" />
 
     <LinearLayout
         android:layout_width="match_parent"
