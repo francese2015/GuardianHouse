@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse.activities;
+package it.unisa.guardianhouse.fragments.activities.activity;
 
 import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 
 import it.unisa.guardianhouse.R;
+import it.unisa.guardianhouse.fragments.activities.NavigationDrawerFragment;
 
 
 public class DrawerActivity extends ActionBarActivity

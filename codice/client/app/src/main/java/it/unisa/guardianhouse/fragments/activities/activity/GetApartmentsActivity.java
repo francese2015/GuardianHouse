@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse.activities;
+package it.unisa.guardianhouse.fragments.activities.activity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -28,6 +28,7 @@ import it.unisa.guardianhouse.adapters.ApartmentListAdapter;
 import it.unisa.guardianhouse.app.AppController;
 import it.unisa.guardianhouse.config.Config;
 import it.unisa.guardianhouse.models.Apartment;
+import it.unisa.guardianhouse.unisa.guardianhouse.MainActivity;
 
 public class GetApartmentsActivity extends ActionBarActivity {
 

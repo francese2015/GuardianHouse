@@ -155,5 +155,6 @@
 
     <string name="action_example">Example action</string>
     <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="title_activity_swipe_refresh">SwipeRefreshActivity</string>
 
 </resources>

@@ -19,7 +19,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".unisa.guardianhouse.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,76 +28,76 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".fragments.activities.activity.LoginActivity"
             android:label="@string/title_activity_login"
-            android:parentActivityName=".activities.MainActivity" >
+            android:parentActivityName=".unisa.guardianhouse.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainActivity" />
+                android:value=".unisa.guardianhouse.MainActivity" />
         </activity>
         <activity
-            android:name=".activities.RegisterActivity"
+            android:name=".fragments.activities.activity.RegisterActivity"
             android:label="@string/title_activity_register"
-            android:parentActivityName=".activities.MainActivity" >
+            android:parentActivityName=".unisa.guardianhouse.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainActivity" />
+                android:value=".unisa.guardianhouse.MainActivity" />
         </activity>
         <activity
-            android:name=".activities.HomeActivity"
+            android:name=".fragments.activities.activity.HomeActivity"
             android:label="@string/title_activity_home" >
         </activity>
         <activity
-            android:name=".activities.AccountActivity"
+            android:name=".fragments.activities.activity.AccountActivity"
             android:label="@string/title_activity_account"
-            android:parentActivityName=".activities.HomeActivity" >
+            android:parentActivityName=".fragments.activities.activity.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HomeActivity" />
+                android:value=".fragments.activities.activity.HomeActivity" />
         </activity>
         <activity
-            android:name=".activities.GetUsersActivity"
+            android:name=".fragments.activities.activity.GetUsersActivity"
             android:label="@string/title_activity_get_users"
-            android:parentActivityName=".activities.HomeActivity" >
+            android:parentActivityName=".fragments.activities.activity.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HomeActivity" />
+                android:value=".fragments.activities.activity.HomeActivity" />
         </activity>
         <activity
-            android:name=".activities.GetReviewActivity"
+            android:name=".fragments.activities.activity.GetReviewActivity"
             android:label="@string/title_activity_recensione" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HomeActivity" />
+                android:value=".fragments.activities.activity.HomeActivity" />
         </activity>
         <activity
-            android:name=".activities.ApartmentActivity"
+            android:name=".fragments.activities.activity.ApartmentActivity"
             android:label="@string/title_activity_apartment" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HomeActivity" />
+                android:value=".fragments.activities.activity.HomeActivity" />
         </activity>
         <activity
-            android:name=".activities.GetApartmentsActivity"
+            android:name=".fragments.activities.activity.GetApartmentsActivity"
             android:label="@string/title_activity_get_apartments" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HomeActivity" />
+                android:value=".fragments.activities.activity.HomeActivity" />
         </activity>
         <activity
-            android:name=".activities.SearchActivity"
+            android:name=".fragments.activities.activity.SearchActivity"
             android:label="Ricerca appartamento" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HomeActivity" />
+                android:value=".fragments.activities.activity.HomeActivity" />
         </activity>
         <activity
-            android:name=".activities.MapActivity"
+            android:name=".fragments.activities.activity.MapActivity"
             android:label="@string/title_activity_map"
-            android:parentActivityName=".activities.HomeActivity" >
+            android:parentActivityName=".fragments.activities.activity.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HomeActivity" />
+                android:value=".fragments.activities.activity.HomeActivity" />
         </activity>
 
         <meta-data
@@ -105,13 +105,14 @@
             android:value="AIzaSyD-a--YGDzMUsYrKuTRTQ-mdjjyBxpTa-Y" />
 
         <activity
-            android:name=".activities.DrawerActivity"
+            android:name=".fragments.activities.activity.DrawerActivity"
             android:label="@string/title_activity_drawer"
-            android:parentActivityName=".activities.HomeActivity" >
+            android:parentActivityName=".fragments.activities.activity.HomeActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HomeActivity" />
+                android:value=".fragments.activities.activity.HomeActivity" />
         </activity>
+
     </application>
 
 </manifest>

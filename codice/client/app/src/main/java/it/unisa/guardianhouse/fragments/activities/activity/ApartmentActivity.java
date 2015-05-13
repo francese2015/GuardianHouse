@@ -1,9 +1,9 @@
-package it.unisa.guardianhouse.activities;
+package it.unisa.guardianhouse.fragments.activities.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,118 +15,111 @@ import android.widget.RelativeLayout;
 import it.unisa.guardianhouse.R;
 
 
-public class AccountActivity extends ActionBarActivity {
+public class ApartmentActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_account);
+        setContentView(R.layout.activity_apartment);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        // richiamo i vari relative layout
-        RelativeLayout nameRelative = (RelativeLayout) findViewById(R.id.relative_name);
-        RelativeLayout surnameRelative = (RelativeLayout) findViewById(R.id.relative_surname);
-        RelativeLayout emailRelative = (RelativeLayout) findViewById(R.id.relative_email);
-        RelativeLayout usernameRelative = (RelativeLayout) findViewById(R.id.relative_username);
-        RelativeLayout passwordRelative = (RelativeLayout) findViewById(R.id.relative_password);
-        RelativeLayout birthdateRelative = (RelativeLayout) findViewById(R.id.relative_birthdate);
-        RelativeLayout birthplaceRelative = (RelativeLayout) findViewById(R.id.relative_birthplace);
-        RelativeLayout addressRelative = (RelativeLayout) findViewById(R.id.relative_address);
-        RelativeLayout phoneRelative = (RelativeLayout) findViewById(R.id.relative_phone);
-        RelativeLayout accountTypeRelative = (RelativeLayout) findViewById(R.id.relative_account);
-        Button btnDeleteAccount = (Button) findViewById(R.id.button_delete_account);
+        RelativeLayout dimensionRelative = (RelativeLayout) findViewById(R.id.relative_dimension);
+        RelativeLayout statusRelative = (RelativeLayout) findViewById(R.id.relative_status);
+        RelativeLayout priceRelative = (RelativeLayout) findViewById(R.id.relative_price);
+        RelativeLayout descriptionRelative = (RelativeLayout) findViewById(R.id.relative_description);
+        RelativeLayout positionRelative = (RelativeLayout) findViewById(R.id.relative_position);
+        RelativeLayout poiRelative = (RelativeLayout) findViewById(R.id.relative_poi);
+        RelativeLayout thermicRelative = (RelativeLayout) findViewById(R.id.relative_thermic);
+        RelativeLayout servicesRelative = (RelativeLayout) findViewById(R.id.relative_services);
+        RelativeLayout testRelative = (RelativeLayout) findViewById(R.id.relative_test);
+        Button btnDeleteApartment = (Button) findViewById(R.id.button_delete_apartment);
 
-        nameRelative.setOnClickListener(new View.OnClickListener() {
+        dimensionRelative.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                String title = "Modifica nome";
-                String hint = "Inserisci il nuovo nome";
+                String title = "Modifica Dimensione";
+                String hint = "Inserisci nuove dimensioni";
                 showInputDialog(title, hint);
             }
         });
 
-        surnameRelative.setOnClickListener(new View.OnClickListener() {
+        statusRelative.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                String title = "Modifica cognome";
-                String hint = "Inserisci il nuovo cognome";
+                String title = "Modifica Status/Condizioni";
+                String hint = "Inserisci nuovo Status/Condizioni";
                 showInputDialog(title, hint);
             }
         });
 
-        emailRelative.setOnClickListener(new View.OnClickListener() {
+        priceRelative.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                String title = "Modifica indirizzo email";
-                String hint = "Inserisci il nuovo indirizzo email";
+                String title = "Modifica il prezzo mensile";
+                String hint = "Inserisci nuovo prezzo";
                 showInputDialog(title, hint);
             }
         });
 
-        usernameRelative.setOnClickListener(new View.OnClickListener() {
+        descriptionRelative.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                String title = "Modifica username";
-                String hint = "Inserisci il nuovo username";
+                String title = "Modifica descrizione";
+                String hint = "Inserisci nuova descrizione";
                 showInputDialog(title, hint);
             }
         });
 
-        passwordRelative.setOnClickListener(new View.OnClickListener() {
+        positionRelative.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                String title = "Modifica password";
-                String hint = "Inserisci la nuova password";
+                String title = "Modifica Collegamenti";
+                String hint = "Inserisci nuovi Collegamenti";
                 showInputDialog(title, hint);
             }
         });
 
-        birthdateRelative.setOnClickListener(new View.OnClickListener() {
+        poiRelative.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                String title = "Modifica data di nascita";
-                String hint = "Inserisci la nuova data di nascita";
+                String title = "Modifica Vicinanza ai Punti d'Interesse";
+                String hint = "Inserisci Nuovi Punti d'Interesse";
                 showInputDialog(title, hint);
             }
         });
 
-        birthplaceRelative.setOnClickListener(new View.OnClickListener() {
+        thermicRelative.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                String title = "Modifica luogo di nascita";
-                String hint = "Inserisci il nuovo luogo di nascita";
+                String title = "Modifica Descrizione Capacità Termica";
+                String hint = "Inserisci Nuova Descrizione";
                 showInputDialog(title, hint);
             }
         });
 
-        addressRelative.setOnClickListener(new View.OnClickListener() {
+        servicesRelative.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                String title = "Modifica indirizzo";
-                String hint = "Inserisci il nuovo indirizzo";
+                String title = "Modifica Servizi Standard";
+                String hint = "Inserisci Nuovi Servizi Standard";
                 showInputDialog(title, hint);
             }
         });
 
-        phoneRelative.setOnClickListener(new View.OnClickListener() {
+        testRelative.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                String title = "Modifica telefono";
-                String hint = "Inserisci il nuovo telefono";
+                String title = "Quanto Puzza?";
+                String hint = "Inserisci un valore minimo di 1000";
                 showInputDialog(title, hint);
             }
         });
 
-        accountTypeRelative.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                // per ora non fa nulla
-            }
-        });
-
-        btnDeleteAccount.setOnClickListener(new View.OnClickListener() {
+        btnDeleteApartment.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 showAlertDialog();
             }
         });
 
+
     }
 
     protected void showInputDialog(String title, String hint) {
 
-        LayoutInflater layoutInflater = LayoutInflater.from(AccountActivity.this);
+        LayoutInflater layoutInflater = LayoutInflater.from(ApartmentActivity.this);
         View promptView = layoutInflater.inflate(R.layout.input_dialog, null);
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(AccountActivity.this);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ApartmentActivity.this);
         alertDialogBuilder.setView(promptView);
 
         alertDialogBuilder.setTitle(title);
@@ -153,24 +146,24 @@ public class AccountActivity extends ActionBarActivity {
 
     protected void showAlertDialog() {
 
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(AccountActivity.this);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ApartmentActivity.this);
 
         // set title
-        alertDialogBuilder.setTitle("Elimina account");
+        alertDialogBuilder.setTitle("Elimina appartamento");
 
         // set dialog message
         alertDialogBuilder
-                .setMessage("Sei sicuro di voler eliminare l'account?")
+                .setMessage("Sei sicuro di voler eliminare la scheda appartamento?")
                 .setCancelable(false)
-                .setPositiveButton("SI",new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog,int id) {
+                .setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
                         // if this button is clicked, close
                         // current activity
-                        AccountActivity.this.finish();
+                        ApartmentActivity.this.finish();
                     }
                 })
-                .setNegativeButton("NO",new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog,int id) {
+                .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
                         // if this button is clicked, just close
                         // the dialog box and do nothing
                         dialog.cancel();
