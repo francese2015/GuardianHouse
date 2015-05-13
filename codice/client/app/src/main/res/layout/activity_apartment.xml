@@ -112,8 +112,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector"
-                    android:clickable="true">
+                    android:background="@drawable/layout_selector">
 
                     <TextView
                         android:id="@+id/dimension_label"
@@ -137,16 +136,7 @@
                         android:layout_marginTop="4dp"
                         android:text="@string/apartment_dimension" />
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginRight="16dp"
-                        android:contentDescription="@string/edit_icon"
-                        android:src="@mipmap/ic_action_edit" />
+
 
                 </RelativeLayout>
 
@@ -157,8 +147,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector"
-                    android:clickable="true">
+                    android:background="@drawable/layout_selector">
+                    <!--android:clickable="true" -->
 
                     <TextView
                         android:id="@+id/status_label"
@@ -182,7 +172,7 @@
                         android:layout_marginTop="4dp"
                         android:text="@string/apartment_status" />
 
-                    <ImageView
+                    <!-- ImageView
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:layout_alignParentEnd="true"
@@ -191,7 +181,7 @@
                         android:layout_marginEnd="16dp"
                         android:layout_marginRight="16dp"
                         android:contentDescription="@string/edit_icon"
-                        android:src="@mipmap/ic_action_edit" />
+                        android:src="@mipmap/ic_action_edit" /> -->
 
                 </RelativeLayout>
 
@@ -202,8 +192,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector"
-                    android:clickable="true">
+                    android:background="@drawable/layout_selector">
 
                     <TextView
                         android:id="@+id/price_label"
@@ -227,16 +216,7 @@
                         android:layout_marginTop="4dp"
                         android:text="@string/apartment_price" />
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginRight="16dp"
-                        android:contentDescription="@string/edit_icon"
-                        android:src="@mipmap/ic_action_edit" />
+
 
                 </RelativeLayout>
 
@@ -247,8 +227,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector"
-                    android:clickable="true">
+                    android:background="@drawable/layout_selector">
 
                     <TextView
                         android:id="@+id/description_label"
@@ -267,23 +246,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/description_label"
-                        android:layout_toLeftOf="@+id/pendescr"
                         android:layout_marginLeft="16dp"
                         android:layout_marginStart="16dp"
-                        android:layout_marginTop="4dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="2dp"
                         android:text="@string/apartment_text" />
 
-                    <ImageView
-                        android:id="@+id/pendescr"
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginRight="16dp"
-                        android:contentDescription="@string/edit_icon"
-                        android:src="@mipmap/ic_action_edit" />
 
                 </RelativeLayout>
 
@@ -294,8 +262,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector"
-                    android:clickable="true">
+                    android:background="@drawable/layout_selector">
 
                     <TextView
                         android:id="@+id/position_label"
@@ -319,16 +286,6 @@
                         android:layout_marginTop="4dp"
                         android:text="@string/apartment_position" />
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginRight="16dp"
-                        android:contentDescription="@string/edit_icon"
-                        android:src="@mipmap/ic_action_edit" />
 
                 </RelativeLayout>
 
@@ -339,8 +296,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector"
-                    android:clickable="true">
+                    android:background="@drawable/layout_selector">
 
                     <TextView
                         android:id="@+id/poi_label"
@@ -364,16 +320,6 @@
                         android:layout_marginTop="4dp"
                         android:text="@string/apartment_poi" />
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginRight="16dp"
-                        android:contentDescription="@string/edit_icon"
-                        android:src="@mipmap/ic_action_edit" />
 
                 </RelativeLayout>
 
@@ -409,16 +355,6 @@
                         android:layout_marginTop="4dp"
                         android:text="@string/apartment_thermic" />
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginRight="16dp"
-                        android:contentDescription="@string/edit_icon"
-                        android:src="@mipmap/ic_action_edit" />
 
                 </RelativeLayout>
 
@@ -429,8 +365,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector"
-                    android:clickable="true">
+                    android:background="@drawable/layout_selector">
 
                     <TextView
                         android:id="@+id/service_label"
@@ -454,16 +389,6 @@
                         android:layout_marginTop="4dp"
                         android:text="@string/apartment_services" />
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginRight="16dp"
-                        android:contentDescription="@string/edit_icon"
-                        android:src="@mipmap/ic_action_edit" />
 
                 </RelativeLayout>
 
@@ -474,8 +399,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="68dp"
                     android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector"
-                    android:clickable="true">
+                    android:background="@drawable/layout_selector">
 
                     <TextView
                         android:id="@+id/letizia_label"
@@ -499,16 +423,6 @@
                         android:layout_marginTop="4dp"
                         android:text="@string/apartment_letizia" />
 
-                    <ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginRight="16dp"
-                        android:contentDescription="@string/edit_icon"
-                        android:src="@mipmap/ic_action_edit" />
 
                 </RelativeLayout>
 

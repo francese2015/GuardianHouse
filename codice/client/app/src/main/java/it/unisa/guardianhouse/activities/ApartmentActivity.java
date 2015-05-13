@@ -34,6 +34,8 @@ public class ApartmentActivity extends ActionBarActivity {
         RelativeLayout testRelative = (RelativeLayout) findViewById(R.id.relative_test);
         Button btnDeleteApartment = (Button) findViewById(R.id.button_delete_apartment);
 
+        /*
+
         dimensionRelative.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 String title = "Modifica Dimensione";
@@ -105,6 +107,8 @@ public class ApartmentActivity extends ActionBarActivity {
                 showInputDialog(title, hint);
             }
         });
+
+        */
 
         btnDeleteApartment.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
