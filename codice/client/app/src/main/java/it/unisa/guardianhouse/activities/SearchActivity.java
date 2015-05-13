@@ -67,10 +67,12 @@ public class SearchActivity extends ActionBarActivity implements OnItemClickList
 
         final TextView tvRadiusText = (TextView) findViewById(R.id.tvRadiusText);
 
+
         seekbarRadius = (SeekBar) findViewById(R.id.seekbarRadius);
         seekbarRadius.setMax(Config.MAX_SEARCH_RADIUS);
         seekbarRadius.setProgress(Config.MAX_SEARCH_RADIUS / 3);
         seekbarRadius.setEnabled(true);
+        tvRadiusText.setText("Distanza: " + seekbarRadius.getProgress() + " Km");
         seekbarRadius.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
             @Override
