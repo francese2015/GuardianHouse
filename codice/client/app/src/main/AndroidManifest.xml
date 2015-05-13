@@ -112,6 +112,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.HomeActivity" />
         </activity>
+        <activity
+            android:name=".refreshlayout.SwipeRefreshActivity"
+            android:label="@string/title_activity_swipe_refresh" >
+        </activity>
     </application>
 
 </manifest>
