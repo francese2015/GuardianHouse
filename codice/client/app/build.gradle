@@ -17,6 +17,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    repositories {
+        mavenCentral()
+    }
 }
 
 dependencies {
@@ -24,5 +28,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.0.0'
     compile 'com.google.android.gms:play-services:7.3.0'
     compile 'com.mcxiaoke.volley:library:1.0.+'
-    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'it.neokree:MaterialNavigationDrawer:1.3.3'
 }
