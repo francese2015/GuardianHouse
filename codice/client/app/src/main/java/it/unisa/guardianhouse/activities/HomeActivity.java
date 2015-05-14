@@ -14,12 +14,9 @@ import it.unisa.guardianhouse.R;
 public class HomeActivity extends ActionBarActivity {
 
     private Button btnDrawer;
-    private Button btnAccount;
     private Button btnGetUsers;
-    private Button btnLogout;
     private Button btnApartment;
     private Button btnReview;
-    private Button btnSearch;
     private Button btnMap;
 
     @Override
@@ -29,26 +26,15 @@ public class HomeActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         btnDrawer = (Button) findViewById(R.id.button_drawer);
-        btnAccount = (Button) findViewById(R.id.button_account);
         btnGetUsers = (Button) findViewById(R.id.button_get_users);
         btnApartment = (Button) findViewById(R.id.button_apartment);
         btnReview = (Button) findViewById(R.id.button_review);
-        btnSearch = (Button) findViewById(R.id.button_search);
         btnMap = (Button) findViewById(R.id.button_map);
-        btnLogout = (Button) findViewById(R.id.button_logout);
 
         // bottone drawer
         btnDrawer.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), NavigationDrawer.class);
-                startActivity(intent);
-            }
-        });
-
-        // bottone account
-        btnAccount.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), AccountActivity.class);
                 startActivity(intent);
             }
         });
@@ -88,14 +74,6 @@ public class HomeActivity extends ActionBarActivity {
             }
         });
 
-        //bottone search
-        btnSearch.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
-                startActivity(intent);
-            }
-        });
-
         //bottone map
         btnMap.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -103,15 +81,6 @@ public class HomeActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-
-        // bottone logout
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                HomeActivity.this.finish();
-            }
-        });
-
-
 
     }
 

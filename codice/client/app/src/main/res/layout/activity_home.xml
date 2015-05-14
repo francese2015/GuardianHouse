@@ -28,13 +28,6 @@
                 android:text="@string/button_drawer" />
 
             <Button
-                android:id="@+id/button_account"
-                android:layout_width="230dp"
-                android:layout_marginTop="1dp"
-                android:layout_height="wrap_content"
-                android:text="@string/button_account" />
-
-            <Button
                 android:id="@+id/button_get_users"
                 android:layout_width="230dp"
                 android:layout_marginTop="1dp"
@@ -50,13 +43,6 @@
                 android:text="@string/button_apartment" />
 
             <Button
-                android:id="@+id/button_search"
-                android:layout_width="230dp"
-                android:layout_marginTop="1dp"
-                android:layout_height="wrap_content"
-                android:text="CERCA APPARTAMENTO" />
-
-            <Button
                 android:id="@+id/button_review"
                 android:layout_width="230dp"
                 android:layout_marginTop="1dp"
@@ -69,13 +55,6 @@
                 android:layout_marginTop="1dp"
                 android:layout_height="wrap_content"
                 android:text="GOOGLE MAPS API TEST" />
-
-            <Button
-                android:id="@+id/button_logout"
-                android:layout_width="230dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="@string/button_logout" />
 
         </LinearLayout>
 
