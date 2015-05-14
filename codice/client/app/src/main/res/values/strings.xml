@@ -7,10 +7,16 @@
     <string name="hello_world">Hello world!</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+    <string name="network_error">Network Error</string>
+    <string name="no_network_connection">No Network Connection.</string>
+    <string name="placeholder_username">Username</string>
+    <string name="placeholder_password">Password</string>
+    <string name="button_login">Login</string>
+    <string name="button_login_to_facebook">Login to Facebook</string>
+    <string name="button_login_to_twitter">Login to Twitter</string>
 
     <!-- Acritivy Main -->
     <string name="button_register">REGISTRATI</string>
-    <string name="button_login">ACCEDI</string>
     <string name="button_login_facebook">ACCEDI CON FACEBOOK</string>
     <string name="text_copyright">Registrandoti, accetti i Termini del Servizio, Informativa sulla Privacy etc.</string>
 

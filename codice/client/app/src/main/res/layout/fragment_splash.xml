@@ -10,6 +10,6 @@
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/app_logo_big" />
+        android:src="@drawable/bg_splash" />
 
 </LinearLayout>
