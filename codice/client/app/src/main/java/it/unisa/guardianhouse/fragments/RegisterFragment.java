@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import it.unisa.guardianhouse.R;
-import it.unisa.guardianhouse.activities.LoginActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -67,7 +66,7 @@ public class RegisterFragment extends Fragment {
 
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(),
-                        LoginActivity.class);
+                        LoginFragment.class);
                 startActivity(i);
                 //finish();
             }

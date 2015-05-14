@@ -33,7 +33,7 @@ import it.unisa.guardianhouse.utils.Utils;
 
 public class GetApartmentsActivity extends ActionBarActivity {
 
-    private static String TAG = MainActivity.class.getSimpleName();
+    private static String TAG = GetApartmentsActivity.class.getSimpleName();
     private ProgressDialog pDialog;
     private String url;
     private List<Apartment> apartmentList = new ArrayList<Apartment>();

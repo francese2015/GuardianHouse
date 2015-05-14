@@ -20,26 +20,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".activities.NavigationDrawer"
-            android:theme="@style/MyNavigationDrawerTheme" />
-        <activity
-            android:name=".activities.MainActivity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".activities.LoginActivity"
-            android:label="@string/title_activity_login"
-            android:parentActivityName=".activities.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainActivity" />
-        </activity>
-        <activity
-            android:name=".activities.RegisterActivity"
-            android:label="@string/title_activity_register"
-            android:parentActivityName=".activities.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MainActivity" />
+            android:theme="@style/MyNavigationDrawerTheme">
+
         </activity>
         <activity
             android:name=".activities.HomeActivity"
@@ -49,14 +31,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".activities.AccountActivity"
-            android:label="@string/title_activity_account"
-            android:parentActivityName=".activities.HomeActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HomeActivity" />
         </activity>
         <activity
             android:name=".activities.GetUsersActivity"
@@ -88,13 +62,6 @@
                 android:value=".activities.HomeActivity" />
         </activity>
         <activity
-            android:name=".activities.SearchActivity"
-            android:label="Ricerca appartamento" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HomeActivity" />
-        </activity>
-        <activity
             android:name=".activities.MapActivity"
             android:label="@string/title_activity_map"
             android:parentActivityName=".activities.HomeActivity" >
@@ -105,7 +72,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyD-a--YGDzMUsYrKuTRTQ-mdjjyBxpTa-Y" />
+            android:value="AIzaSyDrpEq96ATMqaYsHJ4y04sh9MtGE2Qc4XU" />
     </application>
 
 </manifest>

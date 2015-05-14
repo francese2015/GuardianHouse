@@ -63,7 +63,10 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
     private static final String OUT_JSON = "/json";
 
     //------------ make your specific key ------------
-    private static final String API_KEY = "AIzaSyA6NEwUOyNmWJPg7Qo7UQhZmChUwL8Dmg4";
+    // chiave del tutorial
+    private static final String API_KEY = "AIzaSyAU9ShujnIg3IDQxtPr7Q1qOvFVdwNmWc4";
+    // chiave mia
+    //private static final String API_KEY = "AIzaSyDtLLf-f6DzLyh4AYDu-V42SHFdx5DwN8c";
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -153,7 +156,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                     }
                 } else {
                     Toast.makeText(getActivity(),
-                            "Attezione! Non c'è connessione.", Toast.LENGTH_LONG)
+                            "Attezione! Attiva la connessione.", Toast.LENGTH_LONG)
                             .show();
                 }
             }
