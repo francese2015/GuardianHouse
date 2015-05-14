@@ -14,6 +14,8 @@
     <string name="button_login">Login</string>
     <string name="button_login_to_facebook">Login to Facebook</string>
     <string name="button_login_to_twitter">Login to Twitter</string>
+    <string name="ok">OK</string>
+    <string name="no_results_found">No Results Found</string>
 
     <!-- Acritivy Main -->
     <string name="button_register">REGISTRATI</string>
