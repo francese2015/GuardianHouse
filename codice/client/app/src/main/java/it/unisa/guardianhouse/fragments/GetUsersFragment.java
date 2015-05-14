@@ -1,9 +1,11 @@
-package it.unisa.guardianhouse.activities;
+package it.unisa.guardianhouse.fragments;
 
-import android.support.v7.app.ActionBarActivity;
+
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -17,21 +19,28 @@ import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.adapters.UserListAdapter;
 import it.unisa.guardianhouse.models.User;
 
-
-public class GetUsersActivity extends ActionBarActivity {
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class GetUsersFragment extends Fragment {
 
     private List<User> userList = new ArrayList<User>();
     private ListView listView;
     UserListAdapter adapter;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_get_users);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    public GetUsersFragment() {
+        // Required empty public constructor
+    }
 
-        listView = (ListView) findViewById(R.id.listView1);
-        adapter = new UserListAdapter(this, userList);
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_get_users, container, false);
+
+        listView = (ListView) view.findViewById(R.id.listView1);
+        adapter = new UserListAdapter(getActivity(), userList);
         listView.setAdapter(adapter);
 
         try {
@@ -63,27 +72,11 @@ public class GetUsersActivity extends ActionBarActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        return view;
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_get_users, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
 
-        return super.onOptionsItemSelected(item);
-    }
 }

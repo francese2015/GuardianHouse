@@ -1,38 +1,46 @@
-package it.unisa.guardianhouse.activities;
+package it.unisa.guardianhouse.fragments;
+
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 
 import it.unisa.guardianhouse.R;
 
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class GetApartmentFragment extends Fragment {
 
-public class ApartmentActivity extends ActionBarActivity {
+
+    public GetApartmentFragment() {
+        // Required empty public constructor
+    }
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_apartment);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_get_apartment, container, false);
 
-        RelativeLayout dimensionRelative = (RelativeLayout) findViewById(R.id.relative_dimension);
-        RelativeLayout statusRelative = (RelativeLayout) findViewById(R.id.relative_status);
-        RelativeLayout priceRelative = (RelativeLayout) findViewById(R.id.relative_price);
-        RelativeLayout descriptionRelative = (RelativeLayout) findViewById(R.id.relative_description);
-        RelativeLayout positionRelative = (RelativeLayout) findViewById(R.id.relative_position);
-        RelativeLayout poiRelative = (RelativeLayout) findViewById(R.id.relative_poi);
-        RelativeLayout thermicRelative = (RelativeLayout) findViewById(R.id.relative_thermic);
-        RelativeLayout servicesRelative = (RelativeLayout) findViewById(R.id.relative_services);
-        RelativeLayout testRelative = (RelativeLayout) findViewById(R.id.relative_test);
-        Button btnDeleteApartment = (Button) findViewById(R.id.button_delete_apartment);
+        RelativeLayout dimensionRelative = (RelativeLayout) view.findViewById(R.id.relative_dimension);
+        RelativeLayout statusRelative = (RelativeLayout) view.findViewById(R.id.relative_status);
+        RelativeLayout priceRelative = (RelativeLayout) view.findViewById(R.id.relative_price);
+        RelativeLayout descriptionRelative = (RelativeLayout) view.findViewById(R.id.relative_description);
+        RelativeLayout positionRelative = (RelativeLayout) view.findViewById(R.id.relative_position);
+        RelativeLayout poiRelative = (RelativeLayout) view.findViewById(R.id.relative_poi);
+        RelativeLayout thermicRelative = (RelativeLayout) view.findViewById(R.id.relative_thermic);
+        RelativeLayout servicesRelative = (RelativeLayout) view.findViewById(R.id.relative_services);
+        RelativeLayout testRelative = (RelativeLayout) view.findViewById(R.id.relative_test);
+        Button btnDeleteApartment = (Button) view.findViewById(R.id.button_delete_apartment);
 
         /*
 
@@ -86,7 +94,7 @@ public class ApartmentActivity extends ActionBarActivity {
 
         thermicRelative.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                String title = "Modifica Descrizione Capacità Termica";
+                String title = "Modifica Descrizione Capacita' Termica";
                 String hint = "Inserisci Nuova Descrizione";
                 showInputDialog(title, hint);
             }
@@ -116,14 +124,14 @@ public class ApartmentActivity extends ActionBarActivity {
             }
         });
 
-
+        return view;
     }
 
     protected void showInputDialog(String title, String hint) {
 
-        LayoutInflater layoutInflater = LayoutInflater.from(ApartmentActivity.this);
+        LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
         View promptView = layoutInflater.inflate(R.layout.input_dialog, null);
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ApartmentActivity.this);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
         alertDialogBuilder.setView(promptView);
 
         alertDialogBuilder.setTitle(title);
@@ -150,7 +158,7 @@ public class ApartmentActivity extends ActionBarActivity {
 
     protected void showAlertDialog() {
 
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ApartmentActivity.this);
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
 
         // set title
         alertDialogBuilder.setTitle("Elimina appartamento");
@@ -163,7 +171,7 @@ public class ApartmentActivity extends ActionBarActivity {
                     public void onClick(DialogInterface dialog, int id) {
                         // if this button is clicked, close
                         // current activity
-                        ApartmentActivity.this.finish();
+                        getActivity().finish();
                     }
                 })
                 .setNegativeButton("NO", new DialogInterface.OnClickListener() {
@@ -182,25 +190,4 @@ public class ApartmentActivity extends ActionBarActivity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_apartment, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 }

@@ -12,7 +12,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import it.unisa.guardianhouse.R;
-import it.unisa.guardianhouse.activities.HomeActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -50,8 +49,8 @@ public class LoginFragment extends Fragment {
                 // controllo se sono stati inseriti dati nel form
                 if (email.trim().length() > 0 && password.trim().length() > 0) {
 
-                    Intent intent = new Intent(getActivity(), HomeActivity.class);
-                    startActivity(intent);
+                    //Intent intent = new Intent(getActivity(), HomeActivity.class);
+                    //startActivity(intent);
 
                 } else {
                     // chiedo all'utente di inserire i dati

@@ -19,57 +19,15 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
+            android:label="@string/app_name"
             android:name=".activities.NavigationDrawer"
             android:theme="@style/MyNavigationDrawerTheme">
-
-        </activity>
-        <activity
-            android:name=".activities.HomeActivity"
-            android:label="@string/title_activity_home" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activities.GetUsersActivity"
-            android:label="@string/title_activity_get_users"
-            android:parentActivityName=".activities.HomeActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HomeActivity" />
-        </activity>
-        <activity
-            android:name=".activities.GetReviewActivity"
-            android:label="@string/title_activity_recensione" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HomeActivity" />
-        </activity>
-        <activity
-            android:name=".activities.ApartmentActivity"
-            android:label="@string/title_activity_apartment" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HomeActivity" />
-        </activity>
-        <activity
-            android:name=".activities.GetApartmentsActivity"
-            android:label="@string/title_activity_get_apartments" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HomeActivity" />
-        </activity>
-        <activity
-            android:name=".activities.MapActivity"
-            android:label="@string/title_activity_map"
-            android:parentActivityName=".activities.HomeActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.HomeActivity" />
-        </activity>
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDrpEq96ATMqaYsHJ4y04sh9MtGE2Qc4XU" />

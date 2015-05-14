@@ -14,7 +14,7 @@ public abstract class SwipeRefreshActivity extends FragmentActivity implements S
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.setContentView(R.layout.activity_swipe_refresh);
+        super.setContentView(R.layout.fragment_swipe_refresh);
         refreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
     }
 

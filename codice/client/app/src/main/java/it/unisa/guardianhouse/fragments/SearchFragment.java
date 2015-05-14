@@ -39,7 +39,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.unisa.guardianhouse.R;
-import it.unisa.guardianhouse.activities.GetApartmentsActivity;
 import it.unisa.guardianhouse.config.Config;
 import it.unisa.guardianhouse.utils.LocationTracker;
 import it.unisa.guardianhouse.utils.Utils;
