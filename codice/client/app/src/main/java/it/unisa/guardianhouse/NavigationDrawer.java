@@ -37,7 +37,7 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
     @Override
     public void init(Bundle savedInstanceState) {
 
-        this.account = new MaterialAccount(this.getResources(), "Guardian House", "Sottotitolo", R.drawable.app_logo_big, R.drawable.bg);
+        this.account = new MaterialAccount(this.getResources(), "Guardian House", "Il tuo angelo custode!", R.drawable.app_logo_big, R.drawable.bg);
         addAccount(this.account);
 
         home = newSection("Home", new HomeFragment());

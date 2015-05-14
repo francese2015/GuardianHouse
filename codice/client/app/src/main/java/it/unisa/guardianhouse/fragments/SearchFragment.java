@@ -38,6 +38,7 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
+import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.config.Config;
 import it.unisa.guardianhouse.utils.LocationTracker;
@@ -145,6 +146,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                             b.putInt("distance", distance);
                             SearchResultsFragment searchResults = new SearchResultsFragment();
                             searchResults.setArguments(b);
+                            ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchResults, "Risultati");
                             //finish();
                         }
                     } else {

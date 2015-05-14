@@ -70,14 +70,7 @@ public class SearchResultsFragment extends Fragment {
         pDialog.setMessage("Ricerca in corso...");
         pDialog.show();
 
-        if (Utils.hasConnection(getActivity()) == true) {
-            searchByLocation();
-        } else  {
-            // chiedo all'utente di inserire i dati
-            Toast.makeText(getActivity(),
-                    "Connessione assente! Attivare internet o wifi.", Toast.LENGTH_LONG)
-                    .show();
-        }
+        searchByLocation();
 
         return view;
     }
