@@ -42,6 +42,7 @@ import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.activities.GetApartmentsActivity;
 import it.unisa.guardianhouse.config.Config;
 import it.unisa.guardianhouse.utils.LocationTracker;
+import it.unisa.guardianhouse.utils.Utils;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -116,37 +117,43 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
         // bottone search by address
         btnSearchAddress.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Geocoder gc = new Geocoder(getActivity());
+                if (Utils.hasConnection(getActivity()) == true) {
+                    Geocoder gc = new Geocoder(getActivity());
 
-                String autoCompText = autoCompView.getText().toString();
-                if (autoCompText.trim().length() > 0 ) {
+                    String autoCompText = autoCompView.getText().toString();
+                    if (autoCompText.trim().length() > 0) {
 
-                    if (gc.isPresent()) {
-                        List<Address> list = null;
-                        try {
-                            list = gc.getFromLocationName(autoCompText, 1);
-                        } catch (IOException e) {
-                            e.printStackTrace();
+                        if (gc.isPresent()) {
+                            List<Address> list = null;
+                            try {
+                                list = gc.getFromLocationName(autoCompText, 1);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                            Address address = list.get(0);
+
+                            double latitude = address.getLatitude();
+                            double longitude = address.getLongitude();
+                            int distance = seekbarRadius.getProgress();
+                            Intent i = new Intent(getActivity(), GetApartmentsActivity.class);
+                            Bundle b = new Bundle();
+                            b.putDouble("latitude", latitude);
+                            b.putDouble("longitude", longitude);
+                            b.putInt("distance", distance);
+                            i.putExtras(b);
+                            startActivity(i);
+                            //finish();
                         }
-
-                        Address address = list.get(0);
-
-                        double latitude = address.getLatitude();
-                        double longitude = address.getLongitude();
-                        int distance = seekbarRadius.getProgress();
-                        Intent i = new Intent(getActivity(), GetApartmentsActivity.class);
-                        Bundle b = new Bundle();
-                        b.putDouble("latitude", latitude);
-                        b.putDouble("longitude", longitude);
-                        b.putInt("distance", distance);
-                        i.putExtras(b);
-                        startActivity(i);
-                        //finish();
+                    } else {
+                        // chiedo all'utente di inserire i dati
+                        Toast.makeText(getActivity(),
+                                "Inserisci l'indirizzo!", Toast.LENGTH_LONG)
+                                .show();
                     }
                 } else {
-                    // chiedo all'utente di inserire i dati
                     Toast.makeText(getActivity(),
-                            "Inserisci l'indirizzo!", Toast.LENGTH_LONG)
+                            "Attezione! Non c'è connessione.", Toast.LENGTH_LONG)
                             .show();
                 }
             }
