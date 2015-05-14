@@ -1,4 +1,4 @@
-package it.unisa.guardianhouse.app;
+package it.unisa.guardianhouse;
 
 import android.app.Application;
 import android.text.TextUtils;

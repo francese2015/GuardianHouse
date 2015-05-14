@@ -28,7 +28,7 @@ import java.util.Map;
 
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.adapters.ApartmentListAdapter;
-import it.unisa.guardianhouse.app.AppController;
+import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.config.Config;
 import it.unisa.guardianhouse.models.Apartment;
 import it.unisa.guardianhouse.utils.Utils;
