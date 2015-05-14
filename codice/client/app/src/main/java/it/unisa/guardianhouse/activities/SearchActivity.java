@@ -37,6 +37,7 @@ import java.util.List;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.config.Config;
 import it.unisa.guardianhouse.utils.LocationTracker;
+import it.unisa.guardianhouse.utils.Utils;
 
 public class SearchActivity extends ActionBarActivity implements OnItemClickListener {
 
@@ -52,7 +53,7 @@ public class SearchActivity extends ActionBarActivity implements OnItemClickList
     private static final String OUT_JSON = "/json";
 
     //------------ make your specific key ------------
-    private static final String API_KEY = "AIzaSyAU9ShujnIg3IDQxtPr7Q1qOvFVdwNmWc4";
+    private static final String API_KEY = "AIzaSyD-a--YGDzMUsYrKuTRTQ-mdjjyBxpTa-Y";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -106,37 +107,44 @@ public class SearchActivity extends ActionBarActivity implements OnItemClickList
         // bottone search by address
         btnSearchAddress.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Geocoder gc = new Geocoder(SearchActivity.this);
+                if (Utils.hasConnection(getApplicationContext()) == true) {
 
-                String autoCompText = autoCompView.getText().toString();
-                if (autoCompText.trim().length() > 0 ) {
+                    Geocoder gc = new Geocoder(SearchActivity.this);
 
-                    if (gc.isPresent()) {
-                        List<Address> list = null;
-                        try {
-                            list = gc.getFromLocationName(autoCompText, 1);
-                        } catch (IOException e) {
-                            e.printStackTrace();
+                    String autoCompText = autoCompView.getText().toString();
+                    if (autoCompText.trim().length() > 0) {
+
+                        if (gc.isPresent()) {
+                            List<Address> list = null;
+                            try {
+                                list = gc.getFromLocationName(autoCompText, 1);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+
+                            Address address = list.get(0);
+
+                            double latitude = address.getLatitude();
+                            double longitude = address.getLongitude();
+                            int distance = seekbarRadius.getProgress();
+                            Intent i = new Intent(getApplicationContext(), GetApartmentsActivity.class);
+                            Bundle b = new Bundle();
+                            b.putDouble("latitude", latitude);
+                            b.putDouble("longitude", longitude);
+                            b.putInt("distance", distance);
+                            i.putExtras(b);
+                            startActivity(i);
+                            finish();
                         }
-
-                        Address address = list.get(0);
-
-                        double latitude = address.getLatitude();
-                        double longitude = address.getLongitude();
-                        int distance = seekbarRadius.getProgress();
-                        Intent i = new Intent(getApplicationContext(), GetApartmentsActivity.class);
-                        Bundle b = new Bundle();
-                        b.putDouble("latitude", latitude);
-                        b.putDouble("longitude", longitude);
-                        b.putInt("distance", distance);
-                        i.putExtras(b);
-                        startActivity(i);
-                        finish();
+                    } else {
+                        // chiedo all'utente di inserire i dati
+                        Toast.makeText(getApplicationContext(),
+                                "Inserisci l'indirizzo!", Toast.LENGTH_LONG)
+                                .show();
                     }
                 } else {
-                    // chiedo all'utente di inserire i dati
                     Toast.makeText(getApplicationContext(),
-                            "Inserisci l'indirizzo!", Toast.LENGTH_LONG)
+                            "Attezione! Non c'è connessione.", Toast.LENGTH_LONG)
                             .show();
                 }
             }

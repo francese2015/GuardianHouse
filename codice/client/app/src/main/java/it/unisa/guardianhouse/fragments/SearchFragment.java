@@ -62,7 +62,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
     private static final String OUT_JSON = "/json";
 
     //------------ make your specific key ------------
-    private static final String API_KEY = "AIzaSyAU9ShujnIg3IDQxtPr7Q1qOvFVdwNmWc4";
+    private static final String API_KEY = "AIzaSyA6NEwUOyNmWJPg7Qo7UQhZmChUwL8Dmg4";
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

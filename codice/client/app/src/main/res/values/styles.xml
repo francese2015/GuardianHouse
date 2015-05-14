@@ -20,10 +20,10 @@
         <item name="android:textColor">@color/bianco</item>
     </style>
 
-    <style name="MyNavigationDrawerTheme" parent="MaterialNavigationDrawerTheme">
+    <style name="MyNavigationDrawerTheme"  parent="MaterialNavigationDrawerTheme.Light.DarkActionBar">
         <item name="colorPrimary">@color/ColorPrimary</item>
         <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
-        <item name="colorAccent">#FFFFFF</item>
+
     </style>
 
     <!-- Custom blue button -->

@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -28,6 +29,7 @@ import it.unisa.guardianhouse.adapters.ApartmentListAdapter;
 import it.unisa.guardianhouse.app.AppController;
 import it.unisa.guardianhouse.config.Config;
 import it.unisa.guardianhouse.models.Apartment;
+import it.unisa.guardianhouse.utils.Utils;
 
 public class GetApartmentsActivity extends ActionBarActivity {
 
@@ -59,7 +61,15 @@ public class GetApartmentsActivity extends ActionBarActivity {
         pDialog.setMessage("Ricerca in corso...");
         pDialog.show();
 
-        searchByLocation();
+        if (Utils.hasConnection(getApplicationContext()) == true) {
+            searchByLocation();
+        } else  {
+            // chiedo all'utente di inserire i dati
+            Toast.makeText(getApplicationContext(),
+                    "Connessione assente! Attivare internet o wifi.", Toast.LENGTH_LONG)
+                    .show();
+        }
+
 
     }
 
