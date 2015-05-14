@@ -147,7 +147,6 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                             SearchResultsFragment searchResults = new SearchResultsFragment();
                             searchResults.setArguments(b);
                             ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchResults, "Risultati");
-                            //finish();
                         }
                     } else {
                         // chiedo all'utente di inserire i dati
@@ -166,32 +165,38 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
         // bottone search by location
         btnSearchLocation.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                gps = new LocationTracker(getActivity());
+                if (Utils.hasConnection(getActivity()) == true) {
+                    gps = new LocationTracker(getActivity());
 
-                // check if GPS enabled
-                if (gps.canGetLocation()) {
+                    // check if GPS enabled
+                    if (gps.canGetLocation()) {
 
-                    double latitude = gps.getLatitude();
-                    double longitude = gps.getLongitude();
-                    int distance = seekbarRadius.getProgress();
+                        double latitude = gps.getLatitude();
+                        double longitude = gps.getLongitude();
+                        int distance = seekbarRadius.getProgress();
 
-                    // \n is for new line
-//                    Toast.makeText(
-//                            getApplicationContext(),
-//                            "Coordinate: \nLat: " + latitude
-//                                    + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
-                    Bundle b = new Bundle();
-                    b.putDouble("latitude", latitude);
-                    b.putDouble("longitude", longitude);
-                    b.putInt("distance", distance);
-                    SearchResultsFragment searchResults = new SearchResultsFragment();
-                    searchResults.setArguments(b);
-                    //finish();
+                        // \n is for new line
+                        //                    Toast.makeText(
+                        //                            getApplicationContext(),
+                        //                            "Coordinate: \nLat: " + latitude
+                        //                                    + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
+                        Bundle b = new Bundle();
+                        b.putDouble("latitude", latitude);
+                        b.putDouble("longitude", longitude);
+                        b.putInt("distance", distance);
+                        SearchResultsFragment searchResults = new SearchResultsFragment();
+                        searchResults.setArguments(b);
+                        ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchResults, "Risultati");
+                    } else {
+                        // can't get location
+                        // GPS or Network is not enabled
+                        // Ask user to enable GPS/network in settings
+                        gps.showSettingsAlert();
+                    }
                 } else {
-                    // can't get location
-                    // GPS or Network is not enabled
-                    // Ask user to enable GPS/network in settings
-                    gps.showSettingsAlert();
+                    Toast.makeText(getActivity(),
+                            "Attezione! Attiva la connessione.", Toast.LENGTH_LONG)
+                            .show();
                 }
             }
         });
