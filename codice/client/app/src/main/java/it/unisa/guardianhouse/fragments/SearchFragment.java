@@ -139,13 +139,13 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                             double latitude = address.getLatitude();
                             double longitude = address.getLongitude();
                             int distance = seekbarRadius.getProgress();
-                            Intent i = new Intent(getActivity(), GetApartmentsActivity.class);
+
                             Bundle b = new Bundle();
                             b.putDouble("latitude", latitude);
                             b.putDouble("longitude", longitude);
                             b.putInt("distance", distance);
-                            i.putExtras(b);
-                            startActivity(i);
+                            SearchResultsFragment searchResults = new SearchResultsFragment();
+                            searchResults.setArguments(b);
                             //finish();
                         }
                     } else {
@@ -179,13 +179,12 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
 //                            getApplicationContext(),
 //                            "Coordinate: \nLat: " + latitude
 //                                    + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
-                    Intent i = new Intent(getActivity(), GetApartmentsActivity.class);
                     Bundle b = new Bundle();
                     b.putDouble("latitude", latitude);
                     b.putDouble("longitude", longitude);
                     b.putInt("distance", distance);
-                    i.putExtras(b);
-                    startActivity(i);
+                    SearchResultsFragment searchResults = new SearchResultsFragment();
+                    searchResults.setArguments(b);
                     //finish();
                 } else {
                     // can't get location
