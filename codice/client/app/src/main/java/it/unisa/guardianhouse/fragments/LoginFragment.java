@@ -26,6 +26,7 @@ import java.util.Map;
 
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.unisa.guardianhouse.AppController;
+import it.unisa.guardianhouse.NavigationDrawer;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.config.Config;
 import it.unisa.guardianhouse.helpers.SQLiteHandler;
@@ -138,7 +139,7 @@ public class LoginFragment extends Fragment {
 
                         Toast.makeText(getActivity(),
                                 "Login effettuato! :)", Toast.LENGTH_LONG).show();
-
+                        ((NavigationDrawer) getActivity()).loginUser();
                         HomeFragment homeFragment = new HomeFragment();
                         ((MaterialNavigationDrawer) getActivity()).setFragment(homeFragment, "Home");
 
