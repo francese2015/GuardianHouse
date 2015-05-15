@@ -1,4 +1,4 @@
-package com.example.testproject2.helper;
+package it.unisa.guardianhouse.helpers;
 
 import android.content.Context;
 import android.content.SharedPreferences;

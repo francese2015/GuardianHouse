@@ -17,10 +17,10 @@ import it.unisa.guardianhouse.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AccountFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
 
-    public AccountFragment() {
+    public ProfileFragment() {
         // Required empty public constructor
     }
 
@@ -28,7 +28,7 @@ public class AccountFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_account, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
         // richiamo i vari relative layout
         RelativeLayout nameRelative = (RelativeLayout) view.findViewById(R.id.relative_name);
         RelativeLayout surnameRelative = (RelativeLayout) view.findViewById(R.id.relative_surname);

@@ -1,10 +1,4 @@
-package com.example.testproject2.helper;
-
-/**
- * Author: Ravi Tamada
- * URL: www.androidhive.info
- * twitter: http://twitter.com/ravitamada
- * */
+package it.unisa.guardianhouse.helpers;
 
 import java.util.HashMap;
  
