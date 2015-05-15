@@ -3,8 +3,32 @@
     android:layout_height="match_parent"
     tools:context="it.unisa.guardianhouse.fragments.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+
+
+    <ImageView
+        android:layout_width="381dp"
+        android:layout_height="600dp"
+        android:src="@drawable/house_back"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/app_logo_big"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="338dp"
+        android:id="@+id/welcome"
+        android:text="Welcome Home"
+        android:layout_gravity="center_horizontal|top"
+        android:textStyle="bold"
+        android:textColor="@color/White"
+        android:textSize="30dp"
+        android:editable="false" />
+
 
 </FrameLayout>
