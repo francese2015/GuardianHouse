@@ -110,19 +110,19 @@
                 android:layout_below="@id/divider"
                 android:layout_height="300dp" >
 
-               <!-- <fragment
+               <fragment
                     android:id="@+id/googleMap"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
-                    class="com.google.android.gms.maps.SupportMapFragment" /> -->
+                    class="com.google.android.gms.maps.SupportMapFragment" />
 
-                <ImageView
+                <!--<ImageView
                     android:id="@+id/imgViewMap"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:scaleType="center"
-                    android:src="@drawable/profile_placeholder" />
+                    android:src="@drawable/profile_placeholder" /> -->
             </FrameLayout>
 
             <FrameLayout
