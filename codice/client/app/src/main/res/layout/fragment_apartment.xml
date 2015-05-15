@@ -66,7 +66,7 @@
                             android:id="@+id/ratingBar"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            style="?android:attr/ratingBarStyleSmall"
+                            style="@style/ratingBarList"
                             android:isIndicator="true"
                             android:layout_marginLeft="5dp"
                             android:minHeight="18dp" />
@@ -92,17 +92,56 @@
 
                 </LinearLayout>
 
+
+
             </LinearLayout>
 
+            <FrameLayout
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@id/linear1"
+                android:background="@drawable/line_divider_blue" />
+
+            <FrameLayout
+                android:id="@+id/googleMapContainer"
+                android:layout_width="match_parent"
+                android:background="@android:color/transparent"
+                android:layout_below="@id/divider"
+                android:layout_height="300dp" >
+
+               <!-- <fragment
+                    android:id="@+id/googleMap"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    class="com.google.android.gms.maps.SupportMapFragment" /> -->
+
+                <ImageView
+                    android:id="@+id/imgViewMap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:scaleType="center"
+                    android:src="@drawable/profile_placeholder" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@id/googleMapContainer"
+                android:background="@drawable/line_divider_blue" />
 
             <LinearLayout
                 android:id="@+id/apartment_data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/linear1"
+                android:layout_below="@+id/googleMapContainer"
                 android:divider="@drawable/divider"
                 android:orientation="vertical"
                 android:showDividers="middle">
+
+
 
                 <!-- Dimensione -->
 
