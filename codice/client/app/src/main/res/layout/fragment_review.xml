@@ -16,45 +16,44 @@
 
 
             <ImageView
-                android:id="@+id/apartment_img"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:contentDescription="@string/img_descr2"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/appartamento" />
+                android:id="@+id/imgViewPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_viewer_placeholder"
+                />
 
-            <TextView
+
+            <EditText
                 android:id="@+id/apartment_city"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/apartment_img"
-                android:layout_toEndOf="@+id/apartment_img"
+                android:layout_below="@id/imgViewPhoto"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="12dp"
-                android:text="@string/apartment_city" />
+                android:textSize="20sp"
+                android:text="Insert City" />
 
 
 
-            <TextView
+            <EditText
                 android:id="@+id/apartment_address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/apartment_img"
-                android:layout_toEndOf="@+id/apartment_img"
+                android:layout_below="@id/apartment_city"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="12dp"
-                android:layout_below="@+id/apartment_city"
-                android:text="@string/apartment_address" />
-
-
-
+                android:textSize="20sp"
+                android:text="Insert Address" />
 
 
             <View
                 android:id="@+id/separator_line_1"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_below="@+id/apartment_img"
+                android:layout_below="@+id/apartment_address"
                 android:layout_marginTop="16dp"
                 android:background="#dfdfdf" />
 
@@ -85,7 +84,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:text="@string/apartment_forniture"
+                        android:text="Vote Furniture"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold" />
@@ -129,7 +128,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:text="@string/apartment_thermic_capacity"
+                        android:text="Vote Thermic Capacity"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold" />
@@ -173,7 +172,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:text="@string/apartment_honesty"
+                        android:text="Vote Landlord Honesty"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold" />
@@ -216,7 +215,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:text="@string/apartment_honesty"
+                        android:text="Vote House Security"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold" />

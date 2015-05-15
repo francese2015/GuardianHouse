@@ -19,18 +19,24 @@
         android:label="@string/app_name"
         android:theme="@style/MyNavigationDrawerTheme" >
         <activity
-            android:label="@string/app_name"
             android:name=".NavigationDrawer"
-            android:theme="@style/MyNavigationDrawerTheme">
+            android:label="@string/app_name"
+            android:theme="@style/MyNavigationDrawerTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDrpEq96ATMqaYsHJ4y04sh9MtGE2Qc4XU" />
+
+        <activity
+            android:name=".fragments.ReviewActivity"
+            android:label="@string/title_activity_review" >
+        </activity>
     </application>
 
 </manifest>
