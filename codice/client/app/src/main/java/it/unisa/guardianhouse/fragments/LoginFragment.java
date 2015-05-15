@@ -1,6 +1,7 @@
 package it.unisa.guardianhouse.fragments;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -11,19 +12,29 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.unisa.guardianhouse.R;
+import it.unisa.guardianhouse.config.Config;
+import it.unisa.guardianhouse.helpers.SQLiteHandler;
+import it.unisa.guardianhouse.helpers.SessionManager;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class LoginFragment extends Fragment {
 
+    private static final String TAG = LoginFragment.class.getSimpleName();
+    String userId;
+    String url = Config.USERS_URL + "/" + 37;
+    SQLiteHandler db;
+    String apiKey;
     EditText inputEmail;
     EditText inputPassword;
     Button btnLogin;
     Button btnLinkToRegister;
+    ProgressDialog pDialog;
+    SessionManager session;
     String email;
     String password;
+
 
     public LoginFragment() {
         // Required empty public constructor
@@ -49,8 +60,8 @@ public class LoginFragment extends Fragment {
                 // controllo se sono stati inseriti dati nel form
                 if (email.trim().length() > 0 && password.trim().length() > 0) {
 
-                    //Intent intent = new Intent(getActivity(), HomeActivity.class);
-                    //startActivity(intent);
+                    HomeFragment homeFragment = new HomeFragment();
+                    ((MaterialNavigationDrawer) getActivity()).setFragment(homeFragment, "Home");
 
                 } else {
                     // chiedo all'utente di inserire i dati
@@ -65,10 +76,8 @@ public class LoginFragment extends Fragment {
         btnLinkToRegister.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(),
-                        RegisterFragment.class);
-                startActivity(i);
-                //finish();
+                RegisterFragment registerFragment = new RegisterFragment();
+                ((MaterialNavigationDrawer) getActivity()).setFragment(registerFragment, "Registrazione");
             }
         });
 

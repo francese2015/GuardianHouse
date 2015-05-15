@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.unisa.guardianhouse.R;
 
 /**
@@ -53,6 +54,9 @@ public class RegisterFragment extends Fragment {
 
                 if (!username.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
 
+                    HomeFragment homeFragment = new HomeFragment();
+                    ((MaterialNavigationDrawer) getActivity()).setFragment(homeFragment, "Home");
+
                 } else {
                     Toast.makeText(getActivity(),
                             "Riempi tutti i campi!", Toast.LENGTH_LONG)
@@ -65,10 +69,8 @@ public class RegisterFragment extends Fragment {
         btnLinkToLogin.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(),
-                        LoginFragment.class);
-                startActivity(i);
-                //finish();
+                LoginFragment loginFragment = new LoginFragment();
+                ((MaterialNavigationDrawer) getActivity()).setFragment(loginFragment, "Login");
             }
         });
 

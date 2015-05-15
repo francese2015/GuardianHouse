@@ -31,6 +31,13 @@
         <item name="android:textColor">@color/bianco</item>
     </style>
 
+
+    <style name="ratingBarList" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/star_rating_bar_full</item>
+        <item name="android:minHeight">18dip</item>
+        <item name="android:maxHeight">18dip</item>
+    </style>
+
     <!-- Custom blue button -->
     <style name="BlueButton" parent="@android:style/Widget.Button">
         <item name="android:gravity">center_vertical|center_horizontal</item>
