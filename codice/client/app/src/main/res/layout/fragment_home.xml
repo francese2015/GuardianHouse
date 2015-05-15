@@ -5,11 +5,11 @@
 
 
 
-    <ImageView
+    <!--<ImageView
         android:layout_width="381dp"
         android:layout_height="600dp"
         android:src="@drawable/house_back"
-        android:layout_gravity="center" />
+        android:layout_gravity="center" /> -->
 
     <ImageView
         android:layout_width="100dp"
