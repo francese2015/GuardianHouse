@@ -63,7 +63,9 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
             public void onClick(MaterialSection section) {
                 Toast.makeText(NavigationDrawer.this, "Logout effettuato.", Toast.LENGTH_SHORT).show();
                 //logoutUser();
-                section.unSelect(); // so deselect the section if you want
+                section.unSelect();
+                HomeFragment homeFragment = new HomeFragment();
+                setFragment(homeFragment, "Home");
             }
         });
 

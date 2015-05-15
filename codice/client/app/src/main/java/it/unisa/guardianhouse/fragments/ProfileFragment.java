@@ -173,7 +173,7 @@ public class ProfileFragment extends Fragment {
                     public void onClick(DialogInterface dialog, int id) {
                         // if this button is clicked, close
                         // current activity
-                        getActivity().finish();
+
                     }
                 })
                 .setNegativeButton("NO", new DialogInterface.OnClickListener() {
