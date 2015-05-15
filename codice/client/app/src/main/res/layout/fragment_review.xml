@@ -14,46 +14,76 @@
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:paddingTop="@dimen/activity_vertical_margin">
 
+              <EditText
+                android:id="@+id/apartment_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="12dp"
+                android:textSize="16sp"
+                android:inputType="textAutoComplete"
+                android:textColor="@color/DarkGray"
+                android:text="Insert Address" />
+
+
+
 
             <ImageView
                 android:id="@+id/imgViewPhoto"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:layout_below="@+id/apartment_address"
                 android:adjustViewBounds="true"
                 android:cropToPadding="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/image_viewer_placeholder"
-                />
-
-
-            <EditText
-                android:id="@+id/apartment_city"
+                                />
+            <TextView
+                android:id="@+id/txtImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/imgViewPhoto"
+
+                android:layout_alignRight="@+id/imgViewPhoto"
+                android:layout_alignBottom="@+id/imgViewPhoto"
+                android:layout_margin="1dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:text="Add/edit"
+                android:textColor="#000000" />
+
+
+
+            <LinearLayout
+                android:id="@+id/textbox"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_margin="10dp"
                 android:layout_below="@id/imgViewPhoto"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="12dp"
-                android:textSize="20sp"
-                android:text="Insert City" />
+                android:orientation="vertical" >
 
+                <EditText
+                    android:id="@+id/txtReview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/textbox_bg_review"
+                    android:ems="10"
+                    android:gravity="top|left"
+                    android:hint="Insert a Brief Description"
+                    android:maxLines="5"
 
+                    android:textSize="18sp" >
 
-            <EditText
-                android:id="@+id/apartment_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/apartment_city"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="12dp"
-                android:textSize="20sp"
-                android:text="Insert Address" />
+                </EditText>
+
+            </LinearLayout>
 
 
             <View
                 android:id="@+id/separator_line_1"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_below="@+id/apartment_address"
                 android:layout_marginTop="16dp"
                 android:background="#dfdfdf" />
 
@@ -61,7 +91,7 @@
                 android:id="@+id/apartment_data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/separator_line_1"
+                android:layout_below="@+id/textbox"
                 android:divider="@drawable/divider"
                 android:orientation="vertical"
                 android:showDividers="middle">
