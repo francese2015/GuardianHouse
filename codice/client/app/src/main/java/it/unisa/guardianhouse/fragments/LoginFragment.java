@@ -114,7 +114,7 @@ public class LoginFragment extends Fragment {
         // Tag used to cancel the request
         String tag_jObj_req = "req_login";
 
-        pDialog.setMessage("Logging in ...");
+        pDialog.setMessage("Accesso in corso ...");
         showDialog();
 
         MyJsonObjectRequest strReq = new MyJsonObjectRequest(Request.Method.POST,
@@ -135,6 +135,9 @@ public class LoginFragment extends Fragment {
                         userId = response.getJSONObject("user").getJSONObject("id").getString("$id");
                         apiKey = response.getJSONObject("user").getString("api_key");
                         session.setLogin(true, apiKey);
+
+                        Toast.makeText(getActivity(),
+                                "Login effettuato! :)", Toast.LENGTH_LONG).show();
 
                         HomeFragment homeFragment = new HomeFragment();
                         ((MaterialNavigationDrawer) getActivity()).setFragment(homeFragment, "Home");
