@@ -155,5 +155,6 @@
         \n6. DIRITTI DELL\'INTERESSATO
         \nIn ogni momento potrà esercitare i Suoi diritti nei confronti del titolare del trattamento, ai sensi dell\'art.7 del D.Lgs.196/2003.\n\n
     </string>
+    <string name="title_activity_review">ReviewActivity</string>
 
 </resources>
