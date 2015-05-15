@@ -14,22 +14,18 @@ import android.widget.RelativeLayout;
 
 import it.unisa.guardianhouse.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class GetApartmentFragment extends Fragment {
+
+public class ApartmentFragment extends Fragment {
 
 
-    public GetApartmentFragment() {
-        // Required empty public constructor
+    public ApartmentFragment() {
+
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_get_apartment, container, false);
+        View view = inflater.inflate(R.layout.fragment_apartment, container, false);
 
         RelativeLayout dimensionRelative = (RelativeLayout) view.findViewById(R.id.relative_dimension);
         RelativeLayout statusRelative = (RelativeLayout) view.findViewById(R.id.relative_status);
@@ -188,6 +184,5 @@ public class GetApartmentFragment extends Fragment {
         // show it
         alertDialog.show();
     }
-
 
 }

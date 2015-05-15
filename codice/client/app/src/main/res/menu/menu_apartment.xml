@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="it.unisa.guardianhouse.activities.ApartmentActivity">
+    tools:context="it.unisa.guardianhouse.fragments.ApartmentFragment">
 
     <item
         android:id="@+id/action_settings"

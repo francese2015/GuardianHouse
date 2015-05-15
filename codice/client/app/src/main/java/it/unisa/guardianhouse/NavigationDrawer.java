@@ -1,17 +1,14 @@
 package it.unisa.guardianhouse;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
 
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.neokree.materialnavigationdrawer.elements.MaterialAccount;
 import it.neokree.materialnavigationdrawer.elements.MaterialSection;
 import it.neokree.materialnavigationdrawer.elements.listeners.MaterialSectionListener;
 import it.unisa.guardianhouse.fragments.AccountFragment;
-import it.unisa.guardianhouse.fragments.GetApartmentFragment;
-import it.unisa.guardianhouse.fragments.GetReviewFragment;
+import it.unisa.guardianhouse.fragments.ApartmentFragment;
+import it.unisa.guardianhouse.fragments.ReviewFragment;
 import it.unisa.guardianhouse.fragments.HomeFragment;
 import it.unisa.guardianhouse.fragments.LoginFragment;
 import it.unisa.guardianhouse.fragments.RegisterFragment;
@@ -45,8 +42,8 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
         accountPage = newSection("Account", new AccountFragment());
         register = newSection("Register", new RegisterFragment());
         login = newSection("Login", new LoginFragment());
-        getApartment = newSection("Appartamento", new GetApartmentFragment());
-        getReview = newSection("Recensione", new GetReviewFragment());
+        getApartment = newSection("Appartamento", new ApartmentFragment());
+        getReview = newSection("Recensione", new ReviewFragment());
         mapTest = newSection("Google Maps Test", new MapTestFragment());
 
         addSection(this.home);
