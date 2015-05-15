@@ -36,9 +36,8 @@ import it.unisa.guardianhouse.utils.MyJsonObjectRequest;
 public class LoginFragment extends Fragment {
 
     private static final String TAG = LoginFragment.class.getSimpleName();
-    String userId;
-    String url = Config.USERS_URL + "/" + 37;
     SQLiteHandler db;
+    String userId;
     String apiKey;
     EditText inputEmail;
     EditText inputPassword;
@@ -59,8 +58,8 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login, container, false);
+
         inputEmail = (EditText) view.findViewById(R.id.editText1);
         inputPassword = (EditText) view.findViewById(R.id.editText2);
         btnLogin = (Button) view.findViewById(R.id.button1);
@@ -89,9 +88,6 @@ public class LoginFragment extends Fragment {
                     params.put("password", password);
 
                     makeRequest();
-
-                    HomeFragment homeFragment = new HomeFragment();
-                    ((MaterialNavigationDrawer) getActivity()).setFragment(homeFragment, "Home");
 
                 } else {
                     // chiedo all'utente di inserire i dati
@@ -169,7 +165,6 @@ public class LoginFragment extends Fragment {
             public Map<String, String> getHeaders() throws AuthFailureError {
                 HashMap<String, String> headers = new HashMap<String, String>();
                 headers.put("Content-Type","application/x-www-form-urlencoded");
-                headers.put("Authorization", apiKey);
                 return headers;
             }
 
