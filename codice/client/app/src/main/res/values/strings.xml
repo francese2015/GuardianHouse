@@ -190,8 +190,8 @@
     <string name="plus">+</string>
     <string name="insert_address">Inserire Indirizzo</string>
     <string name="welcome_home">Welcome Home</string>
-    <string name="medium_text_placeholder">Medium Text</string>
-    <string name="small_text_placeholder">Small Text</string>
+    <string name="medium_text_placeholder">Testo Medio</string>
+    <string name="small_text_placeholder">Testo Piccolo</string>
     <string name="send">Invia</string>
     <string name="insert_apartment">Inserisci Appartamento</string>
     <string name="insert_photo">Inserire Foto</string>
@@ -206,7 +206,7 @@
     <string name="vote_thermic_capacity">Vote Capacità Termica</string>
     <string name="next">Prossimo</string>
     <string name="vote_landlord_honesty">Vota l\'onestà del padrone di casa</string>
-    <string name="vote_house_security">Vote Sicurezza Casa</string>
+    <string name="vote_house_security">Vota Sicurezza Casa</string>
     <string name="zero_integer">0</string>
 
 </resources>
