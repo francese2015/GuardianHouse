@@ -131,6 +131,12 @@
     <string name="apartment_distanceCC">Distanza Centro Città</string>
     <string name="apartment_tools">Qualità Elettrodomestici</string>
 
+    <!-- Activity Insert Apartment Scheda 1 -->
+
+    <string name="insert_apartment_name">Inserisci nome</string>
+    <string name="insert_apartment_description">Inserisci descrizione</string>
+    <string name="insert_apartment_mq">Inserisci metri quadri</string>
+
     <string name="hello_blank_fragment">Da riempire</string>
     <string name="title_activity_map">Mappa appartamenti</string>
     <string name="title_activity_get_apartments">Risultati ricerca</string>
