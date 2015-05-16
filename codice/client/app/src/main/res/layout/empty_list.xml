@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/nessun_risultato"
+        android:text="@string/no_results"
         android:textSize="16sp"
         android:textColor="@color/grigio_scuro"
         android:textStyle="bold" />

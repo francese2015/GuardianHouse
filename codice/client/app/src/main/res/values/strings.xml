@@ -175,8 +175,8 @@
     <string name="feedback_title">Feedback</string>
     <string name="review_title">Recensione</string>
     <string name="show_review_title">Mostra Recensioni</string>
-    <string name="nessun_risultato">Nessun Risultato</string>
-    <string name="lascia_recensione">Lascia Recensione</string>
+    <string name="no_results">Nessun Risultato</string>
+    <string name="give_review">Lascia Recensione</string>
     <string name="user_feedback_hint">Feedback Utente</string>
     <string name="insert_address_hint">Inserisci l\'indirizzo</string>
     <string name="distance">Distanza:</string>

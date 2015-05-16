@@ -14,7 +14,7 @@
 
         android:id="@+id/action_review"
         android:orderInCategory="100"
-        android:title="@string/lascia_recensione"
+        android:title="@string/give_review"
         app:showAsAction="never" />
 
     />
