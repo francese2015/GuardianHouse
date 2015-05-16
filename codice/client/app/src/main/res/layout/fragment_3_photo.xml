@@ -33,10 +33,12 @@
                 android:background="#A7000000"
                 android:orientation="vertical"
                 android:padding="5dp"
-                android:layout_alignBottom="@+id/imgViewPhoto">
+                android:layout_alignBottom="@+id/imgViewPhoto"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
 
                 <TextView
-                    android:id="@+id/nameApt"
+                    android:id="@+id/insertPhoto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
@@ -45,7 +47,14 @@
                     android:textColor="@color/bianco"
                     android:textSize="20sp"
                     android:textStyle="bold" />
-
+<!--
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/image_counter"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="right" />
+-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -123,7 +132,7 @@
                 <RelativeLayout
                     android:id="@+id/relative_dimension"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="150dp"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/layout_selector"
                     android:clickable="true">
@@ -140,19 +149,24 @@
                         android:text="Description"
                         android:textStyle="bold" />
 
+
                     <EditText
-                        android:id="@+id/dimension_value"
+                        android:id="@+id/txtReview"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="16dp"
+                        android:layout_weight="1"
                         android:layout_below="@+id/dimension_label"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="4dp"
-                        android:text="Put a brief comment about the apartment"
-                        android:inputType="textMultiLine"
-                        android:textColor="@color/DarkGray"
-                        />
+                        android:background="@drawable/textbox_bg_review"
+                        android:ems="10"
+                        android:gravity="top|left"
+                        android:hint="Put a brief comment about the apartment"
+                        android:maxLines="7"
+                        android:textSize="18sp" >
+
+                    </EditText>
+
+
                 </RelativeLayout>
 
             </LinearLayout>
