@@ -23,7 +23,7 @@
                 android:textSize="16sp"
                 android:inputType="textAutoComplete"
                 android:textColor="@color/DarkGray"
-                android:text="Insert Address" />
+                android:text="@string/insert_address" />
 
 
 
@@ -49,7 +49,7 @@
                 android:layout_margin="1dp"
                 android:gravity="center"
                 android:textSize="16sp"
-                android:text="Add/edit"
+                android:text="@string/add_edit"
                 android:textColor="#000000" />
 
 
@@ -70,7 +70,7 @@
                     android:background="@drawable/textbox_bg_review"
                     android:ems="10"
                     android:gravity="top|left"
-                    android:hint="Insert a Brief Description"
+                    android:hint="@string/fragment_brief_description"
                     android:maxLines="5"
 
                     android:textSize="18sp" >
@@ -114,7 +114,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:text="Vote Furniture"
+                        android:text="@string/vote_furniture"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold" />
@@ -158,7 +158,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:text="Vote Thermic Capacity"
+                        android:text="@string/vote_thermic_capacity"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold" />
@@ -202,7 +202,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:text="Vote Landlord Honesty"
+                        android:text="@string/vote_landlord_honesty"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold" />
@@ -245,7 +245,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:text="Vote House Security"
+                        android:text="@string/vote_house_security"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold" />

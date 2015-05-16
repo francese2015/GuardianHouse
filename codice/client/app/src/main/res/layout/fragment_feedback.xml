@@ -18,7 +18,7 @@
             android:background="@drawable/textbox_bg_review"
             android:ems="10"
             android:gravity="top|left"
-            android:hint="Feedback Utente"
+            android:hint="@string/user_feedback_hint"
             android:maxLines="5"
             android:textSize="18sp" >
 
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_marginTop="5dp"
-            android:text="Invia"
+            android:text="@string/send"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="16sp" />
 

@@ -2,7 +2,7 @@
 
 
     <item
-        android:title="Review"
+        android:title="@string/review_title"
         android:icon="@drawable/ic_check"
         android:id="@+id/menuPostReview"
         android:orderInCategory="100"

@@ -43,7 +43,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="18dp"
-                    android:text="Insert Photo"
+                    android:text="@string/insert_photo"
                     android:textColor="@color/bianco"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -109,7 +109,7 @@
                         android:layout_marginTop="8dp"
                         android:textColor="#2196F3"
                         android:textSize="20dp"
-                        android:text="Title"
+                        android:text="@string/title"
                         android:textStyle="bold" />
 
                     <EditText
@@ -121,7 +121,7 @@
                         android:layout_marginRight="16dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="4dp"
-                        android:text="Put a Descriptive Title for Your Review"
+                        android:text="@string/title_description_fragment3"
                         android:inputType="text"
                         android:textColor="@color/DarkGray"
                         />
@@ -146,7 +146,7 @@
                         android:layout_marginTop="8dp"
                         android:textColor="#2196F3"
                         android:textSize="20dp"
-                        android:text="Description"
+                        android:text="@string/description"
                         android:textStyle="bold" />
 
 
@@ -160,7 +160,7 @@
                         android:background="@drawable/textbox_bg_review"
                         android:ems="10"
                         android:gravity="top|left"
-                        android:hint="Put a brief comment about the apartment"
+                        android:hint="@string/description_hint_fragment3"
                         android:maxLines="7"
                         android:textSize="18sp" >
 
@@ -179,14 +179,14 @@
                 android:background="#dfdfdf" />
 
             <Button
-                android:id="@+id/button_delete_apartment"
+                android:id="@+id/button_photo"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/separator_line_2"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="28dp"
 
-                android:text="Next" />
+                android:text="@string/next" />
 
         </RelativeLayout>
 

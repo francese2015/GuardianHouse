@@ -5,17 +5,17 @@
     <string name="app_name">Guardian House</string>
     <string name="action_settings">Impostazioni</string>
     <string name="hello_world">Hello world!</string>
-    <string name="drawer_open">Open navigation drawer</string>
-    <string name="drawer_close">Close navigation drawer</string>
-    <string name="network_error">Network Error</string>
-    <string name="no_network_connection">No Network Connection.</string>
+    <string name="drawer_open">Apri Navigation Drawer</string>
+    <string name="drawer_close">Chiudi Navigation drawer</string>
+    <string name="network_error">Errore di Rete</string>
+    <string name="no_network_connection">Nessuna Connessione di Rete.</string>
     <string name="placeholder_username">Username</string>
     <string name="placeholder_password">Password</string>
     <string name="button_login">Login</string>
     <string name="button_login_to_facebook">Login to Facebook</string>
     <string name="button_login_to_twitter">Login to Twitter</string>
     <string name="ok">OK</string>
-    <string name="no_results_found">No Results Found</string>
+    <string name="no_results_found">Nessun Risultato</string>
 
     <!-- Acritivy Main -->
     <string name="button_register">REGISTRATI</string>
@@ -82,8 +82,8 @@
     <string name="label_surname">Cognome:</string>
 
     <!-- Activity Search -->
-    <string name="hint">Search...</string>
-    <string name="app1_descr">First most searched app</string>
+    <string name="hint">Cerca...</string>
+    <string name="app1_descr">L'applicazione più Cercata</string>
     <string name="apart_name">Favorito</string>
 
 	<!-- Activity apartment -->
@@ -115,8 +115,8 @@
     <string name="img_descr2">apartment_pic</string>
 
     <!-- Insert Operations -->
-    <string name="insert_text">Insert Text</string>
-    <string name="insert_dimension">Insert Dimensions</string>
+    <string name="insert_text">Inserire Testo</string>
+    <string name="insert_dimension">Inserire Dimensioni</string>
     <!-- Review Value -->
     <string name="title_activity_recensione">Visualizza recensione</string>
     <string name="apartment_address">Via Crispi 8</string>
@@ -172,5 +172,41 @@
         \nIn ogni momento potrà esercitare i Suoi diritti nei confronti del titolare del trattamento, ai sensi dell\'art.7 del D.Lgs.196/2003.\n\n
     </string>
     <string name="title_activity_review">ReviewActivity</string>
+    <string name="feedback_title">Feedback</string>
+    <string name="review_title">Recensione</string>
+    <string name="show_review_title">Mostra Recensioni</string>
+    <string name="nessun_risultato">Nessun Risultato</string>
+    <string name="lascia_recensione">Lascia Recensione</string>
+    <string name="user_feedback_hint">Feedback Utente</string>
+    <string name="insert_address_hint">Inserisci l\'indirizzo</string>
+    <string name="distance">Distanza:</string>
+    <string name="search_address">RICERCA INDIRIZZO</string>
+    <string name="fragment_room_desc">Raccontaci qualcosa di più sull\'appartamento...</string>
+    <string name="max_guests">N.o Massimo Ospiti</string>
+    <string name="room_number">Stanze</string>
+    <string name="bed">Letti</string>
+    <string name="wc_number">Bagni</string>
+    <string name="less">-</string>
+    <string name="plus">+</string>
+    <string name="insert_address">Inserire Indirizzo</string>
+    <string name="welcome_home">Welcome Home</string>
+    <string name="medium_text_placeholder">Medium Text</string>
+    <string name="small_text_placeholder">Small Text</string>
+    <string name="send">Invia</string>
+    <string name="insert_apartment">Inserisci Appartamento</string>
+    <string name="insert_photo">Inserire Foto</string>
+    <string name="title">Titolo</string>
+    <string name="title_description_fragment3">Inserisci un titolo descrittivo della tua recensione</string>
+    <string name="description">Descrizione</string>
+    <string name="description_hint_fragment3">Scrivi un commento riguardante l\'appartamento</string>
+    <string name="gps_search">RICERCA GPS</string>
+    <string name="add_edit">Aggiungi/Modifica</string>
+    <string name="fragment_brief_description">Inserisci una breve Descrizione</string>
+    <string name="vote_furniture">Vota gli elettrodomestici</string>
+    <string name="vote_thermic_capacity">Vote Capacità Termica</string>
+    <string name="next">Prossimo</string>
+    <string name="vote_landlord_honesty">Vota l\'onestà del padrone di casa</string>
+    <string name="vote_house_security">Vote Sicurezza Casa</string>
+    <string name="zero_integer">0</string>
 
 </resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="feedback_title">Feedback</string>
+    <string name="review_title">Review</string>
+    <string name="show_review_title">Show Review</string>
+    <string name="nessun_risultat">Nessun Risultato</string>
+    <string name="lascia_recensione">Lascia Recensione</string>
+    <string name="user_feedback_hint">Feedback Utente</string>
+    <string name="insert_address_hint">Inserisci l\'indirizzo</string>
+    <string name="distance">Distanza:</string>
+    <string name="search_address">RICERCA INDIRIZZO</string>
+    <string name="fragment_room_desc">Raccontaci qualcosa di più sull\'appartamento...</string>
+    <string name="max_guests">N.o Massimo Ospiti</string>
+    <string name="room_number">Numero di Stanze</string>
+    <string name="wc_number">Bagnir</string>
+    <string name="less">-</string>
+    <string name="plus">+</string>
+    <string name="insert_address">Inserire Indirizzo</string>
+    <string name="welcome_home">Welcome Home</string>
+    <string name="medium_text_placeholder">Medium Text</string>
+    <string name="small_text_placeholder">Small Text</string>
+    <string name="send">Invia</string>
+    <string name="insert_apartment">Inserisci Appartamento</string>
+    <string name="insert_photo">Inserire Foto</string>
+    <string name="title">Titolo</string>
+    <string name="title_description_fragment3">Inserisci un titolo descrittivo della tua recensione</string>
+    <string name="description">Descrizione</string>
+    <string name="description_hint_fragment3">Scrivi un commento riguardante l\'appartamento</string>
+    <string name="gps_search">RICERCA GPS</string>
+    <string name="add_edit">Aggiungi/Modifica</string>
+    <string name="vote_furniture">Vota gli elettrodomestici</string>
+    <string name="vote_thermic_capacity">Vote Capacità Termica</string>
+    <string name="next">Prossimo</string>
+    <string name="vote_landlord_honesty">Vota l\'onestà del padrone di casa</string>
+    <string name="vote_house_security">Vote Sicurezza Casa</string>
+    <string name="zero_integer">0</string>
+</resources>

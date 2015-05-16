@@ -24,7 +24,7 @@
         android:layout_height="338dp"
         android:layout_marginTop="150dp"
         android:id="@+id/welcome"
-        android:text="Welcome Home"
+        android:text="@string/welcome_home"
         android:layout_gravity="center_horizontal|top"
         android:textStyle="bold"
         android:textColor="@color/White"

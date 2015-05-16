@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
-                android:text="Inserisci Appartamento"
+                android:text="@string/insert_apartment"
                 android:layout_centerHorizontal="true"
                 android:textColor="@color/ColorPrimary"
                 android:layout_below="@+id/logo"

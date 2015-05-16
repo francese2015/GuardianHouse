@@ -40,7 +40,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="Insert Text"
+                    android:text="@string/insert_text"
                     android:textColor="@color/bianco"
                     android:textSize="16sp"
                     android:textStyle="bold" />
@@ -50,7 +50,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="Insert Text"
+                    android:text="@string/insert_text"
                     android:textColor="@color/bianco"
                     android:textSize="14sp" />
 
@@ -70,7 +70,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
-                            android:text="Insert Text"
+                            android:text="@string/insert_text"
                             android:textColor="@color/bianco"
                             android:textSize="14sp" />
                     </LinearLayout>
