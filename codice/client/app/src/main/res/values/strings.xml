@@ -83,7 +83,7 @@
 
     <!-- Activity Search -->
     <string name="hint">Cerca...</string>
-    <string name="app1_descr">L'applicazione più Cercata</string>
+    <string name="app1_descr">Applicazione più Cercata</string>
     <string name="apart_name">Favorito</string>
 
 	<!-- Activity apartment -->
