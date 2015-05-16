@@ -13,21 +13,55 @@
         android:gravity="center"
         >
 
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/app_logo_big"
+            android:layout_gravity="center_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:text="Email"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/ColorPrimary"
+            android:textSize="20dp"
+            />
+
         <EditText
             android:id="@+id/editText1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/title"
             android:hint="@string/form_email"
+            android:layout_marginTop="10dp"
             android:inputType="textEmailAddress" >
         </EditText>
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editText1"
+            android:layout_marginTop="10dp"
+            android:text="Password"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/ColorPrimary"
+            android:textSize="20dp"
+            />
 
         <EditText
             android:id="@+id/editText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editText1"
+            android:layout_below="@+id/title2"
             android:hint="@string/form_password"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:inputType="textPassword" />
 
         <Button
