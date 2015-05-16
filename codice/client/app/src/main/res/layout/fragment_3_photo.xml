@@ -113,7 +113,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/dimension_value"
+                        android:id="@+id/nameApt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/dimension_label"
