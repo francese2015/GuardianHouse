@@ -5,6 +5,9 @@ import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -87,7 +90,7 @@ public class SearchResultsFragment extends Fragment {
                     for (int i = 0; i < apartmentArray.length(); i++) {
                         JSONObject singleApartment = apartmentArray.getJSONObject(i);
                         Apartment apartment = new Apartment();
-                        apartment.setDescription(singleApartment.getJSONObject("details").getString("name"));
+                        apartment.setName(singleApartment.getJSONObject("details").getString("name"));
                         apartmentList.add(apartment);
                     }
                 } catch (JSONException e) {
@@ -126,5 +129,26 @@ public class SearchResultsFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_search_results, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                // Do Fragment menu item stuff here
+                return true;
+            default:
+                break;
+        }
+        return false;
+    }
 }
