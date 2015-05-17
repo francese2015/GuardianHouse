@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.List;
@@ -51,9 +52,11 @@ public class ApartmentListAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.list_item_apt, null);
 
         TextView aptName = (TextView) convertView.findViewById(R.id.nameApt);
+        RatingBar rating = (RatingBar) convertView.findViewById(R.id.ratingBar);
 
         Apartment apt = aptItems.get(position);
         aptName.setText(apt.getName());
+        rating.setRating(apt.getRating());
 
         return convertView;
     }

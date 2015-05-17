@@ -24,6 +24,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -86,11 +87,16 @@ public class SearchResultsFragment extends Fragment {
             public void onResponse(JSONObject response) {
                 hidePDialog();
                 try {
-                    JSONArray apartmentArray = response.getJSONArray("result");
+                    JSONArray apartmentArray = response.getJSONArray("apartments");
                     for (int i = 0; i < apartmentArray.length(); i++) {
                         JSONObject singleApartment = apartmentArray.getJSONObject(i);
                         Apartment apartment = new Apartment();
+                        //ottengo il nome appartamento
                         apartment.setName(singleApartment.getJSONObject("details").getString("name"));
+                        //ottengo il rating
+                        String stringRating = singleApartment.getString("average_rating");
+                        apartment.setRating(Float.parseFloat(stringRating));
+
                         apartmentList.add(apartment);
                     }
                 } catch (JSONException e) {
