@@ -49,19 +49,19 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
         session = new SessionManager(getApplicationContext());
 
         // codice per riempire il navigation drawer
-        this.account = new MaterialAccount(this.getResources(), "Guardian House", "Il tuo angelo custode!", R.drawable.app_logo_big, R.drawable.bg);
+        this.account = new MaterialAccount(this.getResources(), "Guardian House", "Il tuo angelo custode!", R.drawable.app_logo_big, R.drawable.bg2);
         addAccount(this.account);
 
-        home = newSection("Home", new HomeFragment());
-        search = newSection("Ricerca", new SearchFragment());
-        apartmentEntry = newSection("Inserisci appartamento", new ApartmentEntryFragment());
-        profile = newSection("Profilo", new ProfileFragment());
-        register = newSection("Registrazione", new RegisterFragment());
-        login = newSection("Login", new LoginFragment());
+        home = newSection("Home", R.drawable.ic_home, new HomeFragment());
+        search = newSection("Ricerca", R.drawable.ic_magnify, new SearchFragment());
+        apartmentEntry = newSection("Inserisci appartamento", R.drawable.ic_plus, new ApartmentEntryFragment());
+        profile = newSection("Profilo", R.drawable.ic_account, new ProfileFragment());
+        register = newSection("Registrazione", R.drawable.ic_account_plus, new RegisterFragment());
+        login = newSection("Login", R.drawable.ic_login, new LoginFragment());
         apartment = newSection("Appartamento", new ApartmentFragment());
         review = newSection("Recensione", new ReviewFragment());
         //mapTest = newSection("Google Maps Test", new MapTestFragment());
-        logout = newSection("Logout", new MaterialSectionListener() {
+        logout = newSection("Logout", R.drawable.ic_logout, new MaterialSectionListener() {
             @Override
             public void onClick(MaterialSection section) {
                 Toast.makeText(NavigationDrawer.this, "Logout effettuato.", Toast.LENGTH_SHORT).show();
