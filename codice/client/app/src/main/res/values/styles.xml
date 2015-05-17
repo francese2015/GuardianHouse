@@ -20,7 +20,7 @@
         <item name="android:buttonStyle">@style/BlueButton</item>
     </style>
 
-    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
         <item name="android:background" tools:ignore="NewApi">@color/ColorPrimary</item>
         <item name="background">@color/ColorPrimary</item>
         <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
