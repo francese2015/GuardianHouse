@@ -24,7 +24,7 @@
         android:layout_alignBottom="@+id/imgViewPhoto">
 
         <TextView
-            android:id="@+id/insertPhoto"
+            android:id="@+id/nameApt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"

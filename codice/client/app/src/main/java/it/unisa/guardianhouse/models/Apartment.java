@@ -3,7 +3,7 @@ package it.unisa.guardianhouse.models;
 public class Apartment {
 
     // dettagli
-    private String description;
+    private String name;
 
     // indirizzo
     private String streetNumber;    // numero via (es. 6)
@@ -22,12 +22,12 @@ public class Apartment {
 
     }
 
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getStreetNumber() {

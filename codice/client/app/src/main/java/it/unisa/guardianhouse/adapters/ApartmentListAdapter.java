@@ -50,10 +50,10 @@ public class ApartmentListAdapter extends BaseAdapter {
         if (convertView == null)
             convertView = inflater.inflate(R.layout.list_item_apt, null);
 
-        TextView description = (TextView) convertView.findViewById(R.id.nameApt);
+        TextView aptName = (TextView) convertView.findViewById(R.id.nameApt);
 
         Apartment apt = aptItems.get(position);
-        description.setText(apt.getDescription());
+        aptName.setText(apt.getName());
 
         return convertView;
     }
