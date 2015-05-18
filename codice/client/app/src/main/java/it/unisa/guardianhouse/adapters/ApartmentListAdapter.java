@@ -34,7 +34,7 @@ public class ApartmentListAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
+    public Apartment getItem(int position) {
         return aptItems.get(position);
     }
 

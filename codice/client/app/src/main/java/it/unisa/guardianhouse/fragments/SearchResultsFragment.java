@@ -1,17 +1,18 @@
 package it.unisa.guardianhouse.fragments;
 
 
+import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -24,22 +25,19 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
+import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.adapters.ApartmentListAdapter;
-import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.config.Config;
 import it.unisa.guardianhouse.models.Apartment;
-import it.unisa.guardianhouse.utils.Utils;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class SearchResultsFragment extends Fragment {
 
     private static String TAG = SearchResultsFragment.class.getSimpleName();
@@ -47,6 +45,7 @@ public class SearchResultsFragment extends Fragment {
     private String url;
     private List<Apartment> apartmentList = new ArrayList<Apartment>();
     private ListView listView;
+    private String aptId;
     ApartmentListAdapter adapter;
 
     public SearchResultsFragment() {
@@ -62,6 +61,19 @@ public class SearchResultsFragment extends Fragment {
         listView = (ListView) view.findViewById(R.id.listView1);
         adapter = new ApartmentListAdapter(getActivity(), apartmentList);
         listView.setAdapter(adapter);
+
+        // listening to single list item on click
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> adapter, View view,
+                                    int position, long id) {
+                Apartment apt = (Apartment) adapter.getItemAtPosition(position);
+                Bundle b = new Bundle();
+                b.putString("aptId", apt.getId());
+                ApartmentFragment aptFragment = new ApartmentFragment();
+                aptFragment.setArguments(b);
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(aptFragment, "Scheda appartamento");
+            }
+        });
 
         Bundle b = getArguments();
         double latitude = b.getDouble("latitude");
@@ -102,6 +114,7 @@ public class SearchResultsFragment extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
                 adapter.notifyDataSetChanged();
             }
         }, new Response.ErrorListener() {
@@ -156,5 +169,13 @@ public class SearchResultsFragment extends Fragment {
                 break;
         }
         return false;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        apartmentList.clear();
+        adapter.notifyDataSetChanged();
     }
 }

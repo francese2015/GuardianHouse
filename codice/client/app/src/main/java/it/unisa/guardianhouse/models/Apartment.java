@@ -2,6 +2,9 @@ package it.unisa.guardianhouse.models;
 
 public class Apartment {
 
+    // id
+    private String aptId;
+
     // dettagli
     private String name;
     private Float rating;
@@ -21,6 +24,14 @@ public class Apartment {
 
     public Apartment() {
 
+    }
+
+    public String getId() {
+        return aptId;
+    }
+
+    public void setId() {
+        this.aptId = aptId;
     }
 
     public String getName() {

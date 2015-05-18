@@ -110,11 +110,11 @@
                 android:layout_below="@id/divider"
                 android:layout_height="300dp" >
 
-               <fragment
+               <!--<fragment
                     android:id="@+id/googleMap"
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
-                    class="com.google.android.gms.maps.SupportMapFragment" />
+                    class="com.google.android.gms.maps.SupportMapFragment" />-->
 
                 <!--<ImageView
                     android:id="@+id/imgViewMap"
