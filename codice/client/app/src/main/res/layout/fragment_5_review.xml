@@ -15,8 +15,7 @@
             android:id="@+id/review_header"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_margin="16dp
-            "
+            android:layout_margin="16dp"
             android:gravity="center"
             android:adjustViewBounds="true"
             android:cropToPadding="true"
