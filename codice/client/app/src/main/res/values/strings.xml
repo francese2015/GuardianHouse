@@ -144,6 +144,8 @@
     <string name="insert_apartment_spot">Inserisci Posti Auto</string>
     <string name="apartment_durata_contratto">Durata Contratto</string>
     <string name="insert_durata_contratto">Inserisci Durata</string>
+    <string name="apartment_status_detail">Inserisci Condizioni</string>
+    <string name="insert_status_detail">Nuovo, ristrutturato...</string>
 
     <!-- titles -->
 

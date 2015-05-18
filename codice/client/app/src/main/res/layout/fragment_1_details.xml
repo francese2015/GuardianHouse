@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
     <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/scrollView" >
@@ -31,6 +29,7 @@
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:layout_marginTop="10dp"
                 android:text="@string/insert_apartment"
                 android:layout_centerHorizontal="true"
@@ -146,18 +145,39 @@
                 android:inputType="text" >
             </EditText>
 
+            <TextView
+                android:id="@+id/name_stanze_libere"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/durata"
+                android:layout_marginTop="20dp"
+                android:textColor="#2196F3"
+                android:textSize="18dp"
+                android:text="@string/apartment_status_detail"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/stanze_libere"
+                android:layout_below="@id/name_stanze_libere"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/insert_status_detail"
+                android:inputType="text" >
+            </EditText>
+
             <Button
                 android:id="@+id/button_avanti"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/durata"
+                android:layout_below="@+id/stanze_libere"
                 android:layout_marginTop="30dp"
                 android:text="@string/button_goto_scheda2" />
+
+
 
         </RelativeLayout>
 
 
     </ScrollView>
 
-
-</LinearLayout>
