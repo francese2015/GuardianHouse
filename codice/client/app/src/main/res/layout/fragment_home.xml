@@ -27,7 +27,7 @@
         android:text="@string/welcome_home"
         android:layout_gravity="center_horizontal|top"
         android:textStyle="bold"
-        android:textColor="@color/White"
+        android:textColor="@color/ColorPrimary"
         android:textSize="30dp"
         android:editable="false" />
 
