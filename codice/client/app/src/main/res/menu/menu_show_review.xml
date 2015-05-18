@@ -1,8 +1,0 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item
-    android:id="@+id/menuNewReview"
-    android:icon="@drawable/ic_menu_new_review"
-    android:orderInCategory="100"
-    android:showAsAction="always"
-    android:title="@string/show_review_title" />
-</menu>
