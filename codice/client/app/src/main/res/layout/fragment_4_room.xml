@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,15 +7,17 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/activity_vertical_margin">
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            >
 
             <TextView
-                android:id="@+id/imgViewPhoto"
+                android:id="@+id/room_header"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:gravity="center"
@@ -29,19 +31,19 @@
                 android:layout_alignParentTop="true" />
 
             <LinearLayout
-                android:id="@+id/apartment_data"
+                android:id="@+id/room_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/imgViewPhoto"
+                android:layout_below="@+id/room_header"
                 android:divider="@drawable/divider"
                 android:orientation="vertical"
-                android:showDividers="middle"
+                android:showDividers="none"
                 android:weightSum="1">
 
             <!-- Number of Guests -->
 
                 <TextView
-                    android:id="@+id/dimension_label"
+                    android:id="@+id/guest_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -59,7 +61,7 @@
 
 
                     <Button
-                        android:id="@+id/button_delete_apartment"
+                        android:id="@+id/button_less"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -70,7 +72,7 @@
                         android:layout_column="0" />
 
                     <TextView
-                        android:id="@+id/insertPhoto"
+                        android:id="@+id/integer_guests"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
@@ -85,7 +87,7 @@
 
 
                     <Button
-                        android:id="@+id/button_delete_apartment"
+                        android:id="@+id/button_plus"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="40dp"
@@ -101,7 +103,7 @@
 
                 <!-- Room Numbers -->
                 <TextView
-                    android:id="@+id/dimension_label"
+                    android:id="@+id/room_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -119,7 +121,7 @@
 
 
                     <Button
-                        android:id="@+id/button_delete_apartment"
+                        android:id="@+id/button_less"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -130,7 +132,7 @@
                         android:layout_column="0" />
 
                     <TextView
-                        android:id="@+id/insertPhoto"
+                        android:id="@+id/integer_room"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
@@ -145,7 +147,67 @@
 
 
                     <Button
-                        android:id="@+id/button_delete_apartment"
+                        android:id="@+id/button_plus"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/plus"
+                        android:textSize="20sp"
+                        android:layout_row="0"
+                        android:layout_column="6" />
+
+
+                </GridLayout>
+            <!-- Free Roms -->
+
+                <TextView
+                    android:id="@+id/free_room_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#2196F3"
+                    android:textSize="20dp"
+                    android:text="@string/free_rooms_title"
+                    android:layout_gravity="center"
+                    android:textStyle="bold" />
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:gravity="center">
+
+
+                    <Button
+                        android:id="@+id/button_less"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="40dp"
+                        android:text="@string/less"
+                        android:textSize="20sp"
+                        android:layout_row="0"
+                        android:layout_column="0" />
+
+                    <TextView
+                        android:id="@+id/integer_free_room"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/zero_integer"
+                        android:textColor="@color/ColorPrimary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_row="0"
+                        android:layout_column="1" />
+
+
+                    <Button
+                        android:id="@+id/button_plus"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="40dp"
@@ -162,7 +224,7 @@
             <!-- Bed -->
 
                 <TextView
-                    android:id="@+id/dimension_label"
+                    android:id="@+id/bed_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -180,7 +242,7 @@
 
 
                     <Button
-                        android:id="@+id/button_delete_apartment"
+                        android:id="@+id/button_less"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -191,7 +253,7 @@
                         android:layout_column="0" />
 
                     <TextView
-                        android:id="@+id/insertPhoto"
+                        android:id="@+id/integer_bed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
@@ -206,7 +268,7 @@
 
 
                     <Button
-                        android:id="@+id/button_delete_apartment"
+                        android:id="@+id/button_plus"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="40dp"
@@ -223,7 +285,7 @@
                 <!-- WC -->
 
                 <TextView
-                    android:id="@+id/dimension_label"
+                    android:id="@+id/wc_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -241,7 +303,7 @@
 
 
                     <Button
-                        android:id="@+id/button_delete_apartment"
+                        android:id="@+id/button_less"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -252,7 +314,7 @@
                         android:layout_column="0" />
 
                     <TextView
-                        android:id="@+id/insertPhoto"
+                        android:id="@+id/integer_wc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
@@ -267,7 +329,7 @@
 
 
                     <Button
-                        android:id="@+id/button_delete_apartment"
+                        android:id="@+id/button_plus"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="40dp"
@@ -292,10 +354,10 @@
                 android:background="#dfdfdf" />
 
             <Button
-                android:id="@+id/button_room"
+                android:id="@+id/button_next"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/separator_line_2"
+                android:layout_below="@+id/room_layout"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="28dp"
 
@@ -305,4 +367,4 @@
 
     </ScrollView>
 
-</RelativeLayout>
+</FrameLayout>

@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -95,13 +95,13 @@
                 <RelativeLayout
                     android:id="@+id/relative_dimension"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="150dp"
                     android:layout_gravity="center_vertical"
                     android:background="@drawable/layout_selector"
                     android:clickable="true">
 
                     <TextView
-                        android:id="@+id/dimension_label"
+                        android:id="@+id/picture_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
@@ -112,18 +112,20 @@
                         android:text="@string/title"
                         android:textStyle="bold" />
 
+
                     <EditText
                         android:id="@+id/nameApt"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/dimension_label"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/title_description_fragment3"
-                        android:inputType="text"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/picture_title"
+                        android:background="@drawable/textbox_style"
+                        android:layout_margin="16dp"
+                        android:hint="@string/title_description_fragment3"
                         android:textColor="@color/DarkGray"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:maxLines="7"
+                        android:ems="10"
                         />
                 </RelativeLayout>
 
@@ -138,7 +140,7 @@
                     android:clickable="true">
 
                     <TextView
-                        android:id="@+id/dimension_label"
+                        android:id="@+id/comment_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="16dp"
@@ -151,15 +153,15 @@
 
 
                     <EditText
-                        android:id="@+id/txtReview"
+                        android:id="@+id/txt_eview"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_margin="16dp"
                         android:layout_weight="1"
-                        android:layout_below="@+id/dimension_label"
-                        android:background="@drawable/textbox_bg_review"
+                        android:layout_below="@+id/comment_title"
+                        android:background="@drawable/textbox_style"
                         android:ems="10"
-                        android:gravity="top|left"
+                        android:gravity="center"
                         android:hint="@string/description_hint_fragment3"
                         android:maxLines="7"
                         android:textSize="18sp" >
@@ -192,4 +194,4 @@
 
     </ScrollView>
 
-</RelativeLayout>
+</FrameLayout>

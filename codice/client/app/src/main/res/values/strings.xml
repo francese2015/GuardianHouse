@@ -208,5 +208,6 @@
     <string name="vote_landlord_honesty">Vota l\'onestà del padrone di casa</string>
     <string name="vote_house_security">Vota Sicurezza Casa</string>
     <string name="zero_integer">0</string>
+    <string name="free_rooms_title">Stanze Libere</string>
 
 </resources>

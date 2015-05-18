@@ -475,7 +475,7 @@
                 android:background="#dfdfdf" />
 
             <Button
-                android:id="@+id/button_delete_apartment"
+                android:id="@+id/button_less"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/separator_line_2"

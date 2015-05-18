@@ -2,16 +2,10 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
 
-<!--    &lt;!&ndash; Base application theme. &ndash;&gt;
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        &lt;!&ndash; Customize your theme here. &ndash;&gt;
-        <item name="colorPrimary">@color/ColorPrimary</item>
-        <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
-        <item name="android:buttonStyle">@style/BlueButton</item>
-    </style>
--->
+
 
     <style name="MyNavigationDrawerTheme"  parent="MaterialNavigationDrawerTheme.Light.DarkActionBar">
+        <item name="android:windowBackground">@color/bianco</item>
         <item name="colorPrimary">@color/ColorPrimary</item>
         <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
         <item name="singleAccount">true</item>

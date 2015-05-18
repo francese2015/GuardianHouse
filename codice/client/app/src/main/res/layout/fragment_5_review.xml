@@ -3,4 +3,21 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <EditText
+        android:id="@+id/rLastName"
+        android:layout_gravity="center"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/textbox_style"
+        android:hint="@string/account_name"
+        android:padding="5dip"
+        android:singleLine="true"
+        android:textColor="#999999"
+        android:textSize="14dip"
+        android:drawableLeft="@drawable/ic_about" />
+
 </LinearLayout>

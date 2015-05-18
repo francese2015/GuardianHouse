@@ -36,7 +36,7 @@ public class ApartmentFragment extends Fragment {
         RelativeLayout thermicRelative = (RelativeLayout) view.findViewById(R.id.relative_thermic);
         RelativeLayout servicesRelative = (RelativeLayout) view.findViewById(R.id.relative_services);
         RelativeLayout testRelative = (RelativeLayout) view.findViewById(R.id.relative_test);
-        Button btnDeleteApartment = (Button) view.findViewById(R.id.button_delete_apartment);
+        Button btnDeleteApartment = (Button) view.findViewById(R.id.button_less);
 
         /*
 
