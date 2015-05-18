@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Globali -->
+    <string name="app_name">Guardian House</string>
+    <string name="action_settings">Impostazioni</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="drawer_open">Apri Navigation Drawer</string>
+    <string name="drawer_close">Chiudi Navigation drawer</string>
+    <string name="network_error">Errore di Rete</string>
+    <string name="no_network_connection">Nessuna Connessione di Rete.</string>
+    <string name="placeholder_username">Username</string>
+    <string name="placeholder_password">Password</string>
+    <string name="button_login">Login</string>
+    <string name="button_login_to_facebook">Login to Facebook</string>
+    <string name="button_login_to_twitter">Login to Twitter</string>
+    <string name="ok">OK</string>
+    <string name="no_results_found">Nessun Risultato</string>
+
+    <!-- Acritivy Main -->
+    <string name="button_register">REGISTRATI</string>
+    <string name="button_login_facebook">ACCEDI CON FACEBOOK</string>
+    <string name="text_copyright">Registrandoti, accetti i Termini del Servizio, Informativa sulla Privacy etc.</string>
+
+    <!-- Activity Register -->
+    <string name="title_activity_register">Registrazione</string>
+    <string name="form_email">Indirizzo email</string>
+    <string name="form_username">Username</string>
+    <string name="form_password">Password</string>
+    <string name="button_register1">REGISTRATI</string>
+    <string name="button_login1">Sei gia membro? Accedi!</string>
+
+    <!-- Activity Login -->
+    <string name="title_activity_login">Accedi con Email</string>
+    <string name="text_forgot_password">Hai dimenticato la password?</string>
+    <string name="form_email2">Indirizzo email</string>
+    <string name="form_password2">Password</string>
+    <string name="button_login2">ACCEDI</string>
+    <string name="button_register2">Non sei membro? Registrati!</string>
+
+    <!-- Activity Home -->
+    <string name="title_activity_home">Home</string>
+    <string name="button_account">ACCOUNT</string>
+    <string name="button_get_users">VISUALIZZA UTENTI</string>
+    <string name="button_review">VISUALIZZA RECENSIONE</string>
+    <string name="button_logout">LOGOUT</string>
+    <string name="button_drawer">DRAWER</string>
+    <string name="button_apartment">SCHEDA APPARTAMENTO</string>
+
+    <!-- Activity Account -->
+    <string name="title_activity_account">Account</string>
+    <string name="img_descr1">user_pic</string>
+    <string name="account_name_label">Nome</string>
+    <string name="account_surname_label">Cognome</string>
+    <string name="account_email_label">Indirizzo email</string>
+    <string name="account_username_label">Username</string>
+    <string name="account_password_label">Password</string>
+    <string name="account_birthdate_label">Data di nascita</string>
+    <string name="account_birthplace_label">Luogo di nascita</string>
+    <string name="account_address_label">Indirizzo</string>
+    <string name="account_phone_label">Telefono</string>
+    <string name="account_accountType_label">Account</string>
+    <string name="account_name">Mario</string>
+    <string name="account_surname">Rossi</string>
+    <string name="account_email">m.rossi@email.it</string>
+    <string name="account_username">m.rossi</string>
+    <string name="account_password">**********</string>
+    <string name="account_birthdate">06/03/1990</string>
+    <string name="account_birthplace">Roma</string>
+    <string name="account_address">Via Garibaldi 12</string>
+    <string name="account_phone">3387468765</string>
+    <string name="account_accountType">admin</string>
+    <string name="edit_icon">edit_icon</string>
+    <string name="button_delete_account">ELIMINA ACCOUNT</string>
+    <string name="button_save_apartment">Salva Modifiche</string>
+    <string name="title_activity_apartment">Scheda Appartamento</string>
+
+    <!-- Activity Get users -->
+    <string name="title_activity_get_users">Visualizza utenti</string>
+    <string name="label_username">Username:</string>
+    <string name="label_name">Nome:</string>
+    <string name="label_surname">Cognome:</string>
+
+    <!-- Activity Search -->
+    <string name="hint">Cerca...</string>
+    <string name="app1_descr">Applicazione più Cercata</string>
+    <string name="apart_name">Favorito</string>
+
+	<!-- Activity apartment -->
+
+    <!-- Apartment Label -->
+
+    <string name="title_activity_simple_list_view">SimpleListViewActivity</string>
+    <string name="apartment_dimension_label">Dimensioni</string>
+    <string name="apartment_status_label">Status</string>
+    <string name="apartment_price_label">Range di Prezzo</string>
+    <string name="apartment_text_label">Descrizione</string>
+    <string name="apartment_position_label">Collegamenti</string>
+    <string name="apartment_poi_label"> Vicinanza a Punti d Interesse </string>
+    <string name="apartment_thermic_label">Capacità Termica</string>
+    <string name="apartment_services_label">Servizi Standard</string>
+    <string name="apartment_letizia_label">Letizia Manzo</string>
+
+    <!-- Apartment Value -->
+    <string name="apartment_dimension">120 MQ</string>
+    <string name="apartment_status">Ristrutturata</string>
+    <string name="apartment_price">200€/mese</string>
+    <string name="apartment_text">Casa Vecchia, cade a pezzi, fredda in inverno, calda in estate, PUZZA la sconsiglio a tutti.</string>
+    <string name="apartment_position">Fermata Bus a 10 km</string>
+    <string name="apartment_poi">Pescheria "Nonno Cecchino" 2m </string>
+    <string name="apartment_thermic">Sempre Fredda</string>
+    <string name="apartment_services">Nessun Servizio</string>
+    <string name="apartment_letizia">PUZZA</string>
+    <string name="button_delete_apartment">Elimina Scheda Appartamento</string>
+    <string name="img_descr2">apartment_pic</string>
+
+    <!-- Insert Operations -->
+    <string name="insert_text">Inserire Testo</string>
+    <string name="insert_dimension">Inserire Dimensioni</string>
+    <!-- Review Value -->
+    <string name="title_activity_recensione">Visualizza recensione</string>
+    <string name="apartment_address">Via Crispi 8</string>
+    <string name="apartment_city">Campobasso</string>
+    <string name="apartment_number">8</string>
+    <string name="apartment_forniture">Arredamento</string>
+    <string name="apartment_thermic_capacity">Capacità Termica</string>
+    <string name="apartment_honesty">Onestà Padrone di Casa</string>
+    <string name="apartment_security">Sicurezza Appartamento</string>
+    <string name="apartment_buses">Collegamento con Bus</string>
+    <string name="apartment_neighbours">Vicini</string>
+    <string name="apartment_distanceCC">Distanza Centro Città</string>
+    <string name="apartment_tools">Qualità Elettrodomestici</string>
+
+    <!-- Activity Insert Apartment Scheda 1 -->
+
+    <string name="button_goto_scheda2">Avanti</string>
+    <string name="apartment_name_label">Nome</string>
+    <string name="insert_apartment_name">Inserisci nome</string>
+    <string name="apartment_desc_label">Descrizione</string>
+    <string name="insert_apartment_description">Inserisci descrizione</string>
+    <string name="apartment_mq_label">Metri Quadri</string>
+    <string name="insert_apartment_mq">Inserisci metri quadri</string>
+    <string name="apartment_spot_label">Posto Auto</string>
+    <string name="insert_apartment_spot">Inserisci Posti Auto</string>
+    <string name="apartment_durata_contratto">Durata Contratto</string>
+    <string name="insert_durata_contratto">Inserisci Durata</string>
+
+    <!-- titles -->
+
+    <string name="hello_blank_fragment">Da riempire</string>
+    <string name="title_activity_map">Mappa appartamenti</string>
+    <string name="title_activity_get_apartments">Risultati ricerca</string>
+    <string name="title_activity_swipe_refresh">SwipeRefreshActivity</string>
+
+    <!-- Normativa Privacy -->
+    <string name="privacy_agreement">
+        CONSENSO AI SENSI DEL CODICE IN MATERIA DI PROTEZIONE DEI DATI PERSONALI INFORMATIVA AI SENSI DELL\'ART.13 DEL T.U. PRIVACY (D.LGS 196/2003)
+        \nAi sensi del D.Lgs. n. 196 del 30 giugno 2003 (\"Codice in materia di protezione dei dati personali\"), il trattamento delle informazioni personali che La riguardano sarà improntato ai principi di correttezza, liceità e trasparenza e di tutela della Sua riservatezza e dei Suoi diritti.
+        \nAi sensi dell\'art. 13 del D.lgs. n.196/2003 ed in relazione ai dati personali dei quali entreremo in possesso, La informiamo di quanto segue:
+        \n1.FINALITA\' DEL TRATTAMENTO
+        \nIl trattamento dei dati da Lei forniti è ﬁnalizzato alla pubblicazione di Nome e Cognome all\'interno della scheda dedicata alla recensione da Lei inviata, inoltre si autorizza l\'invio di eventuali comunicazioni istituzionali relative ad iniziative di carattere informativo rappresentata da questa applicazione;
+        \n2.MODALITA\' DEL TRATTAMENTO
+        \nI dati verranno archiviati su supporti, informatici e/o telematici, nel rispetto della normativa vigente e con logiche strettamente correlate alle finalità;
+        \n
+        \n3. NATURA FACOLTATIVA DEL CONFERIMENTO DEI DATI E CONSEGUENZE DI UN EVENTUALE RIFIUTO DI RISPONDERE
+        \nIl conferimento dei dati è facoltativo, l\'eventuale riﬁuto di fornire tali dati non inficia l\'invio della segnalazione che sarà, in questo caso, anonima.
+        \n4. AMBITO DI COMUNICAZIONE E DIFFUSIONE
+        \nI dati personali potranno venire a conoscenza degli incaricati del trattamento. I dati personali non saranno comunicati ad altri soggetti, né saranno oggetto di diffusione.
+        \n5. ESTREMI IDENTIFICATIVI DEL TITOLARE, DEL RESPONSABILE E DEL RAPPRESENTANTE DEL TITOLARE NEL TERRITORIO DELLO STATO
+        \nil Titolare del trattamento è il team GuardianHouse Project. L\'nteressato può esercitare i diritti di cui all\'art. 7 del D. Lgs. n.196/2003 cui espressamente si rinvia.
+        \n6. DIRITTI DELL\'INTERESSATO
+        \nIn ogni momento potrà esercitare i Suoi diritti nei confronti del titolare del trattamento, ai sensi dell\'art.7 del D.Lgs.196/2003.\n\n
+    </string>
+    <string name="title_activity_review">ReviewActivity</string>
+    <string name="feedback_title">Feedback</string>
+    <string name="review_title">Recensione</string>
+    <string name="show_review_title">Mostra Recensioni</string>
+    <string name="no_results">Nessun Risultato</string>
+    <string name="give_review">Lascia Recensione</string>
+    <string name="user_feedback_hint">Feedback Utente</string>
+    <string name="insert_address_hint">Inserisci l\'indirizzo</string>
+    <string name="distance">Distanza:</string>
+    <string name="search_address">RICERCA INDIRIZZO</string>
+    <string name="fragment_room_desc">Raccontaci qualcosa di più sull\'appartamento...</string>
+    <string name="max_guests">N.o Massimo Ospiti</string>
+    <string name="room_number">Stanze</string>
+    <string name="bed">Letti</string>
+    <string name="wc_number">Bagni</string>
+    <string name="less">-</string>
+    <string name="plus">+</string>
+    <string name="insert_address">Inserire Indirizzo</string>
+    <string name="welcome_home">Welcome Home</string>
+    <string name="medium_text_placeholder">Testo Medio</string>
+    <string name="small_text_placeholder">Testo Piccolo</string>
+    <string name="send">Invia</string>
+    <string name="insert_apartment">Inserisci Appartamento</string>
+    <string name="insert_photo">Inserire Foto</string>
+    <string name="title">Titolo</string>
+    <string name="title_description_fragment3">Inserisci un titolo descrittivo della tua recensione</string>
+    <string name="description">Descrizione</string>
+    <string name="description_hint_fragment3">Scrivi un commento riguardante l\'appartamento</string>
+    <string name="gps_search">RICERCA GPS</string>
+    <string name="add_edit">Aggiungi/Modifica</string>
+    <string name="fragment_brief_description">Inserisci una breve Descrizione</string>
+    <string name="vote_furniture">Vota gli elettrodomestici</string>
+    <string name="vote_thermic_capacity">Vote Capacità Termica</string>
+    <string name="next">Prossimo</string>
+    <string name="vote_landlord_honesty">Vota l\'onestà del padrone di casa</string>
+    <string name="vote_house_security">Vota Sicurezza Casa</string>
+    <string name="zero_integer">0</string>
+    <string name="free_rooms_title">Stanze Libere</string>
+    <string name="button_save">Salva</string>
+    <string name="review_description_hint">Descrivi le tue percezioni riguardo l\'appartamento</string>
+    <string name="fragment_review_title">Titolo Recensione</string>
+    <string name="fragment_5_header">Prima di andare via, lascia un tuo commento sull\'appartamento...</string>
+
+</resources>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/MintCream">
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true" >
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/launcherImg"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:adjustViewBounds="true"
+                android:cropToPadding="true"
+                android:layout_marginLeft="150dp"
+                android:src="@drawable/ic_launcher" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical" >
+
+                <EditText
+                    android:id="@+id/txtUsername"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/textbox_username"
+                    android:ems="10"
+                    android:digits="abcdefghijklmnopqrstuvwxyz1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ_"
+                    android:hint="@string/placeholder_username"
+                    android:paddingLeft="60dp"
+                    android:inputType="textPersonName|text" >
+
+                    <requestFocus />
+                </EditText>
+
+                <EditText
+                    android:id="@+id/txtPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/textbox_password"
+                    android:ems="10"
+                    android:hint="@string/placeholder_password"
+                    android:inputType="textPassword"
+                    android:paddingLeft="60dp" />
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_login_large"
+                    android:text="@string/button_login"
+                    android:textColor="@color/White"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnFacebook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_facebook_large"
+                    android:textColor="@color/White"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="@string/button_login_to_facebook" />
+
+                <Button
+                    android:id="@+id/btnTwitter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_twitter_large"
+                    android:textColor="@color/White"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="@string/button_login_to_twitter" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/button1"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20sp"
+                    android:background="@null"
+                    android:text="@string/button_register2"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

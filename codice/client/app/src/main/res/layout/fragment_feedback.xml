@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/txtReview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/textbox_bg_review"
+            android:ems="10"
+            android:gravity="top|left"
+            android:hint="@string/user_feedback_hint"
+            android:maxLines="5"
+            android:textSize="18sp" >
+
+        </EditText>
+
+        <TextView
+            android:id="@+id/tvMaxCharCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="5dp"
+            android:text="@string/send"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="16sp" />
+
+        <RatingBar
+            android:id="@+id/ratingBar2"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:clickable="false"
+            android:indeterminate="false"
+            android:longClickable="false"
+            android:numStars="5"
+            android:rating="4" />
+
+    </LinearLayout>
+
+</LinearLayout>
