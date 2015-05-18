@@ -64,9 +64,9 @@ public class SearchResultsFragment extends Fragment {
 
         // listening to single list item on click
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> adapter, View view,
-                                    int position, long id) {
-                Apartment apt = (Apartment) adapter.getItemAtPosition(position);
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
+                Object obj = adapter.getItemAtPosition(position);
+                Apartment apt = (Apartment)obj;
                 Bundle b = new Bundle();
                 b.putString("aptId", apt.getId());
                 ApartmentFragment aptFragment = new ApartmentFragment();
@@ -104,6 +104,7 @@ public class SearchResultsFragment extends Fragment {
                         JSONObject singleApartment = apartmentArray.getJSONObject(i);
                         Apartment apartment = new Apartment();
                         //ottengo il nome appartamento
+                        apartment.setId(singleApartment.getJSONObject("_id").getString("$id"));
                         apartment.setName(singleApartment.getJSONObject("details").getString("name"));
                         //ottengo il rating
                         String stringRating = singleApartment.getString("average_rating");

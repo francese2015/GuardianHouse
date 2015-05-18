@@ -3,6 +3,7 @@ package it.unisa.guardianhouse.config;
 public class Config {
 
     public static String BASE_URL = "http://carlo.teammolise.rocks/api";
+    //public static String BASE_URL = "10.0.2.2/guardianhouse-webservices";
 
     public static String LOGIN_URL = BASE_URL + "/login";
 

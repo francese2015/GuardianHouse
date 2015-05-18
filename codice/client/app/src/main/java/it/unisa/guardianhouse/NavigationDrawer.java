@@ -53,7 +53,7 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
         addAccount(this.account);
 
         home = newSection("Home", R.drawable.ic_home, new HomeFragment());
-        search = newSection("Ricerca", R.drawable.ic_magnify, new SearchFragment());
+        search = newSection("Cerca appartamento", R.drawable.ic_magnify, new SearchFragment());
         apartmentEntry = newSection("Inserisci appartamento", R.drawable.ic_plus, new ApartmentEntryFragment());
         profile = newSection("Profilo", R.drawable.ic_account, new ProfileFragment());
         register = newSection("Registrazione", R.drawable.ic_account_plus, new RegisterFragment());
@@ -83,8 +83,8 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
             this.addSection(this.profile);
             this.addSection(this.logout);
         }
-        this.addBottomSection(this.apartment);
-        this.addBottomSection(this.review);
+        //this.addBottomSection(this.apartment);
+        //this.addBottomSection(this.review);
         //this.addBottomSection(this.mapTest);
 
         setBackPattern(MaterialNavigationDrawer.BACKPATTERN_BACK_TO_FIRST);

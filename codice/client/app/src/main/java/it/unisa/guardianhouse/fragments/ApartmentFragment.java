@@ -2,7 +2,9 @@ package it.unisa.guardianhouse.fragments;
 
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.media.Rating;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,13 +12,38 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
+import it.unisa.guardianhouse.config.Config;
+import it.unisa.guardianhouse.models.Apartment;
 
 
 public class ApartmentFragment extends Fragment {
 
+    private static String TAG = ApartmentFragment.class.getSimpleName();
+    private ProgressDialog pDialog;
+    private String url;
+    TextView nameApt;
+    String aptId;
+    RatingBar ratingBar;
 
     public ApartmentFragment() {
 
@@ -27,6 +54,14 @@ public class ApartmentFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_apartment, container, false);
 
+        Bundle b = getArguments();
+        aptId = b.getString("aptId");
+        url = Config.APARTMENTS_URL + "/" + aptId;
+
+        nameApt = (TextView) view.findViewById(R.id.name_apt);
+        ratingBar = (RatingBar) view.findViewById(R.id.rating_bar);
+
+        /*
         RelativeLayout dimensionRelative = (RelativeLayout) view.findViewById(R.id.relative_dimension);
         RelativeLayout statusRelative = (RelativeLayout) view.findViewById(R.id.relative_status);
         RelativeLayout priceRelative = (RelativeLayout) view.findViewById(R.id.relative_price);
@@ -37,8 +72,6 @@ public class ApartmentFragment extends Fragment {
         RelativeLayout servicesRelative = (RelativeLayout) view.findViewById(R.id.relative_services);
         RelativeLayout testRelative = (RelativeLayout) view.findViewById(R.id.relative_test);
         Button btnDeleteApartment = (Button) view.findViewById(R.id.button_less);
-
-        /*
 
         dimensionRelative.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -112,13 +145,21 @@ public class ApartmentFragment extends Fragment {
             }
         });
 
-        */
+
 
         btnDeleteApartment.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 showAlertDialog();
             }
         });
+
+        */
+
+        pDialog = new ProgressDialog(getActivity());
+        pDialog.setMessage("Ricerca in corso...");
+        pDialog.show();
+
+        getApartmentData();
 
         return view;
     }
@@ -183,6 +224,50 @@ public class ApartmentFragment extends Fragment {
 
         // show it
         alertDialog.show();
+
+    }
+
+    public void getApartmentData() {
+
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, url,
+                (String) null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                hidePDialog();
+                try {
+                    JSONObject singleApartment = response.getJSONObject("apartment");
+                    //ottengo il nome appartamento
+                    nameApt.setText(singleApartment.getJSONObject("details").getString("name"));
+                    //ottengo il rating
+                    String stringRating = singleApartment.getString("average_rating");
+                    ratingBar.setRating(Float.parseFloat(stringRating));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Error: " + error.getMessage());
+                hidePDialog();
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Content-Type", "application/x-www-form-urlencoded");
+                return headers;
+            }
+        };
+
+        AppController.getInstance().addToRequestQueue(jsonObjReq);
+    }
+
+    private void hidePDialog() {
+        if (pDialog != null) {
+            pDialog.dismiss();
+            pDialog = null;
+        }
     }
 
 }

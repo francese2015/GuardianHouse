@@ -30,7 +30,7 @@ public class Apartment {
         return aptId;
     }
 
-    public void setId() {
+    public void setId(String aptId) {
         this.aptId = aptId;
     }
 
