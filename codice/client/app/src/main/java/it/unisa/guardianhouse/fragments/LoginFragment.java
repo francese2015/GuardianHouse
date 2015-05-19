@@ -17,6 +17,8 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.gc.materialdesign.views.ButtonFlat;
+import com.gc.materialdesign.views.ButtonRectangle;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,8 +44,10 @@ public class LoginFragment extends Fragment {
     String apiKey;
     EditText inputEmail;
     EditText inputPassword;
-    Button btnLogin;
-    Button btnLinkToRegister;
+    //Button btnLogin;
+    ButtonRectangle btnLogin;
+    //Button btnLinkToRegister;
+    ButtonFlat btnLinkToRegister;
     ProgressDialog pDialog;
     SessionManager session;
     String email;
@@ -63,8 +67,8 @@ public class LoginFragment extends Fragment {
 
         inputEmail = (EditText) view.findViewById(R.id.editText1);
         inputPassword = (EditText) view.findViewById(R.id.editText2);
-        btnLogin = (Button) view.findViewById(R.id.button1);
-        btnLinkToRegister = (Button) view.findViewById(R.id.button2);
+        btnLogin = (ButtonRectangle) view.findViewById(R.id.button1);
+        btnLinkToRegister = (ButtonFlat) view.findViewById(R.id.button2);
 
         // Progress dialog
         pDialog = new ProgressDialog(getActivity());

@@ -1,5 +1,8 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="it.unisa.guardianhouse.fragments.LoginFragment">
 
@@ -64,6 +67,7 @@
             android:layout_marginTop="10dp"
             android:inputType="textPassword" />
 
+<!--
         <Button
             android:id="@+id/button1"
             android:layout_width="match_parent"
@@ -71,7 +75,19 @@
             android:layout_below="@+id/editText2"
             android:layout_marginTop="30dp"
             android:text="@string/button_login2" />
+-->
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText2"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:background="#1E88E5"
+            materialdesign:rippleSpeed="200"
+            android:text="@string/button_login2" />
 
+<!--
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
@@ -81,6 +97,17 @@
             android:background="@null"
             android:text="@string/button_register2"
             android:textColor="#000000" />
+-->
+        <com.gc.materialdesign.views.ButtonFlat
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button1"
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"
+            android:background="#1E88E5"
+            materialdesign:rippleSpeed="300"
+            android:text="@string/button_register2" />
 
     </RelativeLayout>
 
