@@ -43,12 +43,14 @@ public class RegisterFragment extends Fragment {
     private EditText inputUsername;
     private EditText inputEmail;
     private EditText inputPassword;
+    private EditText repeatPassword;
     private ProgressDialog pDialog;
     private SessionManager session;
     private SQLiteHandler db;
     String username;
     String email;
     String password;
+    String repeatpass;
     Map<String, String> params;
 
     public RegisterFragment() {
@@ -65,6 +67,7 @@ public class RegisterFragment extends Fragment {
         inputEmail = (EditText) view.findViewById(R.id.editText1);
         inputUsername = (EditText) view.findViewById(R.id.editText2);
         inputPassword = (EditText) view.findViewById(R.id.editText3);
+        repeatPassword = (EditText) view.findViewById(R.id.editText4);
         btnRegister = (Button) view.findViewById(R.id.button1);
         btnLinkToLogin = (Button) view.findViewById(R.id.button2);
 
@@ -80,20 +83,37 @@ public class RegisterFragment extends Fragment {
                 username = inputUsername.getText().toString();
                 email = inputEmail.getText().toString();
                 password = inputPassword.getText().toString();
+                repeatpass = repeatPassword.getText().toString();
 
-                if (!username.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
+                if (!username.isEmpty() && !email.isEmpty() && !password.isEmpty() && !repeatpass.isEmpty()) {
 
-                    params = new HashMap<String, String>();
-                    params.put("username", username);
-                    params.put("password", password);
-                    params.put("email", email);
-                    registerUser();
+
+
+                    if(repeatpass.equals(password)){
+
+                        params = new HashMap<String, String>();
+                        params.put("username", username);
+                        params.put("password", password);
+                        params.put("email", email);
+
+                        registerUser();
+
+                    } else {
+
+                        Toast.makeText(getActivity(),
+                                "Ripeti correttamente la password", Toast.LENGTH_LONG)
+                                .show();
+
+                    }
 
                 } else {
                     Toast.makeText(getActivity(),
                             "Riempi tutti i campi!", Toast.LENGTH_LONG)
                             .show();
                 }
+
+
+
             }
         });
 

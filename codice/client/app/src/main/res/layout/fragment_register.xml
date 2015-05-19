@@ -13,37 +13,87 @@
         android:gravity="center"
         >
 
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="#2196F3"
+            android:textSize="18dp"
+            android:text="@string/email"
+            android:textStyle="bold" />
+
         <EditText
             android:id="@+id/editText1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/email"
             android:hint="@string/form_email"
             android:inputType="textEmailAddress" >
         </EditText>
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editText1"
+            android:layout_marginTop="10dp"
+            android:textColor="#2196F3"
+            android:textSize="18dp"
+            android:text="@string/username"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editText1"
+            android:layout_below="@+id/username"
             android:hint="@string/form_username"
-            android:layout_marginTop="15dp"
             android:inputType="text" />
+
+        <TextView
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/editText2"
+            android:textColor="#2196F3"
+            android:textSize="18dp"
+            android:text="@string/password"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editText3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editText2"
+            android:layout_below="@+id/password"
             android:hint="@string/form_password"
-            android:layout_marginTop="15dp"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/repeat_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText3"
+            android:layout_marginTop="10dp"
+            android:textColor="#2196F3"
+            android:textSize="18dp"
+            android:text="@string/repeat_password"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/repeat_pass"
+            android:hint="@string/repeat_password"
             android:inputType="textPassword" />
 
         <Button
             android:id="@+id/button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editText3"
+            android:layout_below="@+id/editText4"
             android:layout_marginTop="30dp"
             android:text="@string/button_register1" />
 

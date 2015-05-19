@@ -27,8 +27,13 @@
     <string name="form_email">Indirizzo email</string>
     <string name="form_username">Username</string>
     <string name="form_password">Password</string>
+    <string name="repeat_password">Ripeti password</string>
     <string name="button_register1">REGISTRATI</string>
     <string name="button_login1">Sei gia membro? Accedi!</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="ripeat_pass">Ripeti Password</string>
 
     <!-- Activity Login -->
     <string name="title_activity_login">Accedi con Email</string>
