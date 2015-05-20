@@ -34,7 +34,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <com.gc.materialdesign.views.Slider
+            <!-- <com.gc.materialdesign.views.Slider
                 android:id="@+id/slider"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -42,13 +42,14 @@
                 materialdesign:max="50"
                 materialdesign:min="0"
                 materialdesign:showNumberIndicator="true"/>
+            -->
 
-            <!-- <SeekBar
+           <SeekBar
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/seekbarRadius" />
 
-            -->
+
 
             <Button
                 android:id="@+id/search_img"
