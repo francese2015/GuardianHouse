@@ -21,7 +21,9 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.NetworkImageView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,9 +43,11 @@ public class ApartmentFragment extends Fragment {
     private static String TAG = ApartmentFragment.class.getSimpleName();
     private ProgressDialog pDialog;
     private String url;
+    NetworkImageView thumbnail;
     TextView nameApt;
     String aptId;
     RatingBar ratingBar;
+    ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
     public ApartmentFragment() {
 
@@ -60,6 +64,7 @@ public class ApartmentFragment extends Fragment {
 
         nameApt = (TextView) view.findViewById(R.id.name_apt);
         ratingBar = (RatingBar) view.findViewById(R.id.rating_bar);
+        thumbnail = (NetworkImageView)view.findViewById(R.id.thumbnailApt);
 
         /*
         RelativeLayout dimensionRelative = (RelativeLayout) view.findViewById(R.id.relative_dimension);
@@ -236,6 +241,9 @@ public class ApartmentFragment extends Fragment {
                 hidePDialog();
                 try {
                     JSONObject singleApartment = response.getJSONObject("apartment");
+                    if (imageLoader == null)
+                        imageLoader = AppController.getInstance().getImageLoader();
+                    thumbnail.setImageUrl(singleApartment.getJSONArray("pictures").getJSONObject(0).getString("url"), imageLoader);
                     //ottengo il nome appartamento
                     nameApt.setText(singleApartment.getJSONObject("details").getString("name"));
                     //ottengo il rating
