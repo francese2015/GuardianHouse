@@ -19,24 +19,24 @@
         android:label="@string/app_name"
         android:theme="@style/MyNavigationDrawerTheme" >
         <activity
-            android:name=".NavigationDrawer"
+            android:name=".SplashScreen"
             android:label="@string/app_name"
-            android:theme="@style/MyNavigationDrawerTheme" >
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".NavigationDrawer"
+            android:label="@string/app_name"
+            android:theme="@style/MyNavigationDrawerTheme" >
+        </activity>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDrpEq96ATMqaYsHJ4y04sh9MtGE2Qc4XU" />
-
-        <activity
-            android:name=".fragments.ReviewActivity"
-            android:label="@string/title_activity_review" >
-        </activity>
     </application>
 
 </manifest>

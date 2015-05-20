@@ -220,5 +220,6 @@
     <string name="review_description_hint">Descrivi le tue percezioni riguardo l\'appartamento</string>
     <string name="fragment_review_title">Titolo Recensione</string>
     <string name="fragment_5_header">Prima di andare via, lascia un tuo commento sull\'appartamento...</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
 
 </resources>
