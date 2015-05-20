@@ -21,6 +21,10 @@ public class Apartment {
     //coordinate
     private Double latitude;
     private Double longitude;
+    private Double distanceFromLocation;
+
+    // photo thumbnail
+    private String thumbnailUrl;
 
     public Apartment() {
 
@@ -48,6 +52,22 @@ public class Apartment {
 
     public void setRating(Float rating) {
         this.rating = rating;
+    }
+
+    public String getThumbnailUrl() {
+        return thumbnailUrl;
+    }
+
+    public void setThumbnailUrl(String thumbnailUrl) {
+        this.thumbnailUrl = thumbnailUrl;
+    }
+
+    public Double getDistanceFromLocation() {
+        return distanceFromLocation;
+    }
+
+    public void setDistanceFromLocation(Double distanceFromLocation) {
+        this.distanceFromLocation = distanceFromLocation;
     }
 
     public String getStreetNumber() {

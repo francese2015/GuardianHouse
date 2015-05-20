@@ -9,19 +9,22 @@ import android.widget.BaseAdapter;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.NetworkImageView;
+
+import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.models.Apartment;
 
-/**
- * Created by Nae on 13.04.2015.
- */
 public class ApartmentListAdapter extends BaseAdapter {
 
     private Activity activity;
     private LayoutInflater inflater;
     private List<Apartment> aptItems;
+    ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
     public ApartmentListAdapter(Activity activity, List<Apartment> aptItems) {
         this.activity = activity;
@@ -50,13 +53,19 @@ public class ApartmentListAdapter extends BaseAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (convertView == null)
             convertView = inflater.inflate(R.layout.list_item_apt, null);
-
+        if (imageLoader == null)
+            imageLoader = AppController.getInstance().getImageLoader();
+        NetworkImageView thumbNail = (NetworkImageView) convertView
+                .findViewById(R.id.thumbnailApt);
         TextView aptName = (TextView) convertView.findViewById(R.id.nameApt);
         RatingBar rating = (RatingBar) convertView.findViewById(R.id.ratingBar);
+        TextView distanceFromLocation = (TextView) convertView.findViewById(R.id.distanceFromLocation);
 
         Apartment apt = aptItems.get(position);
+        thumbNail.setImageUrl(apt.getThumbnailUrl(), imageLoader);
         aptName.setText(apt.getName());
         rating.setRating(apt.getRating());
+        distanceFromLocation.setText("Distanza: " + Double.parseDouble(new DecimalFormat("##.##").format(apt.getDistanceFromLocation())) + " Km");
 
         return convertView;
     }

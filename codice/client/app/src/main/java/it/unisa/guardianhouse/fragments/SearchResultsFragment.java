@@ -105,10 +105,12 @@ public class SearchResultsFragment extends Fragment {
                         Apartment apartment = new Apartment();
                         //ottengo il nome appartamento
                         apartment.setId(singleApartment.getJSONObject("_id").getString("$id"));
+                        apartment.setThumbnailUrl(singleApartment.getJSONArray("pictures").getJSONObject(0).getString("url"));
                         apartment.setName(singleApartment.getJSONObject("details").getString("name"));
                         //ottengo il rating
                         String stringRating = singleApartment.getString("average_rating");
                         apartment.setRating(Float.parseFloat(stringRating));
+                        apartment.setDistanceFromLocation(singleApartment.getDouble("distance"));
 
                         apartmentList.add(apartment);
                     }
