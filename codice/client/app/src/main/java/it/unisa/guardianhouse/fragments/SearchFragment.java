@@ -25,6 +25,9 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gc.materialdesign.views.ButtonFloat;
+import com.gc.materialdesign.views.ScrollView;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -52,7 +55,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
     private FragmentActivity fa;
 
     private Button btnSearchAddress;
-    private Button btnSearchLocation;
+    private ButtonFloat btnSearchLocation;
     private SeekBar seekbarRadius;
     LocationTracker gps;
 
@@ -115,7 +118,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
 
 
         btnSearchAddress = (Button) view.findViewById(R.id.search_img);
-        btnSearchLocation = (Button) view.findViewById(R.id.search_by_gps);
+        btnSearchLocation = (ButtonFloat) view.findViewById(R.id.search_by_gps);
 
         // bottone search by address
         btnSearchAddress.setOnClickListener(new View.OnClickListener() {
