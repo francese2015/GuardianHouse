@@ -4,6 +4,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
         android:id="@+id/scrollView" >
 
         <RelativeLayout
@@ -166,12 +167,15 @@
                 android:inputType="text" >
             </EditText>
 
-            <Button
-                android:id="@+id/button_avanti"
+            <com.gc.materialdesign.views.ButtonRectangle
+                android:id="@+id/button1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/stanze_libere"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:background="#1E88E5"
+                materialdesign:rippleSpeed="200"
                 android:text="@string/button_goto_scheda2" />
 
 

@@ -17,6 +17,8 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.gc.materialdesign.views.ButtonFlat;
+import com.gc.materialdesign.views.ButtonRectangle;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,8 +40,8 @@ import it.unisa.guardianhouse.utils.MyJsonObjectRequest;
 public class RegisterFragment extends Fragment {
 
     private static final String TAG = RegisterFragment.class.getSimpleName();
-    private Button btnRegister;
-    private Button btnLinkToLogin;
+    private ButtonRectangle btnRegister;
+    private ButtonFlat btnLinkToLogin;
     private EditText inputUsername;
     private EditText inputEmail;
     private EditText inputPassword;
@@ -68,8 +70,8 @@ public class RegisterFragment extends Fragment {
         inputUsername = (EditText) view.findViewById(R.id.editText2);
         inputPassword = (EditText) view.findViewById(R.id.editText3);
         repeatPassword = (EditText) view.findViewById(R.id.editText4);
-        btnRegister = (Button) view.findViewById(R.id.button1);
-        btnLinkToLogin = (Button) view.findViewById(R.id.button2);
+        btnRegister = (ButtonRectangle) view.findViewById(R.id.button1);
+        btnLinkToLogin = (ButtonFlat) view.findViewById(R.id.button2);
 
         // Progress dialog
         pDialog = new ProgressDialog(getActivity());
