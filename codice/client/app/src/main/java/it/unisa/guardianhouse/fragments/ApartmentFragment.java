@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -53,6 +54,7 @@ public class ApartmentFragment extends Fragment {
     private Double longitude;
     private Double distance;
     String aptId;
+    ImageView featured;
     TextView nameApt;
     RatingBar ratingBar;
     TextView distanceTextView;
@@ -81,6 +83,7 @@ public class ApartmentFragment extends Fragment {
         mMapView.onCreate(mBundle);
         setUpMapIfNeeded(view);
 
+        featured = (ImageView) view.findViewById(R.id.imgViewFeatured);
         nameApt = (TextView) view.findViewById(R.id.name_apt);
         ratingBar = (RatingBar) view.findViewById(R.id.rating_bar);
         thumbnail = (NetworkImageView)view.findViewById(R.id.thumbnailApt);
@@ -183,7 +186,7 @@ public class ApartmentFragment extends Fragment {
         */
 
         pDialog = new ProgressDialog(getActivity());
-        pDialog.setMessage("Ricerca in corso...");
+        pDialog.setMessage("Caricamento...");
         pDialog.show();
 
         getApartmentData();
@@ -265,6 +268,9 @@ public class ApartmentFragment extends Fragment {
                     JSONObject singleApartment = response.getJSONObject("apartment");
                     if (imageLoader == null)
                         imageLoader = AppController.getInstance().getImageLoader();
+                    if (singleApartment.getJSONObject("details").getBoolean("featured") == false) {
+                        featured.setVisibility(View.INVISIBLE);
+                    }
                     thumbnail.setImageUrl(singleApartment.getJSONArray("pictures").getJSONObject(0).getString("url"), imageLoader);
                     //ottengo il nome appartamento
                     nameApt.setText(singleApartment.getJSONObject("details").getString("name"));

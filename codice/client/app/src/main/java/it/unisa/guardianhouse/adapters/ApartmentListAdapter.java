@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -55,13 +56,18 @@ public class ApartmentListAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.list_item_apt, null);
         if (imageLoader == null)
             imageLoader = AppController.getInstance().getImageLoader();
-        NetworkImageView thumbNail = (NetworkImageView) convertView
-                .findViewById(R.id.thumbnailApt);
+
+        NetworkImageView thumbNail = (NetworkImageView) convertView.findViewById(R.id.thumbnailApt);
+        ImageView featured = (ImageView) convertView.findViewById(R.id.imgViewFeatured);
         TextView aptName = (TextView) convertView.findViewById(R.id.nameApt);
         RatingBar rating = (RatingBar) convertView.findViewById(R.id.ratingBar);
         TextView distanceFromLocation = (TextView) convertView.findViewById(R.id.distanceFromLocation);
 
         Apartment apt = aptItems.get(position);
+
+        if (apt.getFeatured() != Boolean.FALSE) {
+            featured.setVisibility(View.VISIBLE);
+        }
         thumbNail.setImageUrl(apt.getThumbnailUrl(), imageLoader);
         aptName.setText(apt.getName());
         rating.setRating(apt.getRating());

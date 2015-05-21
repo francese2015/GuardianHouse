@@ -8,6 +8,7 @@ public class Apartment {
     // dettagli
     private String name;
     private Float rating;
+    private Boolean featured;
 
     // indirizzo
     private String streetNumber;    // numero via (es. 6)
@@ -52,6 +53,14 @@ public class Apartment {
 
     public void setRating(Float rating) {
         this.rating = rating;
+    }
+
+    public Boolean getFeatured() {
+        return featured;
+    }
+
+    public void setFeatured(Boolean featured) {
+        this.featured = featured;
     }
 
     public String getThumbnailUrl() {

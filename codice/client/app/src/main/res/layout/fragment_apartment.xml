@@ -1,433 +1,555 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:fillViewport="true"
     tools:context="it.unisa.guardianhouse.fragments.ApartmentFragment">
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/activity_vertical_margin">
 
-        <RelativeLayout
+        <com.android.volley.toolbox.NetworkImageView
+            android:id="@+id/thumbnailApt"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image_viewer_placeholder" />
+
+        <LinearLayout
+            android:id="@+id/linear1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingBottom="@dimen/activity_vertical_margin">
+            android:layout_alignBottom="@+id/thumbnailApt"
+            android:layout_gravity="bottom|start"
+            android:background="#A7000000"
+            android:orientation="vertical"
+            android:padding="5dp">
 
-            <com.android.volley.toolbox.NetworkImageView
-                android:id="@+id/thumbnailApt"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:adjustViewBounds="true"
-                android:cropToPadding="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/image_viewer_placeholder" />
+            <TextView
+                android:id="@+id/name_apt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/bianco"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <LinearLayout
-                android:id="@+id/linear1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/thumbnailApt"
-                android:layout_gravity="bottom|start"
-                android:background="#A7000000"
-                android:orientation="vertical"
-                android:padding="5dp">
-
-                <TextView
-                    android:id="@+id/name_apt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:textColor="@color/bianco"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                android:layout_height="match_parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <RatingBar
+                        android:id="@+id/rating_bar"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:layout_marginLeft="5dp"
+                        android:isIndicator="true"
+                        android:minHeight="18dp" />
 
-                        <RatingBar
-                            android:id="@+id/rating_bar"
-                            style="?android:attr/ratingBarStyleSmall"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:isIndicator="true"
-                            android:minHeight="18dp" />
-
-                        <TextView
-                            android:id="@+id/distanceFromLocation"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:textColor="@color/bianco"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-
-
-                    <ImageView
-                        android:id="@+id/imgViewFeatured"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center"
-                        android:layout_marginRight="5dp"
-                        android:src="@drawable/app_logo_big" />
-
+                    <TextView
+                        android:id="@+id/distanceFromLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/bianco"
+                        android:textSize="14sp" />
                 </LinearLayout>
 
 
-            </LinearLayout>
-
-            <FrameLayout
-                android:id="@+id/divider"
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:layout_below="@id/linear1"
-                android:background="@drawable/line_divider_blue" />
-
-            <com.google.android.gms.maps.MapView
-                android:id="@+id/map"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_below="@id/divider" />
-
-            <FrameLayout
-                android:id="@+id/divider2"
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:layout_below="@id/map"
-                android:background="@drawable/line_divider_blue" />
-
-            <LinearLayout
-                android:id="@+id/apartment_data"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/map"
-                android:divider="@drawable/divider"
-                android:orientation="vertical"
-                android:showDividers="middle">
-
-
-                <!-- Dimensione -->
-
-                <RelativeLayout
-                    android:id="@+id/relative_dimension"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector">
-
-                    <TextView
-                        android:id="@+id/dimension_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/apartment_dimension_label"
-                        android:textColor="#2196F3"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/dimension_value"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/dimension_label"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/apartment_dimension" />
-
-
-                </RelativeLayout>
-
-                <!-- Status -->
-
-                <RelativeLayout
-                    android:id="@+id/relative_status"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector">
-                    <!--android:clickable="true" -->
-
-                    <TextView
-                        android:id="@+id/status_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/apartment_status_label"
-                        android:textColor="#2196F3"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/status_value"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/status_label"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="4dp"
-
-                        android:text="@string/apartment_status" />
-
-                    <!-- ImageView
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginRight="16dp"
-                        android:contentDescription="@string/edit_icon"
-                        android:src="@mipmap/ic_action_edit" /> -->
-
-                </RelativeLayout>
-
-                <!-- Prezzo -->
-
-                <RelativeLayout
-                    android:id="@+id/relative_price"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector">
-
-                    <TextView
-                        android:id="@+id/price_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/apartment_price_label"
-                        android:textColor="#2196F3"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/price_value"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/price_label"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/apartment_price" />
-
-
-                </RelativeLayout>
-
-                <!-- Descrizione -->
-
-                <RelativeLayout
-                    android:id="@+id/relative_description"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector">
-
-                    <TextView
-                        android:id="@+id/description_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/apartment_text_label"
-                        android:textColor="#2196F3"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/text_value"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/description_label"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="2dp"
-                        android:text="@string/apartment_text" />
-
-
-                </RelativeLayout>
-
-                <!-- Posizione -->
-
-                <RelativeLayout
-                    android:id="@+id/relative_position"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector">
-
-                    <TextView
-                        android:id="@+id/position_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/apartment_position_label"
-                        android:textColor="#2196F3"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/position_value"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/position_label"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/apartment_position" />
-
-
-                </RelativeLayout>
-
-                <!-- Punti d'interesse-->
-
-                <RelativeLayout
-                    android:id="@+id/relative_poi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector">
-
-                    <TextView
-                        android:id="@+id/poi_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/apartment_poi_label"
-                        android:textColor="#2196F3"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/poi_value"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/poi_label"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/apartment_poi" />
-
-
-                </RelativeLayout>
-
-                <!-- Capacità Termica-->
-
-                <RelativeLayout
-                    android:id="@+id/relative_thermic"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector"
-                    android:clickable="true">
-
-                    <TextView
-                        android:id="@+id/thermic_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/apartment_thermic_label"
-                        android:textColor="#2196F3"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/thermic_value"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/thermic_label"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/apartment_thermic" />
-
-
-                </RelativeLayout>
-
-                <!-- Servizi Standard -->
-
-                <RelativeLayout
-                    android:id="@+id/relative_services"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector">
-
-                    <TextView
-                        android:id="@+id/service_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:text="@string/apartment_services_label"
-                        android:textColor="#2196F3"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/service_value"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/service_label"
-                        android:layout_marginBottom="6dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/apartment_services" />
-
-
-                </RelativeLayout>
+                <ImageView
+                    android:id="@+id/imgViewFeatured"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/app_logo_big" />
 
             </LinearLayout>
 
-            <View
-                android:id="@+id/separator_line_2"
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_below="@id/linear1"
+            android:background="@drawable/line_divider_blue" />
+
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_below="@id/divider" />
+
+        <FrameLayout
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_below="@id/map"
+            android:background="@drawable/line_divider_blue" />
+
+        <LinearLayout
+            android:id="@+id/apartment_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/map"
+            android:divider="@drawable/divider"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+
+            <!-- Descrizione -->
+
+            <RelativeLayout
+                android:id="@+id/relative_description"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_below="@+id/apartment_data"
-                android:background="#dfdfdf" />
-
-            <Button
-                android:id="@+id/button_less"
-                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/separator_line_2"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="28dp"
-                android:text="@string/button_delete_apartment" />
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector">
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/description_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/apartment_text_label"
+                    android:textColor="#2196F3"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
 
-    </ScrollView>
+                <TextView
+                    android:id="@+id/text_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/description_label"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/apartment_text" />
 
-</FrameLayout>
+
+            </RelativeLayout>
+
+            <!-- Dimensione -->
+
+            <RelativeLayout
+                android:id="@+id/relative_dimension"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector">
+
+                <TextView
+                    android:id="@+id/dimension_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/apartment_dimension_label"
+                    android:textColor="#2196F3"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dimension_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dimension_label"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/apartment_dimension" />
+
+
+            </RelativeLayout>
+
+            <!-- Posto auto -->
+
+            <RelativeLayout
+                android:id="@+id/relative_car_place"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector">
+
+                <TextView
+                    android:id="@+id/car_place_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Posti auto"
+                    android:textColor="#2196F3"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/car_place_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/car_place_label"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:text="2" />
+
+
+            </RelativeLayout>
+
+            <!-- Durata contratto -->
+
+            <RelativeLayout
+                android:id="@+id/relative_contract_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector">
+
+                <TextView
+                    android:id="@+id/contract_time_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Durata contratto"
+                    android:textColor="#2196F3"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/contract_time_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/contract_time_label"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:text="1 anno" />
+
+
+            </RelativeLayout>
+
+            <!-- Free rooms -->
+
+            <RelativeLayout
+                android:id="@+id/relative_free_rooms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector">
+
+                <TextView
+                    android:id="@+id/free_rooms_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Stanze libere"
+                    android:textColor="#2196F3"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/contract_time_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/free_rooms_label"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:text="2 stanze" />
+
+
+            </RelativeLayout>
+
+            <!-- Status -->
+
+            <RelativeLayout
+                android:id="@+id/relative_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector">
+                <!--android:clickable="true" -->
+
+                <TextView
+                    android:id="@+id/status_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/apartment_status_label"
+                    android:textColor="#2196F3"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/status_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/status_label"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+
+                    android:text="@string/apartment_status" />
+
+                <!-- ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:contentDescription="@string/edit_icon"
+                    android:src="@mipmap/ic_action_edit" /> -->
+
+            </RelativeLayout>
+
+            <!-- Prezzo -->
+
+            <RelativeLayout
+                android:id="@+id/relative_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector">
+
+                <TextView
+                    android:id="@+id/price_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/apartment_price_label"
+                    android:textColor="#2196F3"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/price_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/price_label"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/apartment_price" />
+
+
+            </RelativeLayout>
+
+
+            <!-- Posizione -->
+
+            <RelativeLayout
+                android:id="@+id/relative_position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector">
+
+                <TextView
+                    android:id="@+id/position_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/apartment_position_label"
+                    android:textColor="#2196F3"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/position_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/position_label"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/apartment_position" />
+
+
+            </RelativeLayout>
+
+            <!-- Punti d'interesse-->
+
+            <RelativeLayout
+                android:id="@+id/relative_poi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector">
+
+                <TextView
+                    android:id="@+id/poi_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/apartment_poi_label"
+                    android:textColor="#2196F3"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/poi_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/poi_label"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/apartment_poi" />
+
+
+            </RelativeLayout>
+
+            <!-- Capacità Termica-->
+
+            <RelativeLayout
+                android:id="@+id/relative_thermic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector"
+                android:clickable="true">
+
+                <TextView
+                    android:id="@+id/thermic_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/apartment_thermic_label"
+                    android:textColor="#2196F3"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/thermic_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/thermic_label"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/apartment_thermic" />
+
+
+            </RelativeLayout>
+
+            <!-- Servizi Standard -->
+
+            <RelativeLayout
+                android:id="@+id/relative_services"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector">
+
+                <TextView
+                    android:id="@+id/service_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/apartment_services_label"
+                    android:textColor="#2196F3"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/service_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/service_label"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/apartment_services" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/separator_line_2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/apartment_data"
+            android:background="#dfdfdf" />
+
+        <Button
+            android:id="@+id/button_view_reviews"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/separator_line_2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28dp"
+            android:backgroundTint="@color/LimeGreen"
+            android:text="Visualizza recensioni" />
+
+        <Button
+            android:id="@+id/button_ins_review"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button_view_reviews"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28dp"
+            android:backgroundTint="@color/DarkOrange"
+            android:text="Lascia una recensione" />
+
+        <Button
+            android:id="@+id/button_less"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button_ins_review"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28dp"
+            android:backgroundTint="@color/OrangeRed"
+            android:text="@string/button_delete_apartment" />
+
+    </RelativeLayout>
+
+</ScrollView>

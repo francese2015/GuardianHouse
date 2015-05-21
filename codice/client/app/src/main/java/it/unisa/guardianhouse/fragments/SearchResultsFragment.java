@@ -108,6 +108,7 @@ public class SearchResultsFragment extends Fragment {
                         apartment.setId(singleApartment.getJSONObject("_id").getString("$id"));
                         apartment.setThumbnailUrl(singleApartment.getJSONArray("pictures").getJSONObject(0).getString("url"));
                         apartment.setName(singleApartment.getJSONObject("details").getString("name"));
+                        apartment.setFeatured(singleApartment.getJSONObject("details").getBoolean("featured"));
                         //ottengo il rating
                         String stringRating = singleApartment.getString("average_rating");
                         apartment.setRating(Float.parseFloat(stringRating));
