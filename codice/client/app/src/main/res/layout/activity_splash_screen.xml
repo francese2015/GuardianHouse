@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ColorPrimary"
     tools:context="it.unisa.guardianhouse.SplashScreen">
 
 
@@ -19,8 +20,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
         android:gravity="center_horizontal"
-        android:text="www.guardianhouse.tk"
-        android:textColor="#454545"
-        android:textSize="12dp" />
+        android:text="@string/website_url"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp" />
 
 </RelativeLayout>

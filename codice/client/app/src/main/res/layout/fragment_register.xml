@@ -101,7 +101,7 @@
             android:layout_marginTop="30dp"
             android:layout_centerHorizontal="true"
             android:background="#1E88E5"
-            materialdesign:rippleSpeed="200"
+            materialdesign:rippleSpeed="100"
             android:text="@string/button_register1" />
 
         <com.gc.materialdesign.views.ButtonFlat
@@ -112,7 +112,7 @@
             android:layout_marginTop="15dp"
             android:layout_centerHorizontal="true"
             android:background="#1E88E5"
-            materialdesign:rippleSpeed="200"
+            materialdesign:rippleSpeed="100"
             android:text="@string/button_login1" />
 
     </RelativeLayout>
