@@ -23,7 +23,7 @@
         android:adjustViewBounds="true"
         android:cropToPadding="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/apt02"/>
+        android:src="@drawable/image_viewer_placeholder"/>
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -65,7 +65,8 @@ public class ApartmentListAdapter extends BaseAdapter {
         thumbNail.setImageUrl(apt.getThumbnailUrl(), imageLoader);
         aptName.setText(apt.getName());
         rating.setRating(apt.getRating());
-        distanceFromLocation.setText("Distanza: " + Double.parseDouble(new DecimalFormat("##.##").format(apt.getDistanceFromLocation())) + " Km");
+        DecimalFormat precision = new DecimalFormat("0.00");
+        distanceFromLocation.setText("Distanza: " + precision.format(apt.getDistanceFromLocation()) + " Km");
 
         return convertView;
     }
