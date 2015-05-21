@@ -10,6 +10,7 @@ import it.neokree.materialnavigationdrawer.elements.listeners.MaterialSectionLis
 import it.unisa.guardianhouse.fragments.ApartmentEntryFragment;
 import it.unisa.guardianhouse.fragments.ProfileFragment;
 import it.unisa.guardianhouse.fragments.ApartmentFragment;
+import it.unisa.guardianhouse.fragments.ResultsFragment;
 import it.unisa.guardianhouse.fragments.ReviewFragment;
 import it.unisa.guardianhouse.fragments.HomeFragment;
 import it.unisa.guardianhouse.fragments.LoginFragment;
@@ -34,8 +35,6 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
     private MaterialSection profile;
     //private MaterialSection aboutUs;
     //private MaterialSection termsConds;
-    private MaterialSection apartment;
-    private MaterialSection review;
 
 
     @Override
@@ -55,8 +54,6 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
         profile = newSection("Profilo", R.drawable.ic_account, new ProfileFragment());
         register = newSection("Registrazione", R.drawable.ic_account_plus, new RegisterFragment());
         login = newSection("Login", R.drawable.ic_login, new LoginFragment());
-        apartment = newSection("Appartamento", new ApartmentFragment());
-        review = newSection("Recensione", new ReviewFragment());
         //mapTest = newSection("Google Maps Test", new MapTestFragment());
         logout = newSection("Logout", R.drawable.ic_logout, new MaterialSectionListener() {
             @Override

@@ -2,16 +2,14 @@ package it.unisa.guardianhouse.fragments;
 
 
 import android.annotation.SuppressLint;
+import android.support.v4.app.Fragment;
 import android.content.Context;
-import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +24,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.gc.materialdesign.views.ButtonFloat;
-import com.gc.materialdesign.views.ScrollView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -147,7 +144,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                             b.putDouble("latitude", latitude);
                             b.putDouble("longitude", longitude);
                             b.putInt("distance", distance);
-                            SearchResultsFragment searchResults = new SearchResultsFragment();
+                            ResultsFragment searchResults = new ResultsFragment();
                             searchResults.setArguments(b);
                             ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchResults, "Risultati");
                         }
@@ -187,7 +184,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                         b.putDouble("latitude", latitude);
                         b.putDouble("longitude", longitude);
                         b.putInt("distance", distance);
-                        SearchResultsFragment searchResults = new SearchResultsFragment();
+                        ResultsListFragment searchResults = new ResultsListFragment();
                         searchResults.setArguments(b);
                         ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchResults, "Risultati");
                     } else {

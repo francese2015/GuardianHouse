@@ -1,7 +1,7 @@
 package it.unisa.guardianhouse.fragments;
 
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -37,16 +37,16 @@ import it.unisa.guardianhouse.config.Config;
 import it.unisa.guardianhouse.models.Apartment;
 
 
-public class SearchResultsFragment extends Fragment {
+public class ResultsListFragment extends Fragment {
 
-    private static String TAG = SearchResultsFragment.class.getSimpleName();
+    private static String TAG = ResultsListFragment.class.getSimpleName();
     private ProgressDialog pDialog;
     private String url;
     private List<Apartment> apartmentList = new ArrayList<Apartment>();
     private ListView listView;
     ApartmentListAdapter adapter;
 
-    public SearchResultsFragment() {
+    public ResultsListFragment() {
         // Required empty public constructor
     }
 
@@ -54,7 +54,7 @@ public class SearchResultsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_search_results, container, false);
+        View view = inflater.inflate(R.layout.fragment_results_list, container, false);
 
         listView = (ListView) view.findViewById(R.id.listView1);
         adapter = new ApartmentListAdapter(getActivity(), apartmentList);
