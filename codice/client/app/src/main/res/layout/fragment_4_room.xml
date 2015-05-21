@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="it.unisa.guardianhouse.activities.ApartmentActivity">
+    tools:context="it.unisa.guardianhouse.activities.ApartmentActivity"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -353,15 +354,17 @@
                 android:layout_below="@+id/apartment_data"
                 android:background="#dfdfdf" />
 
-            <Button
-                android:id="@+id/button_next"
-                android:layout_width="200dp"
+            <com.gc.materialdesign.views.ButtonRectangle
+                android:id="@+id/button_to_review"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/room_layout"
+                android:layout_marginTop="10dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="28dp"
+                android:background="#1E88E5"
+                materialdesign:rippleSpeed="200"
+                android:text="@string/button_goto_scheda2" />
 
-                android:text="@string/next" />
 
         </RelativeLayout>
 

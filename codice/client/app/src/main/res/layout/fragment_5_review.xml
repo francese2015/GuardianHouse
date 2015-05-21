@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?><LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    >
 
     <RelativeLayout
         android:id="@+id/relative_dimension"
@@ -75,19 +77,18 @@
             />
 
 
-        <Button
-            android:id="@+id/button_save"
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/button_to_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ratingBar2"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:gravity="center"
-            android:text="@string/button_save"
-            android:textSize="24sp"
-            android:layout_row="0"
-            android:layout_column="0" />
+            android:layout_below="@+id/ratingBar2"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:background="#1E88E5"
+            materialdesign:rippleSpeed="200"
+            android:text="@string/button_save" />
+
+
     </RelativeLayout>
 
 </LinearLayout>
