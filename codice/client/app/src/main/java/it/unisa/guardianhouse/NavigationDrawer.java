@@ -15,7 +15,6 @@ import it.unisa.guardianhouse.fragments.HomeFragment;
 import it.unisa.guardianhouse.fragments.LoginFragment;
 import it.unisa.guardianhouse.fragments.RegisterFragment;
 import it.unisa.guardianhouse.fragments.SearchFragment;
-import it.unisa.guardianhouse.fragments.MapTestFragment;
 import it.unisa.guardianhouse.helpers.SQLiteHandler;
 import it.unisa.guardianhouse.helpers.SessionManager;
 
@@ -33,12 +32,10 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
     private MaterialSection login;
     private MaterialSection logout;
     private MaterialSection profile;
-    //private MaterialSection logout;
     //private MaterialSection aboutUs;
     //private MaterialSection termsConds;
     private MaterialSection apartment;
     private MaterialSection review;
-    //private MaterialSection mapTest;
 
 
     @Override
@@ -83,9 +80,6 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
             this.addSection(this.profile);
             this.addSection(this.logout);
         }
-        //this.addBottomSection(this.apartment);
-        //this.addBottomSection(this.review);
-        //this.addBottomSection(this.mapTest);
 
         setBackPattern(MaterialNavigationDrawer.BACKPATTERN_BACK_TO_FIRST);
 

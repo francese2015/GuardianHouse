@@ -2,18 +2,15 @@ package it.unisa.guardianhouse.fragments;
 
 
 import android.app.AlertDialog;
+import android.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.media.Rating;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
@@ -24,18 +21,24 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.NetworkImageView;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
 import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.config.Config;
-import it.unisa.guardianhouse.models.Apartment;
 
 
 public class ApartmentFragment extends Fragment {
@@ -43,10 +46,17 @@ public class ApartmentFragment extends Fragment {
     private static String TAG = ApartmentFragment.class.getSimpleName();
     private ProgressDialog pDialog;
     private String url;
-    NetworkImageView thumbnail;
-    TextView nameApt;
+    private MapView mMapView;
+    private GoogleMap mMap;
+    private Bundle mBundle;
+    private Double latitude;
+    private Double longitude;
+    private Double distance;
     String aptId;
+    TextView nameApt;
     RatingBar ratingBar;
+    TextView distanceTextView;
+    NetworkImageView thumbnail;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
     public ApartmentFragment() {
@@ -58,13 +68,25 @@ public class ApartmentFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_apartment, container, false);
 
+        MapsInitializer.initialize(getActivity());
+
         Bundle b = getArguments();
         aptId = b.getString("aptId");
+        latitude = b.getDouble("itemLatitude");
+        longitude = b.getDouble("itemLongitude");
+        distance = b.getDouble("distance");
         url = Config.APARTMENTS_URL + "/" + aptId;
+
+        mMapView = (MapView) view.findViewById(R.id.map);
+        mMapView.onCreate(mBundle);
+        setUpMapIfNeeded(view);
 
         nameApt = (TextView) view.findViewById(R.id.name_apt);
         ratingBar = (RatingBar) view.findViewById(R.id.rating_bar);
         thumbnail = (NetworkImageView)view.findViewById(R.id.thumbnailApt);
+        distanceTextView = (TextView) view.findViewById(R.id.distanceFromLocation);
+        DecimalFormat precision = new DecimalFormat("##.##");
+        distanceTextView.setText("Distanza: " + precision.format(distance) + " Km");
 
         /*
         RelativeLayout dimensionRelative = (RelativeLayout) view.findViewById(R.id.relative_dimension);
@@ -249,6 +271,7 @@ public class ApartmentFragment extends Fragment {
                     //ottengo il rating
                     String stringRating = singleApartment.getString("average_rating");
                     ratingBar.setRating(Float.parseFloat(stringRating));
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -276,6 +299,46 @@ public class ApartmentFragment extends Fragment {
             pDialog.dismiss();
             pDialog = null;
         }
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mBundle = savedInstanceState;
+    }
+
+    private void setUpMapIfNeeded(View inflatedView) {
+        if (mMap == null) {
+            mMap = ((MapView) inflatedView.findViewById(R.id.map)).getMap();
+            if (mMap != null) {
+                setUpMap();
+            }
+        }
+    }
+
+    private void setUpMap() {
+        LatLng point = new LatLng(latitude, longitude);
+
+        mMap.addMarker(new MarkerOptions().position(point).title("Appartamento"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point, 15));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mMapView.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mMapView.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        mMapView.onDestroy();
+        super.onDestroy();
     }
 
 }

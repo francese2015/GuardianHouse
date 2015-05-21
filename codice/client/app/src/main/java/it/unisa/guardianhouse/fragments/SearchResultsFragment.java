@@ -12,14 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
-import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonObjectRequest;
 
 import org.json.JSONArray;
@@ -46,7 +44,6 @@ public class SearchResultsFragment extends Fragment {
     private String url;
     private List<Apartment> apartmentList = new ArrayList<Apartment>();
     private ListView listView;
-    private String aptId;
     ApartmentListAdapter adapter;
 
     public SearchResultsFragment() {
@@ -70,6 +67,9 @@ public class SearchResultsFragment extends Fragment {
                 Apartment apt = (Apartment)obj;
                 Bundle b = new Bundle();
                 b.putString("aptId", apt.getId());
+                b.putDouble("itemLatitude", apt.getLatitude());
+                b.putDouble("itemLongitude", apt.getLongitude());
+                b.putDouble("distance", apt.getDistanceFromLocation());
                 ApartmentFragment aptFragment = new ApartmentFragment();
                 aptFragment.setArguments(b);
                 ((MaterialNavigationDrawer) getActivity()).setFragmentChild(aptFragment, "Scheda appartamento");
@@ -112,7 +112,8 @@ public class SearchResultsFragment extends Fragment {
                         String stringRating = singleApartment.getString("average_rating");
                         apartment.setRating(Float.parseFloat(stringRating));
                         apartment.setDistanceFromLocation(singleApartment.getDouble("distance"));
-
+                        apartment.setLatitude(singleApartment.getJSONObject("location").getJSONArray("coordinates").getDouble(1));
+                        apartment.setLongitude(singleApartment.getJSONObject("location").getJSONArray("coordinates").getDouble(0));
                         apartmentList.add(apartment);
                     }
                 } catch (JSONException e) {
