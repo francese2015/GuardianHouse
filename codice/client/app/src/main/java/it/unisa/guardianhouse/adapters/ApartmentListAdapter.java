@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import java.text.DecimalFormat;
 import java.util.List;
+import java.util.Map;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
@@ -68,6 +69,7 @@ public class ApartmentListAdapter extends BaseAdapter {
         if (apt.getFeatured() != Boolean.FALSE) {
             featured.setVisibility(View.VISIBLE);
         }
+
         thumbNail.setImageUrl(apt.getThumbnailUrl(), imageLoader);
         aptName.setText(apt.getName());
         rating.setRating(apt.getRating());
