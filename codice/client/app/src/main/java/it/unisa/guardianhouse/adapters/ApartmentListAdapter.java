@@ -66,7 +66,7 @@ public class ApartmentListAdapter extends BaseAdapter {
 
         Apartment apt = aptItems.get(position);
 
-        if (apt.getFeatured() != Boolean.FALSE) {
+        if (apt.getFeatured()) {
             featured.setVisibility(View.VISIBLE);
         }
 

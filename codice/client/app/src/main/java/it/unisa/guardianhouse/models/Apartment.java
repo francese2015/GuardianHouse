@@ -11,7 +11,7 @@ public class Apartment implements Parcelable{
     // dettagli
     private String name;
     private Float rating;
-    private Boolean featured;
+    private boolean featured;
 
     // indirizzo
     private String completeAddress;
@@ -40,7 +40,7 @@ public class Apartment implements Parcelable{
         aptId = in.readString();
         name = in.readString();
         rating = in.readFloat();
-        featured = in.readByte() != 0; //myBoolean == true if byte != 0
+        featured = in.readByte() != 0;
         completeAddress = in.readString();
         internId = in.readString();
         streetNumber = in.readString();
@@ -86,11 +86,11 @@ public class Apartment implements Parcelable{
         this.rating = rating;
     }
 
-    public Boolean getFeatured() {
+    public boolean getFeatured() {
         return featured;
     }
 
-    public void setFeatured(Boolean featured) {
+    public void setFeatured(boolean featured) {
         this.featured = featured;
     }
 
@@ -108,6 +108,14 @@ public class Apartment implements Parcelable{
 
     public void setDistanceFromLocation(Double distanceFromLocation) {
         this.distanceFromLocation = distanceFromLocation;
+    }
+
+    public String getInternId() {
+        return internId;
+    }
+
+    public void setInternId(String internId) {
+        this.internId = internId;
     }
 
     public String getStreetNumber() {
@@ -192,7 +200,7 @@ public class Apartment implements Parcelable{
         dest.writeString(aptId);
         dest.writeString(name);
         dest.writeFloat(rating);
-        dest.writeByte((byte) (featured ? 1 : 0)); //if myBoolean == true, byte == 1
+        dest.writeByte((byte) (featured ? 1 : 0));
         dest.writeString(completeAddress);
         dest.writeString(internId);
         dest.writeString(streetNumber);

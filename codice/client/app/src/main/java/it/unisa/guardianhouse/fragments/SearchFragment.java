@@ -64,6 +64,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
     private Double longitude;
     private int distance;
     LocationTracker gps;
+    String autoCompText;
     Bundle bundle;
 
     private static String TAG = ResultsFragment.class.getSimpleName();
@@ -138,7 +139,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                 if (Utils.hasConnection(getActivity()) == true) {
                     Geocoder gc = new Geocoder(getActivity());
 
-                    String autoCompText = autoCompView.getText().toString();
+                    autoCompText = autoCompView.getText().toString();
                     if (autoCompText.trim().length() > 0) {
 
                         if (gc.isPresent()) {
@@ -339,6 +340,14 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                         apartment.setThumbnailUrl(singleApartment.getJSONArray("pictures").getJSONObject(0).getString("url"));
                         apartment.setName(singleApartment.getJSONObject("details").getString("name"));
                         apartment.setFeatured(singleApartment.getJSONObject("details").getBoolean("featured"));
+                        apartment.setInternId(singleApartment.getJSONObject("address").getString("intern_id"));
+                        apartment.setStreetNumber(singleApartment.getJSONObject("address").getString("street_number"));
+                        apartment.setRoute(singleApartment.getJSONObject("address").getString("route"));
+                        apartment.setLocality(singleApartment.getJSONObject("address").getString("locality"));
+                        apartment.setAdminAreaLevel1(singleApartment.getJSONObject("address").getString("administrative_area_level_1"));
+                        apartment.setAdminAreaLevel2(singleApartment.getJSONObject("address").getString("administrative_area_level_2"));
+                        apartment.setPostalCode(singleApartment.getJSONObject("address").getString("postal_code"));
+                        apartment.setCountry(singleApartment.getJSONObject("address").getString("country"));
 
                         //ottengo il rating
                         String stringRating = singleApartment.getString("average_rating");
@@ -350,6 +359,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                         apartmentList.add(apartment);
                     }
                     bundle = new Bundle();
+                    bundle.putString("myAddress", autoCompText);
                     bundle.putDouble("myLatitude", latitude);
                     bundle.putDouble("myLongitude", longitude);
                     bundle.putInt("distance", distance);
