@@ -85,7 +85,7 @@
             android:layout_marginTop="30dp"
             android:layout_centerHorizontal="true"
             android:background="#1E88E5"
-            materialdesign:rippleSpeed="100"
+            materialdesign:rippleSpeed="50"
             android:text="@string/button_login2" />
 
 <!--
@@ -107,7 +107,7 @@
             android:layout_marginTop="15dp"
             android:layout_centerHorizontal="true"
             android:background="#1E88E5"
-            materialdesign:rippleSpeed="100"
+            materialdesign:rippleSpeed="50"
             android:text="@string/button_register2" />
 
     </RelativeLayout>

@@ -526,7 +526,6 @@
             android:layout_below="@+id/separator_line_2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="28dp"
-            android:backgroundTint="@color/LimeGreen"
             android:text="Visualizza recensioni" />
 
         <Button
@@ -536,7 +535,6 @@
             android:layout_below="@+id/button_view_reviews"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="28dp"
-            android:backgroundTint="@color/DarkOrange"
             android:text="Lascia una recensione" />
 
         <Button
@@ -546,7 +544,6 @@
             android:layout_below="@+id/button_ins_review"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="28dp"
-            android:backgroundTint="@color/OrangeRed"
             android:text="@string/button_delete_apartment" />
 
     </RelativeLayout>

@@ -190,7 +190,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_centerHorizontal="true"
                 android:background="#1E88E5"
-                materialdesign:rippleSpeed="200"
+                materialdesign:rippleSpeed="50"
                 android:text="@string/button_goto_scheda2" />
 
 
