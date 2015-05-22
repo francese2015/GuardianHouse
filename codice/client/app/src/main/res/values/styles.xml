@@ -11,6 +11,7 @@
         <item name="singleAccount">true</item>
         <item name="learningPattern">false</item>
         <item name="toolbarElevation">true</item>
+        <item name="rippleBackport">true</item>
         <item name="android:buttonStyle">@style/BlueButton</item>
     </style>
 
