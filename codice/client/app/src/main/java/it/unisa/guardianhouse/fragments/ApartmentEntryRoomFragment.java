@@ -40,7 +40,7 @@ public class ApartmentEntryRoomFragment extends Fragment {
 
             public void onClick(View view) {
                 ApartmentEntryReviewFragment apartmentEntryReviewFragment = new ApartmentEntryReviewFragment();
-                ((MaterialNavigationDrawer) getActivity()).setFragment(apartmentEntryReviewFragment, "Recensione");
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(apartmentEntryReviewFragment, "Recensione");
             }
         });
 

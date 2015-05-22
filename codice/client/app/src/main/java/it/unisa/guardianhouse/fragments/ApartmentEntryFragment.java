@@ -40,7 +40,7 @@ public class ApartmentEntryFragment extends Fragment {
 
             public void onClick(View view) {
                 ApartmentEntryPhotoFragment apartmentEntryPhotoFragment = new ApartmentEntryPhotoFragment();
-                ((MaterialNavigationDrawer) getActivity()).setFragment(apartmentEntryPhotoFragment, "Foto");
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(apartmentEntryPhotoFragment, "Foto");
             }
         });
 
