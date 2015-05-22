@@ -2,13 +2,13 @@ package it.unisa.guardianhouse.fragments;
 
 
 import android.annotation.SuppressLint;
-import android.support.v4.app.Fragment;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +23,12 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.gc.materialdesign.views.ButtonFloat;
 
 import org.json.JSONArray;
@@ -36,25 +42,34 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
+import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.config.Config;
+import it.unisa.guardianhouse.models.Apartment;
 import it.unisa.guardianhouse.utils.LocationTracker;
 import it.unisa.guardianhouse.utils.Utils;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class SearchFragment extends Fragment implements AdapterView.OnItemClickListener {
 
-    private FragmentActivity fa;
+public class SearchFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     private Button btnSearchAddress;
     private ButtonFloat btnSearchLocation;
     private SeekBar seekbarRadius;
+    private Double latitude;
+    private Double longitude;
+    private int distance;
     LocationTracker gps;
+    Bundle bundle;
+
+    private static String TAG = ResultsFragment.class.getSimpleName();
+    private ProgressDialog pDialog;
+    private String url;
+    private ArrayList<Apartment> apartmentList = new ArrayList<Apartment>();
 
     private static final String LOG_TAG = "GuardianHouseApp";
 
@@ -136,17 +151,17 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
 
                             Address address = list.get(0);
 
-                            double latitude = address.getLatitude();
-                            double longitude = address.getLongitude();
-                            int distance = seekbarRadius.getProgress();
+                            latitude = address.getLatitude();
+                            longitude = address.getLongitude();
+                            distance = seekbarRadius.getProgress();
 
-                            Bundle b = new Bundle();
-                            b.putDouble("latitude", latitude);
-                            b.putDouble("longitude", longitude);
-                            b.putInt("distance", distance);
-                            ResultsFragment searchResults = new ResultsFragment();
-                            searchResults.setArguments(b);
-                            ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchResults, "Risultati");
+                            url = Config.SEARCH_APT_URL + "/" + latitude + "," + longitude + "," + distance;
+
+                            pDialog = new ProgressDialog(getActivity());
+                            pDialog.setMessage("Ricerca in corso...");
+                            pDialog.show();
+
+                            searchByLocation();
                         }
                     } else {
                         // chiedo all'utente di inserire i dati
@@ -171,22 +186,17 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                     // check if GPS enabled
                     if (gps.canGetLocation()) {
 
-                        double latitude = gps.getLatitude();
-                        double longitude = gps.getLongitude();
-                        int distance = seekbarRadius.getProgress();
+                        latitude = gps.getLatitude();
+                        longitude = gps.getLongitude();
+                        distance = seekbarRadius.getProgress();
 
-                        // \n is for new line
-                        //                    Toast.makeText(
-                        //                            getApplicationContext(),
-                        //                            "Coordinate: \nLat: " + latitude
-                        //                                    + "\nLong: " + longitude, Toast.LENGTH_LONG).show();
-                        Bundle b = new Bundle();
-                        b.putDouble("latitude", latitude);
-                        b.putDouble("longitude", longitude);
-                        b.putInt("distance", distance);
-                        ResultsListFragment searchResults = new ResultsListFragment();
-                        searchResults.setArguments(b);
-                        ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchResults, "Risultati");
+                        url = Config.SEARCH_APT_URL + "/" + latitude + "," + longitude + "," + distance;
+
+                        pDialog = new ProgressDialog(getActivity());
+                        pDialog.setMessage("Ricerca in corso...");
+                        pDialog.show();
+
+                        searchByLocation();
                     } else {
                         // can't get location
                         // GPS or Network is not enabled
@@ -206,7 +216,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
 
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         String str = (String) adapterView.getItemAtPosition(position);
-        Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT).show();
     }
 
     public static ArrayList<String> autocomplete(String input) {
@@ -311,5 +321,82 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
         }
     }
 
+    public void searchByLocation() {
+
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, url,
+                (String) null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                hidePDialog();
+                try {
+                    JSONArray apartmentArray = response.getJSONArray("apartments");
+                    for (int i = 0; i < apartmentArray.length(); i++) {
+                        JSONObject singleApartment = apartmentArray.getJSONObject(i);
+                        Apartment apartment = new Apartment();
+
+                        //ottengo il nome appartamento
+                        apartment.setId(singleApartment.getJSONObject("_id").getString("$id"));
+                        apartment.setThumbnailUrl(singleApartment.getJSONArray("pictures").getJSONObject(0).getString("url"));
+                        apartment.setName(singleApartment.getJSONObject("details").getString("name"));
+                        apartment.setFeatured(singleApartment.getJSONObject("details").getBoolean("featured"));
+
+                        //ottengo il rating
+                        String stringRating = singleApartment.getString("average_rating");
+                        apartment.setRating(Float.parseFloat(stringRating));
+
+                        apartment.setLatitude(singleApartment.getJSONObject("location").getJSONArray("coordinates").getDouble(1));
+                        apartment.setLongitude(singleApartment.getJSONObject("location").getJSONArray("coordinates").getDouble(0));
+                        apartment.setDistanceFromLocation(singleApartment.getDouble("distance"));
+                        apartmentList.add(apartment);
+                    }
+                    bundle = new Bundle();
+                    bundle.putDouble("myLatitude", latitude);
+                    bundle.putDouble("myLongitude", longitude);
+                    bundle.putInt("distance", distance);
+                    bundle.putParcelableArrayList("aptData", apartmentList);
+
+                    ResultsFragment searchResults = new ResultsFragment();
+                    searchResults.setArguments(bundle);
+                    ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchResults, "Risultati");
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Error: " + error.getMessage());
+                hidePDialog();
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Content-Type", "application/x-www-form-urlencoded");
+                return headers;
+            }
+        };
+
+        AppController.getInstance().addToRequestQueue(jsonObjReq);
+    }
+
+    private void hidePDialog() {
+        if (pDialog != null) {
+            pDialog.dismiss();
+            pDialog = null;
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        apartmentList.clear();
+    }
 
 }

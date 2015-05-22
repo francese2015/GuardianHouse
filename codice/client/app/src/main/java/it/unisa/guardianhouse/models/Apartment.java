@@ -1,6 +1,9 @@
 package it.unisa.guardianhouse.models;
 
-public class Apartment {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Apartment implements Parcelable{
 
     // id
     private String aptId;
@@ -11,11 +14,13 @@ public class Apartment {
     private Boolean featured;
 
     // indirizzo
+    private String completeAddress;
+    private String internId;
     private String streetNumber;    // numero via (es. 6)
     private String route;           // via (es. Via Roma)
     private String locality;        // città (es. Campobasso)
     private String adminAreaLevel1; // regioni (es. Molise)
-    private String adminAreaLevel2; // province (es. Campobasso)
+    private String adminAreaLevel2; // province (es. CB)
     private String postalCode;      // codice postale (es. 86100)
     private String country;         // paese (es. Italia)
 
@@ -29,6 +34,32 @@ public class Apartment {
 
     public Apartment() {
 
+    }
+
+    public Apartment(Parcel in) {
+        aptId = in.readString();
+        name = in.readString();
+        rating = in.readFloat();
+        featured = in.readByte() != 0; //myBoolean == true if byte != 0
+        completeAddress = in.readString();
+        internId = in.readString();
+        streetNumber = in.readString();
+        route = in.readString();
+        locality = in.readString();
+        adminAreaLevel1 = in.readString();
+        adminAreaLevel2 = in.readString();
+        postalCode = in.readString();
+        country = in.readString();
+        latitude = in.readDouble();
+        longitude = in.readDouble();
+        distanceFromLocation = in.readDouble();
+        thumbnailUrl = in.readString();
+    }
+
+    public String getCompleteAddress() {
+        String completeAddress = route + " " + streetNumber + ", " + postalCode + " " +
+                locality + " (" + adminAreaLevel2 + ")";
+        return completeAddress;
     }
 
     public String getId() {
@@ -151,4 +182,41 @@ public class Apartment {
         this.latitude = latitude;
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(aptId);
+        dest.writeString(name);
+        dest.writeFloat(rating);
+        dest.writeByte((byte) (featured ? 1 : 0)); //if myBoolean == true, byte == 1
+        dest.writeString(completeAddress);
+        dest.writeString(internId);
+        dest.writeString(streetNumber);
+        dest.writeString(route);
+        dest.writeString(locality);
+        dest.writeString(adminAreaLevel1);
+        dest.writeString(adminAreaLevel2);
+        dest.writeString(postalCode);
+        dest.writeString(country);
+        dest.writeDouble(latitude);
+        dest.writeDouble(longitude);
+        dest.writeDouble(distanceFromLocation);
+        dest.writeString(thumbnailUrl);
+    }
+
+    public static final Parcelable.Creator<Apartment> CREATOR = new Parcelable.Creator<Apartment>()
+    {
+        public Apartment createFromParcel(Parcel in)
+        {
+            return new Apartment(in);
+        }
+        public Apartment[] newArray(int size)
+        {
+            return new Apartment[size];
+        }
+    };
 }

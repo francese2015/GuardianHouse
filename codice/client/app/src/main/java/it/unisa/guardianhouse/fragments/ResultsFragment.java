@@ -22,11 +22,15 @@ public class ResultsFragment extends Fragment implements MaterialTabListener {
     MaterialTabHost tabHost;
     ViewPager pager;
     ViewPagerAdapter adapter;
+    Bundle bundle;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_results, container, false);
 
+        bundle = getArguments();
+
+        // codice del fragment search
         tabHost = (MaterialTabHost) view.findViewById(R.id.tabHost);
         pager = (ViewPager) view.findViewById(R.id.pager);
 
@@ -81,15 +85,15 @@ public class ResultsFragment extends Fragment implements MaterialTabListener {
         }
 
         public Fragment getItem(int index) {
-            Bundle b = getArguments();
+            bundle = getArguments();
             switch (index) {
                 case 0:
                     ResultsListFragment searchResults = new ResultsListFragment();
-                    searchResults.setArguments(b);
+                    searchResults.setArguments(bundle);
                     return searchResults;
                 case 1:
                     ResultsMapFragment searchResultsMap = new ResultsMapFragment();
-                    searchResultsMap.setArguments(b);
+                    searchResultsMap.setArguments(bundle);
                     return searchResultsMap;
             }
             return null;
@@ -116,5 +120,15 @@ public class ResultsFragment extends Fragment implements MaterialTabListener {
             // do nothing here! no call to super.restoreState(state, loader);
         }
 
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 }
