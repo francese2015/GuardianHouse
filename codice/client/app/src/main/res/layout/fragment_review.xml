@@ -1,4 +1,6 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="it.unisa.guardianhouse.fragments.ReviewFragment">
@@ -14,36 +16,23 @@
             android:paddingBottom="@dimen/activity_vertical_margin"
             android:paddingTop="@dimen/activity_vertical_margin">
 
-              <EditText
-                android:id="@+id/apartment_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="12dp"
-                android:textSize="16sp"
-                android:inputType="textAutoComplete"
-                android:textColor="@color/DarkGray"
-                android:text="@string/insert_address" />
-
-
-
 
             <ImageView
                 android:id="@+id/imgViewPhoto"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_below="@+id/apartment_address"
                 android:adjustViewBounds="true"
                 android:cropToPadding="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/image_viewer_placeholder"
                                 />
+
+
             <TextView
                 android:id="@+id/txtImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/imgViewPhoto"
-
                 android:layout_alignRight="@+id/imgViewPhoto"
                 android:layout_alignBottom="@+id/imgViewPhoto"
                 android:layout_margin="1dp"
@@ -54,18 +43,54 @@
 
 
 
-            <LinearLayout
+            <RelativeLayout
                 android:id="@+id/textbox"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_below="@id/imgViewPhoto"
                 android:orientation="vertical" >
 
+
+                <EditText
+                    android:id="@+id/apartment_address"
+                    android:layout_width="235dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:textSize="18sp"
+                    android:inputType="textAutoComplete"
+                    android:textColor="@color/DarkGray"
+                    android:text="@string/insert_address">
+
+                </EditText>
+
+                <ImageButton
+                    android:id="@+id/img_quality"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_map" />
+
+
+
+            </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/review_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/textbox"
+                    android:layout_marginTop="20dp"
+                    >
+
                 <EditText
                     android:id="@+id/txtReview"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/apartment_address"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
                     android:layout_weight="1"
                     android:background="@drawable/textbox_bg_review"
                     android:ems="10"
@@ -91,12 +116,12 @@
                 android:id="@+id/apartment_data"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/textbox"
+                android:layout_below="@+id/review_content"
                 android:divider="@drawable/divider"
                 android:orientation="vertical"
                 android:showDividers="middle">
 
-                <!-- Dimensione -->
+                <!-- Elettrodomestici -->
 
                 <RelativeLayout
 
@@ -104,6 +129,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/layout_selector"
                     android:clickable="false">
 
@@ -141,6 +167,8 @@
                         android:rating="4" />
 
                 </RelativeLayout>
+
+                <!-- Capacità Termica-->
 
                 <RelativeLayout
 
@@ -186,6 +214,9 @@
 
                 </RelativeLayout>
 
+
+                <!-- Onestà Padrone di Casa -->
+
                 <RelativeLayout
 
                     android:id="@+id/relative_dimension2"
@@ -228,6 +259,9 @@
                         android:rating="4" />
 
                 </RelativeLayout>
+
+
+                <!-- Sicurezza Casa -->
 
                 <RelativeLayout
 
@@ -273,6 +307,70 @@
                 </RelativeLayout>
 
 
+                <!-- Durata Contratto -->
+
+                <TextView
+                    android:id="@+id/contract_time_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#2196F3"
+                    android:textSize="20dp"
+                    android:text="@string/contract_duration_hint"
+                    android:textStyle="bold" />
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="1dp"
+                    android:gravity="center">
+
+
+                    <Button
+                        android:id="@+id/button_less"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="40dp"
+                        android:text="@string/less"
+                        android:textSize="20sp"
+                        android:layout_row="0"
+                        android:layout_column="0" />
+
+                    <TextView
+                        android:id="@+id/integer_guests"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/zero_integer"
+                        android:textColor="@color/ColorPrimary"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_row="0"
+                        android:layout_column="1" />
+
+
+                    <Button
+                        android:id="@+id/button_plus"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/plus"
+                        android:textSize="20sp"
+                        android:layout_row="0"
+                        android:layout_column="6" />
+
+
+                </GridLayout>
+
+
+
+
             </LinearLayout>
 
 
@@ -282,4 +380,4 @@
 
     </ScrollView>
 
-</FrameLayout>
+</ScrollView>
