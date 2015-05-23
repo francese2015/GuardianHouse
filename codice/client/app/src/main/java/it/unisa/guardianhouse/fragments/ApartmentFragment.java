@@ -6,13 +6,17 @@ import android.support.v4.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -22,6 +26,12 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.NetworkImageView;
+import com.daimajia.slider.library.Animations.DescriptionAnimation;
+import com.daimajia.slider.library.Indicators.PagerIndicator;
+import com.daimajia.slider.library.SliderLayout;
+import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.daimajia.slider.library.SliderTypes.TextSliderView;
+import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -39,10 +49,11 @@ import java.util.Map;
 
 import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
+import it.unisa.guardianhouse.adapters.TransformerAdapter;
 import it.unisa.guardianhouse.config.Config;
 
 
-public class ApartmentFragment extends Fragment {
+public class ApartmentFragment extends Fragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener{
 
     private static String TAG = ApartmentFragment.class.getSimpleName();
     private ProgressDialog pDialog;
@@ -55,6 +66,7 @@ public class ApartmentFragment extends Fragment {
     private Double distance;
     String aptId;
     ImageView featured;
+    private SliderLayout imgSlider;
     TextView nameApt;
     RatingBar ratingBar;
     TextView distanceTextView;
@@ -79,9 +91,41 @@ public class ApartmentFragment extends Fragment {
         distance = b.getDouble("distance");
         url = Config.APARTMENTS_URL + "/" + aptId;
 
+        pDialog = new ProgressDialog(getActivity());
+        pDialog.setMessage("Caricamento...");
+        pDialog.show();
+
+        getApartmentData();
+
         mMapView = (MapView) view.findViewById(R.id.map);
         mMapView.onCreate(mBundle);
         setUpMapIfNeeded(view);
+
+        // codice image slider
+        imgSlider = (SliderLayout) view.findViewById(R.id.img_slider);
+        HashMap<String,String> url_maps = new HashMap<String, String>();
+        url_maps.put("Foto 1", "http://carlo.teammolise.rocks/img/apt/apt02.jpg");
+        url_maps.put("Foto 2", "http://carlo.teammolise.rocks/img/apt/apt03.jpg");
+
+        for(String name : url_maps.keySet()){
+            TextSliderView textSliderView = new TextSliderView(getActivity());
+            // initialize a SliderLayout
+            textSliderView
+                    //.description(name)
+                    .image(url_maps.get(name))
+                    .setScaleType(BaseSliderView.ScaleType.Fit)
+                    .setOnSliderClickListener(this);
+//            //add your extra information
+//            textSliderView.bundle(new Bundle());
+//            textSliderView.getBundle()
+//                    .putString("extra",name);
+            imgSlider.addSlider(textSliderView);
+        }
+        imgSlider.setPresetTransformer(SliderLayout.Transformer.Default);
+        imgSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
+        //imgSlider.setCustomAnimation(new DescriptionAnimation());
+        imgSlider.setDuration(4000);
+        imgSlider.addOnPageChangeListener(this);
 
         featured = (ImageView) view.findViewById(R.id.imgViewFeatured);
         nameApt = (TextView) view.findViewById(R.id.name_apt);
@@ -185,12 +229,6 @@ public class ApartmentFragment extends Fragment {
 
         */
 
-        pDialog = new ProgressDialog(getActivity());
-        pDialog.setMessage("Caricamento...");
-        pDialog.show();
-
-        getApartmentData();
-
         return view;
     }
 
@@ -271,7 +309,7 @@ public class ApartmentFragment extends Fragment {
                     if (singleApartment.getJSONObject("details").getBoolean("featured") == false) {
                         featured.setVisibility(View.INVISIBLE);
                     }
-                    thumbnail.setImageUrl(singleApartment.getJSONArray("pictures").getJSONObject(0).getString("url"), imageLoader);
+                    //thumbnail.setImageUrl(singleApartment.getJSONArray("pictures").getJSONObject(0).getString("url"), imageLoader);
                     //ottengo il nome appartamento
                     nameApt.setText(singleApartment.getJSONObject("details").getString("name"));
                     //ottengo il rating
@@ -346,5 +384,29 @@ public class ApartmentFragment extends Fragment {
         mMapView.onDestroy();
         super.onDestroy();
     }
+
+    // altri metodi dello slider
+    @Override
+    public void onStop() {
+        // To prevent a memory leak on rotation, make sure to call stopAutoCycle() on the slider before activity or fragment is destroyed
+        imgSlider.stopAutoCycle();
+        super.onStop();
+    }
+
+    @Override
+    public void onSliderClick(BaseSliderView slider) {
+        // aprire immagine qui
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+
+    @Override
+    public void onPageSelected(int position) {
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {}
 
 }
