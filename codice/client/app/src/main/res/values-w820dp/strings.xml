@@ -40,4 +40,6 @@
     <string name="fragment_review_title">Titolo Recensione</string>
     <string name="fragment_5_header">Prima di andare via, lascia un tuo commento sull\'appartamento...</string>
     <string name="contract_duration_hint">Indica Durata Contratto(in Mesi)</string>
+    <string name="bus_vote">Vicinanza con I mezzi di Trasporto</string>
+    <string name="vote_neighbours">Rapporto con i Vicini</string>
 </resources>

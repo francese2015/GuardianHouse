@@ -1,7 +1,7 @@
-
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="it.unisa.guardianhouse.fragments.ReviewFragment">
 
@@ -54,9 +54,11 @@
 
                 <EditText
                     android:id="@+id/apartment_address"
-                    android:layout_width="235dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
                     android:layout_marginLeft="50dp"
+                    android:layout_marginStart="50dp"
                     android:textSize="18sp"
                     android:inputType="textAutoComplete"
                     android:textColor="@color/DarkGray"
@@ -141,6 +143,8 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:text="@string/vote_furniture"
+                        android:textColor="#2196F3"
+                        android:textSize="18sp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:textStyle="bold" />
@@ -159,6 +163,7 @@
                         android:layout_width="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
                         android:layout_centerHorizontal="true"
                         android:clickable="false"
                         android:indeterminate="false"
@@ -189,7 +194,9 @@
                         android:text="@string/vote_thermic_capacity"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="#2196F3"
+                        android:textSize="18sp"/>
 
                     <ImageView
                         android:id="@+id/img_quality1"
@@ -236,7 +243,9 @@
                         android:text="@string/vote_landlord_honesty"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="#2196F3"
+                        android:textSize="18sp"/>
 
                     <ImageView
                         android:id="@+id/img_honesty"
@@ -282,7 +291,9 @@
                         android:text="@string/vote_house_security"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="#2196F3"
+                        android:textSize="18sp"/>
 
                     <ImageView
                         android:id="@+id/img_security"
@@ -316,7 +327,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="8dp"
                     android:textColor="#2196F3"
-                    android:textSize="20dp"
+                    android:textSize="18sp"
                     android:text="@string/contract_duration_hint"
                     android:textStyle="bold" />
 
@@ -366,12 +377,119 @@
                         android:layout_column="6" />
 
 
+
+
                 </GridLayout>
 
+                <!-- Mezzi Di Trasporto -->
 
+                <RelativeLayout
+
+                    android:id="@+id/relative_dimension4"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="false"
+                    android:layout_marginTop="20dp">
+
+
+
+                    <TextView
+                        android:id="@+id/bus_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/bus_vote"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:textStyle="bold"
+                        android:textColor="#2196F3"
+                        android:textSize="18sp"/>
+
+                    <ImageView
+                        android:id="@+id/img_security"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_bus_grey600_18dp" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBar3"
+                        android:layout_width="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:clickable="false"
+                        android:indeterminate="false"
+                        android:longClickable="false"
+                        android:numStars="5"
+                        android:rating="4" />
+
+                </RelativeLayout>
+
+
+                <!-- Rapporto con i Vicini -->
+
+                <RelativeLayout
+
+                    android:id="@+id/relative_dimension5"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="false"
+                    android:layout_marginTop="20dp">
+
+
+
+                    <TextView
+                        android:id="@+id/neighbours_vote_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/vote_neighbours"
+                        android:layout_marginLeft="10dp"
+                        android:textStyle="bold"
+                        android:textColor="#2196F3"
+                        android:textSize="18sp"/>
+
+                    <ImageView
+                        android:id="@+id/img_security"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/icon_user" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBar3"
+                        android:layout_width="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:clickable="false"
+                        android:indeterminate="false"
+                        android:longClickable="false"
+                        android:numStars="5"
+                        android:rating="4" />
+
+                </RelativeLayout>
 
 
             </LinearLayout>
+
+            <com.gc.materialdesign.views.ButtonRectangle
+                android:id="@+id/button_to_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/apartment_data"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:background="#1E88E5"
+                materialdesign:rippleSpeed="50"
+                android:text="@string/button_save" />
 
 
         </RelativeLayout>
