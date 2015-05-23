@@ -31,6 +31,8 @@ dependencies {
     compile 'com.mcxiaoke.volley:library:1.0.+'
     compile 'it.neokree:MaterialNavigationDrawer:1.3.3'
     compile 'it.neokree:MaterialTabs:0.11'
+    compile 'com.android.support:cardview-v7:21.0.+'
+    compile 'com.android.support:recyclerview-v7:21.0.+'
     compile 'com.github.navasmdc:MaterialDesign:1.5@aar'
     compile 'com.nineoldandroids:library:2.4.0' //aggiunta per far funzionare il ButtonFloat
 }
