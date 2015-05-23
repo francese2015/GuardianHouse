@@ -30,6 +30,7 @@ import com.daimajia.slider.library.Animations.DescriptionAnimation;
 import com.daimajia.slider.library.Indicators.PagerIndicator;
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
+import com.daimajia.slider.library.SliderTypes.DefaultSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.daimajia.slider.library.Tricks.ViewPagerEx;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
@@ -103,14 +104,15 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
 
         // codice image slider
         imgSlider = (SliderLayout) view.findViewById(R.id.img_slider);
+        imgSlider.stopAutoCycle();
         HashMap<String,String> url_maps = new HashMap<String, String>();
         url_maps.put("Foto 1", "http://carlo.teammolise.rocks/img/apt/apt02.jpg");
         url_maps.put("Foto 2", "http://carlo.teammolise.rocks/img/apt/apt03.jpg");
 
         for(String name : url_maps.keySet()){
-            TextSliderView textSliderView = new TextSliderView(getActivity());
+            DefaultSliderView sliderView = new DefaultSliderView(getActivity());
             // initialize a SliderLayout
-            textSliderView
+            sliderView
                     //.description(name)
                     .image(url_maps.get(name))
                     .setScaleType(BaseSliderView.ScaleType.Fit)
@@ -119,7 +121,7 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
 //            textSliderView.bundle(new Bundle());
 //            textSliderView.getBundle()
 //                    .putString("extra",name);
-            imgSlider.addSlider(textSliderView);
+            imgSlider.addSlider(sliderView);
         }
         imgSlider.setPresetTransformer(SliderLayout.Transformer.Default);
         imgSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
