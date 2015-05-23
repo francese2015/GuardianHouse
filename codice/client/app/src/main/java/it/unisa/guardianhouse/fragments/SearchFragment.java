@@ -329,7 +329,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                 (String) null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                hidePDialog();
+
                 try {
                     JSONArray apartmentArray = response.getJSONArray("apartments");
                     for (int i = 0; i < apartmentArray.length(); i++) {
@@ -373,6 +373,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                hidePDialog();
             }
         }, new Response.ErrorListener() {
             @Override
