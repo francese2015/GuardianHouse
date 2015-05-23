@@ -42,4 +42,10 @@
     <string name="contract_duration_hint">Indica Durata Contratto(in Mesi)</string>
     <string name="bus_vote">Vicinanza con I mezzi di Trasporto</string>
     <string name="vote_neighbours">Rapporto con i Vicini</string>
+    <string name="address_label">Indirizzo</string>
+    <string name="furniture">Elettrodomestici</string>
+    <string name="thermic_capacity">Capacità Termica</string>
+    <string name="landlord_honesty">Onestà Padrone di Casa</string>
+    <string name="house_security">Sicurezza Casa</string>
+    <string name="go_back">Torna Indietro</string>
 </resources>
