@@ -29,6 +29,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.gc.materialdesign.views.ButtonFlat;
 import com.gc.materialdesign.views.ButtonFloat;
 
 import org.json.JSONArray;
@@ -57,8 +58,8 @@ import it.unisa.guardianhouse.utils.Utils;
 
 public class SearchFragment extends Fragment implements AdapterView.OnItemClickListener {
 
-    private Button btnSearchAddress;
-    private ButtonFloat btnSearchLocation;
+    private ButtonFloat btnSearchAddress;
+    private ButtonFlat btnSearchLocation;
     private SeekBar seekbarRadius;
     private Double latitude;
     private Double longitude;
@@ -130,8 +131,8 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
         });
 
 
-        btnSearchAddress = (Button) view.findViewById(R.id.search_img);
-        btnSearchLocation = (ButtonFloat) view.findViewById(R.id.search_by_gps);
+        btnSearchAddress = (ButtonFloat) view.findViewById(R.id.search_img);
+        btnSearchLocation = (ButtonFlat) view.findViewById(R.id.search_by_gps);
 
         // bottone search by address
         btnSearchAddress.setOnClickListener(new View.OnClickListener() {

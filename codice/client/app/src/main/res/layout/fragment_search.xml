@@ -1,73 +1,76 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context="it.unisa.guardianhouse.fragments.SearchFragment">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/addressLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Indirizzo"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="16dp"
-            >
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:ems="10"
+            android:hint="@string/insert_address_hint"></AutoCompleteTextView>
+        <!--android:drawableRight="@drawable/ic_magnify"-->
 
-            <AutoCompleteTextView
-                android:id="@+id/autoCompleteTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:hint="@string/insert_address_hint"
-                android:ems="10" >
-            </AutoCompleteTextView>
+        <TextView
+            android:id="@+id/tvRadiusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/distance"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tvRadiusText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:text="@string/distance"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+        <!-- <com.gc.materialdesign.views.Slider
+            android:id="@+id/slider"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#1E88E5"
+            materialdesign:max="50"
+            materialdesign:min="0"
+            materialdesign:showNumberIndicator="true"/>
+        -->
 
-            <!-- <com.gc.materialdesign.views.Slider
-                android:id="@+id/slider"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="#1E88E5"
-                materialdesign:max="50"
-                materialdesign:min="0"
-                materialdesign:showNumberIndicator="true"/>
-            -->
+        <SeekBar
+            android:id="@+id/seekbarRadius"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-           <SeekBar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/seekbarRadius" />
+        <com.gc.materialdesign.views.ButtonFlat
+            android:id="@+id/search_by_gps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="#1E88E5"
+            materialdesign:rippleSpeed="50"
+            android:text="@string/gps_search" />
 
+    </LinearLayout>
 
+    <com.gc.materialdesign.views.ButtonFloat
+        android:id="@+id/search_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="bottom|end"
+        materialdesign:iconDrawable="@drawable/ic_magnify_white" />
 
-            <Button
-                android:id="@+id/search_img"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:text="@string/search_address"
-                android:drawableLeft="@mipmap/ic_action_search"/>
-
-            <com.gc.materialdesign.views.ButtonFloat
-                android:id="@+id/search_by_gps"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="50dp"
-                android:background="#1E88E5"
-                materialdesign:iconDrawable="@drawable/ic_action_location_found" />
-
-        </LinearLayout>
-
-</RelativeLayout>
+</FrameLayout>

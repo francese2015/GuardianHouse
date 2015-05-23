@@ -186,7 +186,7 @@
     <string name="no_results">Nessun Risultato</string>
     <string name="give_review">Lascia Recensione</string>
     <string name="user_feedback_hint">Feedback Utente</string>
-    <string name="insert_address_hint">Inserisci l\'indirizzo</string>
+    <string name="insert_address_hint">Dove?</string>
     <string name="distance">Distanza:</string>
     <string name="search_address">RICERCA INDIRIZZO</string>
     <string name="fragment_room_desc">Raccontaci qualcosa di più sull\'appartamento...</string>
@@ -207,7 +207,7 @@
     <string name="title_description_fragment3">Inserisci un titolo descrittivo della tua recensione</string>
     <string name="description">Descrizione</string>
     <string name="description_hint_fragment3">Scrivi un commento riguardante l\'appartamento</string>
-    <string name="gps_search">RICERCA GPS</string>
+    <string name="gps_search">Questa posizione</string>
     <string name="add_edit">Aggiungi/Modifica</string>
     <string name="fragment_brief_description">Inserisci una breve Descrizione</string>
     <string name="vote_furniture">Vota gli elettrodomestici</string>

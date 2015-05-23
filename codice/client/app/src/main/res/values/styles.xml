@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
-
-
-
     <style name="MyNavigationDrawerTheme"  parent="MaterialNavigationDrawerTheme.Light.DarkActionBar">
         <!--<item name="android:windowBackground">@color/bianco</item>-->
         <item name="colorPrimary">@color/ColorPrimary</item>
