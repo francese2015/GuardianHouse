@@ -41,6 +41,7 @@ import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -96,7 +97,7 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
         pDialog.setMessage("Caricamento...");
         pDialog.show();
 
-        getApartmentData();
+
 
         mMapView = (MapView) view.findViewById(R.id.map);
         mMapView.onCreate(mBundle);
@@ -105,27 +106,8 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
         // codice image slider
         imgSlider = (SliderLayout) view.findViewById(R.id.img_slider);
         imgSlider.stopAutoCycle();
-        HashMap<String,String> url_maps = new HashMap<String, String>();
-        url_maps.put("Foto 1", "http://carlo.teammolise.rocks/img/apt/apt02.jpg");
-        url_maps.put("Foto 2", "http://carlo.teammolise.rocks/img/apt/apt03.jpg");
-
-        for(String name : url_maps.keySet()){
-            DefaultSliderView sliderView = new DefaultSliderView(getActivity());
-            // initialize a SliderLayout
-            sliderView
-                    //.description(name)
-                    .image(url_maps.get(name))
-                    .setScaleType(BaseSliderView.ScaleType.Fit)
-                    .setOnSliderClickListener(this);
-//            //add your extra information
-//            textSliderView.bundle(new Bundle());
-//            textSliderView.getBundle()
-//                    .putString("extra",name);
-            imgSlider.addSlider(sliderView);
-        }
         imgSlider.setPresetTransformer(SliderLayout.Transformer.Default);
         imgSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
-        //imgSlider.setCustomAnimation(new DescriptionAnimation());
         imgSlider.setDuration(4000);
         imgSlider.addOnPageChangeListener(this);
 
@@ -136,6 +118,8 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
         distanceTextView = (TextView) view.findViewById(R.id.distanceFromLocation);
         DecimalFormat precision = new DecimalFormat("##.##");
         distanceTextView.setText("Distanza: " + precision.format(distance) + " Km");
+
+        getApartmentData();
 
         /*
         RelativeLayout dimensionRelative = (RelativeLayout) view.findViewById(R.id.relative_dimension);
@@ -317,6 +301,20 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
                     //ottengo il rating
                     String stringRating = singleApartment.getString("average_rating");
                     ratingBar.setRating(Float.parseFloat(stringRating));
+
+                    JSONArray photoArray = singleApartment.getJSONArray("pictures");
+                    HashMap<String, String> url_maps = new HashMap<String, String>();
+                    for (int i = 0; i < photoArray.length(); i++) {
+                        url_maps.put(photoArray.getJSONObject(i).getString("title"), photoArray.getJSONObject(i).getString("url"));
+                    }
+                    for(String name : url_maps.keySet()){
+                        DefaultSliderView sliderView = new DefaultSliderView(getActivity());
+                        // initialize a SliderLayout
+                        sliderView
+                                .image(url_maps.get(name))
+                                .setScaleType(BaseSliderView.ScaleType.Fit);
+                        imgSlider.addSlider(sliderView);
+                    }
 
                 } catch (JSONException e) {
                     e.printStackTrace();
