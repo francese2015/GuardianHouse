@@ -22,6 +22,7 @@ public class SessionManager {
     private static final String PREF_NAME = "AndroidHiveLogin";     
     private static final String KEY_IS_LOGGEDIN = "isLoggedIn";    
     private static final String API_KEY = "api_key";
+    private static final String USER_ID = "id";
  
     public SessionManager(Context context) {
         this._context = context;
@@ -29,9 +30,10 @@ public class SessionManager {
         editor = pref.edit();
     }
  
-    public void setLogin(boolean isLoggedIn, String apiKey) { 
+    public void setLogin(boolean isLoggedIn, String apiKey, String userId) {
         editor.putBoolean(KEY_IS_LOGGEDIN, isLoggedIn);
         editor.putString(API_KEY, apiKey);
+        editor.putString(USER_ID, userId);
         // commit changes
         editor.commit(); 
         Log.d(TAG, "User login session modified!");
@@ -44,10 +46,9 @@ public class SessionManager {
     public String getApiKey(){
         return pref.getString(API_KEY, "");
     }
-    
-    public void setApiKey(String apiKey) {        
-        // commit changes
-        editor.commit(); 
-        Log.d(TAG, "Api key stored!");
+
+    public String getUserId(){
+        return pref.getString(USER_ID, "");
     }
+
 }

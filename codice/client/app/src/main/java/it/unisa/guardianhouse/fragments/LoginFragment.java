@@ -139,10 +139,10 @@ public class LoginFragment extends Fragment {
                         // Create login session
                         userId = response.getJSONObject("user").getJSONObject("id").getString("$id");
                         apiKey = response.getJSONObject("user").getString("api_key");
-                        session.setLogin(true, apiKey);
+                        session.setLogin(true, apiKey, userId);
 
                         Toast.makeText(getActivity(),
-                                "Login effettuato! :)", Toast.LENGTH_LONG).show();
+                                "Login effettuato!", Toast.LENGTH_LONG).show();
                         ((NavigationDrawer) getActivity()).loginUser();
                         HomeFragment homeFragment = new HomeFragment();
                         ((MaterialNavigationDrawer) getActivity()).setFragment(homeFragment, "Home");

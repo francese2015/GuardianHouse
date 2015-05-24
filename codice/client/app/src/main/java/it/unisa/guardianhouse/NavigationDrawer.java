@@ -83,7 +83,7 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
     }
 
     private void logoutUser() {
-        session.setLogin(false, "");
+        session.setLogin(false, "", "");
         this.removeSection(this.profile);
         this.removeSection(this.logout);
         this.addSection(this.login);
@@ -91,7 +91,6 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
     }
 
     public void loginUser() {
-        session.setLogin(false, "");
         this.addSection(this.profile);
         this.addSection(this.logout);
         this.removeSection(this.login);

@@ -2,6 +2,7 @@ package it.unisa.guardianhouse.fragments;
 
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,15 +11,51 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.NetworkImageView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
+import it.unisa.guardianhouse.config.Config;
+import it.unisa.guardianhouse.helpers.SessionManager;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+
 public class ProfileFragment extends Fragment {
 
+    private static String TAG = ProfileFragment.class.getSimpleName();
+    private ProgressDialog pDialog;
+    private String url;
+    SessionManager session;
+    NetworkImageView userPhoto;
+    ImageLoader imageLoader = AppController.getInstance().getImageLoader();
+    TextView topUsernameView;
+    RatingBar ratingBar;
+    TextView usernameView;
+    TextView emailView;
+    TextView nameView;
+    TextView surnameView;
+    TextView birthdateView;
+    TextView birthplaceView;
+    TextView addressView;
+    TextView phoneView;
+    TextView roleView;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -29,6 +66,31 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        session = new SessionManager(getActivity());
+
+        url = Config.USERS_URL + "/" + session.getUserId();
+
+
+        pDialog = new ProgressDialog(getActivity());
+        pDialog.setMessage("Caricamento...");
+        pDialog.show();
+
+        getUserData();
+
+        topUsernameView = (TextView) view.findViewById(R.id.username);
+        ratingBar = (RatingBar) view.findViewById(R.id.rating_bar);
+        nameView = (TextView) view.findViewById(R.id.name_value);
+        surnameView = (TextView) view.findViewById(R.id.surname_value);
+        emailView = (TextView) view.findViewById(R.id.email_value);
+        usernameView = (TextView) view.findViewById(R.id.username_value);
+        birthdateView = (TextView) view.findViewById(R.id.birthdate_value);
+        birthplaceView = (TextView) view.findViewById(R.id.birthplace_value);
+        addressView = (TextView) view.findViewById(R.id.address_value);
+        phoneView = (TextView) view.findViewById(R.id.telephone_value);
+        roleView = (TextView) view.findViewById(R.id.role_value);
+
+
         // richiamo i vari relative layout
         RelativeLayout nameRelative = (RelativeLayout) view.findViewById(R.id.relative_name);
         RelativeLayout surnameRelative = (RelativeLayout) view.findViewById(R.id.relative_surname);
@@ -189,6 +251,61 @@ public class ProfileFragment extends Fragment {
 
         // show it
         alertDialog.show();
+    }
+
+    public void getUserData() {
+
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, url,
+                (String) null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                hidePDialog();
+                try {
+                    JSONObject userJson = response.getJSONObject("user");
+                    if (imageLoader == null)
+                        imageLoader = AppController.getInstance().getImageLoader();
+                    //userPhoto.setImageUrl(userJson.getJSONObject("profile_pic").getString("url"), imageLoader);
+                    topUsernameView.setText(userJson.getString("username"));
+                    String stringRating = userJson.getString("average_rating");
+                    ratingBar.setRating(Float.parseFloat(stringRating));
+                    nameView.setText(userJson.getString("name"));
+                    surnameView.setText(userJson.getString("surname"));
+                    emailView.setText(userJson.getString("email"));
+                    usernameView.setText(userJson.getString("username"));
+                    birthdateView.setText(userJson.getString("birthdate"));
+                    birthplaceView.setText(userJson.getString("birthplace"));
+                    addressView.setText(userJson.getString("address"));
+                    phoneView.setText(userJson.getString("phone"));
+                    roleView.setText(userJson.getString("role"));
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG, "Error: " + error.getMessage());
+                hidePDialog();
+            }
+        }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Content-Type", "application/x-www-form-urlencoded");
+                headers.put("Authorization", session.getApiKey());
+                return headers;
+            }
+        };
+
+        AppController.getInstance().addToRequestQueue(jsonObjReq);
+    }
+
+    private void hidePDialog() {
+        if (pDialog != null) {
+            pDialog.dismiss();
+            pDialog = null;
+        }
     }
 
 }
