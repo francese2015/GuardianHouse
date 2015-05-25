@@ -16,14 +16,15 @@
             android:gravity="center"
             android:paddingBottom="@dimen/activity_vertical_margin">
 
-            <ImageView
+
+            <ImageSwitcher
                 android:id="@+id/imgViewPhoto"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"
                 android:adjustViewBounds="true"
                 android:cropToPadding="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/image_viewer_placeholder"
+
                 />
 
             <LinearLayout
@@ -154,7 +155,7 @@
 
 
                     <EditText
-                        android:id="@+id/txt_eview"
+                        android:id="@+id/txt_view"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:layout_margin="16dp"

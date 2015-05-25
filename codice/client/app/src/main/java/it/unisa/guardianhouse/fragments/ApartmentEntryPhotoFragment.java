@@ -1,11 +1,14 @@
 package it.unisa.guardianhouse.fragments;
 
 
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageSwitcher;
+import android.widget.Toast;
 
 import com.gc.materialdesign.views.ButtonRectangle;
 
@@ -18,6 +21,14 @@ import it.unisa.guardianhouse.R;
 public class ApartmentEntryPhotoFragment extends Fragment {
 
     ButtonRectangle btnLinkToRoom;
+    private EditText inputTitle;
+    private EditText inputComment;
+    private ImageSwitcher inputPicture;
+    Bundle bundle = getArguments();
+
+    String title;
+    String comment;
+
 
 
     public ApartmentEntryPhotoFragment() {
@@ -33,20 +44,55 @@ public class ApartmentEntryPhotoFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_3_photo, container, false);
 
         btnLinkToRoom = (ButtonRectangle) view.findViewById(R.id.button_to_room);
+        inputTitle = (EditText) view.findViewById(R.id.nameApt);
+        inputPicture = (ImageSwitcher) view.findViewById(R.id.imgViewPhoto);
+        inputComment = (EditText) view.findViewById(R.id.txt_view);
 
 
         //link al Fragment Room
 
         btnLinkToRoom.setOnClickListener(new View.OnClickListener() {
 
+
+
             public void onClick(View view) {
-                ApartmentEntryRoomFragment apartmentEntryRoomFragment = new ApartmentEntryRoomFragment();
-                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(apartmentEntryRoomFragment, "Composizione Casa");
+
+
+                title = inputTitle.getText().toString();
+                comment = inputComment.getText().toString();
+
+                if(!title.isEmpty() && !comment.isEmpty()){
+
+
+
+                    bundle = new Bundle();
+                    bundle.putString("myTitle",  title);
+                    bundle.putString("myComment", comment);
+
+                    ApartmentEntryRoomFragment photoResults = new ApartmentEntryRoomFragment();
+                    photoResults.setArguments(bundle);
+
+                    ApartmentEntryRoomFragment apartmentEntryRoomFragment = new ApartmentEntryRoomFragment();
+                    ((MaterialNavigationDrawer) getActivity()).setFragmentChild(apartmentEntryRoomFragment, "Composizione Casa");
+
+
+                } else {
+
+
+                    Toast.makeText(getActivity(),
+                            "Riempi tutti i campi!", Toast.LENGTH_LONG)
+                            .show();
+
+
+                }
+
             }
+
         });
 
 
         return view;
-
     }
+
+
 }

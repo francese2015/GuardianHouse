@@ -62,7 +62,7 @@
 
 
                     <Button
-                        android:id="@+id/button_less"
+                        android:id="@+id/button_less_guests"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -72,23 +72,27 @@
                         android:layout_row="0"
                         android:layout_column="0" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/integer_guests"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
+                        android:layout_marginLeft="45dp"
                         android:gravity="center"
                         android:layout_marginTop="10dp"
-                        android:text="@string/zero_integer"
                         android:textColor="@color/ColorPrimary"
                         android:textSize="20sp"
                         android:textStyle="bold"
+                        android:hint="0"
                         android:layout_row="0"
-                        android:layout_column="1" />
+                        android:layout_column="1"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"/>
 
 
                     <Button
-                        android:id="@+id/button_plus"
+                        android:id="@+id/button_plus_guests"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="40dp"
@@ -122,7 +126,7 @@
 
 
                     <Button
-                        android:id="@+id/button_less"
+                        android:id="@+id/button_less_rooms"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -132,23 +136,27 @@
                         android:layout_row="0"
                         android:layout_column="0" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/integer_room"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
+                        android:layout_marginLeft="45dp"
                         android:gravity="center"
                         android:layout_marginTop="10dp"
-                        android:text="@string/zero_integer"
+                        android:hint="@string/zero_integer"
                         android:textColor="@color/ColorPrimary"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:layout_row="0"
-                        android:layout_column="1" />
+                        android:layout_column="1"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"/>
 
 
                     <Button
-                        android:id="@+id/button_plus"
+                        android:id="@+id/button_plus_rooms"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="40dp"
@@ -182,7 +190,7 @@
 
 
                     <Button
-                        android:id="@+id/button_less"
+                        android:id="@+id/button_less_free"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -192,23 +200,27 @@
                         android:layout_row="0"
                         android:layout_column="0" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/integer_free_room"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
+                        android:layout_marginLeft="45dp"
                         android:gravity="center"
                         android:layout_marginTop="10dp"
-                        android:text="@string/zero_integer"
+                        android:hint="@string/zero_integer"
                         android:textColor="@color/ColorPrimary"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:layout_row="0"
-                        android:layout_column="1" />
+                        android:layout_column="1"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"/>
 
 
                     <Button
-                        android:id="@+id/button_plus"
+                        android:id="@+id/button_plus_free"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="40dp"
@@ -243,7 +255,7 @@
 
 
                     <Button
-                        android:id="@+id/button_less"
+                        android:id="@+id/button_less_bed"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -253,23 +265,27 @@
                         android:layout_row="0"
                         android:layout_column="0" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/integer_bed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
+                        android:layout_marginLeft="45dp"
                         android:gravity="center"
                         android:layout_marginTop="10dp"
-                        android:text="@string/zero_integer"
+                        android:hint="@string/zero_integer"
                         android:textColor="@color/ColorPrimary"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:layout_row="0"
-                        android:layout_column="1" />
+                        android:layout_column="1"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"/>
 
 
                     <Button
-                        android:id="@+id/button_plus"
+                        android:id="@+id/button_plus_bed"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="40dp"
@@ -304,7 +320,7 @@
 
 
                     <Button
-                        android:id="@+id/button_less"
+                        android:id="@+id/button_less_wc"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -314,23 +330,27 @@
                         android:layout_row="0"
                         android:layout_column="0" />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/integer_wc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
+                        android:layout_marginLeft="45dp"
                         android:gravity="center"
                         android:layout_marginTop="10dp"
-                        android:text="@string/zero_integer"
+                        android:hint="@string/zero_integer"
                         android:textColor="@color/ColorPrimary"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:layout_row="0"
-                        android:layout_column="1" />
+                        android:layout_column="1"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"/>
 
 
                     <Button
-                        android:id="@+id/button_plus"
+                        android:id="@+id/button_plus_wc"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="40dp"
