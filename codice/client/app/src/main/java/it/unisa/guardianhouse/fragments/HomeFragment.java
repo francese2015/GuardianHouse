@@ -66,6 +66,53 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+        apartmentList = new ArrayList<Apartment>();
+        mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh);
+        mSwipeRefreshLayout.setColorScheme(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+        listView = (ListView) view.findViewById(R.id.listView1);
+        adapter = new ApartmentListAdapter(getActivity(), apartmentList);
+        listView.setAdapter(adapter);
+
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mSwipeRefreshLayout.setRefreshing(true);
+                        apartmentList.clear();
+                        adapter.notifyDataSetChanged();
+                        startRequest();
+                        mSwipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 2000);
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
+                Object obj = adapter.getItemAtPosition(position);
+                Apartment apt = (Apartment) obj;
+                Bundle b = new Bundle();
+                b.putString("aptId", apt.getId());
+                b.putDouble("itemLatitude", apt.getLatitude());
+                b.putDouble("itemLongitude", apt.getLongitude());
+                b.putDouble("distance", apt.getDistanceFromLocation());
+                ApartmentFragment aptFragment = new ApartmentFragment();
+                aptFragment.setArguments(b);
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(aptFragment, "Scheda appartamento");
+            }
+        });
+
+        startRequest();
+
+        return view;
+    }
+
+    public void startRequest() {
         if (Utils.hasConnection(getActivity()) == true) {
             gps = new LocationTracker(getActivity());
 
@@ -77,51 +124,8 @@ public class HomeFragment extends Fragment {
 
                 url = Config.FEATURED_APT_URL + "/" + latitude + "," + longitude + "," + distance;
 
-                pDialog = new ProgressDialog(getActivity());
-                pDialog.setMessage("Ricerca in corso...");
-                pDialog.show();
-
                 searchByLocation();
 
-                apartmentList = new ArrayList<Apartment>();
-
-                mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh);
-                mSwipeRefreshLayout.setColorScheme(android.R.color.holo_blue_bright,
-                        android.R.color.holo_green_light,
-                        android.R.color.holo_orange_light,
-                        android.R.color.holo_red_light);
-                listView = (ListView) view.findViewById(R.id.listView1);
-                adapter = new ApartmentListAdapter(getActivity(), apartmentList);
-                listView.setAdapter(adapter);
-
-                mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-                    @Override
-                    public void onRefresh() {
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                adapter = new ApartmentListAdapter(getActivity(), apartmentList);
-                                listView.setAdapter(adapter);
-                                mSwipeRefreshLayout.setRefreshing(false);
-                            }
-                        },2000);
-                    }
-                });
-
-                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                    public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
-                        Object obj = adapter.getItemAtPosition(position);
-                        Apartment apt = (Apartment) obj;
-                        Bundle b = new Bundle();
-                        b.putString("aptId", apt.getId());
-                        b.putDouble("itemLatitude", apt.getLatitude());
-                        b.putDouble("itemLongitude", apt.getLongitude());
-                        b.putDouble("distance", apt.getDistanceFromLocation());
-                        ApartmentFragment aptFragment = new ApartmentFragment();
-                        aptFragment.setArguments(b);
-                        ((MaterialNavigationDrawer) getActivity()).setFragmentChild(aptFragment, "Scheda appartamento");
-                    }
-                });
             } else {
                 // can't get location
                 // GPS or Network is not enabled
@@ -133,17 +137,14 @@ public class HomeFragment extends Fragment {
                     "Attezione! Attiva la connessione.", Toast.LENGTH_LONG)
                     .show();
         }
-        return view;
     }
 
 
     public void searchByLocation() {
-
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, url,
                 (String) null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-
                 try {
                     JSONArray apartmentArray = response.getJSONArray("apartments");
                     for (int i = 0; i < apartmentArray.length(); i++) {
@@ -173,18 +174,17 @@ public class HomeFragment extends Fragment {
                         apartment.setDistanceFromLocation(singleApartment.getDouble("distance"));
                         apartmentList.add(apartment);
                     }
-
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                hidePDialog();
+                adapter.notifyDataSetChanged();
+
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 VolleyLog.d(TAG, "Error: " + error.getMessage());
-                hidePDialog();
+
             }
         }) {
             @Override
@@ -198,16 +198,10 @@ public class HomeFragment extends Fragment {
         AppController.getInstance().addToRequestQueue(jsonObjReq);
     }
 
-    private void hidePDialog() {
-        if (pDialog != null) {
-            pDialog.dismiss();
-            pDialog = null;
-        }
-    }
-
     @Override
     public void onDestroy() {
         super.onDestroy();
+        apartmentList.clear();
     }
 
     @Override
