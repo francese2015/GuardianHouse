@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/ColorPrimary</item>
         <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
         <item name="singleAccount">true</item>
-        <item name="learningPattern">false</item>
+        <item name="learningPattern">true</item>
         <item name="toolbarElevation">true</item>
         <item name="rippleBackport">true</item>
         <item name="android:buttonStyle">@style/BlueButton</item>

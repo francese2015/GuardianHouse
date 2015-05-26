@@ -1,37 +1,22 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="3dp"
     tools:context="it.unisa.guardianhouse.fragments.HomeFragment">
 
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <ListView
+            android:id="@+id/listView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:dividerHeight="0dp"></ListView>
 
-    <!--<ImageView
-        android:layout_width="381dp"
-        android:layout_height="600dp"
-        android:src="@drawable/house_back"
-        android:layout_gravity="center" /> -->
-
-
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/app_logo_big"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="338dp"
-        android:layout_marginTop="150dp"
-        android:id="@+id/welcome"
-        android:text="@string/welcome_home"
-        android:layout_gravity="center_horizontal|top"
-        android:textStyle="bold"
-        android:textColor="@color/ColorPrimary"
-        android:textSize="30dp"
-        android:editable="false" />
-
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </FrameLayout>

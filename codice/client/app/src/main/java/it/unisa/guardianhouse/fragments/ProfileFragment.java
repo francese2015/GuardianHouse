@@ -262,12 +262,10 @@ public class ProfileFragment extends Fragment {
                 hidePDialog();
                 try {
                     JSONObject userJson = response.getJSONObject("user");
-                    if (imageLoader == null)
-                        imageLoader = AppController.getInstance().getImageLoader();
+                    //if (imageLoader == null)
+                    //   imageLoader = AppController.getInstance().getImageLoader();
                     //userPhoto.setImageUrl(userJson.getJSONObject("profile_pic").getString("url"), imageLoader);
                     topUsernameView.setText(userJson.getString("username"));
-                    String stringRating = userJson.getString("average_rating");
-                    ratingBar.setRating(Float.parseFloat(stringRating));
                     nameView.setText(userJson.getString("name"));
                     surnameView.setText(userJson.getString("surname"));
                     emailView.setText(userJson.getString("email"));
@@ -277,6 +275,8 @@ public class ProfileFragment extends Fragment {
                     addressView.setText(userJson.getString("address"));
                     phoneView.setText(userJson.getString("phone"));
                     roleView.setText(userJson.getString("role"));
+                    String stringRating = userJson.getString("average_rating");
+                    ratingBar.setRating(Float.parseFloat(stringRating));
 
                 } catch (JSONException e) {
                     e.printStackTrace();

@@ -15,6 +15,8 @@ public class Config {
 
     public static String SEARCH_APT_URL = BASE_URL + "/apartments/search";
 
+    public static String FEATURED_APT_URL = BASE_URL + "/apartments/featured";
+
     public static int MAX_SEARCH_RADIUS = 20;
 
 }
