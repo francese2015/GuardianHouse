@@ -296,7 +296,7 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
                     JSONArray photoArray = singleApartment.getJSONArray("pictures");
                     HashMap<String, String> url_maps = new HashMap<String, String>();
                     for (int i = 0; i < photoArray.length(); i++) {
-                        url_maps.put(photoArray.getJSONObject(i).getString("title"), photoArray.getJSONObject(i).getString("url"));
+                        url_maps.put("photo " + i, photoArray.getJSONObject(i).getString("url"));
                     }
                     for(String name : url_maps.keySet()){
                         DefaultSliderView sliderView = new DefaultSliderView(getActivity());

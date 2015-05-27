@@ -114,6 +114,38 @@
             android:orientation="vertical"
             android:showDividers="middle">
 
+            <RelativeLayout
+                android:id="@+id/relative_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector">
+
+                <TextView
+                    android:id="@+id/address_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Indirizzo"
+                    android:textColor="#2196F3"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/address_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/address_label"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:text="Via Roma 6, interno 15, 86100 Campobasso, Molise (CB), Italia" />
+
+
+            </RelativeLayout>
 
             <!-- Descrizione -->
 
@@ -510,6 +542,41 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="4dp"
                     android:text="@string/apartment_services" />
+
+
+            </RelativeLayout>
+
+            <!-- aggiunto da -->
+
+            <RelativeLayout
+                android:id="@+id/relative_inserted_by"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector">
+
+                <TextView
+                    android:id="@+id/inserted_by_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Inserito da"
+                    android:textColor="#2196F3"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/inserted_by_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/inserted_by_label"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:text="m.rossi10" />
 
 
             </RelativeLayout>
