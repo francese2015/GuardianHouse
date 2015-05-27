@@ -24,7 +24,7 @@ public class ApartmentEntryPhotoFragment extends Fragment {
     private EditText inputTitle;
     private EditText inputComment;
     private ImageSwitcher inputPicture;
-    Bundle bundle = getArguments();
+    Bundle bundle ;
 
     String title;
     String comment;
@@ -65,7 +65,7 @@ public class ApartmentEntryPhotoFragment extends Fragment {
 
 
 
-                    bundle = new Bundle();
+                    bundle = getArguments();
                     bundle.putString("myTitle",  title);
                     bundle.putString("myComment", comment);
 

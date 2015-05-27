@@ -49,7 +49,7 @@ public class ApartmentEntryRoomFragment extends Fragment implements View.OnClick
     String wc;
 
 
-    Bundle bundle = getArguments();
+    Bundle bundle;
 
 
 
@@ -115,7 +115,7 @@ public class ApartmentEntryRoomFragment extends Fragment implements View.OnClick
 
 
 
-                bundle = new Bundle();
+                bundle = getArguments();
                 bundle.putString("myGuest", guest);
                 bundle.putString("myRoom", room);
                 bundle.putString("myFree", free);

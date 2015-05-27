@@ -5,82 +5,88 @@ package it.unisa.guardianhouse.models;
  */
 public class Review {
 
-    private String applicanceStatus;
-    private String thermicCapacity;
-    private String landlordHonesty;
-    private String securityLevel;
-    private String busConnection;
-    private String neighbours;
-    private String distanceCC;
-    private String fornitureQuality;
+    private double applicanceStatus;
+    private double thermicCapacity;
+    private double landlordHonesty;
+    private double securityLevel;
+    private double busConnection;
+    private double neighbours;
+    private double distanceCC;
+    private double fornitureQuality;
     private double feedbackRate;
     private String description;
+    private String thumbnailUrl;
+    private String rewId;
+
+
+
+    private String username;
 
 
     public Review() {
     }
 
-    public String getApplicanceStatus() {
+    public double getApplicanceStatus() {
         return applicanceStatus;
     }
 
-    public void setApplicanceStatus(String applicanceStatus) {
+    public void setApplicanceStatus(double applicanceStatus) {
         this.applicanceStatus = applicanceStatus;
     }
 
-    public String getThermicCapacity() {
+    public double getThermicCapacity() {
         return thermicCapacity;
     }
 
-    public void setThermicCapacity(String thermicCapacity) {
+    public void setThermicCapacity(double thermicCapacity) {
         this.thermicCapacity = thermicCapacity;
     }
 
-    public String getLandlordHonesty() {
+    public double getLandlordHonesty() {
         return landlordHonesty;
     }
 
-    public void setLandlordHonesty(String landlordHonesty) {
+    public void setLandlordHonesty(double landlordHonesty) {
         this.landlordHonesty = landlordHonesty;
     }
 
-    public String getSecurityLevel() {
+    public double getSecurityLevel() {
         return securityLevel;
     }
 
-    public void setSecurityLevel(String securityLevel) {
+    public void setSecurityLevel(double securityLevel) {
         this.securityLevel = securityLevel;
     }
 
-    public String getBusConnection() {
+    public double getBusConnection() {
         return busConnection;
     }
 
-    public void setBusConnection(String busConnection) {
+    public void setBusConnection(double busConnection) {
         this.busConnection = busConnection;
     }
 
-    public String getNeighbours() {
+    public double getNeighbours() {
         return neighbours;
     }
 
-    public void setNeighbours(String neighbours) {
+    public void setNeighbours(double neighbours) {
         this.neighbours = neighbours;
     }
 
-    public String getDistanceCC() {
+    public double getDistanceCC() {
         return distanceCC;
     }
 
-    public void setDistanceCC(String distanceCC) {
+    public void setDistanceCC(double distanceCC) {
         this.distanceCC = distanceCC;
     }
 
-    public String getFornitureQuality() {
+    public double getFornitureQuality() {
         return fornitureQuality;
     }
 
-    public void setFornitureQuality(String fornitureQuality) {
+    public void setFornitureQuality(double fornitureQuality) {
         this.fornitureQuality = fornitureQuality;
     }
 
@@ -99,4 +105,25 @@ public class Review {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public void setThumbnailUrl(String thumbnailUrl) {
+        this.thumbnailUrl = thumbnailUrl;
+    }
+
+    public String getThumbnailUrl() {
+        return thumbnailUrl;
+    }
+
+    public void setRewId(String rewId){this.rewId = rewId;}
+
+    public String getRewId() {return rewId;}
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
 }

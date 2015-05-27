@@ -28,7 +28,7 @@ public class ApartmentEntryReviewFragment extends Fragment {
     String review;
     float rate;
 
-    Bundle bundle = getArguments();
+    Bundle bundle ;
 
 
     public ApartmentEntryReviewFragment() {
@@ -58,7 +58,7 @@ public class ApartmentEntryReviewFragment extends Fragment {
 
                 if (!title.isEmpty() && !review.isEmpty()) {
 
-                    bundle = new Bundle();
+                    bundle = getArguments();
                     bundle.putString("myTitle", title);
                     bundle.putString("myReview", review);
                     bundle.putFloat("myRate", rate);

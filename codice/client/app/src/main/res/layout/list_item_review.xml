@@ -22,8 +22,8 @@
             android:paddingBottom="30dp"
             >
 
-            <ImageView
-                android:id="@+id/imageView1"
+            <com.android.volley.toolbox.NetworkImageView
+                android:id="@+id/thumbnailRew"
                 android:contentDescription="@string/img_descr1"
                 android:layout_width="74dp"
                 android:layout_height="74dp"
@@ -36,36 +36,36 @@
                 android:src="@drawable/icon_user" />
 
             <TextView
-                android:id="@+id/text_username"
+                android:id="@+id/username_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/imageView1"
-                android:layout_toEndOf="@+id/imageView1"
+                android:layout_toRightOf="@+id/thumbnailRew"
+                android:layout_toEndOf="@+id/thumbnailRew"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="12dp"
                 android:text="@string/label_username" />
 
             <TextView
-                android:id="@+id/username"
+                android:id="@+id/username_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/text_username"
-                android:layout_toEndOf="@+id/text_username"
+                android:layout_toRightOf="@+id/username_label"
+                android:layout_toEndOf="@+id/username_label"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="12dp"
-                android:text="Placeholder"/>
+                android:text=""/>
 
 
             <TextView
                 android:id="@+id/txtReview"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
-                android:layout_below="@+id/text_username"
+                android:layout_below="@+id/username_label"
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="9dp"
                 android:ems="11"
                 android:gravity="top|left"
-                android:text="@string/lorem_ipsum"
+                android:text=""
                 android:maxLines="5"
 
                 android:textSize="18sp" >
