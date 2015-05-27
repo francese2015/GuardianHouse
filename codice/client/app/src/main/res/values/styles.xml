@@ -2,7 +2,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
 
     <style name="MyNavigationDrawerTheme"  parent="MaterialNavigationDrawerTheme.Light.DarkActionBar">
-        <!--<item name="android:windowBackground">@color/bianco</item>-->
+        <item name="android:windowBackground">@color/bianco</item>
         <item name="colorPrimary">@color/ColorPrimary</item>
         <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
         <item name="singleAccount">true</item>

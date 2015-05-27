@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -28,13 +29,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
+import it.unisa.guardianhouse.adapters.ProfileApartmentListAdapter;
 import it.unisa.guardianhouse.config.Config;
 import it.unisa.guardianhouse.helpers.SessionManager;
+import it.unisa.guardianhouse.models.Apartment;
 
 
 public class ProfileFragment extends Fragment {
@@ -56,6 +60,9 @@ public class ProfileFragment extends Fragment {
     TextView addressView;
     TextView phoneView;
     TextView roleView;
+    private ListView listView;
+    ProfileApartmentListAdapter adapter;
+    private ArrayList<Apartment> apartmentList;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -66,18 +73,18 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        //Utils.setRobotoFont(getActivity(), view);
 
         session = new SessionManager(getActivity());
+        apartmentList = new ArrayList<Apartment>();
 
         url = Config.USERS_URL + "/" + session.getUserId();
-
 
         pDialog = new ProgressDialog(getActivity());
         pDialog.setMessage("Caricamento...");
         pDialog.show();
 
-        getUserData();
-
+        userPhoto = (NetworkImageView) view.findViewById(R.id.user_pic);
         topUsernameView = (TextView) view.findViewById(R.id.username);
         ratingBar = (RatingBar) view.findViewById(R.id.rating_bar);
         nameView = (TextView) view.findViewById(R.id.name_value);
@@ -89,6 +96,13 @@ public class ProfileFragment extends Fragment {
         addressView = (TextView) view.findViewById(R.id.address_value);
         phoneView = (TextView) view.findViewById(R.id.telephone_value);
         roleView = (TextView) view.findViewById(R.id.role_value);
+        listView = (ListView) view.findViewById(R.id.inserted_apts);
+        listView.setEmptyView(view.findViewById(R.id.empty_list));
+        getUserData();
+        adapter = new ProfileApartmentListAdapter(getActivity(), apartmentList);
+        listView.setAdapter(adapter);
+
+
 
 
         // richiamo i vari relative layout
@@ -194,7 +208,7 @@ public class ProfileFragment extends Fragment {
     protected void showInputDialog(String title, String hint) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-        View promptView = layoutInflater.inflate(R.layout.input_dialog, null);
+        View promptView = layoutInflater.inflate(R.layout.dialog_input, null);
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
         alertDialogBuilder.setView(promptView);
 
@@ -262,9 +276,10 @@ public class ProfileFragment extends Fragment {
                 hidePDialog();
                 try {
                     JSONObject userJson = response.getJSONObject("user");
-                    //if (imageLoader == null)
-                    //   imageLoader = AppController.getInstance().getImageLoader();
-                    //userPhoto.setImageUrl(userJson.getJSONObject("profile_pic").getString("url"), imageLoader);
+                    if (imageLoader == null) {
+                        imageLoader = AppController.getInstance().getImageLoader();
+                    }
+                    userPhoto.setImageUrl(userJson.getJSONObject("profile_pic").getString("url"), imageLoader);
                     topUsernameView.setText(userJson.getString("username"));
                     nameView.setText(userJson.getString("name"));
                     surnameView.setText(userJson.getString("surname"));
@@ -278,9 +293,19 @@ public class ProfileFragment extends Fragment {
                     String stringRating = userJson.getString("average_rating");
                     ratingBar.setRating(Float.parseFloat(stringRating));
 
+                    JSONArray apartmentsArray = userJson.getJSONArray("apartmentsList");
+                    for (int i = 0; i < apartmentsArray.length(); i++) {
+                        JSONObject singleApartment = apartmentsArray.getJSONObject(i);
+                        Apartment apartment = new Apartment();
+                        apartment.setId(singleApartment.getString("apartment_id"));
+                        apartment.setName(singleApartment.getString("apartment_name"));
+                        apartmentList.add(apartment);
+                    }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+                adapter.notifyDataSetChanged();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -306,6 +331,17 @@ public class ProfileFragment extends Fragment {
             pDialog.dismiss();
             pDialog = null;
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        apartmentList.clear();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 
 }

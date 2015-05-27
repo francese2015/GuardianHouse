@@ -16,18 +16,11 @@
         android:paddingBottom="@dimen/activity_vertical_margin"
         android:paddingTop="@dimen/activity_vertical_margin">
 
-        <ImageView
-            android:id="@+id/user_pic"
-            android:layout_width="wrap_content"
-            android:layout_height="160dp"
-            android:layout_centerHorizontal="true"
-            android:contentDescription="@string/img_descr1"
-            android:src="@drawable/bb_avatar" />
-
         <com.android.volley.toolbox.NetworkImageView
             android:id="@+id/user_pic"
-            android:layout_width="match_parent"
+            android:layout_width="160dp"
             android:layout_height="160dp"
+            android:layout_centerHorizontal="true"
             android:adjustViewBounds="true"
             android:cropToPadding="true"
             android:scaleType="centerCrop"
@@ -55,7 +48,7 @@
         <View
             android:id="@+id/separator_line_1"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:layout_below="@+id/rating_bar"
             android:layout_marginTop="16dp"
             android:background="#dfdfdf" />
@@ -497,14 +490,54 @@
                     android:contentDescription="@string/edit_icon"
                     android:src="@mipmap/ic_action_edit" />
 
+
             </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative_inserted_apts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector"
+                android:clickable="true">
+
+                <TextView
+                    android:id="@+id/inserted_apts_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="Appartamenti inseriti"
+                    android:textStyle="bold" />
+
+                <ListView
+                    android:id="@+id/inserted_apts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/inserted_apts_label"
+                    android:dividerHeight="1dp" />
+
+                <TextView
+                    android:id="@+id/empty_list"
+                    android:visibility="gone"
+                    android:layout_below="@+id/inserted_apts_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="16dp"
+                    android:text="Nessun appartamento inserito" />
+
+             </RelativeLayout>
+
+
 
         </LinearLayout>
 
         <View
             android:id="@+id/separator_line_2"
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:layout_below="@+id/user_data"
             android:background="#dfdfdf" />
 
