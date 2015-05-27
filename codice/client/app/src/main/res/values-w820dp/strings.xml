@@ -48,4 +48,6 @@
     <string name="landlord_honesty">Onestà Padrone di Casa</string>
     <string name="house_security">Sicurezza Casa</string>
     <string name="go_back">Torna Indietro</string>
+    <string name="conditions_label">Condizioni Casa</string>
+    <string name="username_label">Rilasciato da:</string>
 </resources>

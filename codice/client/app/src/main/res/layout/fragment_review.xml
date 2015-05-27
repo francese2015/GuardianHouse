@@ -1,379 +1,497 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="it.unisa.guardianhouse.fragments.ReviewFragment"
-    android:fillViewport="false"
-    android:id="@+id/root">
+    android:fillViewport="true"
+    tools:context="it.unisa.guardianhouse.fragments.ReviewFragment">
 
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:orientation="vertical">
 
-        <RelativeLayout
+        <LinearLayout
+            android:id="@+id/review_user"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/username_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/username_label"
+                android:textSize="18sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/username_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18sp">
+
+            </TextView>
+
+        </LinearLayout>
+
+
+        <!-- Descrizione -->
+
+
+        <LinearLayout
+            android:id="@+id/review_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/review_user"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/txtReview"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/textbox_bg_review"
+                android:ems="10"
+                android:gravity="top|left"
+                android:hint="@string/fragment_brief_description"
+                android:maxLines="5"
+
+                android:textSize="18sp">
+
+            </EditText>
+
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/separator_line_1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="16dp"
+            android:background="#dfdfdf" />
+
+        <LinearLayout
+            android:id="@+id/apartment_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/activity_vertical_margin"
-            android:paddingTop="@dimen/activity_vertical_margin"
-            android:id="@+id/review_data">
+            android:layout_below="@+id/review_content"
+            android:divider="@drawable/divider"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <!-- Elettrodomestici -->
+
+            <RelativeLayout
+
+                android:id="@+id/relative_dimension"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/layout_selector"
+                android:clickable="false">
 
 
-                <LinearLayout
-                    android:id="@+id/review_content"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
-                    >
-
-                <EditText
-                    android:id="@+id/txtReview"
+                <TextView
+                    android:id="@+id/forniture_label"
                     android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/textbox_bg_review"
-                    android:ems="10"
-                    android:gravity="top|left"
-                    android:hint="@string/fragment_brief_description"
-                    android:maxLines="5"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/vote_furniture"
+                    android:textColor="#2196F3"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                    android:textSize="18sp" >
+                <ImageView
+                    android:id="@+id/img_quality"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:contentDescription="@string/edit_icon"
+                    android:src="@mipmap/ic_action_storage" />
 
-                </EditText>
-
-            </LinearLayout>
-
-
-            <View
-                android:id="@+id/separator_line_1"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginTop="16dp"
-                android:background="#dfdfdf" />
-
-            <LinearLayout
-                android:id="@+id/apartment_data"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/review_content"
-                android:divider="@drawable/divider"
-                android:orientation="vertical"
-                android:showDividers="middle">
-
-                <!-- Elettrodomestici -->
-
-                <RelativeLayout
-
-                    android:id="@+id/relative_dimension"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/layout_selector"
-                    android:clickable="false">
-
-
-
-                    <TextView
-                        android:id="@+id/forniture_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:text="@string/vote_furniture"
-                        android:textColor="#2196F3"
-                        android:textSize="18sp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:textStyle="bold" />
-
-                    <ImageView
-                        android:id="@+id/img_quality"
-                        android:layout_width="38dp"
-                        android:layout_height="38dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_centerVertical="true"
-                        android:contentDescription="@string/edit_icon"
-                        android:src="@mipmap/ic_action_storage" />
-
-                    <RatingBar
-                        android:id="@+id/ratingBar1"
-                        android:layout_width="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:layout_centerHorizontal="true"
-                        android:clickable="false"
-                        android:indeterminate="false"
-                        android:longClickable="false"
-                        android:numStars="5"
-                        android:rating="4" />
-
-                </RelativeLayout>
-
-                <!-- Capacità Termica-->
-
-                <RelativeLayout
-
-                    android:id="@+id/relative_dimension1"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector"
-                    android:clickable="false">
-
-
-
-                    <TextView
-                        android:id="@+id/dimension_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:text="@string/vote_thermic_capacity"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:textStyle="bold"
-                        android:textColor="#2196F3"
-                        android:textSize="18sp"/>
-
-                    <ImageView
-                        android:id="@+id/img_quality1"
-                        android:layout_width="38dp"
-                        android:layout_height="38dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_centerVertical="true"
-                        android:contentDescription="@string/edit_icon"
-                        android:src="@mipmap/ic_action_bightness_low" />
-
-                    <RatingBar
-                        android:id="@+id/ratingBar2"
-                        android:layout_width="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:clickable="false"
-                        android:indeterminate="false"
-                        android:longClickable="false"
-                        android:numStars="5"
-                        android:rating="4" />
-
-                </RelativeLayout>
-
-
-                <!-- Onestà Padrone di Casa -->
-
-                <RelativeLayout
-
-                    android:id="@+id/relative_dimension2"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector"
-                    android:clickable="false">
-
-
-
-                    <TextView
-                        android:id="@+id/honesty_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:text="@string/vote_landlord_honesty"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:textStyle="bold"
-                        android:textColor="#2196F3"
-                        android:textSize="18sp"/>
-
-                    <ImageView
-                        android:id="@+id/img_honesty"
-                        android:layout_width="38dp"
-                        android:layout_height="38dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_centerVertical="true"
-                        android:src="@mipmap/ic_action_cc_bcc" />
-
-                    <RatingBar
-                        android:id="@+id/ratingBar3"
-                        android:layout_width="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:clickable="false"
-                        android:indeterminate="false"
-                        android:longClickable="false"
-                        android:numStars="5"
-                        android:rating="4" />
-
-                </RelativeLayout>
-
-
-                <!-- Sicurezza Casa -->
-
-                <RelativeLayout
-
-                    android:id="@+id/relative_dimension3"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector"
-                    android:clickable="false">
-
-
-
-                    <TextView
-                        android:id="@+id/secure_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:text="@string/vote_house_security"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:textStyle="bold"
-                        android:textColor="#2196F3"
-                        android:textSize="18sp"/>
-
-                    <ImageView
-                        android:id="@+id/img_security"
-                        android:layout_width="38dp"
-                        android:layout_height="38dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_centerVertical="true"
-                        android:src="@mipmap/ic_action_secure" />
-
-                    <RatingBar
-                        android:id="@+id/ratingBar4"
-                        android:layout_width="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:clickable="false"
-                        android:indeterminate="false"
-                        android:longClickable="false"
-                        android:numStars="5"
-                        android:rating="4" />
-
-                </RelativeLayout>
-
-
-
-                <!-- Mezzi Di Trasporto -->
-
-                <RelativeLayout
-
-                    android:id="@+id/relative_dimension4"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector"
+                <RatingBar
+                    android:id="@+id/ratingBar1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="15dp"
                     android:clickable="false"
-                    android:layout_marginTop="20dp">
+                    android:indeterminate="false"
+                    android:longClickable="false"
+                    android:numStars="5"
+                    android:rating="4" />
+
+            </RelativeLayout>
+
+            <!-- Capacità Termica-->
+
+            <RelativeLayout
+
+                android:id="@+id/relative_dimension1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector"
+                android:clickable="false">
 
 
+                <TextView
+                    android:id="@+id/dimension_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/vote_thermic_capacity"
+                    android:textColor="#2196F3"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/bus_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:text="@string/bus_vote"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:textStyle="bold"
-                        android:textColor="#2196F3"
-                        android:textSize="18sp"/>
+                <ImageView
+                    android:id="@+id/img_quality1"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:contentDescription="@string/edit_icon"
+                    android:src="@mipmap/ic_action_bightness_low" />
 
-                    <ImageView
-                        android:id="@+id/img_bus"
-                        android:layout_width="38dp"
-                        android:layout_height="38dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/ic_bus_grey600_18dp" />
-
-                    <RatingBar
-                        android:id="@+id/ratingBar5"
-                        android:layout_width="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:clickable="false"
-                        android:indeterminate="false"
-                        android:longClickable="false"
-                        android:numStars="5"
-                        android:rating="4" />
-
-                </RelativeLayout>
-
-
-                <!-- Rapporto con i Vicini -->
-
-                <RelativeLayout
-
-                    android:id="@+id/relative_dimension5"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_vertical"
-                    android:background="@drawable/layout_selector"
+                <RatingBar
+                    android:id="@+id/ratingBar2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
                     android:clickable="false"
-                    android:layout_marginTop="20dp">
+                    android:indeterminate="false"
+                    android:longClickable="false"
+                    android:numStars="5"
+                    android:rating="4" />
+
+            </RelativeLayout>
 
 
+            <!-- Onestà Padrone di Casa -->
 
-                    <TextView
-                        android:id="@+id/neighbours_vote_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:text="@string/vote_neighbours"
-                        android:layout_marginLeft="10dp"
-                        android:textStyle="bold"
-                        android:textColor="#2196F3"
-                        android:textSize="18sp"/>
+            <RelativeLayout
 
-                    <ImageView
-                        android:id="@+id/img_neighbours"
-                        android:layout_width="38dp"
-                        android:layout_height="38dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_centerVertical="true"
-                        android:src="@drawable/icon_user" />
-
-                    <RatingBar
-                        android:id="@+id/ratingBar6"
-                        android:layout_width="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:clickable="false"
-                        android:indeterminate="false"
-                        android:longClickable="false"
-                        android:numStars="5"
-                        android:rating="4" />
-
-                </RelativeLayout>
+                android:id="@+id/relative_dimension2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector"
+                android:clickable="false">
 
 
-            </LinearLayout>
+                <TextView
+                    android:id="@+id/honesty_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/vote_landlord_honesty"
+                    android:textColor="#2196F3"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_honesty"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/ic_action_cc_bcc" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    android:indeterminate="false"
+                    android:longClickable="false"
+                    android:numStars="5"
+                    android:rating="4" />
+
+            </RelativeLayout>
+
+
+            <!-- Sicurezza Casa -->
+
+            <RelativeLayout
+
+                android:id="@+id/relative_dimension3"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector"
+                android:clickable="false">
+
+
+                <TextView
+                    android:id="@+id/secure_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/vote_house_security"
+                    android:textColor="#2196F3"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_security"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@mipmap/ic_action_secure" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    android:indeterminate="false"
+                    android:longClickable="false"
+                    android:numStars="5"
+                    android:rating="4" />
+
+            </RelativeLayout>
+
+
+            <!-- Mezzi Di Trasporto -->
+
+            <RelativeLayout
+
+                android:id="@+id/relative_dimension4"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/layout_selector"
+                android:clickable="false">
+
+
+                <TextView
+                    android:id="@+id/bus_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/bus_vote"
+                    android:textColor="#2196F3"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_bus"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/ic_bus_grey600_18dp" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    android:indeterminate="false"
+                    android:longClickable="false"
+                    android:numStars="5"
+                    android:rating="4" />
+
+            </RelativeLayout>
+
+
+            <!-- Rapporto con i Vicini -->
+
+            <RelativeLayout
+
+                android:id="@+id/relative_dimension5"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/layout_selector"
+                android:clickable="false">
+
+
+                <TextView
+                    android:id="@+id/neighbours_vote_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/vote_neighbours"
+                    android:textColor="#2196F3"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_neighbours"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/icon_user" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    android:indeterminate="false"
+                    android:longClickable="false"
+                    android:numStars="5"
+                    android:rating="4" />
+
+            </RelativeLayout>
+
+            <!-- Rating Generale -->
+
+            <RelativeLayout
+
+                android:id="@+id/relative_general"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector"
+                android:clickable="false">
+
+
+                <TextView
+                    android:id="@+id/general_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Voto Esperienza"
+                    android:textColor="#2196F3"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_general"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/star_empty" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    android:indeterminate="false"
+                    android:longClickable="false"
+                    android:numStars="5"
+                    android:rating="4" />
+
+            </RelativeLayout>
+
+            <!-- Condizioni Casa -->
+
+            <RelativeLayout
+
+                android:id="@+id/relative_house_conditions"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector"
+                android:clickable="false">
+
+
+                <TextView
+                    android:id="@+id/conditions_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/conditions_label"
+                    android:textColor="#2196F3"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_conditions"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/ic_home" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    android:indeterminate="false"
+                    android:longClickable="false"
+                    android:numStars="5"
+                    android:rating="4" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/review_data">
 
             <com.gc.materialdesign.views.ButtonRectangle
                 android:id="@+id/button_to_review"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/apartment_data"
-                android:layout_marginTop="10dp"
+                android:layout_below="@+id/button_layout"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
                 android:background="#1E88E5"
-                materialdesign:rippleSpeed="50"
-                android:text="@string/button_save" />
+                android:text="@string/button_save"
+                materialdesign:rippleSpeed="50" />
 
 
         </RelativeLayout>
 
+    </LinearLayout>
+
+</ScrollView>
 
 
-    </ScrollView>
 
-</FrameLayout>
+
