@@ -2,13 +2,14 @@ package it.unisa.guardianhouse.fragments;
 
 
 import android.app.AlertDialog;
-import android.support.v4.app.Fragment;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -41,6 +42,7 @@ import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
 
+import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.config.Config;
@@ -65,6 +67,11 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
     TextView distanceTextView;
     NetworkImageView thumbnail;
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
+    Button btnShowReview;
+
+
+
+    Bundle bundle;
 
     public ApartmentFragment() {
 
@@ -111,6 +118,23 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
         distanceTextView.setText("Distanza: " + precision.format(distance) + " Km");
 
         getApartmentData();
+
+        Button btnShowReview = (Button) view.findViewById(R.id.button_view_reviews);
+
+        btnShowReview.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+
+                bundle = new Bundle();
+                bundle.putString("myAptId", aptId);
+
+                ReviewListFragment reviewListFragment = new ReviewListFragment();
+                reviewListFragment.setArguments(bundle);
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(reviewListFragment, "Lista Recensioni");
+
+            }
+        });
+
 
         /*
         RelativeLayout dimensionRelative = (RelativeLayout) view.findViewById(R.id.relative_dimension);
