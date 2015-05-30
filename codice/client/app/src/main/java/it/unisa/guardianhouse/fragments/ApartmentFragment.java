@@ -86,8 +86,8 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
 
         Bundle b = getArguments();
         aptId = b.getString("aptId");
-        latitude = b.getDouble("itemLatitude");
-        longitude = b.getDouble("itemLongitude");
+        //latitude = b.getDouble("itemLatitude");
+        //longitude = b.getDouble("itemLongitude");
         distance = b.getDouble("distance");
         url = Config.APARTMENTS_URL + "/" + aptId;
 
@@ -99,7 +99,7 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
 
         mMapView = (MapView) view.findViewById(R.id.map);
         mMapView.onCreate(mBundle);
-        setUpMapIfNeeded(view);
+
 
         // codice image slider
         imgSlider = (SliderLayout) view.findViewById(R.id.img_slider);
@@ -113,11 +113,11 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
         nameApt = (TextView) view.findViewById(R.id.name_apt);
         ratingBar = (RatingBar) view.findViewById(R.id.rating_bar);
         thumbnail = (NetworkImageView)view.findViewById(R.id.thumbnailApt);
-        distanceTextView = (TextView) view.findViewById(R.id.distanceFromLocation);
-        DecimalFormat precision = new DecimalFormat("##.##");
-        distanceTextView.setText("Distanza: " + precision.format(distance) + " Km");
+        //distanceTextView = (TextView) view.findViewById(R.id.distanceFromLocation);
+        //DecimalFormat precision = new DecimalFormat("##.##");
+        //distanceTextView.setText("Distanza: " + precision.format(distance) + " Km");
 
-        getApartmentData();
+        getApartmentData(view);
 
         Button btnShowReview = (Button) view.findViewById(R.id.button_view_reviews);
 
@@ -296,13 +296,14 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
 
     }
 
-    public void getApartmentData() {
+    public void getApartmentData(final View view) {
 
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, url,
                 (String) null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 hidePDialog();
+                VolleyLog.d(TAG, "Response: " + response);
                 try {
                     JSONObject singleApartment = response.getJSONObject("apartment");
                     if (imageLoader == null)
@@ -316,6 +317,8 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
                     //ottengo il rating
                     String stringRating = singleApartment.getString("average_rating");
                     ratingBar.setRating(Float.parseFloat(stringRating));
+                    latitude = singleApartment.getJSONObject("location").getJSONArray("coordinates").getDouble(1);
+                    longitude = singleApartment.getJSONObject("location").getJSONArray("coordinates").getDouble(0);
 
                     JSONArray photoArray = singleApartment.getJSONArray("pictures");
                     HashMap<String, String> url_maps = new HashMap<String, String>();
@@ -330,6 +333,8 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
                                 .setScaleType(BaseSliderView.ScaleType.Fit);
                         imgSlider.addSlider(sliderView);
                     }
+
+                    setUpMapIfNeeded(view);
 
                 } catch (JSONException e) {
                     e.printStackTrace();

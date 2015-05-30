@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -33,6 +34,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.adapters.ProfileApartmentListAdapter;
@@ -193,6 +195,18 @@ public class ProfileFragment extends Fragment {
         accountTypeRelative.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 // per ora non fa nulla
+            }
+        });
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
+                Object obj = adapter.getItemAtPosition(position);
+                Apartment apt = (Apartment) obj;
+                Bundle b = new Bundle();
+                b.putString("aptId", apt.getId());
+                ApartmentFragment aptFragment = new ApartmentFragment();
+                aptFragment.setArguments(b);
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(aptFragment, "Scheda appartamento");
             }
         });
 

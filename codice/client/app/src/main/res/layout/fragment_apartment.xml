@@ -56,19 +56,17 @@
 
                     <RatingBar
                         android:id="@+id/rating_bar"
-                        style="?android:attr/ratingBarStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:isIndicator="true"
-                        android:minHeight="18dp" />
+                        android:isIndicator="true"/>
 
-                    <TextView
+<!--                    <TextView
                         android:id="@+id/distanceFromLocation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:textSize="14sp" />
+                        android:textSize="14sp" />-->
                 </LinearLayout>
 
 
