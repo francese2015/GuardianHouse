@@ -92,14 +92,14 @@
 
                 android:id="@+id/relative_dimension"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="false">
 
 
                 <TextView
-                    android:id="@+id/forniture_label"
+                    android:id="@+id/furniture_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
@@ -123,6 +123,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
+                    android:layout_below="@id/furniture_label"
+                    android:layout_marginTop="30dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:clickable="false"
@@ -139,7 +141,7 @@
 
                 android:id="@+id/relative_dimension1"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="false">
@@ -173,6 +175,8 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:clickable="false"
+                    android:layout_marginTop="30dp"
+                    android:layout_below="@id/dimension_label"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
                     android:indeterminate="false"
                     android:longClickable="false"
@@ -188,7 +192,7 @@
 
                 android:id="@+id/relative_dimension2"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="false">
@@ -220,6 +224,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
+                    android:layout_below="@id/honesty_label"
+                    android:layout_marginTop="30dp"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
                     android:clickable="false"
                     android:indeterminate="false"
@@ -236,7 +242,7 @@
 
                 android:id="@+id/relative_dimension3"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="false">
@@ -269,6 +275,8 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
+                    android:layout_below="@id/secure_label"
+                    android:layout_marginTop="30dp"
                     android:clickable="false"
                     android:indeterminate="false"
                     android:longClickable="false"
@@ -284,7 +292,7 @@
 
                 android:id="@+id/relative_dimension4"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
 
                 android:background="@drawable/layout_selector"
@@ -318,6 +326,8 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
+                    android:layout_below="@id/bus_label"
+                    android:layout_marginTop="30dp"
                     android:clickable="false"
                     android:indeterminate="false"
                     android:longClickable="false"
@@ -333,7 +343,7 @@
 
                 android:id="@+id/relative_dimension5"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
 
                 android:background="@drawable/layout_selector"
@@ -366,6 +376,8 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
+                    android:layout_below="@id/neighbours_vote_label"
+                    android:layout_marginTop="30dp"
                     android:clickable="false"
                     android:indeterminate="false"
                     android:longClickable="false"
@@ -380,7 +392,7 @@
 
                 android:id="@+id/relative_general"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="false">
@@ -412,6 +424,8 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
+                    android:layout_below="@id/general_label"
+                    android:layout_marginTop="30dp"
                     android:clickable="false"
                     android:indeterminate="false"
                     android:longClickable="false"
@@ -426,7 +440,7 @@
 
                 android:id="@+id/relative_house_conditions"
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="false">
@@ -461,6 +475,8 @@
                     android:indeterminate="false"
                     android:longClickable="false"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
+                    android:layout_below="@id/conditions_label"
+                    android:layout_marginTop="30dp"
                     android:numStars="5"
                     android:rating="4" />
 
