@@ -26,7 +26,6 @@ public class ApartmentEntryFragment extends Fragment {
     private EditText inputMeters;
     private EditText inputCarspot;
     private EditText inputContractDuration;
-    private EditText inputConditions;
     Bundle bundle;
 
 
@@ -35,7 +34,7 @@ public class ApartmentEntryFragment extends Fragment {
     String meters;
     String carspot;
     String contract;
-    String conditions;
+
 
 
 
@@ -58,7 +57,6 @@ public class ApartmentEntryFragment extends Fragment {
         inputMeters = (EditText) view.findViewById(R.id.descrip);
         inputCarspot = (EditText) view.findViewById(R.id.carspot);
         inputContractDuration = (EditText) view.findViewById(R.id.durata);
-        inputConditions = (EditText) view.findViewById(R.id.conditions);
 
 
         //link event alla schermata d'inserimento Foto
@@ -78,9 +76,9 @@ public class ApartmentEntryFragment extends Fragment {
 
             contract = inputContractDuration.getText().toString();
 
-            conditions = inputConditions.getText().toString();
 
-            if(!name.isEmpty() && !descript.isEmpty() && !meters.isEmpty() && !carspot.isEmpty() && !contract.isEmpty() && !conditions.isEmpty()){
+
+            if(!name.isEmpty() && !descript.isEmpty() && !meters.isEmpty() && !carspot.isEmpty() && !contract.isEmpty() ){
 
 
 
@@ -91,7 +89,7 @@ public class ApartmentEntryFragment extends Fragment {
                 bundle.putString("myMeters", meters);
                 bundle.putString("myCarspot", carspot);
                 bundle.putString("Mycontract", contract);
-                bundle.putString("myConditions", conditions);
+
 
                 ApartmentEntryRoomFragment apartmentEntryRoomFragment = new ApartmentEntryRoomFragment();
                 apartmentEntryRoomFragment.setArguments(bundle);
