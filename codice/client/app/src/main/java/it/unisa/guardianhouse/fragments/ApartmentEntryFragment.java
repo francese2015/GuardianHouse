@@ -26,7 +26,7 @@ public class ApartmentEntryFragment extends Fragment {
     private EditText inputMeters;
     private EditText inputCarspot;
     private EditText inputContractDuration;
-    private EditText inputFreeRoom;
+    private EditText inputConditions;
     Bundle bundle;
 
 
@@ -35,7 +35,7 @@ public class ApartmentEntryFragment extends Fragment {
     String meters;
     String carspot;
     String contract;
-    String room;
+    String conditions;
 
 
 
@@ -58,7 +58,7 @@ public class ApartmentEntryFragment extends Fragment {
         inputMeters = (EditText) view.findViewById(R.id.descrip);
         inputCarspot = (EditText) view.findViewById(R.id.carspot);
         inputContractDuration = (EditText) view.findViewById(R.id.durata);
-        inputFreeRoom = (EditText) view.findViewById(R.id.stanze_libere);
+        inputConditions = (EditText) view.findViewById(R.id.conditions);
 
 
         //link event alla schermata d'inserimento Foto
@@ -78,9 +78,9 @@ public class ApartmentEntryFragment extends Fragment {
 
             contract = inputContractDuration.getText().toString();
 
-            room = inputFreeRoom.getText().toString();
+            conditions = inputConditions.getText().toString();
 
-            if(!name.isEmpty() && !descript.isEmpty() && !meters.isEmpty() && !carspot.isEmpty() && !contract.isEmpty() && !room.isEmpty()){
+            if(!name.isEmpty() && !descript.isEmpty() && !meters.isEmpty() && !carspot.isEmpty() && !contract.isEmpty() && !conditions.isEmpty()){
 
 
 
@@ -91,11 +91,11 @@ public class ApartmentEntryFragment extends Fragment {
                 bundle.putString("myMeters", meters);
                 bundle.putString("myCarspot", carspot);
                 bundle.putString("Mycontract", contract);
-                bundle.putString("myRoom", room);
+                bundle.putString("myConditions", conditions);
 
-                ApartmentEntryPhotoFragment apartmentEntryPhotoFragment = new ApartmentEntryPhotoFragment();
-                apartmentEntryPhotoFragment.setArguments(bundle);
-                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(apartmentEntryPhotoFragment, "Inserisci una Foto");
+                ApartmentEntryRoomFragment apartmentEntryRoomFragment = new ApartmentEntryRoomFragment();
+                apartmentEntryRoomFragment.setArguments(bundle);
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(apartmentEntryRoomFragment, "Composizione Casa");
 
             } else {
 

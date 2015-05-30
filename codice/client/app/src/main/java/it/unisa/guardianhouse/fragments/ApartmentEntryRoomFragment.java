@@ -64,7 +64,7 @@ public class ApartmentEntryRoomFragment extends Fragment implements View.OnClick
                              Bundle savedInstanceState) {
 
 
-        View view = inflater.inflate(R.layout.fragment_4_room, container, false);
+        View view = inflater.inflate(R.layout.fragment_2_room, container, false);
 
         btnLinkToReview = (ButtonRectangle) view.findViewById(R.id.button_to_review);
         btnLessRooms = (Button) view.findViewById(R.id.button_less_rooms);
