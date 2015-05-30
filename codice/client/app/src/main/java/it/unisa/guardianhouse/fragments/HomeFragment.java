@@ -1,12 +1,16 @@
 package it.unisa.guardianhouse.fragments;
 
 
+import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -65,6 +69,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        setHasOptionsMenu(true);
 
         apartmentList = new ArrayList<Apartment>();
         mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh);
@@ -207,5 +212,39 @@ public class HomeFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_home, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                SearchFragment searchFragment = new SearchFragment();
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchFragment, "Cerca appartamento");
+                return true;
+            case R.id.action_insert_apt:
+                ApartmentEntryFragment aptEntryFragment = new ApartmentEntryFragment();
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(aptEntryFragment, "Inserisci appartamento");
+                return true;
+            case R.id.action_refresh:
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mSwipeRefreshLayout.setRefreshing(true);
+                        apartmentList.clear();
+                        adapter.notifyDataSetChanged();
+                        startRequest();
+                        mSwipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 2000);
+                return true;
+            default:
+                break;
+        }
+        return false;
     }
 }

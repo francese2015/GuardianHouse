@@ -48,7 +48,7 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
         this.account = new MaterialAccount(this.getResources(), "Guardian House", "Il tuo angelo custode!", R.drawable.app_logo_big, R.drawable.bg2);
         addAccount(this.account);
 
-        home = newSection("Home", R.drawable.ic_home, new HomeFragment());
+        home = newSection("In primo piano", R.drawable.ic_home, new HomeFragment());
         search = newSection("Cerca appartamento", R.drawable.ic_magnify, new SearchFragment());
         apartmentEntry = newSection("Inserisci appartamento", R.drawable.ic_plus, new ApartmentEntryFragment());
         profile = newSection("Profilo", R.drawable.ic_account, new ProfileFragment());
@@ -62,7 +62,7 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
                 logoutUser();
                 section.unSelect();
                 HomeFragment homeFragment = new HomeFragment();
-                setFragment(homeFragment, "Home");
+                setFragment(homeFragment, "In primo piano");
             }
         });
 
