@@ -1,18 +1,24 @@
 package it.unisa.guardianhouse.fragments;
 
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageSwitcher;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.gc.materialdesign.views.ButtonRectangle;
 
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.unisa.guardianhouse.R;
+import it.unisa.guardianhouse.utils.LocationTracker;
 
 
 /**
@@ -20,23 +26,33 @@ import it.unisa.guardianhouse.R;
  */
 public class ApartmentEntryFragment extends Fragment {
 
-    private ButtonRectangle btnLinkToPhoto;
-    private EditText inputName;
-    private EditText inputDescrip;
-    private EditText inputMeters;
-    private EditText inputCarspot;
-    private EditText inputContractDuration;
+
     Bundle bundle;
-
-
-    String name;
+    String road;
     String descript;
     String meters;
     String carspot;
     String contract;
+    String civic;
+    String intern;
+    String conditions;
+    LocationTracker gps;
 
+    private Double latitude;
+    private Double longitude;
+    private int distance;
 
-
+    private ButtonRectangle btnLinkToPhoto;
+    private EditText inputAddressRoad;
+    private EditText inputDescrip;
+    private EditText inputMeters;
+    private EditText inputCarspot;
+    private EditText inputContractDuration;
+    private EditText inputCivicNumber;
+    private EditText inputInternId;
+    private ImageButton btnMap;
+    private Spinner spinnerConditions;
+    private ImageSwitcher aptPic;
 
 
     public ApartmentEntryFragment() {
@@ -52,50 +68,61 @@ public class ApartmentEntryFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_1_details, container, false);
 
         btnLinkToPhoto = (ButtonRectangle) view.findViewById(R.id.button1);
-        inputName = (EditText) view.findViewById(R.id.name);
+        inputAddressRoad = (EditText) view.findViewById(R.id.address_road);
         inputDescrip = (EditText) view.findViewById(R.id.descrip);
-        inputMeters = (EditText) view.findViewById(R.id.descrip);
+        inputMeters = (EditText) view.findViewById(R.id.meters);
         inputCarspot = (EditText) view.findViewById(R.id.carspot);
         inputContractDuration = (EditText) view.findViewById(R.id.durata);
+        inputCivicNumber = (EditText) view.findViewById(R.id.civic_number);
+        inputInternId = (EditText) view.findViewById(R.id.intern_id);
+        btnMap = (ImageButton) view.findViewById(R.id.img_map);
+        spinnerConditions = (Spinner) view.findViewById(R.id.spinner);
+        aptPic = (ImageSwitcher) view.findViewById(R.id.imgViewPhoto);
 
-
-        //link event alla schermata d'inserimento Foto
 
         btnLinkToPhoto.setOnClickListener(new View.OnClickListener() {
 
 
+            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             public void onClick(View view) {
 
-            name = inputName.getText().toString();
 
-            descript = inputDescrip.getText().toString();
+                road = inputAddressRoad.getText().toString();
 
-            meters = inputMeters.getText().toString();
+                descript = inputDescrip.getText().toString();
 
-            carspot = inputCarspot.getText().toString();
+                meters = inputMeters.getText().toString();
 
-            contract = inputContractDuration.getText().toString();
+                carspot = inputCarspot.getText().toString();
 
+                contract = inputContractDuration.getText().toString();
 
+                civic = inputCivicNumber.getText().toString();
 
-            if(!name.isEmpty() && !descript.isEmpty() && !meters.isEmpty() && !carspot.isEmpty() && !contract.isEmpty() ){
+                intern = inputInternId.getText().toString();
 
-
-
-
-                bundle = new Bundle();
-                bundle.putString("myName", name);
-                bundle.putString("myDescript", descript);
-                bundle.putString("myMeters", meters);
-                bundle.putString("myCarspot", carspot);
-                bundle.putString("Mycontract", contract);
+                conditions = spinnerConditions.getSelectedItem().toString();
 
 
-                ApartmentEntryRoomFragment apartmentEntryRoomFragment = new ApartmentEntryRoomFragment();
-                apartmentEntryRoomFragment.setArguments(bundle);
-                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(apartmentEntryRoomFragment, "Composizione Casa");
+                if (!road.isEmpty() && !civic.isEmpty() && !meters.isEmpty() && !carspot.isEmpty() && !contract.isEmpty() && !intern.isEmpty()) {
 
-            } else {
+
+                    bundle = new Bundle();
+                    bundle.putString("myCivic", civic);
+                    bundle.putString("myInter", intern);
+                    bundle.putString("myConditions", conditions);
+                    bundle.putString("myRoad", road);
+                    bundle.putString("myDescript", descript);
+                    bundle.putString("myMeters", meters);
+                    bundle.putString("myCarspot", carspot);
+                    bundle.putString("Mycontract", contract);
+
+
+                    ApartmentEntryRoomFragment apartmentEntryRoomFragment = new ApartmentEntryRoomFragment();
+                    apartmentEntryRoomFragment.setArguments(bundle);
+                    ((MaterialNavigationDrawer) getActivity()).setFragmentChild(apartmentEntryRoomFragment, "Composizione Casa");
+
+                } else {
 
 
                     Toast.makeText(getActivity(),

@@ -50,4 +50,8 @@
     <string name="go_back">Torna Indietro</string>
     <string name="conditions_label">Condizioni Casa</string>
     <string name="username_label">Rilasciato da:</string>
+    <string name="civic_number">Numero Civico</string>
+    <string name="intern_id">Numero Interno</string>
+    <string name="city_name">Città</string>
+    <string name="road">Via</string>
 </resources>

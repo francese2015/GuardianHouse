@@ -42,6 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/username"
             android:layout_centerHorizontal="true"
+            android:progressDrawable="@drawable/custom_ratingbar_selector"
             android:layout_marginLeft="5dp"
             android:isIndicator="true" />
 

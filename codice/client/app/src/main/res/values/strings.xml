@@ -143,7 +143,7 @@
     <string name="button_goto_scheda2">Avanti</string>
     <string name="apartment_name_label">Indirizzo Completo*</string>
     <string name="insert_apartment_name">Es. Via Roma 1, Campobasso, CB</string>
-    <string name="apartment_desc_label">Descrizione*</string>
+    <string name="apartment_desc_label">Descrizione</string>
     <string name="insert_apartment_description">Es. : L\'appartamento si trova al primo piano di un palazzo situato a pochi metri dal mare ma....</string>
     <string name="apartment_mq_label">Metri Quadri*</string>
     <string name="insert_apartment_mq">Es. 90</string>
@@ -234,5 +234,9 @@
     <string name="go_back">Torna Indietro</string>
     <string name="conditions_label">Condizioni Casa</string>
     <string name="username_label">Rilasciato da:</string>
+    <string name="civic_number">Numero Civico</string>
+    <string name="intern_id">Numero Interno</string>
+    <string name="city_name">Città</string>
+    <string name="road">Via</string>
 
 </resources>

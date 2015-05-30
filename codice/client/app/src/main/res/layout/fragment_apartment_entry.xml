@@ -107,6 +107,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="68dp"
                     style="?android:attr/ratingBarStyle"
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
                     android:isIndicator="true"
                     android:layout_marginLeft="5dp"
                     android:minHeight="18dp" />

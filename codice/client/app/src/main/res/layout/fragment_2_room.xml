@@ -376,7 +376,7 @@
 
             <com.gc.materialdesign.views.ButtonRectangle
                 android:id="@+id/button_to_review"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/room_layout"
                 android:layout_marginTop="10dp"

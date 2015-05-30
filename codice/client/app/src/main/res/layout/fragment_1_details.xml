@@ -27,7 +27,7 @@
         >
 
             <TextView
-                android:id="@+id/name_title"
+                android:id="@+id/address_label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
@@ -38,23 +38,59 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/name"
-                android:layout_below="@id/name_title"
+                android:id="@+id/address_road"
+                android:layout_below="@id/address_label"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="80dp"
-                android:hint="@string/insert_apartment_name"
+                android:hint="@string/road"
                 android:inputType="text" >
             </EditText>
+
+        <EditText
+            android:id="@+id/civic_number"
+            android:layout_below="@id/address_road"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="80dp"
+            android:hint="@string/civic_number"
+            android:inputType="number" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/intern_id"
+            android:layout_below="@id/civic_number"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="80dp"
+            android:hint="@string/intern_id"
+            android:inputType="number" >
+        </EditText>
+
+        <EditText
+            android:id="@+id/city"
+            android:layout_below="@id/intern_id"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="80dp"
+            android:hint="@string/city_name"
+             >
+        </EditText>
 
         <ImageButton
             android:id="@+id/img_map"
             android:layout_width="38dp"
             android:layout_height="38dp"
             android:layout_centerVertical="true"
-            android:layout_below="@id/name_title"
+            android:layout_below="@id/address_label"
             android:layout_marginTop="3dp"
             android:layout_marginLeft="310dp"
             android:src="@drawable/ic_map" />

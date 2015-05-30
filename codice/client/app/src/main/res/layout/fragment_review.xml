@@ -94,9 +94,8 @@
 
                 android:id="@+id/relative_dimension"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginTop="20dp"
                 android:background="@drawable/layout_selector"
                 android:clickable="false">
 
@@ -107,7 +106,6 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
                     android:text="@string/vote_furniture"
                     android:textColor="#2196F3"
                     android:textSize="18sp"
@@ -126,9 +124,9 @@
                     android:id="@+id/ratingBar1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginTop="15dp"
                     android:clickable="false"
                     android:indeterminate="false"
                     android:longClickable="false"
@@ -143,7 +141,7 @@
 
                 android:id="@+id/relative_dimension1"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="false">
@@ -155,7 +153,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+
                     android:text="@string/vote_thermic_capacity"
                     android:textColor="#2196F3"
                     android:textSize="18sp"
@@ -177,6 +175,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:clickable="false"
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
                     android:indeterminate="false"
                     android:longClickable="false"
                     android:numStars="5"
@@ -191,7 +190,7 @@
 
                 android:id="@+id/relative_dimension2"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="false">
@@ -203,7 +202,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+
                     android:text="@string/vote_landlord_honesty"
                     android:textColor="#2196F3"
                     android:textSize="18sp"
@@ -223,6 +222,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
                     android:clickable="false"
                     android:indeterminate="false"
                     android:longClickable="false"
@@ -238,7 +238,7 @@
 
                 android:id="@+id/relative_dimension3"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="false">
@@ -250,7 +250,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+
                     android:text="@string/vote_house_security"
                     android:textColor="#2196F3"
                     android:textSize="18sp"
@@ -270,6 +270,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
                     android:clickable="false"
                     android:indeterminate="false"
                     android:longClickable="false"
@@ -285,9 +286,9 @@
 
                 android:id="@+id/relative_dimension4"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginTop="20dp"
+
                 android:background="@drawable/layout_selector"
                 android:clickable="false">
 
@@ -298,7 +299,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
+
                     android:text="@string/bus_vote"
                     android:textColor="#2196F3"
                     android:textSize="18sp"
@@ -318,6 +319,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
                     android:clickable="false"
                     android:indeterminate="false"
                     android:longClickable="false"
@@ -333,9 +335,9 @@
 
                 android:id="@+id/relative_dimension5"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginTop="20dp"
+
                 android:background="@drawable/layout_selector"
                 android:clickable="false">
 
@@ -365,6 +367,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
                     android:clickable="false"
                     android:indeterminate="false"
                     android:longClickable="false"
@@ -379,7 +382,7 @@
 
                 android:id="@+id/relative_general"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="false">
@@ -391,7 +394,6 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
                     android:text="Voto Esperienza"
                     android:textColor="#2196F3"
                     android:textSize="18sp"
@@ -411,6 +413,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
                     android:clickable="false"
                     android:indeterminate="false"
                     android:longClickable="false"
@@ -425,7 +428,7 @@
 
                 android:id="@+id/relative_house_conditions"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="false">
@@ -437,7 +440,6 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
                     android:text="@string/conditions_label"
                     android:textColor="#2196F3"
                     android:textSize="18sp"
@@ -460,6 +462,7 @@
                     android:clickable="false"
                     android:indeterminate="false"
                     android:longClickable="false"
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
                     android:numStars="5"
                     android:rating="4" />
 
