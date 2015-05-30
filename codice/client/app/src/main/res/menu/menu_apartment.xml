@@ -4,17 +4,13 @@
     tools:context="it.unisa.guardianhouse.fragments.ApartmentFragment">
 
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:id="@+id/action_edit_apt"
+        android:title="Modifica appartamento"
         app:showAsAction="never" />
 
     <item
-
-        android:id="@+id/action_review"
-        android:orderInCategory="100"
-        android:title="@string/give_review"
+        android:id="@+id/action_delete_apt"
+        android:title="Elimina appartamento"
         app:showAsAction="never" />
 
-    />
 </menu>

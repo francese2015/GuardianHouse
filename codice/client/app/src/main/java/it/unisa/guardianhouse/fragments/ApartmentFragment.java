@@ -5,8 +5,12 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -81,6 +85,7 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_apartment, container, false);
+        setHasOptionsMenu(true);
 
         MapsInitializer.initialize(getActivity());
 
@@ -428,5 +433,25 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
 
     @Override
     public void onPageScrollStateChanged(int state) {}
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_apartment, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_edit_apt:
+                // codice per modificare appartamento
+                return true;
+            case R.id.action_delete_apt:
+                // codice per eliminare appartamento
+                return true;
+            default:
+                break;
+        }
+        return false;
+    }
 
 }

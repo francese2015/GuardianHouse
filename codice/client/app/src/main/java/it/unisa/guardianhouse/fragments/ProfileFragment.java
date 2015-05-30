@@ -7,6 +7,9 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -75,6 +78,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        setHasOptionsMenu(true);
         //Utils.setRobotoFont(getActivity(), view);
 
         session = new SessionManager(getActivity());
@@ -356,6 +360,26 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_profile, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_edit_profile:
+                // codice per modificare il profilo
+                return true;
+            case R.id.action_delete_account:
+                // codice per eliminare l account
+                return true;
+            default:
+                break;
+        }
+        return false;
     }
 
 }
