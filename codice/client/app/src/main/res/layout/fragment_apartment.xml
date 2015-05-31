@@ -41,12 +41,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginTop="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -80,8 +81,6 @@
                     android:src="@drawable/app_logo_big" />
 
             </LinearLayout>
-
-
         </LinearLayout>
 
         <FrameLayout
@@ -607,14 +606,14 @@
             android:layout_marginTop="28dp"
             android:text="Lascia una recensione" />
 
-        <Button
+<!--        <Button
             android:id="@+id/button_less"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/button_ins_review"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="28dp"
-            android:text="@string/button_delete_apartment" />
+            android:text="@string/button_delete_apartment" />-->
 
     </RelativeLayout>
 

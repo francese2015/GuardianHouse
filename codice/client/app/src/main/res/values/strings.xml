@@ -141,17 +141,17 @@
     <!-- Activity Insert Apartment Scheda 1 -->
 
     <string name="button_goto_scheda2">Avanti</string>
-    <string name="apartment_name_label">Indirizzo Completo*</string>
+    <string name="apartment_name_label">Indirizzo Completo (*)</string>
     <string name="insert_apartment_name">Es. Via Roma 1, Campobasso, CB</string>
     <string name="apartment_desc_label">Descrizione</string>
     <string name="insert_apartment_description">Es. : L\'appartamento si trova al primo piano di un palazzo situato a pochi metri dal mare ma....</string>
-    <string name="apartment_mq_label">Metri Quadri*</string>
+    <string name="apartment_mq_label">Metri Quadri (*)</string>
     <string name="insert_apartment_mq">Es. 90</string>
-    <string name="apartment_spot_label">Posto Auto*</string>
+    <string name="apartment_spot_label">Posto Auto (*)</string>
     <string name="insert_apartment_spot">Es. 1</string>
-    <string name="apartment_durata_contratto">Durata Contratto*</string>
+    <string name="apartment_durata_contratto">Durata Contratto (*)</string>
     <string name="insert_durata_contratto">Inserisci Durata(In Mesi)</string>
-    <string name="apartment_status_detail">Inserisci Condizioni Casa*</string>
+    <string name="apartment_status_detail">Inserisci Condizioni Casa (*)</string>
     <string name="insert_status_detail">Nuovo/Ristrutturato/Lavori in Corso</string>
 
     <!-- titles -->
@@ -203,7 +203,7 @@
     <string name="small_text_placeholder">Testo Piccolo</string>
     <string name="send">Invia</string>
     <string name="insert_apartment">Inserisci Appartamento</string>
-    <string name="insert_photo">Inserire Foto</string>
+    <string name="insert_photo">Foto</string>
     <string name="title">Titolo</string>
     <string name="title_description_fragment3">Inserisci un titolo descrittivo della tua recensione</string>
     <string name="description">Descrizione</string>

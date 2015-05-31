@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-    <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/scrollView" >
-
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,17 +11,13 @@
         android:gravity="center"
         android:paddingBottom="@dimen/activity_vertical_margin">
 
-
-
-    <RelativeLayout
-
-        android:id="@+id/relative_address"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="@drawable/layout_selector"
-        android:clickable="false"
-        >
+        <RelativeLayout
+            android:id="@+id/relative_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/layout_selector"
+            android:clickable="false">
 
             <TextView
                 android:id="@+id/address_label"
@@ -32,218 +25,237 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
+                android:text="@string/apartment_name_label"
                 android:textColor="#2196F3"
                 android:textSize="18dp"
-                android:text="@string/apartment_name_label"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/address_road"
-                android:layout_below="@id/address_label"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/address_label"
+                android:layout_marginLeft="5dp"
                 android:layout_marginRight="80dp"
+                android:layout_marginTop="5dp"
                 android:hint="@string/road"
-                android:inputType="text" >
-            </EditText>
+                android:inputType="text"></EditText>
 
-        <EditText
-            android:id="@+id/civic_number"
-            android:layout_below="@id/address_road"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="80dp"
-            android:hint="@string/civic_number"
-            android:inputType="number" >
-        </EditText>
+            <EditText
+                android:id="@+id/civic_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/address_road"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="80dp"
+                android:layout_marginTop="5dp"
+                android:hint="@string/civic_number"
+                android:inputType="number"></EditText>
 
-        <EditText
-            android:id="@+id/intern_id"
-            android:layout_below="@id/civic_number"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="80dp"
-            android:hint="@string/intern_id"
-            android:inputType="number" >
-        </EditText>
+            <EditText
+                android:id="@+id/intern_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/civic_number"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="80dp"
+                android:layout_marginTop="5dp"
+                android:hint="@string/intern_id"
+                android:inputType="number"></EditText>
 
-        <EditText
-            android:id="@+id/city"
-            android:layout_below="@id/intern_id"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="80dp"
-            android:hint="@string/city_name"
-             >
-        </EditText>
+            <EditText
+                android:id="@+id/city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/intern_id"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="80dp"
+                android:layout_marginTop="5dp"
+                android:hint="@string/city_name"></EditText>
 
-        <ImageButton
-            android:id="@+id/img_map"
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:layout_centerVertical="true"
-            android:layout_below="@id/address_label"
-            android:layout_marginTop="3dp"
-            android:layout_marginLeft="310dp"
-            android:src="@drawable/ic_map" />
+            <ImageButton
+                android:id="@+id/img_map"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_below="@id/address_label"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="310dp"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/ic_map" />
 
         </RelativeLayout>
 
-            <TextView
-                android:id="@+id/name_descr"
-                android:layout_width="match_parent"
-                android:layout_marginLeft="5dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/relative_address"
-                android:layout_marginTop="10dp"
-                android:textColor="#2196F3"
-                android:textSize="18dp"
-                android:text="@string/apartment_desc_label"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/descrip"
-                android:layout_below="@id/name_descr"
-                android:layout_margin="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/insert_apartment_description"
-                android:inputType="textMultiLine" >
-            </EditText>
-
-            <TextView
-                android:id="@+id/name_mq"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_below="@+id/descrip"
-                android:layout_marginTop="10dp"
-                android:textColor="#2196F3"
-                android:textSize="18dp"
-                android:text="@string/apartment_mq_label"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/meters"
-                android:layout_below="@id/name_mq"
-                android:layout_margin="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/insert_apartment_mq"
-                android:inputType="number" >
-            </EditText>
-
-            <TextView
-                android:id="@+id/name_carspot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_below="@+id/meters"
-                android:layout_marginTop="10dp"
-                android:textColor="#2196F3"
-                android:textSize="18dp"
-                android:text="@string/apartment_spot_label"
-                android:textStyle="bold" />
-
-
-            <EditText
-                android:id="@+id/carspot"
-                android:layout_below="@id/name_carspot"
-                android:layout_margin="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/insert_apartment_spot"
-                android:inputType="number" >
-            </EditText>
-
-            <TextView
-                android:id="@+id/name_durata"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_below="@+id/carspot"
-                android:layout_marginTop="10dp"
-                android:textColor="#2196F3"
-                android:textSize="18dp"
-                android:text="@string/apartment_durata_contratto"
-                android:textStyle="bold" />
-
-
-            <EditText
-                android:id="@+id/durata"
-                android:layout_below="@id/name_durata"
-                android:layout_margin="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/insert_durata_contratto"
-                android:inputType="number" >
-            </EditText>
-
-            <TextView
-                android:id="@+id/conditions_label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/durata"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
-                android:textColor="#2196F3"
-                android:textSize="18dp"
-                android:text="@string/apartment_status_detail"
-                android:textStyle="bold" />
-
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="250dp"
-                android:layout_margin="6dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/conditions_label"
-                android:background="@color/LightCyan"
-                android:entries="@array/apt_conditions"/>
-
-        <ImageSwitcher
-            android:id="@+id/imgViewPhoto"
+        <TextView
+            android:id="@+id/name_descr"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:adjustViewBounds="true"
-            android:layout_below="@+id/spinner"
-            android:background="@drawable/image_viewer_placeholder"
-            android:cropToPadding="true"
-            android:scaleType="centerCrop"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative_address"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/apartment_desc_label"
+            android:textColor="#2196F3"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
-            />
+        <EditText
+            android:id="@+id/descrip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_descr"
+            android:layout_margin="5dp"
+            android:hint="@string/insert_apartment_description"
+            android:inputType="textMultiLine"></EditText>
+
+        <TextView
+            android:id="@+id/name_mq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/descrip"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/apartment_mq_label"
+            android:textColor="#2196F3"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/meters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_mq"
+            android:layout_margin="5dp"
+            android:hint="@string/insert_apartment_mq"
+            android:inputType="number"></EditText>
+
+        <TextView
+            android:id="@+id/name_carspot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/meters"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/apartment_spot_label"
+            android:textColor="#2196F3"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/carspot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_carspot"
+            android:layout_margin="5dp"
+            android:hint="@string/insert_apartment_spot"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/name_durata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carspot"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/apartment_durata_contratto"
+            android:textColor="#2196F3"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/durata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_durata"
+            android:layout_margin="5dp"
+            android:hint="@string/insert_durata_contratto"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/conditions_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/durata"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/apartment_status_detail"
+            android:textColor="#2196F3"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="180dp"
+            android:layout_height="24dp"
+            android:layout_below="@id/conditions_label"
+            android:layout_margin="6dp"
+            android:entries="@array/apt_conditions" />
+
 
         <LinearLayout
             android:id="@+id/linear1"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_gravity="bottom|start"
-            android:background="#A7000000"
-            android:orientation="vertical"
-            android:padding="5dp"
-            android:layout_alignBottom="@+id/imgViewPhoto"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/spinner"
+            android:layout_gravity="bottom|start"
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/insertPhoto"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="10dp"
                 android:text="@string/insert_photo"
-                android:textColor="@color/bianco"
-                android:textSize="20sp"
+                android:textColor="#2196F3"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
+        </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/linear1"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/get_images"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Carica/Scatta foto" />
+
+            </RelativeLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/hori_scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="false"
+                android:foregroundGravity="left"
+                android:paddingBottom="1dp"
+                android:paddingTop="1dp">
+
+                <LinearLayout
+                    android:id="@+id/selected_photos_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:animateLayoutChanges="true"
+                    android:gravity="left"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                </LinearLayout>
+            </HorizontalScrollView>
 
         </LinearLayout>
 
@@ -251,17 +263,13 @@
             android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/linear1"
-            android:layout_marginTop="10dp"
+            android:layout_below="@+id/container"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
             android:background="#1E88E5"
-            materialdesign:rippleSpeed="50"
-            android:text="@string/button_goto_scheda2" />
+            android:text="@string/button_goto_scheda2"
+            materialdesign:rippleSpeed="50" />
 
+    </RelativeLayout>
 
-
-        </RelativeLayout>
-
-
-    </ScrollView>
-
+</ScrollView>
