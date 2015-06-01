@@ -62,16 +62,18 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
     private Bundle mBundle;
     private Double latitude;
     private Double longitude;
-    private Double distance;
-    String aptId;
-    ImageView featured;
+    Double distance;
+    private String aptId;
+    private ImageView featured;
     private SliderLayout imgSlider;
-    TextView nameApt;
-    RatingBar ratingBar;
-    TextView distanceTextView;
-    NetworkImageView thumbnail;
-    ImageLoader imageLoader = AppController.getInstance().getImageLoader();
-    Button btnShowReview;
+    private TextView nameApt;
+    TextView username;
+    String userId;
+    private RatingBar ratingBar;
+    private NetworkImageView thumbnail;
+    private ImageLoader imageLoader = AppController.getInstance().getImageLoader();
+    private Button btnShowReview;
+    // private TextView distanceTextView;
 
 
 
@@ -116,6 +118,7 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
 
         featured = (ImageView) view.findViewById(R.id.imgViewFeatured);
         nameApt = (TextView) view.findViewById(R.id.name_apt);
+        username = (TextView) view.findViewById(R.id.inserted_by_value);
         ratingBar = (RatingBar) view.findViewById(R.id.rating_bar);
         thumbnail = (NetworkImageView)view.findViewById(R.id.thumbnailApt);
         //distanceTextView = (TextView) view.findViewById(R.id.distanceFromLocation);
@@ -319,6 +322,8 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
                     //thumbnail.setImageUrl(singleApartment.getJSONArray("pictures").getJSONObject(0).getString("url"), imageLoader);
                     //ottengo il nome appartamento
                     nameApt.setText(singleApartment.getJSONObject("details").getString("name"));
+                    userId = singleApartment.getJSONObject("added_by").getString("user_id");
+                    username.setText(singleApartment.getJSONObject("added_by").getString("username"));
                     //ottengo il rating
                     String stringRating = singleApartment.getString("average_rating");
                     ratingBar.setRating(Float.parseFloat(stringRating));
