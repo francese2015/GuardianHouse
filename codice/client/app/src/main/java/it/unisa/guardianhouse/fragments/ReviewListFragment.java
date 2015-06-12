@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.adapters.ReviewListAdapter;
@@ -40,6 +41,7 @@ public class ReviewListFragment extends Fragment {
     ArrayList<Review> reviewList;
     String aptId;
     String url;
+    String rewiewId;
 
 
     public ReviewListFragment () {
@@ -53,22 +55,24 @@ public class ReviewListFragment extends Fragment {
 
         Bundle bundle = getArguments();
         aptId = bundle.getString("myAptId");
-        url = "http://carlo.teammolise.rocks/api/apartments/554732e9e4b08dbaf0160eec/reviews";
+        //url = "http://carlo.teammolise.rocks/api/apartments/554732e9e4b08dbaf0160eec/reviews";
+        url = Config.APARTMENTS_URL + "/" + aptId + "/reviews";
         reviewList = new ArrayList<Review>();
-
         listView = (ListView) view.findViewById(R.id.listView1);
         adapter = new ReviewListAdapter(getActivity(),reviewList);
         listView.setAdapter(adapter);
 
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
-//
-//                //url = Config.APARTMENTS_URL + "/" + aptId + "/reviews";
-//
-//                ReviewFragment reviewFragment = new ReviewFragment();
-//                ((MaterialNavigationDrawer) getActivity()).setFragment(reviewFragment, "Recensione");
-//            }
-//        });
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
+                Object obj = adapter.getItemAtPosition(position);
+                Review rew = (Review)obj;
+                Bundle b = new Bundle();
+                b.putString("aptId", rew.getRewId());
+                ReviewFragment reviewFragment = new ReviewFragment();
+                reviewFragment.setArguments(b);
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(reviewFragment, "Recensione");
+            }
+        });
 
         getReviews();
 
@@ -87,7 +91,7 @@ public class ReviewListFragment extends Fragment {
                     for (int i = 0; i < reviewsList.length(); i++) {
                         JSONObject singleReview = reviewsList.getJSONObject(i);
                         Review review = new Review();
-//                      review.setRewId(singleReview.getJSONObject("_id").getString("$id"));
+                        review.setRewId(singleReview.getJSONObject("_id").getString("$id"));
 //                      review.setApplicanceStatus(singleReview.getDouble("house_conditions"));
 //                      review.setThermicCapacity(singleReview.getDouble("thermic_capacity"));
 //                      review.setLandlordHonesty(singleReview.getDouble("landlord_honesty"));
