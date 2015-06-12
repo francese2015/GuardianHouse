@@ -161,6 +161,10 @@
     <string name="title_activity_get_apartments">Risultati ricerca</string>
     <string name="title_activity_swipe_refresh">SwipeRefreshActivity</string>
 
+    <!-- Feedback -->
+
+    <string name="feedbacktext">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."</string>
+
     <!-- Normativa Privacy -->
     <string name="privacy_agreement">
         CONSENSO AI SENSI DEL CODICE IN MATERIA DI PROTEZIONE DEI DATI PERSONALI INFORMATIVA AI SENSI DELL\'ART.13 DEL T.U. PRIVACY (D.LGS 196/2003)

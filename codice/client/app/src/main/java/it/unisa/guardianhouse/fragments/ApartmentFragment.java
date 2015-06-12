@@ -145,6 +145,16 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
             }
         });
 
+        TextView txtUserInsert = (TextView) view.findViewById(R.id.inserted_by_value);
+
+        txtUserInsert.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+            FeedbackListFragment feedbackListFragment = new FeedbackListFragment();
+                //feedbackListFragment.setArguments();
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(feedbackListFragment, "Lista Feedback");
+            }
+        });
 
         /*
         RelativeLayout dimensionRelative = (RelativeLayout) view.findViewById(R.id.relative_dimension);
