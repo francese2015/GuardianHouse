@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -42,7 +41,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,6 +49,7 @@ import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.config.Config;
+import it.unisa.guardianhouse.models.Review;
 
 
 public class ApartmentFragment extends Fragment implements BaseSliderView.OnSliderClickListener, ViewPagerEx.OnPageChangeListener{
@@ -73,6 +73,7 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
     private NetworkImageView thumbnail;
     private ImageLoader imageLoader = AppController.getInstance().getImageLoader();
     private Button btnShowReview;
+    private ArrayList<Review> reviewList = new ArrayList<Review>();
     // private TextView distanceTextView;
 
 
@@ -132,13 +133,14 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
         btnShowReview.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
+                ReviewListFragment reviewListFragment = new ReviewListFragment();
+
 
                 bundle = new Bundle();
-                bundle.putString("myAptId", aptId);
-
-                ReviewListFragment reviewListFragment = new ReviewListFragment();
+                bundle.putString("myAptId", aptId );
                 reviewListFragment.setArguments(bundle);
-                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(reviewListFragment, "Lista Recensioni");
+
+                ((MaterialNavigationDrawer) getActivity()).setFragment(reviewListFragment, "Lista Recensioni");
 
             }
         });

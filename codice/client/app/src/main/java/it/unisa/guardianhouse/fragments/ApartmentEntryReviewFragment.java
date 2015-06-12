@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.gc.materialdesign.views.ButtonRectangle;
 
+import java.util.HashMap;
+
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.unisa.guardianhouse.R;
 
@@ -30,6 +32,7 @@ public class ApartmentEntryReviewFragment extends Fragment {
     private RatingBar rateNeighbours;
     private RatingBar rateExperience;
     private RatingBar rateConditions;
+    private HashMap<String, String> params;
 
     String review;
     double furniture;
@@ -87,6 +90,7 @@ public class ApartmentEntryReviewFragment extends Fragment {
                 if(!review.isEmpty()){
 
                 bundle = getArguments();
+
                 bundle.putString("myReview", review);
                 bundle.putDouble("myFurniture", furniture);
                 bundle.putDouble("myThermic", thermic);

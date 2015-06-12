@@ -11,13 +11,48 @@
         android:gravity="center"
         android:paddingBottom="@dimen/activity_vertical_margin">
 
+
+
+    <RelativeLayout
+        android:id="@+id/relative_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/layout_selector"
+        android:clickable="false">
+
+        <TextView
+            android:id="@+id/title_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/title_apartment"
+            android:textColor="#2196F3"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_label"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="5dp"
+            android:hint="@string/title_apartment_value"
+            android:inputType="text"></EditText>
+</RelativeLayout>
+
         <RelativeLayout
             android:id="@+id/relative_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_below="@id/relative_title"
             android:background="@drawable/layout_selector"
             android:clickable="false">
+
 
             <TextView
                 android:id="@+id/address_label"
@@ -25,6 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
+                android:layout_below="@id/title"
                 android:text="@string/apartment_name_label"
                 android:textColor="#2196F3"
                 android:textSize="18dp"

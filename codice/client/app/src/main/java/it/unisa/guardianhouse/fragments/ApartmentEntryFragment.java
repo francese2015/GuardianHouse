@@ -18,7 +18,6 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -42,29 +41,25 @@ public class ApartmentEntryFragment extends Fragment {
 
     private static final int INTENT_REQUEST_GET_IMAGES = 13;
     private static final int INTENT_REQUEST_GET_N_IMAGES = 14;
-
-    private Context mContext;
-
-    private ViewGroup mSelectedImagesContainer;
     HashSet<Uri> mMedia = new HashSet<Uri>();
-
-
     Bundle bundle;
     String road;
-    String descript;
-    String meters;
-    String carspot;
-    String contract;
+    String description;
+    String mq;
+    String car_place;
+    String contract_time;
     String civic;
     String intern;
-    String conditions;
+    String status;
+    String name;
     LocationTracker gps;
-
+    private Context mContext;
+    private ViewGroup mSelectedImagesContainer;
     private Double latitude;
     private Double longitude;
     private int distance;
 
-    private ButtonRectangle btnLinkToPhoto;
+    private ButtonRectangle btnLinkToRoom;
     private EditText inputAddressRoad;
     private EditText inputDescrip;
     private EditText inputMeters;
@@ -74,7 +69,7 @@ public class ApartmentEntryFragment extends Fragment {
     private EditText inputInternId;
     private ImageButton btnMap;
     private Spinner spinnerConditions;
-    private ImageSwitcher aptPic;
+    private EditText inputTitle;
 
 
     public ApartmentEntryFragment() {
@@ -98,7 +93,7 @@ public class ApartmentEntryFragment extends Fragment {
             }
         });
 
-        btnLinkToPhoto = (ButtonRectangle) view.findViewById(R.id.button1);
+        btnLinkToRoom = (ButtonRectangle) view.findViewById(R.id.button1);
         inputAddressRoad = (EditText) view.findViewById(R.id.address_road);
         inputDescrip = (EditText) view.findViewById(R.id.descrip);
         inputMeters = (EditText) view.findViewById(R.id.meters);
@@ -108,32 +103,36 @@ public class ApartmentEntryFragment extends Fragment {
         inputInternId = (EditText) view.findViewById(R.id.intern_id);
         btnMap = (ImageButton) view.findViewById(R.id.img_map);
         spinnerConditions = (Spinner) view.findViewById(R.id.spinner);
+        inputTitle = (EditText) view.findViewById(R.id.title);
 
-
-        btnLinkToPhoto.setOnClickListener(new View.OnClickListener() {
+        btnLinkToRoom.setOnClickListener(new View.OnClickListener() {
 
             @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             public void onClick(View view) {
 
                 road = inputAddressRoad.getText().toString();
-                descript = inputDescrip.getText().toString();
-                meters = inputMeters.getText().toString();
-                carspot = inputCarspot.getText().toString();
-                contract = inputContractDuration.getText().toString();
+                description = inputDescrip.getText().toString();
+                mq = inputMeters.getText().toString();
+                car_place = inputCarspot.getText().toString();
+                contract_time = inputContractDuration.getText().toString();
                 civic = inputCivicNumber.getText().toString();
                 intern = inputInternId.getText().toString();
-                conditions = spinnerConditions.getSelectedItem().toString();
+                status = spinnerConditions.getSelectedItem().toString();
+                name = inputTitle.getText().toString();
 
-                if (!road.isEmpty() && !civic.isEmpty() && !meters.isEmpty() && !carspot.isEmpty() && !contract.isEmpty() && !intern.isEmpty()) {
+                if (!road.isEmpty() && !civic.isEmpty() && !mq.isEmpty() && !car_place.isEmpty() && !contract_time.isEmpty() && !intern.isEmpty()) {
                     bundle = new Bundle();
                     bundle.putString("myCivic", civic);
                     bundle.putString("myInter", intern);
-                    bundle.putString("myConditions", conditions);
+                    bundle.putString("myConditions", status);
                     bundle.putString("myRoad", road);
-                    bundle.putString("myDescript", descript);
-                    bundle.putString("myMeters", meters);
-                    bundle.putString("myCarspot", carspot);
-                    bundle.putString("Mycontract", contract);
+                    bundle.putString("myDescript", description);
+                    bundle.putString("myMeters", mq);
+                    bundle.putString("myCarspot", car_place);
+                    bundle.putString("mycontract", contract_time);
+                    bundle.putString("myTitle", name);
+
+
                     ApartmentEntryRoomFragment apartmentEntryRoomFragment = new ApartmentEntryRoomFragment();
                     apartmentEntryRoomFragment.setArguments(bundle);
                     ((MaterialNavigationDrawer) getActivity()).setFragmentChild(apartmentEntryRoomFragment, "Composizione Casa");

@@ -238,5 +238,8 @@
     <string name="intern_id">Numero Interno</string>
     <string name="city_name">Città</string>
     <string name="road">Via</string>
+    <string name="title_apartment">Titolo</string>
+    <string name="title_apartment_value">Dai un titolo alla tua Idea!</string>
+    <string name="contract_duration">Durata Contratto(In Mesi)</string>
 
 </resources>

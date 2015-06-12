@@ -45,7 +45,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/text_value"
+                    android:id="@+id/address_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/address_label"
@@ -130,7 +130,7 @@
                         android:textStyle="bold" />
 
                     <ImageView
-                        android:id="@+id/img_quality"
+                        android:id="@+id/img_furniture"
                         android:layout_width="38dp"
                         android:layout_height="38dp"
                         android:layout_marginLeft="10dp"
@@ -139,7 +139,7 @@
                         android:src="@mipmap/ic_action_storage" />
 
                     <RatingBar
-                        android:id="@+id/ratingBar1"
+                        android:id="@+id/ratingBarFurniture"
                         android:layout_width="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_height="wrap_content"
@@ -168,7 +168,7 @@
 
 
                     <TextView
-                        android:id="@+id/dimension_label"
+                        android:id="@+id/thermic_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
@@ -180,7 +180,7 @@
                         android:textSize="18sp"/>
 
                     <ImageView
-                        android:id="@+id/img_quality1"
+                        android:id="@+id/img_thermic"
                         android:layout_width="38dp"
                         android:layout_height="38dp"
                         android:layout_marginLeft="10dp"
@@ -189,7 +189,7 @@
                         android:src="@mipmap/ic_action_bightness_low" />
 
                     <RatingBar
-                        android:id="@+id/ratingBar2"
+                        android:id="@+id/ratingBarThermic"
                         android:layout_width="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_height="wrap_content"
@@ -239,7 +239,7 @@
                         android:src="@mipmap/ic_action_cc_bcc" />
 
                     <RatingBar
-                        android:id="@+id/ratingBar4"
+                        android:id="@+id/ratingBarHonesty"
                         android:layout_width="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_height="wrap_content"
@@ -289,7 +289,7 @@
                         android:src="@mipmap/ic_action_secure" />
 
                     <RatingBar
-                        android:id="@+id/ratingBar3"
+                        android:id="@+id/ratingBarSecurity"
                         android:layout_width="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_height="wrap_content"
@@ -308,14 +308,14 @@
                 <!-- Durata Contratto -->
 
                 <TextView
-                    android:id="@+id/contract_time_title"
+                    android:id="@+id/contract_time_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="8dp"
                     android:textColor="#2196F3"
                     android:textSize="18sp"
-                    android:text="@string/contract_duration_hint"
+                    android:text="@string/contract_duration"
                     android:textStyle="bold" />
 
                 <GridLayout
@@ -372,7 +372,7 @@
                         android:textSize="18sp"/>
 
                     <ImageView
-                        android:id="@+id/img_security"
+                        android:id="@+id/img_bus"
                         android:layout_width="38dp"
                         android:layout_height="38dp"
                         android:layout_marginLeft="10dp"
@@ -380,7 +380,7 @@
                         android:src="@drawable/ic_bus_grey600_18dp" />
 
                     <RatingBar
-                        android:id="@+id/ratingBar3"
+                        android:id="@+id/ratingBarBus"
                         android:layout_width="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_height="wrap_content"
@@ -422,7 +422,7 @@
                         android:textSize="18sp"/>
 
                     <ImageView
-                        android:id="@+id/img_security"
+                        android:id="@+id/img_neighbours"
                         android:layout_width="38dp"
                         android:layout_height="38dp"
                         android:layout_marginLeft="10dp"
@@ -430,7 +430,7 @@
                         android:src="@drawable/icon_user" />
 
                     <RatingBar
-                        android:id="@+id/ratingBar3"
+                        android:id="@+id/ratingBar6"
                         android:layout_width="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_height="wrap_content"
