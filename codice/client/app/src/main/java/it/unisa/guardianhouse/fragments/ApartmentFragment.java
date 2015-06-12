@@ -121,27 +121,24 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
         nameApt = (TextView) view.findViewById(R.id.name_apt);
         username = (TextView) view.findViewById(R.id.inserted_by_value);
         ratingBar = (RatingBar) view.findViewById(R.id.rating_bar);
-        thumbnail = (NetworkImageView)view.findViewById(R.id.thumbnailApt);
+        thumbnail = (NetworkImageView) view.findViewById(R.id.thumbnailApt);
+        btnShowReview = (Button) view.findViewById(R.id.button_view_reviews);
         //distanceTextView = (TextView) view.findViewById(R.id.distanceFromLocation);
         //DecimalFormat precision = new DecimalFormat("##.##");
         //distanceTextView.setText("Distanza: " + precision.format(distance) + " Km");
 
         getApartmentData(view);
 
-        Button btnShowReview = (Button) view.findViewById(R.id.button_view_reviews);
 
+        // Link to Login Screen
         btnShowReview.setOnClickListener(new View.OnClickListener() {
+
             public void onClick(View view) {
-
                 ReviewListFragment reviewListFragment = new ReviewListFragment();
-
-
-                bundle = new Bundle();
-                bundle.putString("myAptId", aptId );
+                Bundle bundle = new Bundle();
+                bundle.putString("myAptId", aptId);
                 reviewListFragment.setArguments(bundle);
-
-                ((MaterialNavigationDrawer) getActivity()).setFragment(reviewListFragment, "Lista Recensioni");
-
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(reviewListFragment, "Lista recensioni");
             }
         });
 

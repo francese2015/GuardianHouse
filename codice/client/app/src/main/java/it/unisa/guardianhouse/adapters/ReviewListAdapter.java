@@ -12,6 +12,7 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
@@ -22,21 +23,16 @@ import it.unisa.guardianhouse.models.Review;
  */
 public class ReviewListAdapter extends BaseAdapter {
 
-    ImageLoader imageLoader = AppController.getInstance().getImageLoader();
-    TextView rewUsername;
-    TextView getRewUsername;
-    TextView review;
+    //ImageLoader imageLoader = AppController.getInstance().getImageLoader();
+
     private Activity activity;
     private LayoutInflater inflater;
-    private ArrayList rewItems ;
-
-
+    private List<Review> rewItems;
+    ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
     public ReviewListAdapter(Activity activity, ArrayList rewItems ) {
         this.activity = activity;
-        this.rewItems = rewItems = new ArrayList();
-
-
+        this.rewItems = rewItems;
     }
 
     @Override
@@ -67,12 +63,11 @@ public class ReviewListAdapter extends BaseAdapter {
             imageLoader = AppController.getInstance().getImageLoader();
 
         NetworkImageView thumbNail = (NetworkImageView) convertView.findViewById(R.id.thumbnailRew);
-        TextView rewUsername = (TextView) convertView.findViewById(R.id.username_label);
         TextView getRewUsername = (TextView) convertView.findViewById(R.id.username_value);
         TextView review = (TextView) convertView.findViewById(R.id.txtReview);
 
 
-        Review rew = (Review) rewItems.get(position);
+        Review rew = rewItems.get(position);
 
 
         thumbNail.setImageUrl(rew.getThumbnailUrl(), imageLoader);
