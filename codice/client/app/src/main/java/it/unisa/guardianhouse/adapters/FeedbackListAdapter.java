@@ -57,6 +57,7 @@ public class FeedbackListAdapter extends BaseAdapter {
         TextView username = (TextView) convertView.findViewById(R.id.feedUsername);
         TextView feedback_text = (TextView) convertView.findViewById(R.id.surname);
         RatingBar feedrating = (RatingBar) convertView.findViewById(R.id.feedRatingBar);
+        ImageView feedProfileImage = (ImageView) convertView.findViewById(R.id.feedProfileImage);
 
         Feedback f = feedbacksItems.get(position);
 

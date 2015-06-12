@@ -38,8 +38,8 @@ public class Feedback {
         return rating;
     }
 
-    public void setRating(Float rating) {
-        this.rating = rating;
+    public void setRating(String rating) {
+        this.rating = Float.parseFloat(rating);
     }
 
     public String getUsername() {
