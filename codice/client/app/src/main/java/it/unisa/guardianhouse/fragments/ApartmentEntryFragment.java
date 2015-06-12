@@ -43,15 +43,16 @@ public class ApartmentEntryFragment extends Fragment {
     private static final int INTENT_REQUEST_GET_N_IMAGES = 14;
     HashSet<Uri> mMedia = new HashSet<Uri>();
     Bundle bundle;
-    String road;
+    String route;
     String description;
     String mq;
     String car_place;
     String contract_time;
-    String civic;
-    String intern;
+    String street_number;
+    String intern_id;
     String status;
     String name;
+    String locality;
     LocationTracker gps;
     private Context mContext;
     private ViewGroup mSelectedImagesContainer;
@@ -70,6 +71,7 @@ public class ApartmentEntryFragment extends Fragment {
     private ImageButton btnMap;
     private Spinner spinnerConditions;
     private EditText inputTitle;
+    private EditText inputLocality;
 
 
     public ApartmentEntryFragment() {
@@ -104,33 +106,36 @@ public class ApartmentEntryFragment extends Fragment {
         btnMap = (ImageButton) view.findViewById(R.id.img_map);
         spinnerConditions = (Spinner) view.findViewById(R.id.spinner);
         inputTitle = (EditText) view.findViewById(R.id.title);
+        inputLocality = (EditText) view.findViewById(R.id.city);
 
         btnLinkToRoom.setOnClickListener(new View.OnClickListener() {
 
             @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             public void onClick(View view) {
 
-                road = inputAddressRoad.getText().toString();
+                route = inputAddressRoad.getText().toString();
                 description = inputDescrip.getText().toString();
                 mq = inputMeters.getText().toString();
                 car_place = inputCarspot.getText().toString();
                 contract_time = inputContractDuration.getText().toString();
-                civic = inputCivicNumber.getText().toString();
-                intern = inputInternId.getText().toString();
+                street_number = inputCivicNumber.getText().toString();
+                intern_id = inputInternId.getText().toString();
                 status = spinnerConditions.getSelectedItem().toString();
                 name = inputTitle.getText().toString();
+                locality = inputLocality.getText().toString();
 
-                if (!road.isEmpty() && !civic.isEmpty() && !mq.isEmpty() && !car_place.isEmpty() && !contract_time.isEmpty() && !intern.isEmpty()) {
+                if (!route.isEmpty() && !street_number.isEmpty() && !mq.isEmpty() && !car_place.isEmpty() && !contract_time.isEmpty() && !intern_id.isEmpty()) {
                     bundle = new Bundle();
-                    bundle.putString("myCivic", civic);
-                    bundle.putString("myInter", intern);
+                    bundle.putString("myCivic", street_number);
+                    bundle.putString("myInter", intern_id);
                     bundle.putString("myConditions", status);
-                    bundle.putString("myRoad", road);
+                    bundle.putString("myRoad", route);
                     bundle.putString("myDescript", description);
                     bundle.putString("myMeters", mq);
                     bundle.putString("myCarspot", car_place);
                     bundle.putString("mycontract", contract_time);
                     bundle.putString("myTitle", name);
+                    bundle.putString("myCity", locality);
 
 
                     ApartmentEntryRoomFragment apartmentEntryRoomFragment = new ApartmentEntryRoomFragment();

@@ -12,6 +12,15 @@ public class Apartment implements Parcelable{
     private String name;
     private Float rating;
     private boolean featured;
+    private Double carPlace;
+    private Double contractTime;
+    private Double cost;
+    private String status;
+    private Double mq;
+    private Double freeRooms;
+    private String description;
+
+
 
     // indirizzo
     private String completeAddress;
@@ -227,4 +236,64 @@ public class Apartment implements Parcelable{
             return new Apartment[size];
         }
     };
+
+
+    public void add(Apartment apartment) {
+    }
+
+    public Double getCarPlace() {
+        return carPlace;
+    }
+
+    public void setCarPlace(Double carPlace) {
+        this.carPlace = carPlace;
+    }
+
+    public Double getContractTime() {
+        return contractTime;
+    }
+
+    public void setContractTime(Double contractTime) {
+        this.contractTime = contractTime;
+    }
+
+    public Double getCost() {
+        return cost;
+    }
+
+    public void setCost(Double cost) {
+        this.cost = cost;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Double getMq() {
+        return mq;
+    }
+
+    public void setMq(Double mq) {
+        this.mq = mq;
+    }
+
+    public Double getFreeRooms() {
+        return freeRooms;
+    }
+
+    public void setFreeRooms(Double freeRooms) {
+        this.freeRooms = freeRooms;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

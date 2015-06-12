@@ -44,7 +44,7 @@ public class ApartmentEntryRoomFragment extends Fragment implements View.OnClick
 
     String guest;
     String room;
-    String free;
+    String free_rooms;
     String bed;
     String wc;
 
@@ -106,19 +106,19 @@ public class ApartmentEntryRoomFragment extends Fragment implements View.OnClick
 
                 guest = guestScoreText.getText().toString();
                 room = roomScoreText.getText().toString();
-                free = freeScoreText.getText().toString();
+                free_rooms = freeScoreText.getText().toString();
                 bed = bedScoreText.getText().toString();
                 wc = wcScoreText.getText().toString();
 
 
-                if(!guest.matches("0") && !room.matches("0") && !free.matches("0")  && !bed.matches("0") && !wc.matches("0")){
+                if(!guest.matches("0") && !room.matches("0") && !free_rooms.matches("0")  && !bed.matches("0") && !wc.matches("0")){
 
 
 
                 bundle = getArguments();
                 bundle.putString("myGuest", guest);
                 bundle.putString("myRoom", room);
-                bundle.putString("myFree", free);
+                bundle.putString("myFree", free_rooms);
                 bundle.putString("myBed", bed);
                 bundle.putString("myWc", wc);
 
