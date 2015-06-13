@@ -1,19 +1,24 @@
 package it.unisa.guardianhouse.fragments;
 
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.gc.materialdesign.views.ButtonRectangle;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,12 +26,13 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.config.Config;
 
 
-public class ReviewFragment extends Fragment {
+public class InsertReviewFragment extends Fragment {
 
     private RatingBar ratingBarHonesty;
     private RatingBar ratingBarSecurity;
@@ -35,17 +41,18 @@ public class ReviewFragment extends Fragment {
     private RatingBar ratingBarNeighbours;
     private String url;
     private String aptId;
-    private TextView txtReview;
+    private EditText inputTxtReview;
     private TextView releasedValue;
     private RatingBar ratingBarFurniture;
     private RatingBar ratingBarThermic;
     private RatingBar ratingBarCcDistance;
-
+    private ButtonRectangle btnSave;
+    private String txtReview;
     Bundle bundle;
     String userId;
 
 
-    public ReviewFragment() {
+    public InsertReviewFragment() {
         // Required empty public constructor
     }
 
@@ -53,9 +60,9 @@ public class ReviewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_review_view, container, false);
+        View view = inflater.inflate(R.layout.fragment_insert_review, container, false);
 
-        txtReview = (TextView) view.findViewById(R.id.txtReview);
+        inputTxtReview = (EditText) view.findViewById(R.id.txtReview);
         ratingBarFurniture = (RatingBar) view.findViewById(R.id.ratingBarFurniture);
         ratingBarThermic = (RatingBar) view.findViewById(R.id.ratingBarThermic);
         ratingBarHonesty = (RatingBar) view.findViewById(R.id.ratingBarHonesty);
@@ -65,6 +72,7 @@ public class ReviewFragment extends Fragment {
         ratingBarNeighbours = (RatingBar) view.findViewById(R.id.ratingBarNeighbours);
         ratingBarCcDistance = (RatingBar) view.findViewById(R.id.ratingBarCcDistance);
         releasedValue = (TextView) view.findViewById(R.id.released_value);
+        btnSave = (ButtonRectangle) view.findViewById(R.id.btn_save);
 
         Bundle bundle = getArguments();
         aptId = bundle.getString("myAptId");
@@ -73,6 +81,27 @@ public class ReviewFragment extends Fragment {
         url = Config.APARTMENTS_URL + "/" + aptId + "/reviews" + "/:id";
 
         getReview();
+        btnSave.setOnClickListener(new View.OnClickListener() {
+
+            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+            public void onClick(View view) {
+
+                txtReview = inputTxtReview.getText().toString();
+
+
+                if (!txtReview.isEmpty()) {
+
+
+                    ApartmentFragment apartmentFragment = new ApartmentFragment();
+                    ((MaterialNavigationDrawer) getActivity()).setFragmentChild(apartmentFragment, "Scheda Appartamento");
+
+                } else {
+                    Toast.makeText(getActivity(),
+                            "Compila la Descrizione!!", Toast.LENGTH_LONG)
+                            .show();
+                }
+            }
+        });
 
         return view;
     }
@@ -80,7 +109,7 @@ public class ReviewFragment extends Fragment {
 
     public void getReview() {
 
-        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, url,
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST, url,
                 (String) null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -88,7 +117,7 @@ public class ReviewFragment extends Fragment {
                 try {
 
                     JSONObject singleReview = response.getJSONObject("review");
-                    txtReview.setText(singleReview.getString("description"));
+                    inputTxtReview.setText(singleReview.getString("description"));
 
                     String stringRating = String.valueOf(singleReview.getDouble("house_conditions"));
                     ratingBarConditions.setRating(Float.parseFloat(stringRating));
@@ -120,7 +149,7 @@ public class ReviewFragment extends Fragment {
 
 
 
-                    } catch (JSONException e1) {
+                } catch (JSONException e1) {
                     e1.printStackTrace();
                 }
             }

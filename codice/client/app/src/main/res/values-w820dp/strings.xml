@@ -60,4 +60,5 @@
     <string name="house_conditions_label">Condizioni Casa</string>
     <string name="distance_cc_label">Distanza dal Centro Città</string>
     <string name="released_by_label">Rilasciata da:</string>
+    <string name="description_value">Inserisci una Breve Descrizione dell\'Appartamento</string>
 </resources>

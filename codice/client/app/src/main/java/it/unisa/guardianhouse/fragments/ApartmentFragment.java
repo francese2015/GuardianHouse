@@ -73,6 +73,7 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
     private NetworkImageView thumbnail;
     private ImageLoader imageLoader = AppController.getInstance().getImageLoader();
     private Button btnShowReview;
+    private Button btnInsReview;
     private ArrayList<Review> reviewList = new ArrayList<Review>();
     // private TextView distanceTextView;
 
@@ -123,6 +124,7 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
         ratingBar = (RatingBar) view.findViewById(R.id.rating_bar);
         thumbnail = (NetworkImageView) view.findViewById(R.id.thumbnailApt);
         btnShowReview = (Button) view.findViewById(R.id.button_view_reviews);
+        btnInsReview = (Button) view.findViewById(R.id.button_ins_review);
         //distanceTextView = (TextView) view.findViewById(R.id.distanceFromLocation);
         //DecimalFormat precision = new DecimalFormat("##.##");
         //distanceTextView.setText("Distanza: " + precision.format(distance) + " Km");
@@ -141,6 +143,19 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
                 ((MaterialNavigationDrawer) getActivity()).setFragmentChild(reviewListFragment, "Lista recensioni");
             }
         });
+
+        //Insert Review
+        btnInsReview.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                InsertReviewFragment insertReviewFragment = new InsertReviewFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("myAptId", aptId);
+                insertReviewFragment.setArguments(bundle);
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(insertReviewFragment, "Lascia una Recensione");
+            }
+        });
+
 
         TextView txtUserInsert = (TextView) view.findViewById(R.id.inserted_by_value);
 
