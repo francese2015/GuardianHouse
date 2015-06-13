@@ -47,15 +47,16 @@ public class FeedbackListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+
         if (inflater == null)
             inflater = (LayoutInflater) activity
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (convertView == null)
             convertView = inflater.inflate(R.layout.list_item_feedback, null);
 
-        //ImageView feedProfile = (ImageView) convertView.findViewById(R.id.feedProfileImage);
+
         TextView username = (TextView) convertView.findViewById(R.id.feedUsername);
-        TextView feedback_text = (TextView) convertView.findViewById(R.id.surname);
+        TextView feedback_text = (TextView) convertView.findViewById(R.id.feedbackText);
         RatingBar feedrating = (RatingBar) convertView.findViewById(R.id.feedRatingBar);
         ImageView feedProfileImage = (ImageView) convertView.findViewById(R.id.feedProfileImage);
 

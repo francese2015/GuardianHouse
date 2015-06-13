@@ -34,7 +34,7 @@ public class FeedbackFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_feedback, container, false);
+        View view = inflater.inflate(R.layout.list_item_feedback, container, false);
 
         feedUsername = (TextView) view.findViewById(R.id.feedUsername);
 

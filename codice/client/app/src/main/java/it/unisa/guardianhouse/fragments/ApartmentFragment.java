@@ -147,9 +147,12 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
         txtUserInsert.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
-            FeedbackListFragment feedbackListFragment = new FeedbackListFragment();
-                //feedbackListFragment.setArguments();
+                FeedbackListFragment feedbackListFragment = new FeedbackListFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("user_id", userId);
+                feedbackListFragment.setArguments(bundle);
                 ((MaterialNavigationDrawer) getActivity()).setFragmentChild(feedbackListFragment, "Lista Feedback");
+
             }
         });
 

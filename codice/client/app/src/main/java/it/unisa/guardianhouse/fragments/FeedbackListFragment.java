@@ -38,9 +38,8 @@ public class FeedbackListFragment extends Fragment {
     private ListView listView;
     private FeedbackListAdapter adapter;
     private ArrayList<Feedback> feedbacksList;
-    private Bundle bundle = getArguments();
-    private String usrId;
-    private String url;
+    String usrId;
+    String url;
 
 
     public FeedbackListFragment() {
@@ -55,11 +54,11 @@ public class FeedbackListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_feedback_list, container, false);
 
         Bundle bundle = getArguments();
-        bundle.getString("user_id");
-        url = Config.BASE_URL + "/" + usrId + "/feedbacks";
+        usrId = bundle.getString("user_id");
+        url = Config.USERS_URL + "/" + usrId + "/feedbacks";
 
         feedbacksList = new ArrayList<Feedback>();
-        listView = (ListView) view.findViewById(R.id.listView1);
+        listView = (ListView) view.findViewById(R.id.listViewfeed);
         adapter = new FeedbackListAdapter(getActivity(),feedbacksList);
         listView.setAdapter(adapter);
 
@@ -77,13 +76,12 @@ public class FeedbackListFragment extends Fragment {
             }
         });
 
-
-
+        getFeedbacks();
 
         return view;
     }
 
-    public void getFeedbacks(final View view) {
+    public void getFeedbacks() {
 
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET, url,
                 (String) null, new Response.Listener<JSONObject>() {
@@ -91,13 +89,14 @@ public class FeedbackListFragment extends Fragment {
             public void onResponse(JSONObject response) {
 
                 try {
-                    JSONArray feedbacksList = response.getJSONArray("received_feedbacks");
-                    for (int i = 0; i < feedbacksList.length(); i++) {
-                        JSONObject singleFeedback = feedbacksList.getJSONObject();
+                    JSONArray feedbacksArray = response.getJSONArray("receivedFeedbacks");
+                    for (int i = 0; i < feedbacksArray.length(); i++) {
+                        JSONObject singleFeedback = feedbacksArray.getJSONObject(i);
                         Feedback feedback = new Feedback();
                         feedback.setFeedback_id(singleFeedback.getJSONObject("_id").getString("$id"));
-                        feedback.setRating(singleFeedback.getJSONObject("_id").getString("$rating"));
-                        feedback.setFeed_text(singleFeedback.getJSONObject("_id").getString("description"));
+                        feedback.setUsername(singleFeedback.getJSONObject("given_by").getString("username"));
+                        feedback.setRating(singleFeedback.getString("rating"));
+                        feedback.setFeed_text(singleFeedback.getString("description"));
 
                         feedbacksList.add(feedback);
                     }
