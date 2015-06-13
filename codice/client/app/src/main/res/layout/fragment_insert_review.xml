@@ -15,45 +15,13 @@
         android:paddingTop="@dimen/activity_vertical_margin">
 
 
-        <!-- Released By -->
+        <!-- Descrizione -->
 
-        <RelativeLayout
-            android:id="@+id/relative_released"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:background="@drawable/layout_selector"
-            android:gravity="center">
-
-
-            <TextView
-                android:id="@+id/released_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/released_by_label"
-                android:textColor="#2196F3"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/released_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/released_label"
-                android:layout_marginBottom="6dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="2dp"
-                android:text="" />
-
-
-        </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/review_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/relative_released"
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:orientation="vertical">
@@ -62,7 +30,7 @@
                 android:id="@+id/description_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Descrizione"
+                android:text="@string/apartment_desc_label"
                 android:textColor="#2196F3"
                 android:textSize="18dp"
                 android:textStyle="bold" />

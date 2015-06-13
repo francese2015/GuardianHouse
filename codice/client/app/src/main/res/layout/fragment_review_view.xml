@@ -133,7 +133,8 @@
                     android:indeterminate="false"
                     android:longClickable="false"
                     android:numStars="5"
-                    android:progressDrawable="@drawable/custom_ratingbar_selector" />
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
+                    android:isIndicator="true"/>
 
             </RelativeLayout>
 
@@ -181,7 +182,8 @@
                     android:indeterminate="false"
                     android:longClickable="false"
                     android:numStars="5"
-                    android:progressDrawable="@drawable/custom_ratingbar_selector" />
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
+                    android:isIndicator="true"/>
 
             </RelativeLayout>
 
@@ -229,7 +231,8 @@
                     android:indeterminate="false"
                     android:longClickable="false"
                     android:numStars="5"
-                    android:progressDrawable="@drawable/custom_ratingbar_selector" />
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
+                    android:isIndicator="true"/>
 
             </RelativeLayout>
 
@@ -277,7 +280,8 @@
                     android:indeterminate="false"
                     android:longClickable="false"
                     android:numStars="5"
-                    android:progressDrawable="@drawable/custom_ratingbar_selector" />
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
+                    android:isIndicator="true"/>
 
             </RelativeLayout>
 
@@ -325,7 +329,8 @@
                     android:indeterminate="false"
                     android:longClickable="false"
                     android:numStars="5"
-                    android:progressDrawable="@drawable/custom_ratingbar_selector" />
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
+                    android:isIndicator="true"/>
 
             </RelativeLayout>
 
@@ -372,7 +377,8 @@
                     android:indeterminate="false"
                     android:longClickable="false"
                     android:numStars="5"
-                    android:progressDrawable="@drawable/custom_ratingbar_selector" />
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
+                    android:isIndicator="true"/>
 
             </RelativeLayout>
 
@@ -419,7 +425,8 @@
                     android:indeterminate="false"
                     android:longClickable="false"
                     android:numStars="5"
-                    android:progressDrawable="@drawable/custom_ratingbar_selector" />
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
+                    android:isIndicator="true"/>
 
             </RelativeLayout>
 
@@ -466,7 +473,8 @@
                     android:indeterminate="false"
                     android:longClickable="false"
                     android:numStars="5"
-                    android:progressDrawable="@drawable/custom_ratingbar_selector" />
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
+                    android:isIndicator="true"/>
 
             </RelativeLayout>
 

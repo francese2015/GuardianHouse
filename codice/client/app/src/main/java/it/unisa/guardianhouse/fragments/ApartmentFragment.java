@@ -149,9 +149,9 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
 
             public void onClick(View view) {
                 InsertReviewFragment insertReviewFragment = new InsertReviewFragment();
-                Bundle bundle = new Bundle();
-                bundle.putString("myAptId", aptId);
-                insertReviewFragment.setArguments(bundle);
+                Bundle b = new Bundle();
+                b.putString("AptId", aptId);
+                insertReviewFragment.setArguments(b);
                 ((MaterialNavigationDrawer) getActivity()).setFragmentChild(insertReviewFragment, "Lascia una Recensione");
             }
         });

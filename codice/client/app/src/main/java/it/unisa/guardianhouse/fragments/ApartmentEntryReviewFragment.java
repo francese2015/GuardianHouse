@@ -36,16 +36,16 @@ import it.unisa.guardianhouse.models.Apartment;
  */
 public class ApartmentEntryReviewFragment extends Fragment {
 
-    ButtonRectangle btnToSave;
-    String description;
-    double furniture_quality;
-    double thermic_capacity;
-    double landlord_honesty;
-    double security_level;
-    double bus_connection;
-    double neighbours;
-    double rating;
-    double house_conditions;
+    private ButtonRectangle btnToSave;
+    private String description;
+    private double furniture_quality;
+    private double thermic_capacity;
+    private double landlord_honesty;
+    private double security_level;
+    private double bus_connection;
+    private double neighbours;
+    private double rating;
+    private double house_conditions;
     Bundle bundle;
     private EditText inputReview;
     private RatingBar rateFurniture;

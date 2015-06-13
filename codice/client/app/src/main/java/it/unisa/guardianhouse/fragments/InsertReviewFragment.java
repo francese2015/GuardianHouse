@@ -50,6 +50,19 @@ public class InsertReviewFragment extends Fragment {
     private String txtReview;
     Bundle bundle;
     String userId;
+    private double furniture_quality;
+    private double thermic_capacity;
+    private double landlord_honesty;
+    private double security_level;
+    private double bus_connection;
+    private double neighbours;
+    private double rating;
+    private double house_conditions;
+
+
+
+
+
 
 
     public InsertReviewFragment() {
@@ -74,8 +87,8 @@ public class InsertReviewFragment extends Fragment {
         releasedValue = (TextView) view.findViewById(R.id.released_value);
         btnSave = (ButtonRectangle) view.findViewById(R.id.btn_save);
 
-        Bundle bundle = getArguments();
-        aptId = bundle.getString("myAptId");
+        Bundle b = getArguments();
+        aptId = b.getString("AptId");
 
         // url = "http://carlo.teammolise.rocks/api/apartments/5538b19fe4b07a8290702638/reviews/5538b1e6a4832c04cba15865";
         url = Config.APARTMENTS_URL + "/" + aptId + "/reviews" + "/:id";
@@ -87,6 +100,14 @@ public class InsertReviewFragment extends Fragment {
             public void onClick(View view) {
 
                 txtReview = inputTxtReview.getText().toString();
+                furniture_quality = ratingBarFurniture.getNumStars();
+                thermic_capacity = ratingBarThermic.getNumStars();
+                landlord_honesty = ratingBarHonesty.getNumStars();
+                security_level = ratingBarSecurity.getNumStars();
+                bus_connection = ratingBarBus.getNumStars();
+                neighbours = ratingBarNeighbours.getNumStars();
+                rating = ratingBarCcDistance.getNumStars();
+                house_conditions = ratingBarConditions.getNumStars();
 
 
                 if (!txtReview.isEmpty()) {
@@ -143,9 +164,9 @@ public class InsertReviewFragment extends Fragment {
                     String stringCcDistance = String.valueOf(singleReview.getDouble("distance_cc"));
                     ratingBarCcDistance.setRating(Float.parseFloat(stringCcDistance));
 
-                    releasedValue.setText(singleReview.getJSONObject("released_by").getString("username"));
+                  //  releasedValue.setText(singleReview.getJSONObject("released_by").getString("username"));
 
-                    userId = singleReview.getJSONObject("released_by").getString("user_id");
+                   // userId = singleReview.getJSONObject("released_by").getString("user_id");
 
 
 
