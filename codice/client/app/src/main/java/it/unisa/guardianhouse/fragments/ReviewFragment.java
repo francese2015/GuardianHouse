@@ -152,37 +152,38 @@ public class ReviewFragment extends Fragment {
 
                     JSONObject singleReview;
 
-                        singleReview = response.getJSONObject("received_reviews");
-                        txtReview.setText(singleReview.getJSONObject("received_reviews").getString("description"));
+                    singleReview = response.getJSONObject("received_reviews");
+                    txtReview.setText(singleReview.getJSONObject("received_reviews").getString("description"));
 
-                        String stringRating = String.valueOf(singleReview.getDouble("house_conditions"));
-                        ratingBarConditions.setRating(Float.parseFloat(stringRating));
+                    String stringRating = String.valueOf(singleReview.getDouble("house_conditions"));
+                    ratingBarConditions.setRating(Float.parseFloat(stringRating));
 
-                        String stringFurniture = String.valueOf(singleReview.getDouble("furniture_quality"));
-                        ratingBarFurniture.setRating(Float.parseFloat(stringFurniture));
+                    String stringFurniture = String.valueOf(singleReview.getDouble("furniture_quality"));
+                    ratingBarFurniture.setRating(Float.parseFloat(stringFurniture));
 
-                        String stringThermic = String.valueOf(singleReview.getDouble("thermic_capacity"));
-                        ratingBarThermic.setRating(Float.parseFloat(stringThermic));
+                    String stringThermic = String.valueOf(singleReview.getDouble("thermic_capacity"));
+                    ratingBarThermic.setRating(Float.parseFloat(stringThermic));
 
-                        String stringHonesty = String.valueOf(singleReview.getDouble("landlord_honesty"));
-                        ratingBarHonesty.setRating(Float.parseFloat(stringHonesty));
+                    String stringHonesty = String.valueOf(singleReview.getDouble("landlord_honesty"));
+                    ratingBarHonesty.setRating(Float.parseFloat(stringHonesty));
 
-                        String stringBus = String.valueOf(singleReview.getDouble("bus_connection"));
-                        ratingBarBus.setRating(Float.parseFloat(stringBus));
+                    String stringBus = String.valueOf(singleReview.getDouble("bus_connection"));
+                    ratingBarBus.setRating(Float.parseFloat(stringBus));
 
-                        String stringSecurity = String.valueOf(singleReview.getDouble("security_level"));
-                        ratingBarSecurity.setRating(Float.parseFloat(stringSecurity));
+                    String stringSecurity = String.valueOf(singleReview.getDouble("security_level"));
+                    ratingBarSecurity.setRating(Float.parseFloat(stringSecurity));
 
-                        String stringNeighbours = String.valueOf(singleReview.getDouble("neighbours"));
-                        ratingBarNeighbours.setRating(Float.parseFloat(stringNeighbours));
+                    String stringNeighbours = String.valueOf(singleReview.getDouble("neighbours"));
+                    ratingBarNeighbours.setRating(Float.parseFloat(stringNeighbours));
 
-                        String stringCcDistance = String.valueOf(singleReview.getDouble("distance_cc"));
-                        ratingBarCcDistance.setRating(Float.parseFloat(stringCcDistance));
+                    String stringCcDistance = String.valueOf(singleReview.getDouble("distance_cc"));
+                    ratingBarCcDistance.setRating(Float.parseFloat(stringCcDistance));
 
-                        singleReview = response.getJSONObject("received_reviews");
-                        releasedValue.setText(singleReview.getJSONObject("released_by").getString("username"));
+                    singleReview = response.getJSONObject("received_reviews");
+                    releasedValue.setText(singleReview.getJSONObject("released_by").getString("username"));
 
-                        String userId = singleReview.getJSONObject("released_by").getString("user_id");
+                    String userId = singleReview.getJSONObject("released_by").getString("user_id");
+
 
 
                     } catch (JSONException e1) {
