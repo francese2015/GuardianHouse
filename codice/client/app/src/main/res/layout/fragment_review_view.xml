@@ -10,7 +10,10 @@
         android:layout_height="match_parent"
         android:fillViewport="true">
 
+
+
         <RelativeLayout
+            android:id="@+id/address_relative"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/activity_vertical_margin"
@@ -25,12 +28,53 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
 
+            <!-- Released By -->
+
+            <RelativeLayout
+                android:id="@+id/relative_released"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_below="@id/imgView"
+                android:background="@drawable/layout_selector"
+                android:gravity="center">
+
+
+                <TextView
+                    android:id="@+id/released_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/released_by_label"
+                    android:textColor="#2196F3"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/released_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/released_label"
+                    android:layout_marginBottom="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="2dp"
+                    android:text="" />
+
+
+            </RelativeLayout>
+
+            <!-- Address -->
+
+
             <RelativeLayout
                 android:id="@+id/relative_address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_below="@id/imgView"
+                android:layout_below="@id/relative_released"
                 android:background="@drawable/layout_selector"
                 android:gravity="center">
 
@@ -60,6 +104,8 @@
 
 
             </RelativeLayout>
+
+
 
             <LinearLayout
                 android:id="@+id/review_content"
@@ -431,7 +477,105 @@
                         android:src="@drawable/icon_user" />
 
                     <RatingBar
-                        android:id="@+id/ratingBar6"
+                        android:id="@+id/ratingBarNeighbours"
+                        android:layout_width="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="65dp"
+                        android:progressDrawable="@drawable/custom_ratingbar_selector"
+                        android:layout_centerHorizontal="true"
+                        android:clickable="false"
+                        android:indeterminate="false"
+                        android:longClickable="false"
+                        android:numStars="5"
+                        android:rating="4" />
+
+                </RelativeLayout>
+
+
+                <!-- Condizioni Casa -->
+                <RelativeLayout
+
+                    android:id="@+id/relative_house_conditions"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="false"
+                    android:layout_marginTop="20dp">
+
+
+
+                    <TextView
+                        android:id="@+id/conditions_vote_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/house_conditions_label"
+                        android:layout_marginLeft="10dp"
+                        android:textStyle="bold"
+                        android:textColor="#2196F3"
+                        android:textSize="18sp"/>
+
+                    <ImageView
+                        android:id="@+id/img_conditions"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_home" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBarConditions"
+                        android:layout_width="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="65dp"
+                        android:progressDrawable="@drawable/custom_ratingbar_selector"
+                        android:layout_centerHorizontal="true"
+                        android:clickable="false"
+                        android:indeterminate="false"
+                        android:longClickable="false"
+                        android:numStars="5"
+                        android:rating="4" />
+
+                </RelativeLayout>
+
+
+                <!-- Distanza CC -->
+                <RelativeLayout
+
+                    android:id="@+id/relative_cc_distance"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/layout_selector"
+                    android:clickable="false"
+                    android:layout_marginTop="20dp">
+
+
+
+                    <TextView
+                        android:id="@+id/cc_vote_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/distance_cc_label"
+                        android:layout_marginLeft="10dp"
+                        android:textStyle="bold"
+                        android:textColor="#2196F3"
+                        android:textSize="18sp"/>
+
+                    <ImageView
+                        android:id="@+id/img_cc"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_magnify" />
+
+                    <RatingBar
+                        android:id="@+id/ratingBarCcDistance"
                         android:layout_width="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_height="wrap_content"

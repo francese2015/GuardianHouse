@@ -245,5 +245,8 @@
     <string name="title_apartment">Titolo</string>
     <string name="title_apartment_value">Dai un titolo alla tua Idea!</string>
     <string name="contract_duration">Durata Contratto(In Mesi)</string>
+    <string name="house_conditions_label">Condizioni Casa</string>
+    <string name="distance_cc_label">Distanza dal Centro Città</string>
+    <string name="released_by_label">Rilasciata da:</string>
 
 </resources>
