@@ -60,6 +60,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
+                        android:layout_gravity="center_horizontal"
                         android:progressDrawable="@drawable/custom_ratingbar_selector"
                         android:isIndicator="true"/>
 
@@ -78,9 +79,11 @@
                     android:layout_height="40dp"
                     android:layout_gravity="center"
                     android:layout_marginRight="6dp"
+                    android:layout_marginBottom="8dp"
                     android:src="@drawable/app_logo_big" />
 
             </LinearLayout>
+
         </LinearLayout>
 
         <FrameLayout
@@ -403,146 +406,146 @@
             </RelativeLayout>
 
 
-            <!-- Posizione -->
+            <!--&lt;!&ndash; Posizione &ndash;&gt;-->
 
-            <RelativeLayout
-                android:id="@+id/relative_position"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:background="@drawable/layout_selector">
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/relative_position"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:background="@drawable/layout_selector">-->
 
-                <TextView
-                    android:id="@+id/position_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/apartment_position_label"
-                    android:textColor="#2196F3"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
+                <!--<TextView-->
+                    <!--android:id="@+id/position_label"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginStart="16dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:text="@string/apartment_position_label"-->
+                    <!--android:textColor="#2196F3"-->
+                    <!--android:textSize="18dp"-->
+                    <!--android:textStyle="bold" />-->
 
-                <TextView
-                    android:id="@+id/position_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/position_label"
-                    android:layout_marginBottom="6dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/apartment_position" />
-
-
-            </RelativeLayout>
-
-            <!-- Punti d'interesse-->
-
-            <RelativeLayout
-                android:id="@+id/relative_poi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:background="@drawable/layout_selector">
-
-                <TextView
-                    android:id="@+id/poi_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/apartment_poi_label"
-                    android:textColor="#2196F3"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/poi_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/poi_label"
-                    android:layout_marginBottom="6dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/apartment_poi" />
+                <!--<TextView-->
+                    <!--android:id="@+id/position_value"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/position_label"-->
+                    <!--android:layout_marginBottom="6dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginStart="16dp"-->
+                    <!--android:layout_marginTop="4dp"-->
+                    <!--android:text="@string/apartment_position" />-->
 
 
-            </RelativeLayout>
+            <!--</RelativeLayout>-->
 
-            <!-- Capacità Termica-->
+            <!--&lt;!&ndash; Punti d'interesse&ndash;&gt;-->
 
-            <RelativeLayout
-                android:id="@+id/relative_thermic"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:background="@drawable/layout_selector"
-                android:clickable="true">
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/relative_poi"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:background="@drawable/layout_selector">-->
 
-                <TextView
-                    android:id="@+id/thermic_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/apartment_thermic_label"
-                    android:textColor="#2196F3"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
+                <!--<TextView-->
+                    <!--android:id="@+id/poi_label"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginStart="16dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:text="@string/apartment_poi_label"-->
+                    <!--android:textColor="#2196F3"-->
+                    <!--android:textSize="18dp"-->
+                    <!--android:textStyle="bold" />-->
 
-                <TextView
-                    android:id="@+id/thermic_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/thermic_label"
-                    android:layout_marginBottom="6dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/apartment_thermic" />
-
-
-            </RelativeLayout>
-
-            <!-- Servizi Standard -->
-
-            <RelativeLayout
-                android:id="@+id/relative_services"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:background="@drawable/layout_selector">
-
-                <TextView
-                    android:id="@+id/service_label"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/apartment_services_label"
-                    android:textColor="#2196F3"
-                    android:textSize="18dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/service_value"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/service_label"
-                    android:layout_marginBottom="6dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/apartment_services" />
+                <!--<TextView-->
+                    <!--android:id="@+id/poi_value"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/poi_label"-->
+                    <!--android:layout_marginBottom="6dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginStart="16dp"-->
+                    <!--android:layout_marginTop="4dp"-->
+                    <!--android:text="@string/apartment_poi" />-->
 
 
-            </RelativeLayout>
+            <!--</RelativeLayout>-->
+
+            <!--&lt;!&ndash; Capacità Termica&ndash;&gt;-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/relative_thermic"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:background="@drawable/layout_selector"-->
+                <!--android:clickable="true">-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/thermic_label"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginStart="16dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:text="@string/apartment_thermic_label"-->
+                    <!--android:textColor="#2196F3"-->
+                    <!--android:textSize="18dp"-->
+                    <!--android:textStyle="bold" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/thermic_value"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/thermic_label"-->
+                    <!--android:layout_marginBottom="6dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginStart="16dp"-->
+                    <!--android:layout_marginTop="4dp"-->
+                    <!--android:text="@string/apartment_thermic" />-->
+
+
+            <!--</RelativeLayout>-->
+
+            <!--&lt;!&ndash; Servizi Standard &ndash;&gt;-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/relative_services"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:background="@drawable/layout_selector">-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/service_label"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginStart="16dp"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:text="@string/apartment_services_label"-->
+                    <!--android:textColor="#2196F3"-->
+                    <!--android:textSize="18dp"-->
+                    <!--android:textStyle="bold" />-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/service_value"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/service_label"-->
+                    <!--android:layout_marginBottom="6dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginStart="16dp"-->
+                    <!--android:layout_marginTop="4dp"-->
+                    <!--android:text="@string/apartment_services" />-->
+
+
+            <!--</RelativeLayout>-->
 
             <!-- aggiunto da -->
 
