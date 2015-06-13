@@ -181,7 +181,6 @@ public class ApartmentEntryReviewFragment extends Fragment {
                                 JSONObject singleApartment = apartmentArray.getJSONObject(i);
                                 Apartment apartment = new Apartment();
 
-                                //ottengo il nome appartamento
                                 apartment.setId(singleApartment.getJSONObject("_id").getString("$id"));
                                 apartment.setLocality(singleApartment.getJSONObject("address").getString("locality"));
                                 apartment.setInternId(singleApartment.getJSONObject("address").getString("intern_id"));

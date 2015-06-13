@@ -20,7 +20,10 @@
                 android:id="@+id/imgView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/apt02"/>
+                android:src="@drawable/apt02"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
 
             <RelativeLayout
                 android:id="@+id/relative_address"
@@ -79,7 +82,6 @@
                     android:gravity="center"
                     android:hint="@string/lorem_ipsum"
                     android:maxLines="5"
-
                     android:textSize="18sp" >
 
                 </TextView>
@@ -99,7 +101,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/review_content"
-                android:divider="@drawable/divider"
                 android:orientation="vertical"
                 android:showDividers="middle">
 
@@ -144,7 +145,7 @@
                         android:layout_centerVertical="true"
                         android:layout_height="wrap_content"
                         android:progressDrawable="@drawable/custom_ratingbar_selector"
-                        android:layout_marginTop="50dp"
+                        android:layout_marginTop="65dp"
                         android:layout_centerHorizontal="true"
                         android:clickable="false"
                         android:indeterminate="false"
@@ -194,7 +195,7 @@
                         android:layout_centerVertical="true"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="50dp"
+                        android:layout_marginTop="65dp"
                         android:progressDrawable="@drawable/custom_ratingbar_selector"
                         android:clickable="false"
                         android:indeterminate="false"
@@ -244,7 +245,7 @@
                         android:layout_centerVertical="true"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="50dp"
+                        android:layout_marginTop="65dp"
                         android:progressDrawable="@drawable/custom_ratingbar_selector"
                         android:clickable="false"
                         android:indeterminate="false"
@@ -293,7 +294,7 @@
                         android:layout_width="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
+                        android:layout_marginTop="65dp"
                         android:layout_centerHorizontal="true"
                         android:progressDrawable="@drawable/custom_ratingbar_selector"
                         android:clickable="false"
@@ -384,7 +385,7 @@
                         android:layout_width="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
+                        android:layout_marginTop="65dp"
                         android:layout_centerHorizontal="true"
                         android:progressDrawable="@drawable/custom_ratingbar_selector"
                         android:clickable="false"
@@ -434,7 +435,7 @@
                         android:layout_width="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
+                        android:layout_marginTop="65dp"
                         android:progressDrawable="@drawable/custom_ratingbar_selector"
                         android:layout_centerHorizontal="true"
                         android:clickable="false"
