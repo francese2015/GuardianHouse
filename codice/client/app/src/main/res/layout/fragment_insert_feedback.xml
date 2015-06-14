@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/feedback_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/description_label_feedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/user_feedback_title"
+            android:textColor="@color/ColorPrimary"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/feedback_insert_txt"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/description_label_feedback"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:maxLines="5"
+            android:hint="@string/user_feedback_desc"
+            android:textSize="18dp">
+
+        </EditText>
+
+        <TextView
+            android:id="@+id/furniture_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/feedback_insert_txt"
+            android:text="@string/user_feedback_rating"
+            android:textColor="@color/ColorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img_furniture"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/furniture_label"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/icon_user" />
+
+        <RatingBar
+            android:id="@+id/ratingBarFurniture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/furniture_label"
+            android:clickable="false"
+            android:indeterminate="false"
+            android:longClickable="false"
+            android:numStars="5"
+            android:progressDrawable="@drawable/custom_ratingbar_selector" />
+
+        <com.gc.materialdesign.views.ButtonRectangle
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/ratingBarFurniture"
+            android:background="@color/ColorPrimary"
+            android:text="Invia il Feedback"
+            materialdesign:rippleSpeed="50" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -4,6 +4,9 @@ package it.unisa.guardianhouse.fragments;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -52,6 +55,7 @@ public class FeedbackListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_feedback_list, container, false);
+        setHasOptionsMenu(true);
 
         Bundle bundle = getArguments();
         usrId = bundle.getString("user_id");
@@ -131,6 +135,28 @@ public class FeedbackListFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         feedbacksList.clear();
+    }
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_new_feedback, menu);
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.add_feedback:
+                InsertFeedback insertFeedback = new InsertFeedback();
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(insertFeedback, "Inserisci Feedback");
+                return true;
+
+            default:
+                break;
+        }
+        return false;
     }
 
     @Override

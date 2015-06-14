@@ -42,9 +42,10 @@
             android:id="@+id/feedRatingBar"
             style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="45dp"
+            android:progressDrawable="@drawable/custom_ratingbar_selector"
             android:minHeight="18dp" />
 
         <TextView
@@ -52,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="80dp"
             android:layout_marginRight="12dp"
             android:layout_marginBottom="12dp"
             android:textSize="20dp"

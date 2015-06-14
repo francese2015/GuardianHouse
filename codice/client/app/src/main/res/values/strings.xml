@@ -164,6 +164,10 @@
     <!-- Feedback -->
 
     <string name="feedbacktext">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient."</string>
+    <string name="user_feedback_desc">Inserisci una breve descrizione</string>
+    <string name="user_feedback_title">Descrizione Feedback</string>
+    <string name="user_feedback_rating">Valutazione Utente</string>
+
 
     <!-- Normativa Privacy -->
     <string name="privacy_agreement">
