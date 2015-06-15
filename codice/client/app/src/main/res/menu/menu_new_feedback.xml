@@ -4,7 +4,7 @@
     tools:context="it.unisa.guardianhouse.fragments.FeedbackListFragment">
 
     <item android:id="@+id/add_feedback"
-        android:icon="@drawable/ic_menu_new_review"
+        android:icon="@drawable/ic_plus_white"
         android:title="Inserisci Feedback"
         app:showAsAction="never"/>
 

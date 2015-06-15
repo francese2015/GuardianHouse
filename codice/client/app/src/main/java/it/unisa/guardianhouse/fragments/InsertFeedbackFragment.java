@@ -1,16 +1,20 @@
 package it.unisa.guardianhouse.fragments;
 
 import android.annotation.TargetApi;
+import android.graphics.Color;
 import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -49,7 +53,25 @@ public class InsertFeedbackFragment extends Fragment{
     private Bundle bundle;
     private String description;
     private Float rating;
+    private TextView charcount;
     Map<String, String> params;
+    private final TextWatcher textWatcher = new TextWatcher() {
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            //This sets a textview to the current length
+            charcount.setText("(" + String.valueOf(s.length()) + ")");
+            if (count > 160){
+
+                feedDescription.setTextColor(Color.RED);
+
+            }
+        }
+
+        public void afterTextChanged(Editable s) {
+        }
+    };
 
     public InsertFeedbackFragment() {
         // Required empty public constructor
@@ -63,9 +85,12 @@ public class InsertFeedbackFragment extends Fragment{
 
         session = new SessionManager(getActivity());
 
+        charcount = (TextView) view.findViewById(R.id.char_count);
         feedDescription = (EditText) view.findViewById(R.id.feedback_insert_txt);
+        feedDescription.addTextChangedListener(textWatcher);
         feedRating = (RatingBar) view.findViewById(R.id.ratingBar_insert_feed);
         btnSend = (ButtonRectangle) view.findViewById(R.id.btn_send);
+
 
         Bundle b = getArguments();
         feedUserIdof = b.getString("user_id");
@@ -82,22 +107,25 @@ public class InsertFeedbackFragment extends Fragment{
                 rating = feedRating.getRating();
 
 
-                if (!description.isEmpty()) {
+                if (!description.isEmpty() && description.length()<=160) {
                     // fare qui la richiesta
 
                     params = new HashMap<String, String>();
                     params.put("description", description);
                     params.put("rating", String.valueOf(rating));
-                    params.put("user_id", feedUserIdof);   //ID e USERNAME di chi riceve il feedback
-                    //params.put("username",feedUsernameof);
                     params.put("user_id", session.getUserId());   //ID e USERNAME di chi lascia il feedback
                     params.put("username", session.getUsername());
 
                     makeRequest();
 
-                } else {
+                } else if (description.isEmpty()){
                     Toast.makeText(getActivity(),
                             "Inserisci una Descrizione", Toast.LENGTH_LONG)
+                            .show();
+
+                } else if (description.length()>160){
+                    Toast.makeText(getActivity(),
+                            "La descrizione supera i 160 caratteri", Toast.LENGTH_LONG)
                             .show();
                 }
             }
@@ -126,8 +154,8 @@ public class InsertFeedbackFragment extends Fragment{
                         Toast.makeText(getActivity(),
                                 "Feedback Inserito!", Toast.LENGTH_LONG).show();
 
-                        FeedbackListFragment feedbackListFragment = new FeedbackListFragment();
-                        ((MaterialNavigationDrawer) getActivity()).setFragment(feedbackListFragment, "Feedbacks");
+                        HomeFragment homeFragment = new HomeFragment();
+                                ((MaterialNavigationDrawer) getActivity()).setFragment(homeFragment, "Home");
 
                     } else {
                         // Get the error message
