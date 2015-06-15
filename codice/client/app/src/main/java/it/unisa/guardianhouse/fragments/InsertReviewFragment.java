@@ -61,6 +61,7 @@ public class InsertReviewFragment extends Fragment {
     double neighbours;
     double rating;
     double house_conditions;
+    double distance_cc;
     Map<String, String> params;
     SessionManager session;
 
@@ -101,14 +102,15 @@ public class InsertReviewFragment extends Fragment {
             public void onClick(View view) {
 
                 txtReview = inputTxtReview.getText().toString();
-                furniture_quality = ratingBarFurniture.getNumStars();
-                thermic_capacity = ratingBarThermic.getNumStars();
-                landlord_honesty = ratingBarHonesty.getNumStars();
-                security_level = ratingBarSecurity.getNumStars();
-                bus_connection = ratingBarBus.getNumStars();
-                neighbours = ratingBarNeighbours.getNumStars();
-                rating = ratingBarCcDistance.getNumStars();
-                house_conditions = ratingBarConditions.getNumStars();
+                furniture_quality = ratingBarFurniture.getRating();
+                thermic_capacity = ratingBarThermic.getRating();
+                landlord_honesty = ratingBarHonesty.getRating();
+                security_level = ratingBarSecurity.getRating();
+                bus_connection = ratingBarBus.getRating();
+                neighbours = ratingBarNeighbours.getRating();
+                rating = ratingBarCcDistance.getRating();
+                distance_cc = ratingBarCcDistance.getRating();
+                house_conditions = ratingBarConditions.getRating();
 
 
                 if (!txtReview.isEmpty()) {
@@ -124,6 +126,7 @@ public class InsertReviewFragment extends Fragment {
                     params.put("neighbours", String.valueOf(thermic_capacity));
                     params.put("rating", String.valueOf(rating));
                     params.put("house_conditions", String.valueOf(house_conditions));
+                    params.put("distance_cc", String.valueOf(distance_cc));
                     params.put("user_id", session.getUserId());
                     params.put("username", session.getUsername());
 
