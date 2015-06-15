@@ -5,28 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:paddingBottom="@dimen/activity_vertical_margin">
-
-
-
-    <RelativeLayout
-        android:id="@+id/relative_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:background="@drawable/layout_selector"
-        android:clickable="false">
+        android:layout_margin="6dp"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/title_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="10dp"
             android:text="@string/title_apartment"
             android:textColor="#2196F3"
             android:textSize="18dp"
@@ -37,89 +25,66 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/title_label"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="80dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="6dp"
             android:hint="@string/title_apartment_value"
-            android:inputType="text"></EditText>
-</RelativeLayout>
+            android:inputType="text" />
 
-        <RelativeLayout
-            android:id="@+id/relative_address"
+        <TextView
+            android:id="@+id/address_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_below="@id/relative_title"
-            android:background="@drawable/layout_selector"
-            android:clickable="false">
+            android:layout_below="@id/title"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/apartment_name_label"
+            android:textColor="#2196F3"
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
+        <EditText
+            android:id="@+id/address_road"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/address_label"
+            android:layout_marginTop="5dp"
+            android:hint="@string/road"
+            android:inputType="text" />
 
-            <TextView
-                android:id="@+id/address_label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
-                android:layout_below="@id/title"
-                android:text="@string/apartment_name_label"
-                android:textColor="#2196F3"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+        <EditText
+            android:id="@+id/civic_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/address_road"
+            android:layout_marginTop="5dp"
+            android:hint="@string/civic_number"
+            android:inputType="number" />
 
-            <EditText
-                android:id="@+id/address_road"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/address_label"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="80dp"
-                android:layout_marginTop="5dp"
-                android:hint="@string/road"
-                android:inputType="text"></EditText>
+        <EditText
+            android:id="@+id/intern_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/civic_number"
+            android:layout_marginTop="5dp"
+            android:hint="@string/intern_id"
+            android:inputType="number" />
 
-            <EditText
-                android:id="@+id/civic_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/address_road"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="80dp"
-                android:layout_marginTop="5dp"
-                android:hint="@string/civic_number"
-                android:inputType="number"></EditText>
+        <EditText
+            android:id="@+id/city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/intern_id"
+            android:layout_marginTop="5dp"
+            android:hint="@string/city_name" />
 
-            <EditText
-                android:id="@+id/intern_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/civic_number"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="80dp"
-                android:layout_marginTop="5dp"
-                android:hint="@string/intern_id"
-                android:inputType="number"></EditText>
+        <ImageButton
+            android:id="@+id/img_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/address_label"
+            android:layout_marginTop="3dp"
+            android:src="@drawable/ic_map"
+            android:text="Posizione" />
 
-            <EditText
-                android:id="@+id/city"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/intern_id"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="80dp"
-                android:layout_marginTop="5dp"
-                android:hint="@string/city_name"></EditText>
-
-            <ImageButton
-                android:id="@+id/img_map"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:layout_below="@id/address_label"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="310dp"
-                android:layout_marginTop="3dp"
-                android:src="@drawable/ic_map" />
-
-        </RelativeLayout>
 
         <TextView
             android:id="@+id/name_descr"
@@ -138,16 +103,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/name_descr"
-            android:layout_margin="5dp"
             android:hint="@string/insert_apartment_description"
-            android:inputType="textMultiLine"></EditText>
+            android:inputType="textMultiLine" />
 
         <TextView
             android:id="@+id/name_mq"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/descrip"
-            android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:text="@string/apartment_mq_label"
             android:textColor="#2196F3"
@@ -159,16 +122,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/name_mq"
-            android:layout_margin="5dp"
             android:hint="@string/insert_apartment_mq"
-            android:inputType="number"></EditText>
+            android:inputType="number" />
 
         <TextView
             android:id="@+id/name_carspot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/meters"
-            android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:text="@string/apartment_spot_label"
             android:textColor="#2196F3"
@@ -180,7 +141,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/name_carspot"
-            android:layout_margin="5dp"
             android:hint="@string/insert_apartment_spot"
             android:inputType="number" />
 
@@ -189,7 +149,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/carspot"
-            android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:text="@string/apartment_durata_contratto"
             android:textColor="#2196F3"
@@ -202,7 +161,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/name_durata"
-            android:layout_margin="5dp"
             android:hint="@string/insert_durata_contratto"
             android:inputType="number" />
 
@@ -211,7 +169,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/durata"
-            android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:text="@string/apartment_status_detail"
             android:textColor="#2196F3"
@@ -235,7 +192,7 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/spinner"
             android:layout_gravity="bottom|start"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/insertPhoto"
@@ -266,7 +223,7 @@
                     android:id="@+id/get_images"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
+
                     android:text="Carica/Scatta foto" />
 
             </RelativeLayout>
@@ -297,15 +254,15 @@
 
         <com.gc.materialdesign.views.ButtonRectangle
             android:id="@+id/button1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/container"
-            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="#1E88E5"
             android:text="@string/button_goto_scheda2"
             materialdesign:rippleSpeed="50" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </ScrollView>

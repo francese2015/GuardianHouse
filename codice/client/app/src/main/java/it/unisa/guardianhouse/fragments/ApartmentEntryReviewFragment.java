@@ -1,7 +1,6 @@
 package it.unisa.guardianhouse.fragments;
 
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -34,7 +33,7 @@ import it.unisa.guardianhouse.utils.MyJsonObjectRequest;
 
 public class ApartmentEntryReviewFragment extends Fragment {
 
-    private static final String TAG = ApartmentEntryFragment.class.getSimpleName();
+    private static final String TAG = ApartmentEntryReviewFragment.class.getSimpleName();
     private ButtonRectangle btnToSave;
     private String description;
     private double furniture_quality;
@@ -45,6 +44,7 @@ public class ApartmentEntryReviewFragment extends Fragment {
     private double neighbours;
     private double rating;
     private double house_conditions;
+
     private EditText inputReview;
     private RatingBar rateFurniture;
     private RatingBar rateThermic;
@@ -54,6 +54,7 @@ public class ApartmentEntryReviewFragment extends Fragment {
     private RatingBar rateNeighbours;
     private RatingBar rateExperience;
     private RatingBar rateConditions;
+
     private HashMap<String, String> params;
     private String url;
     SessionManager session;
@@ -73,7 +74,6 @@ public class ApartmentEntryReviewFragment extends Fragment {
         session = new SessionManager(getActivity());
 
         bundle = getArguments();
-
 
         inputReview = (EditText) view.findViewById(R.id.txtReview);
         rateFurniture = (RatingBar) view.findViewById(R.id.ratingBar1);
@@ -103,51 +103,62 @@ public class ApartmentEntryReviewFragment extends Fragment {
                 rating = rateExperience.getRating();
                 house_conditions = rateConditions.getRating();
 
-                if (!description.isEmpty()) {
+
+                for (String key : bundle.keySet())
+                {
+                    Log.d("Bundle Debug", key + " = \"" + bundle.get(key) + "\"");
+                }
+
+
+                if (description.isEmpty() == false) {
 
                     params = new HashMap<>();
 
                     //apartmentEntry
-                    params.put("myTitle", bundle.getString("name"));
-                    params.put("myDescript", bundle.getString("description"));
-                    params.put("myMeters", bundle.getString("mq"));
-                    params.put("myCarspot", bundle.getString("car_place"));
-                    params.put("myContract", bundle.getString("contract_time"));
-                    // cost
-                    params.put("myConditions", bundle.getString("status"));
+                    params.put("name", bundle.getString("myTitle"));
+                    params.put("description", bundle.getString("myDescript"));
+                    params.put("mq", bundle.getString("myMeters"));
+                    params.put("car_place", bundle.getString("myCarspot"));
+                    params.put("contract_time", bundle.getString("mycontract"));
+                    params.put("free_rooms", bundle.getString("myFree"));
+                    //cost
+                    params.put("status", bundle.getString("myConditions"));
 
-                    params.put("myCivic", bundle.getString("street_number"));
-                    params.put("myInter", bundle.getString("intern_id"));
-                    params.put("myLocality", bundle.getString("locality"));
-                    params.put("myRoad", bundle.getString("route"));
+                    params.put("street_nuber", bundle.getString("myCivic"));
+                    params.put("route", bundle.getString("myRoad"));
+                    params.put("locality", bundle.getString("myCity"));
+                    params.put("intern_id", bundle.getString("myInter"));
                     //administrative area level 1
                     //administrative area level 2
                     //postal code
                     //country
 
-                    params.put("myLatitude", bundle.getString("latitude"));
-                    params.put("myLongitude", bundle.getString("longitude"));
+                    //params.put("myLatitude", bundle.getString("latitude"));
+                    //params.put("myLongitude", bundle.getString("longitude"));
 
-                    //apartmentEntryRoom
                     //params.put("myGuest", bundle.getString("guest"));
                     //params.put("myRoom", bundle.getString("room"));
-                    params.put("myFree", bundle.getString("free_rooms"));
                     //params.put("myBed", bundle.getString("bed"));
                     //params.put("myWc", bundle.getString("wc"));
 
                     //apartmentEntryReview
-                    params.put("myConditions", String.valueOf(house_conditions));
-                    params.put("myThermic", String.valueOf(thermic_capacity));
-                    params.put("myLandlord", String.valueOf(landlord_honesty));
+                    params.put("house_conditions", String.valueOf(house_conditions));
+                    params.put("thermic_capacity", String.valueOf(thermic_capacity));
+                    params.put("landlord_honesty", String.valueOf(landlord_honesty));
                     params.put("mySecurity", String.valueOf(security_level));
-                    params.put("myBusNear", String.valueOf(bus_connection));
-                    params.put("myNeighbours", String.valueOf(neighbours));
+                    params.put("security_level", String.valueOf(bus_connection));
+                    params.put("neighbours", String.valueOf(neighbours));
                     //distance_cc ?
-                    params.put("myFurniture", String.valueOf(furniture_quality));
-                    params.put("myReview", description);
-                    params.put("myExperience", String.valueOf(rating));
+                    params.put("furniture_quality", String.valueOf(furniture_quality));
+                    //params.put("description2", description);
+                    params.put("rating", String.valueOf(rating));
                     params.put("user_id", session.getUserId());
                     params.put("username", session.getUsername());
+
+                    for (String key : params.keySet())
+                    {
+                        Log.d("Params Debug", key + " = \"" + params.get(key) + "\"");
+                    }
 
                     makeRequest();
 
