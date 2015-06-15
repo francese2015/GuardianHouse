@@ -68,12 +68,13 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
 
         this.addSection(this.home);
         this.addSection(this.search);
-        this.addSection(this.apartmentEntry);
+
         this.addDivisor();
         if (!session.isLoggedIn()) {
             this.addSection(this.login);
             this.addSection(this.register);
         } else {
+            this.addSection(this.apartmentEntry);
             this.addSection(this.profile);
             this.addSection(this.logout);
         }
@@ -84,6 +85,7 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
 
     private void logoutUser() {
         session.setLogin(false, "", "");
+        this.removeSection(this.apartmentEntry);
         this.removeSection(this.profile);
         this.removeSection(this.logout);
         this.addSection(this.login);
@@ -91,6 +93,7 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
     }
 
     public void loginUser() {
+        this.addSection(this.apartmentEntry);
         this.addSection(this.profile);
         this.addSection(this.logout);
         this.removeSection(this.login);

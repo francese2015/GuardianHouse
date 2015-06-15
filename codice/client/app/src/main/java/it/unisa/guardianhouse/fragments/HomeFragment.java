@@ -38,6 +38,7 @@ import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.adapters.ApartmentListAdapter;
 import it.unisa.guardianhouse.config.Config;
+import it.unisa.guardianhouse.helpers.SessionManager;
 import it.unisa.guardianhouse.models.Apartment;
 import it.unisa.guardianhouse.utils.LocationTracker;
 import it.unisa.guardianhouse.utils.Utils;
@@ -48,7 +49,7 @@ public class HomeFragment extends Fragment {
     private static String TAG = HomeFragment.class.getSimpleName();
     private ProgressDialog pDialog;
     private String url;
-
+    SessionManager session;
     SwipeRefreshLayout mSwipeRefreshLayout;
 
     LocationTracker gps;
@@ -70,6 +71,9 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         setHasOptionsMenu(true);
+        getActivity().invalidateOptionsMenu();
+
+        session = new SessionManager(getActivity());
 
         apartmentList = new ArrayList<Apartment>();
         mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_refresh);
@@ -217,6 +221,13 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_home, menu);
+
+        if (session.isLoggedIn()) {
+            menu.getItem(1).setVisible(true);
+        }
+        else {
+            menu.getItem(1).setVisible(false);
+        }
     }
 
     @Override
