@@ -482,6 +482,54 @@
 
             </RelativeLayout>
 
+            <!-- Condizioni Casa -->
+
+            <RelativeLayout
+
+                android:id="@+id/relative_distance_cc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/layout_selector"
+                android:clickable="false">
+
+
+                <TextView
+                    android:id="@+id/distance_cc_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="Distanza dal Centro Città"
+                    android:textColor="#2196F3"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/img_distance_cc"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/ic_magnify" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="false"
+                    android:indeterminate="false"
+                    android:longClickable="false"
+                    android:progressDrawable="@drawable/custom_ratingbar_selector"
+                    android:layout_below="@id/distance_cc_label"
+                    android:layout_marginTop="30dp"
+                    android:numStars="5"
+                    android:rating="4" />
+
+            </RelativeLayout>
+
         </LinearLayout>
 
 

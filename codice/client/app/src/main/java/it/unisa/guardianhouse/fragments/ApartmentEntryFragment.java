@@ -2,7 +2,10 @@ package it.unisa.guardianhouse.fragments;
 
 
 import android.annotation.TargetApi;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,14 +20,19 @@ import android.widget.Toast;
 
 import com.gc.materialdesign.views.ButtonRectangle;
 
+import java.io.IOException;
+import java.util.List;
+
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.unisa.guardianhouse.R;
+import it.unisa.guardianhouse.config.Config;
 import it.unisa.guardianhouse.utils.LocationTracker;
+import it.unisa.guardianhouse.utils.Utils;
 
 
 public class ApartmentEntryFragment extends Fragment {
 
-//    private static final int INTENT_REQUEST_GET_IMAGES = 13;
+    //    private static final int INTENT_REQUEST_GET_IMAGES = 13;
 //    private static final int INTENT_REQUEST_GET_N_IMAGES = 14;
 //    HashSet<Uri> mMedia = new HashSet<Uri>();
     Bundle bundle;
@@ -38,13 +46,11 @@ public class ApartmentEntryFragment extends Fragment {
     String status;
     String name;
     String locality;
-    LocationTracker gps;
+    String cost;
     private Context mContext;
     private ViewGroup mSelectedImagesContainer;
-    private Double latitude;
-    private Double longitude;
-    private int distance;
-
+    Double latitude;
+    Double longitude;
     private ButtonRectangle btnLinkToRoom;
     private EditText inputAddressRoad;
     private EditText inputDescrip;
@@ -57,6 +63,7 @@ public class ApartmentEntryFragment extends Fragment {
     private Spinner spinnerConditions;
     private EditText inputTitle;
     private EditText inputLocality;
+    private EditText inputCost;
 
 
     public ApartmentEntryFragment() {
@@ -92,6 +99,7 @@ public class ApartmentEntryFragment extends Fragment {
         spinnerConditions = (Spinner) view.findViewById(R.id.spinner);
         inputTitle = (EditText) view.findViewById(R.id.title);
         inputLocality = (EditText) view.findViewById(R.id.city);
+        inputCost = (EditText) view.findViewById(R.id.costo);
 
         Button btnGetImages = (Button) view.findViewById(R.id.get_images);
         btnGetImages.setEnabled(false);
@@ -100,6 +108,7 @@ public class ApartmentEntryFragment extends Fragment {
 
             @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             public void onClick(View view) {
+
 
                 route = inputAddressRoad.getText().toString();
                 description = inputDescrip.getText().toString();
@@ -111,26 +120,51 @@ public class ApartmentEntryFragment extends Fragment {
                 status = spinnerConditions.getSelectedItem().toString();
                 name = inputTitle.getText().toString();
                 locality = inputLocality.getText().toString();
+                cost = inputCost.getText().toString();
+
+                Geocoder gc = new Geocoder(getActivity());
+
+                String addressString = route + " " + street_number + " " + locality;
+
+
 
                 if (!route.isEmpty() && !street_number.isEmpty() && !mq.isEmpty() && !car_place.isEmpty() && !contract_time.isEmpty() && !intern_id.isEmpty()) {
 
-                    bundle = new Bundle();
+                    if (gc.isPresent()) {
+                        List<Address> list = null;
+                        try {
+                            list = gc.getFromLocationName(addressString, 1);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
-                    bundle.putString("myTitle", name);
-                    bundle.putString("myDescript", description);
-                    bundle.putString("myMeters", mq);
-                    bundle.putString("myCarspot", car_place);
-                    bundle.putString("mycontract", contract_time);
-                    bundle.putString("myConditions", status);
+                        Address address = list.get(0);
 
-                    bundle.putString("myCivic", street_number);
-                    bundle.putString("myRoad", route);
-                    bundle.putString("myCity", locality);
-                    bundle.putString("myInter", intern_id);
+                        latitude = address.getLatitude();
+                        longitude = address.getLongitude();
 
-                    ApartmentEntryRoomFragment apartmentEntryRoomFragment = new ApartmentEntryRoomFragment();
-                    apartmentEntryRoomFragment.setArguments(bundle);
-                    ((MaterialNavigationDrawer) getActivity()).setFragmentChild(apartmentEntryRoomFragment, "Composizione Casa");
+                        bundle = new Bundle();
+
+                        bundle.putString("myTitle", name);
+                        bundle.putString("myDescript", description);
+                        bundle.putString("myMeters", mq);
+                        bundle.putString("myCarspot", car_place);
+                        bundle.putString("mycontract", contract_time);
+                        bundle.putString("myCost", cost);
+                        bundle.putString("myConditions", status);
+
+                        bundle.putString("myCivic", street_number);
+                        bundle.putString("myRoad", route);
+                        bundle.putString("myCity", locality);
+                        bundle.putString("myInter", intern_id);
+                        bundle.putDouble("myLat", latitude);
+                        bundle.putDouble("myLong", longitude);
+
+
+                        ApartmentEntryRoomFragment apartmentEntryRoomFragment = new ApartmentEntryRoomFragment();
+                        apartmentEntryRoomFragment.setArguments(bundle);
+                        ((MaterialNavigationDrawer) getActivity()).setFragmentChild(apartmentEntryRoomFragment, "Composizione Casa");
+                    }
 
                 } else {
                     Toast.makeText(getActivity(),

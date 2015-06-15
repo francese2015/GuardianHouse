@@ -165,6 +165,26 @@
             android:inputType="number" />
 
         <TextView
+            android:id="@+id/name_cost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carspot"
+            android:layout_marginTop="10dp"
+            android:text="Costo medio (*)"
+            android:textColor="#2196F3"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+
+        <EditText
+            android:id="@+id/costo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_durata"
+            android:hint="Inserisci costo"
+            android:inputType="number" />
+
+        <TextView
             android:id="@+id/conditions_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

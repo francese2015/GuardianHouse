@@ -44,6 +44,7 @@ public class ApartmentEntryReviewFragment extends Fragment {
     private double neighbours;
     private double rating;
     private double house_conditions;
+    private double distance_cc;
 
     private EditText inputReview;
     private RatingBar rateFurniture;
@@ -54,6 +55,7 @@ public class ApartmentEntryReviewFragment extends Fragment {
     private RatingBar rateNeighbours;
     private RatingBar rateExperience;
     private RatingBar rateConditions;
+    private RatingBar rateDistanceCC;
 
     private HashMap<String, String> params;
     private String url;
@@ -84,6 +86,7 @@ public class ApartmentEntryReviewFragment extends Fragment {
         rateNeighbours = (RatingBar) view.findViewById(R.id.ratingBar6);
         rateExperience = (RatingBar) view.findViewById(R.id.ratingBar7);
         rateConditions = (RatingBar) view.findViewById(R.id.ratingBar8);
+        rateDistanceCC = (RatingBar) view.findViewById(R.id.ratingBar9);
 
         btnToSave = (ButtonRectangle) view.findViewById(R.id.button_to_save);
 
@@ -102,6 +105,7 @@ public class ApartmentEntryReviewFragment extends Fragment {
                 neighbours = rateNeighbours.getRating();
                 rating = rateExperience.getRating();
                 house_conditions = rateConditions.getRating();
+                distance_cc = rateDistanceCC.getRating();
 
 
                 for (String key : bundle.keySet())
@@ -120,8 +124,8 @@ public class ApartmentEntryReviewFragment extends Fragment {
                     params.put("mq", bundle.getString("myMeters"));
                     params.put("car_place", bundle.getString("myCarspot"));
                     params.put("contract_time", bundle.getString("mycontract"));
+                    params.put("cost", bundle.getString("myCost"));
                     params.put("free_rooms", bundle.getString("myFree"));
-                    //cost
                     params.put("status", bundle.getString("myConditions"));
 
                     params.put("street_number", bundle.getString("myCivic"));
@@ -133,24 +137,23 @@ public class ApartmentEntryReviewFragment extends Fragment {
                     //postal code
                     //country
 
-                    //params.put("myLatitude", bundle.getString("latitude"));
-                    //params.put("myLongitude", bundle.getString("longitude"));
+                    params.put("latitude", String.valueOf(bundle.getDouble("myLat")));
+                    params.put("longitude", String.valueOf(bundle.getDouble("myLong")));
 
                     //params.put("myGuest", bundle.getString("guest"));
                     //params.put("myRoom", bundle.getString("room"));
                     //params.put("myBed", bundle.getString("bed"));
                     //params.put("myWc", bundle.getString("wc"));
 
-                    //apartmentEntryReview
                     params.put("house_conditions", String.valueOf(house_conditions));
                     params.put("thermic_capacity", String.valueOf(thermic_capacity));
                     params.put("landlord_honesty", String.valueOf(landlord_honesty));
                     params.put("security_level", String.valueOf(security_level));
                     params.put("bus_connection", String.valueOf(bus_connection));
                     params.put("neighbours", String.valueOf(neighbours));
-                    //distance_cc ?
+                    params.put("distance_cc", String.valueOf(distance_cc));
                     params.put("furniture_quality", String.valueOf(furniture_quality));
-                    //params.put("description2", description);
+                    params.put("description2", description);
                     params.put("rating", String.valueOf(rating));
                     params.put("user_id", session.getUserId());
                     params.put("username", session.getUsername());
