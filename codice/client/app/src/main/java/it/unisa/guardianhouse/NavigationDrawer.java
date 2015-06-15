@@ -84,7 +84,7 @@ public class NavigationDrawer extends MaterialNavigationDrawer implements Materi
     }
 
     private void logoutUser() {
-        session.setLogin(false, "", "");
+        session.setLogin(false, "", "", "");
         this.removeSection(this.apartmentEntry);
         this.removeSection(this.profile);
         this.removeSection(this.logout);

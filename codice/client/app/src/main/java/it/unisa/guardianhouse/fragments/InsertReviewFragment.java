@@ -5,6 +5,7 @@ import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,6 @@ import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.gc.materialdesign.views.ButtonRectangle;
 
 import org.json.JSONException;
@@ -28,12 +28,16 @@ import java.util.Map;
 
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.unisa.guardianhouse.AppController;
+import it.unisa.guardianhouse.NavigationDrawer;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.config.Config;
+import it.unisa.guardianhouse.helpers.SessionManager;
+import it.unisa.guardianhouse.utils.MyJsonObjectRequest;
 
 
 public class InsertReviewFragment extends Fragment {
 
+    private static final String TAG = InsertReviewFragment.class.getSimpleName();
     private RatingBar ratingBarHonesty;
     private RatingBar ratingBarSecurity;
     private RatingBar ratingBarBus;
@@ -49,24 +53,20 @@ public class InsertReviewFragment extends Fragment {
     private ButtonRectangle btnSave;
     private String txtReview;
     Bundle bundle;
-    String userId;
-    private double furniture_quality;
-    private double thermic_capacity;
-    private double landlord_honesty;
-    private double security_level;
-    private double bus_connection;
-    private double neighbours;
-    private double rating;
-    private double house_conditions;
-
-
-
-
-
+    double furniture_quality;
+    double thermic_capacity;
+    double landlord_honesty;
+    double security_level;
+    double bus_connection;
+    double neighbours;
+    double rating;
+    double house_conditions;
+    Map<String, String> params;
+    SessionManager session;
 
 
     public InsertReviewFragment() {
-        // Required empty public constructor
+
     }
 
 
@@ -74,6 +74,8 @@ public class InsertReviewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_insert_review, container, false);
+
+        session = new SessionManager(getActivity());
 
         inputTxtReview = (EditText) view.findViewById(R.id.txtReview);
         ratingBarFurniture = (RatingBar) view.findViewById(R.id.ratingBarFurniture);
@@ -90,10 +92,9 @@ public class InsertReviewFragment extends Fragment {
         Bundle b = getArguments();
         aptId = b.getString("AptId");
 
-        // url = "http://carlo.teammolise.rocks/api/apartments/5538b19fe4b07a8290702638/reviews/5538b1e6a4832c04cba15865";
-        url = Config.APARTMENTS_URL + "/" + aptId + "/reviews" + "/:id";
+        url = Config.APARTMENTS_URL + "/" + aptId + "/reviews";
 
-        getReview();
+
         btnSave.setOnClickListener(new View.OnClickListener() {
 
             @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -111,10 +112,22 @@ public class InsertReviewFragment extends Fragment {
 
 
                 if (!txtReview.isEmpty()) {
+                    // fare qui la richiesta
 
+                    params = new HashMap<String, String>();
+                    params.put("description", txtReview);
+                    params.put("furniture_quality", String.valueOf(furniture_quality));
+                    params.put("thermic_capacity", String.valueOf(thermic_capacity));
+                    params.put("landlord_honesty", String.valueOf(landlord_honesty));
+                    params.put("security_level", String.valueOf(thermic_capacity));
+                    params.put("bus_connection", String.valueOf(bus_connection));
+                    params.put("neighbours", String.valueOf(thermic_capacity));
+                    params.put("rating", String.valueOf(rating));
+                    params.put("house_conditions", String.valueOf(house_conditions));
+                    params.put("user_id", session.getUserId());
+                    params.put("username", session.getUsername());
 
-                    ApartmentFragment apartmentFragment = new ApartmentFragment();
-                    ((MaterialNavigationDrawer) getActivity()).setFragmentChild(apartmentFragment, "Scheda Appartamento");
+                    makeRequest();
 
                 } else {
                     Toast.makeText(getActivity(),
@@ -128,69 +141,62 @@ public class InsertReviewFragment extends Fragment {
     }
 
 
-    public void getReview() {
+    private void makeRequest() {
+        // Tag used to cancel the request
+        String tag_jObj_req = "req_insert_review";
 
-        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.POST, url,
-                (String) null, new Response.Listener<JSONObject>() {
+        MyJsonObjectRequest strReq = new MyJsonObjectRequest(Request.Method.POST,
+                url, params, new Response.Listener<JSONObject>() {
+
             @Override
             public void onResponse(JSONObject response) {
+                Log.d(TAG, "Insert Review Response: " + response.toString());
+
 
                 try {
+                    Boolean error = response.getBoolean("error");
 
-                    JSONObject singleReview = response.getJSONObject("review");
-                    inputTxtReview.setText(singleReview.getString("description"));
+                    // Check for error node in json
+                    if (!error) {
+                        Toast.makeText(getActivity(),
+                                "Recensione inserita!", Toast.LENGTH_LONG).show();
 
-                    String stringRating = String.valueOf(singleReview.getDouble("house_conditions"));
-                    ratingBarConditions.setRating(Float.parseFloat(stringRating));
+                        HomeFragment homeFragment = new HomeFragment();
+                        ((MaterialNavigationDrawer) getActivity()).setFragment(homeFragment, "Home");
 
-                    String stringFurniture = String.valueOf(singleReview.getDouble("furniture_quality"));
-                    ratingBarFurniture.setRating(Float.parseFloat(stringFurniture));
-
-                    String stringThermic = String.valueOf(singleReview.getDouble("thermic_capacity"));
-                    ratingBarThermic.setRating(Float.parseFloat(stringThermic));
-
-                    String stringHonesty = String.valueOf(singleReview.getDouble("landlord_honesty"));
-                    ratingBarHonesty.setRating(Float.parseFloat(stringHonesty));
-
-                    String stringBus = String.valueOf(singleReview.getDouble("bus_connection"));
-                    ratingBarBus.setRating(Float.parseFloat(stringBus));
-
-                    String stringSecurity = String.valueOf(singleReview.getDouble("security_level"));
-                    ratingBarSecurity.setRating(Float.parseFloat(stringSecurity));
-
-                    String stringNeighbours = String.valueOf(singleReview.getDouble("neighbours"));
-                    ratingBarNeighbours.setRating(Float.parseFloat(stringNeighbours));
-
-                    String stringCcDistance = String.valueOf(singleReview.getDouble("distance_cc"));
-                    ratingBarCcDistance.setRating(Float.parseFloat(stringCcDistance));
-
-                  //  releasedValue.setText(singleReview.getJSONObject("released_by").getString("username"));
-
-                   // userId = singleReview.getJSONObject("released_by").getString("user_id");
-
-
-
-                } catch (JSONException e1) {
-                    e1.printStackTrace();
+                    } else {
+                        // Get the error message
+                        //String errorMsg = response.getString("error_msg");
+                        //Toast.makeText(getActivity(),
+                        //        errorMsg, Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    // JSON error
+                    e.printStackTrace();
                 }
+
             }
-
-
         }, new Response.ErrorListener() {
+
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Log.e(TAG, "Login Error: " + error.getMessage());
+                Toast.makeText(getActivity(),
+                        error.getMessage(), Toast.LENGTH_LONG).show();
             }
         }) {
-            @Override
+
             public Map<String, String> getHeaders() throws AuthFailureError {
                 HashMap<String, String> headers = new HashMap<String, String>();
-                headers.put("Content-Type", "application/x-www-form-urlencoded");
+                headers.put("Content-Type","application/x-www-form-urlencoded");
+                headers.put("Authorization", session.getApiKey());
                 return headers;
             }
+
         };
 
-        AppController.getInstance().addToRequestQueue(jsonObjReq);
+        // Adding request to request queue
+        AppController.getInstance().addToRequestQueue(strReq, tag_jObj_req);
     }
 
 
