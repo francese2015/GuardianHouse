@@ -35,6 +35,7 @@ public class ReviewFragment extends Fragment {
     private RatingBar ratingBarNeighbours;
     private String url;
     private String aptId;
+    private String reviewId;
     private TextView txtReview;
     private TextView releasedValue;
     private RatingBar ratingBarFurniture;
@@ -43,6 +44,7 @@ public class ReviewFragment extends Fragment {
 
     Bundle bundle;
     String userId;
+
 
 
     public ReviewFragment() {
@@ -68,9 +70,9 @@ public class ReviewFragment extends Fragment {
 
         Bundle bundle = getArguments();
         aptId = bundle.getString("myAptId");
+        reviewId = bundle.getString("reviewId");
 
-        // url = "http://carlo.teammolise.rocks/api/apartments/5538b19fe4b07a8290702638/reviews/5538b1e6a4832c04cba15865";
-        url = Config.APARTMENTS_URL + "/" + aptId + "/reviews" + "/:id";
+        url = Config.APARTMENTS_URL + "/" + aptId + "/reviews/" + reviewId;
 
         getReview();
 

@@ -16,13 +16,14 @@
 
         <!-- Released By -->
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/relative_released"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@drawable/layout_selector"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
 
             <TextView
@@ -37,16 +38,15 @@
             <TextView
                 android:id="@+id/released_value"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_below="@+id/released_label"
+                android:layout_centerInParent="true"
                 android:layout_marginBottom="6dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="2dp"
                 android:text="" />
 
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/review_content"
@@ -68,11 +68,12 @@
 
             <TextView
                 android:id="@+id/txtReview"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:ems="10"
-                android:gravity="center"
                 android:maxLines="5"
                 android:textSize="18sp">
 

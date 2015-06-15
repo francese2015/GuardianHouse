@@ -41,8 +41,6 @@ public class ReviewListFragment extends Fragment {
     ArrayList<Review> reviewList;
     String aptId;
     String url;
-    String rewiewId;
-
 
     public ReviewListFragment () {
 
@@ -67,7 +65,8 @@ public class ReviewListFragment extends Fragment {
                 Object obj = adapter.getItemAtPosition(position);
                 Review rew = (Review)obj;
                 Bundle b = new Bundle();
-                b.putString("aptId", rew.getRewId());
+                b.putString("myAptId", aptId);
+                b.putString("reviewId", rew.getRewId());
                 ReviewFragment reviewFragment = new ReviewFragment();
                 reviewFragment.setArguments(b);
                 ((MaterialNavigationDrawer) getActivity()).setFragmentChild(reviewFragment, "Recensione");
@@ -92,6 +91,10 @@ public class ReviewListFragment extends Fragment {
                         JSONObject singleReview = reviewsList.getJSONObject(i);
                         Review review = new Review();
                         review.setRewId(singleReview.getJSONObject("_id").getString("$id"));
+                        review.setDescription(singleReview.getString("description"));
+                        review.setUsername(singleReview.getJSONObject("released_by").getString("username"));
+                        String thumbnailUrl = "http://carlo.teammolise.rocks/img/usr/default.png";
+                        review.setThumbnailUrl(thumbnailUrl);
 //                      review.setApplicanceStatus(singleReview.getDouble("house_conditions"));
 //                      review.setThermicCapacity(singleReview.getDouble("thermic_capacity"));
 //                      review.setLandlordHonesty(singleReview.getDouble("landlord_honesty"));
@@ -101,12 +104,9 @@ public class ReviewListFragment extends Fragment {
 //                      review.setDistanceCC(singleReview.getDouble("distance_cc"));
 //                      review.setFornitureQuality(singleReview.getDouble("furniture_quality"));
 //                      review.setFeedbackRate(singleReview.getDouble("rating"));
-                        review.setDescription(singleReview.getString("description"));
-                        review.setUsername(singleReview.getJSONObject("released_by").getString("username"));
                         //String userId = singleReview.getJSONObject("released_by").getString("user_id");
                         //String thumbnailUrl = "http://carlo.teammolise.rocks/img/usr/" + userId + ".png";
-                        String thumbnailUrl = "http://carlo.teammolise.rocks/img/usr/default.png";
-                        review.setThumbnailUrl(thumbnailUrl);
+
                         reviewList.add(review);
                     }
                 } catch (JSONException e) {
