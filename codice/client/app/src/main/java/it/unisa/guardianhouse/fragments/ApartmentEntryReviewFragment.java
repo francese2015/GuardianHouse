@@ -124,7 +124,7 @@ public class ApartmentEntryReviewFragment extends Fragment {
                     //cost
                     params.put("status", bundle.getString("myConditions"));
 
-                    params.put("street_nuber", bundle.getString("myCivic"));
+                    params.put("street_number", bundle.getString("myCivic"));
                     params.put("route", bundle.getString("myRoad"));
                     params.put("locality", bundle.getString("myCity"));
                     params.put("intern_id", bundle.getString("myInter"));
@@ -145,8 +145,8 @@ public class ApartmentEntryReviewFragment extends Fragment {
                     params.put("house_conditions", String.valueOf(house_conditions));
                     params.put("thermic_capacity", String.valueOf(thermic_capacity));
                     params.put("landlord_honesty", String.valueOf(landlord_honesty));
-                    params.put("mySecurity", String.valueOf(security_level));
-                    params.put("security_level", String.valueOf(bus_connection));
+                    params.put("security_level", String.valueOf(security_level));
+                    params.put("bus_connection", String.valueOf(bus_connection));
                     params.put("neighbours", String.valueOf(neighbours));
                     //distance_cc ?
                     params.put("furniture_quality", String.valueOf(furniture_quality));
