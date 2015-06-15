@@ -164,7 +164,8 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
 
                 FeedbackListFragment feedbackListFragment = new FeedbackListFragment();
                 Bundle bundle = new Bundle();
-                bundle.putString("user_id", userId);
+                bundle.putString("user_id", userId); //passo l'id della persona a cui si riferisce il feedback
+                bundle.putString("username", String.valueOf(username));
                 feedbackListFragment.setArguments(bundle);
                 ((MaterialNavigationDrawer) getActivity()).setFragmentChild(feedbackListFragment, "Lista Feedback");
 

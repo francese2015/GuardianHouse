@@ -41,6 +41,7 @@ public class FeedbackListFragment extends Fragment {
     private ListView listView;
     private FeedbackListAdapter adapter;
     private ArrayList<Feedback> feedbacksList;
+    private String username_feed_of;
     String usrId;
     String url;
 
@@ -59,6 +60,7 @@ public class FeedbackListFragment extends Fragment {
 
         Bundle bundle = getArguments();
         usrId = bundle.getString("user_id");
+        username_feed_of = bundle.getString("username");
         url = Config.USERS_URL + "/" + usrId + "/feedbacks";
 
         feedbacksList = new ArrayList<Feedback>();
@@ -149,8 +151,14 @@ public class FeedbackListFragment extends Fragment {
         switch (item.getItemId()) {
 
             case R.id.add_feedback:
-                InsertFeedback insertFeedback = new InsertFeedback();
-                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(insertFeedback, "Inserisci Feedback");
+
+                Bundle bundle = new Bundle();
+                bundle.putString("user_id", usrId); //passo l'id della persona a cui si riferisce il feedback
+                bundle.putString("username", username_feed_of);
+                InsertFeedbackFragment insertFeedbackFragment = new InsertFeedbackFragment();
+                insertFeedbackFragment.setArguments(bundle);
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(insertFeedbackFragment, "Inserisci Feedback");
+
                 return true;
 
             default:

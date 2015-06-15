@@ -38,7 +38,7 @@
         </EditText>
 
         <TextView
-            android:id="@+id/furniture_label"
+            android:id="@+id/rating_feed_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -50,21 +50,21 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/img_furniture"
+            android:id="@+id/img_user"
             android:layout_width="38dp"
             android:layout_height="38dp"
             android:layout_marginTop="15dp"
-            android:layout_below="@id/furniture_label"
+            android:layout_below="@id/rating_feed_label"
             android:layout_marginLeft="20dp"
             android:src="@drawable/icon_user" />
 
         <RatingBar
-            android:id="@+id/ratingBarFurniture"
+            android:id="@+id/ratingBar_insert_feed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:layout_below="@id/furniture_label"
+            android:layout_below="@id/rating_feed_label"
             android:clickable="false"
             android:indeterminate="false"
             android:longClickable="false"
@@ -72,11 +72,11 @@
             android:progressDrawable="@drawable/custom_ratingbar_selector" />
 
         <com.gc.materialdesign.views.ButtonRectangle
-            android:id="@+id/btn_save"
+            android:id="@+id/btn_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/ratingBarFurniture"
+            android:layout_below="@+id/ratingBar_insert_feed"
             android:background="@color/ColorPrimary"
             android:text="Invia il Feedback"
             materialdesign:rippleSpeed="50" />
