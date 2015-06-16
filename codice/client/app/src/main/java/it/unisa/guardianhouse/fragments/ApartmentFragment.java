@@ -69,6 +69,14 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
     private TextView nameApt;
     TextView username;
     String userId;
+    TextView description;
+    TextView mq;
+    TextView car_place;
+    TextView contract_time;
+    TextView free_rooms;
+    TextView cost;
+    TextView status;
+    TextView addressComplete;
     private RatingBar ratingBar;
     private NetworkImageView thumbnail;
     private ImageLoader imageLoader = AppController.getInstance().getImageLoader();
@@ -120,6 +128,14 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
 
         featured = (ImageView) view.findViewById(R.id.imgViewFeatured);
         nameApt = (TextView) view.findViewById(R.id.name_apt);
+        addressComplete = (TextView) view.findViewById(R.id.address_value);
+        description = (TextView) view.findViewById(R.id.text_value);
+        mq = (TextView) view.findViewById(R.id.dimension_value);
+        car_place = (TextView) view.findViewById(R.id.car_place_value);
+        contract_time = (TextView) view.findViewById(R.id.contract_time_value);
+        free_rooms = (TextView) view.findViewById(R.id.free_rooms_value);
+        cost = (TextView) view.findViewById(R.id.price_value);
+        status = (TextView) view.findViewById(R.id.status_value);
         username = (TextView) view.findViewById(R.id.inserted_by_value);
         ratingBar = (RatingBar) view.findViewById(R.id.rating_bar);
         thumbnail = (NetworkImageView) view.findViewById(R.id.thumbnailApt);
@@ -353,6 +369,24 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
                     nameApt.setText(singleApartment.getJSONObject("details").getString("name"));
                     userId = singleApartment.getJSONObject("added_by").getString("user_id");
                     username.setText(singleApartment.getJSONObject("added_by").getString("username"));
+
+                    String streetNumberString = singleApartment.getJSONObject("address").getString("street_number");
+                    String routeString = singleApartment.getJSONObject("address").getString("route");
+                    String localityString = singleApartment.getJSONObject("address").getString("locality");
+                    String postalCodeString = singleApartment.getJSONObject("address").getString("postal_code");
+                    String countryString = singleApartment.getJSONObject("address").getString("country");
+                    String addressString = routeString + " " + streetNumberString + ", " + postalCodeString + " " +
+                            localityString + ", " + countryString;
+
+                    addressComplete.setText(addressString);
+                    description.setText(singleApartment.getJSONObject("details").getString("description"));
+                    mq.setText(singleApartment.getJSONObject("details").getString("mq"));
+                    car_place.setText(singleApartment.getJSONObject("details").getString("car_place"));
+                    contract_time.setText(singleApartment.getJSONObject("details").getString("contract_time"));
+                    free_rooms.setText(singleApartment.getJSONObject("details").getString("free_rooms"));
+                    cost.setText(singleApartment.getJSONObject("details").getString("cost"));
+                    status.setText(singleApartment.getJSONObject("details").getString("status"));
+
                     //ottengo il rating
                     String stringRating = singleApartment.getString("average_rating");
                     ratingBar.setRating(Float.parseFloat(stringRating));
