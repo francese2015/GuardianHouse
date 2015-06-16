@@ -218,7 +218,7 @@
     <string name="description_hint_fragment3">Scrivi un commento riguardante l\'appartamento</string>
     <string name="gps_search">Questa posizione</string>
     <string name="add_edit">Aggiungi/Modifica</string>
-    <string name="fragment_brief_description">Inserisci una breve Descrizione</string>
+    <string name="fragment_brief_description">Inserisci una breve descrizione \n(massimo 160 caratteri)</string>
     <string name="vote_furniture">Vota gli elettrodomestici</string>
     <string name="vote_thermic_capacity">Vote Capacità Termica</string>
     <string name="next">Prossimo</string>

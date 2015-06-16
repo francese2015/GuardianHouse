@@ -32,6 +32,7 @@ import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.adapters.FeedbackListAdapter;
 import it.unisa.guardianhouse.config.Config;
+import it.unisa.guardianhouse.helpers.SessionManager;
 import it.unisa.guardianhouse.models.Feedback;
 
 
@@ -42,6 +43,7 @@ public class FeedbackListFragment extends Fragment {
     private FeedbackListAdapter adapter;
     private ArrayList<Feedback> feedbacksList;
     private String username_feed_of;
+    private SessionManager session;
     String usrId;
     String url;
 
@@ -56,7 +58,14 @@ public class FeedbackListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_feedback_list, container, false);
-        setHasOptionsMenu(true);
+
+        session = new SessionManager(getActivity());
+
+        if (usrId != session.getUserId()) {
+            setHasOptionsMenu(true);
+        } else {
+            setHasOptionsMenu(false);
+        }
 
         Bundle bundle = getArguments();
         usrId = bundle.getString("user_id");

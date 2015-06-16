@@ -37,6 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="6dp"
+                android:textColor="@color/ColorPrimary"
                 android:text="@string/medium_text_placeholder"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -45,9 +46,10 @@
                 android:id="@+id/ratingBar"
                 style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:progressDrawable="@drawable/custom_ratingbar_selector"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
                 android:isIndicator="true"
                 android:minHeight="18dp" />
 
@@ -56,6 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/small_text_placeholder"
                 android:textSize="14sp" />
         </LinearLayout>

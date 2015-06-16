@@ -33,7 +33,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:gravity="center"
-            android:maxLines="5"
+            android:maxLength="160"
             android:hint="@string/user_feedback_desc"
             android:textSize="18dp">
 
@@ -43,12 +43,11 @@
             android:id="@+id/char_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="(0)"
+            android:text="(160)"
             android:textSize="18dp"
             android:textColor="@color/ColorPrimary"
             android:layout_alignRight="@+id/description_label_feedback"
-            android:layout_marginRight="50dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginRight="40dp"
             android:textStyle="bold" />
 
         <TextView

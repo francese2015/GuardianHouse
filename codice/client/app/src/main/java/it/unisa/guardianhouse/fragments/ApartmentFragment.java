@@ -139,6 +139,7 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
                 ReviewListFragment reviewListFragment = new ReviewListFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString("myAptId", aptId);
+                bundle.putString("user_id",userId);
                 reviewListFragment.setArguments(bundle);
                 ((MaterialNavigationDrawer) getActivity()).setFragmentChild(reviewListFragment, "Lista recensioni");
             }

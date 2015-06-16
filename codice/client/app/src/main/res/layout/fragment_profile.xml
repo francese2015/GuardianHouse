@@ -44,6 +44,7 @@
             android:layout_centerHorizontal="true"
             android:progressDrawable="@drawable/custom_ratingbar_selector"
             android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
             android:isIndicator="true" />
 
         <View
@@ -81,6 +82,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/account_name_label"
+                    android:textColor="@color/ColorPrimary"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -90,7 +93,7 @@
                     android:layout_below="@+id/name_label"
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="10dp"
                     />
 
                 <ImageView
@@ -111,7 +114,7 @@
             <RelativeLayout
                 android:id="@+id/relative_surname"
                 android:layout_width="match_parent"
-                android:layout_height="68dp"
+                android:layout_height="75dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="true">
@@ -124,6 +127,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/account_surname_label"
+                    android:textColor="@color/ColorPrimary"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -133,7 +138,7 @@
                     android:layout_below="@+id/surname_label"
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="10dp"
                     />
 
                 <ImageView
@@ -154,7 +159,7 @@
             <RelativeLayout
                 android:id="@+id/relative_email"
                 android:layout_width="match_parent"
-                android:layout_height="68dp"
+                android:layout_height="75dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="true">
@@ -167,6 +172,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/account_email_label"
+                    android:textColor="@color/ColorPrimary"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -176,7 +183,7 @@
                     android:layout_below="@+id/email_label"
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="10dp"
                     />
 
                 <ImageView
@@ -197,7 +204,7 @@
             <RelativeLayout
                 android:id="@+id/relative_username"
                 android:layout_width="match_parent"
-                android:layout_height="68dp"
+                android:layout_height="75dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="true">
@@ -210,6 +217,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/account_username_label"
+                    android:textColor="@color/ColorPrimary"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -219,7 +228,7 @@
                     android:layout_below="@+id/username_label"
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="10dp"
                     />
 
                 <ImageView
@@ -240,7 +249,7 @@
             <RelativeLayout
                 android:id="@+id/relative_password"
                 android:layout_width="match_parent"
-                android:layout_height="68dp"
+                android:layout_height="75dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="true">
@@ -253,6 +262,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/account_password_label"
+                    android:textColor="@color/ColorPrimary"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -262,7 +273,7 @@
                     android:layout_below="@+id/password_label"
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="10dp"
                     android:text="@string/account_password" />
 
                 <ImageView
@@ -283,7 +294,7 @@
             <RelativeLayout
                 android:id="@+id/relative_birthdate"
                 android:layout_width="match_parent"
-                android:layout_height="68dp"
+                android:layout_height="75dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="true">
@@ -296,6 +307,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/account_birthdate_label"
+                    android:textColor="@color/ColorPrimary"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -305,7 +318,7 @@
                     android:layout_below="@+id/birthdate_label"
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="10dp"
                     />
 
                 <ImageView
@@ -326,7 +339,7 @@
             <RelativeLayout
                 android:id="@+id/relative_birthplace"
                 android:layout_width="match_parent"
-                android:layout_height="68dp"
+                android:layout_height="75dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="true">
@@ -339,6 +352,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/account_birthplace_label"
+                    android:textColor="@color/ColorPrimary"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -348,7 +363,7 @@
                     android:layout_below="@+id/birthplace_label"
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="10dp"
                     />
 
                 <ImageView
@@ -369,7 +384,7 @@
             <RelativeLayout
                 android:id="@+id/relative_address"
                 android:layout_width="match_parent"
-                android:layout_height="68dp"
+                android:layout_height="75dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="true">
@@ -382,6 +397,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/account_address_label"
+                    android:textColor="@color/ColorPrimary"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -391,7 +408,7 @@
                     android:layout_below="@+id/address_label"
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="10dp"
                     />
 
                 <ImageView
@@ -412,7 +429,7 @@
             <RelativeLayout
                 android:id="@+id/relative_phone"
                 android:layout_width="match_parent"
-                android:layout_height="68dp"
+                android:layout_height="75dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="true">
@@ -425,6 +442,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/account_phone_label"
+                    android:textColor="@color/ColorPrimary"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -434,7 +453,7 @@
                     android:layout_below="@+id/telephone_label"
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="10dp"
                     />
 
                 <ImageView
@@ -455,7 +474,7 @@
             <RelativeLayout
                 android:id="@+id/relative_account"
                 android:layout_width="match_parent"
-                android:layout_height="68dp"
+                android:layout_height="75dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/layout_selector"
                 android:clickable="true">
@@ -468,6 +487,8 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:text="@string/account_accountType_label"
+                    android:textColor="@color/ColorPrimary"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -477,7 +498,7 @@
                     android:layout_below="@+id/role_label"
                     android:layout_marginLeft="16dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="10dp"
                     />
 
                 <ImageView
@@ -511,6 +532,8 @@
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="16dp"
                     android:text="Appartamenti inseriti"
+                    android:textColor="@color/ColorPrimary"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <ListView
@@ -549,6 +572,7 @@
             android:layout_below="@+id/separator_line_2"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="28dp"
+            android:layout_marginBottom="10dp"
             android:text="@string/button_delete_account" />
 
     </RelativeLayout>

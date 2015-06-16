@@ -21,6 +21,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.config.Config;
@@ -70,11 +71,26 @@ public class ReviewFragment extends Fragment {
 
         Bundle bundle = getArguments();
         aptId = bundle.getString("myAptId");
+        userId = bundle.getString("user_id");
         reviewId = bundle.getString("reviewId");
 
         url = Config.APARTMENTS_URL + "/" + aptId + "/reviews/" + reviewId;
 
         getReview();
+
+
+
+        releasedValue.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+                FeedbackListFragment feedbackListFragment = new FeedbackListFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("user_id", userId); //passo l'id della persona a cui si riferisce il feedback
+                feedbackListFragment.setArguments(bundle);
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(feedbackListFragment, "Lista Feedback");
+
+            }
+        });
 
         return view;
     }

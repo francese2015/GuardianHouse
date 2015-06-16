@@ -57,16 +57,13 @@ public class InsertFeedbackFragment extends Fragment{
     Map<String, String> params;
     private final TextWatcher textWatcher = new TextWatcher() {
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
         }
 
         public void onTextChanged(CharSequence s, int start, int before, int count) {
             //This sets a textview to the current length
-            charcount.setText("(" + String.valueOf(s.length()) + ")");
-            if (count > 160){
+            charcount.setText("(" + String.valueOf(160 - s.length()) + ")");
 
-                feedDescription.setTextColor(Color.RED);
-
-            }
         }
 
         public void afterTextChanged(Editable s) {

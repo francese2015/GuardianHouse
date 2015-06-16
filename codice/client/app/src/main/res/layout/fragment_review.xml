@@ -25,7 +25,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
+                android:textColor="@color/ColorPrimary"
                 android:text="@string/username_label"
+                android:textStyle="bold"
                 android:textSize="18sp">
 
             </TextView>
@@ -34,7 +36,7 @@
                 android:id="@+id/username_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="username"
                 android:textSize="18sp">
 
             </TextView>
@@ -54,17 +56,14 @@
 
             <EditText
                 android:id="@+id/txtReview"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/textbox_bg_review"
                 android:ems="10"
-                android:gravity="top|left"
-                android:hint="@string/fragment_brief_description"
+                android:gravity="center"
                 android:maxLines="5"
-
+                android:maxLength="160"
+                android:hint="@string/description_value"
                 android:textSize="18sp">
 
             </EditText>
@@ -107,7 +106,8 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="10dp"
                     android:text="@string/vote_furniture"
-                    android:textColor="#2196F3"
+                    android:textColor="@color/ColorPrimary"
+                    android:layout_marginTop="10dp"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -123,7 +123,7 @@
                 <RatingBar
                     android:id="@+id/ratingBar1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="27dp"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
@@ -155,7 +155,8 @@
                     android:layout_marginLeft="10dp"
 
                     android:text="@string/vote_thermic_capacity"
-                    android:textColor="#2196F3"
+                    android:textColor="@color/ColorPrimary"
+                    android:layout_marginTop="10dp"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -171,7 +172,7 @@
                 <RatingBar
                     android:id="@+id/ratingBar2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="27dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:clickable="false"
@@ -204,7 +205,8 @@
                     android:layout_marginLeft="10dp"
 
                     android:text="@string/vote_landlord_honesty"
-                    android:textColor="#2196F3"
+                    android:textColor="@color/ColorPrimary"
+                    android:layout_marginTop="10dp"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -219,7 +221,7 @@
                 <RatingBar
                     android:id="@+id/ratingBar3"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="27dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
@@ -252,7 +254,8 @@
                     android:layout_marginLeft="10dp"
 
                     android:text="@string/vote_house_security"
-                    android:textColor="#2196F3"
+                    android:textColor="@color/ColorPrimary"
+                    android:layout_marginTop="10dp"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -267,7 +270,7 @@
                 <RatingBar
                     android:id="@+id/ratingBar4"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="27dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
@@ -301,7 +304,8 @@
                     android:layout_marginLeft="10dp"
 
                     android:text="@string/bus_vote"
-                    android:textColor="#2196F3"
+                    android:textColor="@color/ColorPrimary"
+                    android:layout_marginTop="10dp"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -316,7 +320,7 @@
                 <RatingBar
                     android:id="@+id/ratingBar5"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="27dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
@@ -349,7 +353,8 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="10dp"
                     android:text="@string/vote_neighbours"
-                    android:textColor="#2196F3"
+                    android:textColor="@color/ColorPrimary"
+                    android:layout_marginTop="10dp"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -364,7 +369,7 @@
                 <RatingBar
                     android:id="@+id/ratingBar6"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="27dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
@@ -395,7 +400,8 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="10dp"
                     android:text="Voto Esperienza"
-                    android:textColor="#2196F3"
+                    android:textColor="@color/ColorPrimary"
+                    android:layout_marginTop="10dp"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -410,7 +416,7 @@
                 <RatingBar
                     android:id="@+id/ratingBar7"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="27dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
@@ -441,7 +447,8 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="10dp"
                     android:text="@string/conditions_label"
-                    android:textColor="#2196F3"
+                    android:textColor="@color/ColorPrimary"
+                    android:layout_marginTop="10dp"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -456,7 +463,7 @@
                 <RatingBar
                     android:id="@+id/ratingBar8"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="27dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:clickable="false"
@@ -481,7 +488,6 @@
                 android:id="@+id/button_to_review"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/button_layout"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
                 android:background="#1E88E5"
