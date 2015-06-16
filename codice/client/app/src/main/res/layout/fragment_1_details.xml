@@ -15,6 +15,8 @@
             android:id="@+id/title_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:text="@string/title_apartment"
             android:textColor="#2196F3"
             android:textSize="18dp"
@@ -25,7 +27,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/title_label"
-            android:layout_marginTop="6dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
             android:hint="@string/title_apartment_value"
             android:inputType="text" />
 
@@ -34,8 +38,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/title"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:text="@string/apartment_name_label"
             android:textColor="#2196F3"
             android:textSize="18dp"
@@ -46,7 +51,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/address_label"
-            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:hint="@string/road"
             android:inputType="text" />
 
@@ -55,7 +62,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/address_road"
-            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:hint="@string/civic_number"
             android:inputType="number" />
 
@@ -64,7 +73,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/civic_number"
-            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:hint="@string/intern_id"
             android:inputType="number" />
 
@@ -73,7 +84,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/intern_id"
-            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:hint="@string/city_name" />
 
         <!--        <ImageButton
@@ -91,8 +104,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/relative_address"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:text="@string/apartment_desc_label"
             android:textColor="#2196F3"
             android:textSize="18dp"
@@ -103,6 +117,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/name_descr"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:maxLength="160"
             android:hint="@string/insert_apartment_description"
             android:inputType="textMultiLine" />
 
@@ -111,7 +129,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/descrip"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:text="@string/apartment_mq_label"
             android:textColor="#2196F3"
             android:textSize="18dp"
@@ -122,6 +142,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/name_mq"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:hint="@string/insert_apartment_mq"
             android:inputType="number" />
 
@@ -130,7 +153,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/meters"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:text="@string/apartment_spot_label"
             android:textColor="#2196F3"
             android:textSize="18dp"
@@ -141,6 +166,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/name_carspot"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:hint="@string/insert_apartment_spot"
             android:inputType="number" />
 
@@ -149,7 +177,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/carspot"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:text="@string/apartment_durata_contratto"
             android:textColor="#2196F3"
             android:textSize="18dp"
@@ -161,6 +191,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/name_durata"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:hint="@string/insert_durata_contratto"
             android:inputType="number" />
 
@@ -169,7 +202,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/carspot"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:text="Costo medio (*)"
             android:textColor="#2196F3"
             android:textSize="18dp"
@@ -182,6 +217,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/name_durata"
             android:hint="Inserisci costo"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:inputType="number" />
 
         <TextView
@@ -189,7 +227,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/durata"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
             android:text="@string/apartment_status_detail"
             android:textColor="#2196F3"
             android:textSize="18dp"
@@ -218,8 +258,9 @@
                 android:id="@+id/insertPhoto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
                 android:text="@string/insert_photo"
                 android:textColor="#2196F3"
                 android:textSize="18sp"
@@ -278,7 +319,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/container"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="15dp"
             android:background="#1E88E5"
             android:text="@string/button_goto_scheda2"
             materialdesign:rippleSpeed="50" />

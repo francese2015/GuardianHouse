@@ -77,19 +77,6 @@ public class FeedbackListFragment extends Fragment {
         adapter = new FeedbackListAdapter(getActivity(),feedbacksList);
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
-
-                Object obj = adapter.getItemAtPosition(position);
-                Feedback feed = (Feedback)obj;
-                Bundle b = new Bundle();
-                b.putString("user_id", feed.getFeedback_id());
-                FeedbackFragment feedFragment = new FeedbackFragment();
-                feedFragment.setArguments(b);
-
-                ((MaterialNavigationDrawer) getActivity()).setFragment(feedFragment, "Feedbacks");
-            }
-        });
 
         getFeedbacks();
 

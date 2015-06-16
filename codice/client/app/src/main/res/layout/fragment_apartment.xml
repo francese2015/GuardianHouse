@@ -61,7 +61,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="27dp"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="8dp"
                         android:layout_gravity="center_horizontal"
                         android:progressDrawable="@drawable/custom_ratingbar_selector"
                         android:isIndicator="true"/>
@@ -80,8 +80,9 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center"
+                    android:layout_marginTop="6dp"
                     android:layout_marginRight="6dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="6dp"
                     android:src="@drawable/app_logo_big" />
 
             </LinearLayout>
