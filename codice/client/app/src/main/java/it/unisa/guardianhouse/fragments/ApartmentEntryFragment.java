@@ -47,6 +47,10 @@ public class ApartmentEntryFragment extends Fragment {
     String name;
     String locality;
     String cost;
+    String country;
+    String postalCode;
+    String adminAreaLevel;
+    String subAdminAreaLevel;
     private Context mContext;
     private ViewGroup mSelectedImagesContainer;
     Double latitude;
@@ -59,7 +63,7 @@ public class ApartmentEntryFragment extends Fragment {
     private EditText inputContractDuration;
     private EditText inputCivicNumber;
     private EditText inputInternId;
-    private ImageButton btnMap;
+    //private ImageButton btnMap;
     private Spinner spinnerConditions;
     private EditText inputTitle;
     private EditText inputLocality;
@@ -95,7 +99,7 @@ public class ApartmentEntryFragment extends Fragment {
         inputContractDuration = (EditText) view.findViewById(R.id.durata);
         inputCivicNumber = (EditText) view.findViewById(R.id.civic_number);
         inputInternId = (EditText) view.findViewById(R.id.intern_id);
-        btnMap = (ImageButton) view.findViewById(R.id.img_map);
+        //btnMap = (ImageButton) view.findViewById(R.id.img_map);
         spinnerConditions = (Spinner) view.findViewById(R.id.spinner);
         inputTitle = (EditText) view.findViewById(R.id.title);
         inputLocality = (EditText) view.findViewById(R.id.city);
@@ -142,6 +146,10 @@ public class ApartmentEntryFragment extends Fragment {
 
                         latitude = address.getLatitude();
                         longitude = address.getLongitude();
+                        postalCode = address.getPostalCode();
+                        adminAreaLevel = address.getAdminArea();
+                        subAdminAreaLevel = address.getSubAdminArea();
+                        country = address.getCountryName();
 
                         bundle = new Bundle();
 
@@ -157,6 +165,11 @@ public class ApartmentEntryFragment extends Fragment {
                         bundle.putString("myRoad", route);
                         bundle.putString("myCity", locality);
                         bundle.putString("myInter", intern_id);
+                        bundle.putString("postal_code", postalCode);
+                        //bundle.putString("admin_level", adminAreaLevel);
+                        //bundle.putString("sub_admin_level", subAdminAreaLevel);
+                        bundle.putString("country", country);
+
                         bundle.putDouble("myLat", latitude);
                         bundle.putDouble("myLong", longitude);
 

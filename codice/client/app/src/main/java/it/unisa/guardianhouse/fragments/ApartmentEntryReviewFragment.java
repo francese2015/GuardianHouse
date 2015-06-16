@@ -108,8 +108,7 @@ public class ApartmentEntryReviewFragment extends Fragment {
                 distance_cc = rateDistanceCC.getRating();
 
 
-                for (String key : bundle.keySet())
-                {
+                for (String key : bundle.keySet()) {
                     Log.d("Bundle Debug", key + " = \"" + bundle.get(key) + "\"");
                 }
 
@@ -132,10 +131,11 @@ public class ApartmentEntryReviewFragment extends Fragment {
                     params.put("route", bundle.getString("myRoad"));
                     params.put("locality", bundle.getString("myCity"));
                     params.put("intern_id", bundle.getString("myInter"));
-                    //administrative area level 1
-                    //administrative area level 2
-                    //postal code
-                    //country
+
+                    params.put("postal_code", bundle.getString("postal_code"));
+                    //params.put("administrative_area_level_1", bundle.getString("admin_level"));
+                    //params.put("administrative_area_level_2", bundle.getString("sub_admin_level"));
+                    params.put("country", bundle.getString("country"));
 
                     params.put("latitude", String.valueOf(bundle.getDouble("myLat")));
                     params.put("longitude", String.valueOf(bundle.getDouble("myLong")));
@@ -158,8 +158,7 @@ public class ApartmentEntryReviewFragment extends Fragment {
                     params.put("user_id", session.getUserId());
                     params.put("username", session.getUsername());
 
-                    for (String key : params.keySet())
-                    {
+                    for (String key : params.keySet()) {
                         Log.d("Params Debug", key + " = \"" + params.get(key) + "\"");
                     }
 
@@ -189,28 +188,12 @@ public class ApartmentEntryReviewFragment extends Fragment {
             public void onResponse(JSONObject response) {
                 Log.d(TAG, "Insert Review Response: " + response.toString());
 
+                Toast.makeText(getActivity(),
+                        "Appartamento inserito!", Toast.LENGTH_LONG).show();
 
-                try {
-                    Boolean error = response.getBoolean("error");
+                HomeFragment homeFragment = new HomeFragment();
+                ((MaterialNavigationDrawer) getActivity()).setFragment(homeFragment, "In primo piano");
 
-                    // Check for error node in json
-                    if (!error) {
-                        Toast.makeText(getActivity(),
-                                "Appartamento inserito!", Toast.LENGTH_LONG).show();
-
-                        HomeFragment homeFragment = new HomeFragment();
-                        ((MaterialNavigationDrawer) getActivity()).setFragment(homeFragment, "Home");
-
-                    } else {
-                        // Get the error message
-                        //String errorMsg = response.getString("error_msg");
-                        //Toast.makeText(getActivity(),
-                        //        errorMsg, Toast.LENGTH_LONG).show();
-                    }
-                } catch (JSONException e) {
-                    // JSON error
-                    e.printStackTrace();
-                }
 
             }
         }, new Response.ErrorListener() {

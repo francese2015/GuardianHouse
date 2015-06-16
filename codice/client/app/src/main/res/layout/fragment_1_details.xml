@@ -76,14 +76,14 @@
             android:layout_marginTop="5dp"
             android:hint="@string/city_name" />
 
-        <ImageButton
+<!--        <ImageButton
             android:id="@+id/img_map"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/address_label"
             android:layout_marginTop="3dp"
             android:src="@drawable/ic_map"
-            android:text="Posizione" />
+            android:text="Posizione" />-->
 
 
         <TextView
