@@ -37,185 +37,60 @@
 
             <!-- Number of Guests -->
 
-<!--            <TextView
-                android:id="@+id/guest_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="8dp"
-                android:text="@string/max_guests"
-                android:textColor="#2196F3"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="1dp"
-                android:gravity="center">
-
-
-                <Button
-                    android:id="@+id/button_less_guests"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_column="0"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_row="0"
-                    android:text="@string/less"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/integer_guests"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:layout_marginLeft="45dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_row="0"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:gravity="center"
-                    android:hint="0"
-                    android:textColor="@color/ColorPrimary"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-<<<<<<< HEAD
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="1dp"
-                    android:gravity="center">
-
-
-                    <Button
-                        android:id="@+id/button_less_guests"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="40dp"
-                        android:text="@string/less"
-                        android:textSize="20sp"
-                        android:layout_row="0"
-                        android:layout_column="0" />
-
-                    <EditText
-                        android:id="@+id/integer_guests"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="45dp"
-                        android:gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:textColor="@color/ColorPrimary"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:hint="0"
-                        android:layout_row="0"
-                        android:layout_column="1"
-                        android:clickable="false"
-                        android:cursorVisible="false"
-                        android:focusable="false"
-                        android:focusableInTouchMode="false"/>
-
-
-                    <Button
-                        android:id="@+id/button_plus_guests"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="40dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="20dp"
-                        android:text="@string/plus"
-                        android:textSize="20sp"
-                        android:layout_row="0"
-                        android:layout_column="6" />
-
-
-                </GridLayout>
-
-                <!-- Room Numbers -->
-                <TextView
-                    android:id="@+id/room_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:textColor="#2196F3"
-                    android:textSize="20dp"
-                    android:text="@string/room_number"
-                    android:layout_gravity="center"
-                    android:textStyle="bold" />
-
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="1dp"
-                    android:gravity="center">
-
-
-                    <Button
-                        android:id="@+id/button_less_rooms"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="40dp"
-                        android:text="@string/less"
-                        android:textSize="20sp"
-                        android:layout_row="0"
-                        android:layout_column="0" />
-
-                    <EditText
-                        android:id="@+id/integer_room"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="45dp"
-                        android:gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:hint="@string/zero_integer"
-                        android:textColor="@color/ColorPrimary"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_row="0"
-                        android:layout_column="1"
-                        android:clickable="false"
-                        android:cursorVisible="false"
-                        android:focusable="false"
-                        android:focusableInTouchMode="false"/>
-
-
-                    <Button
-                        android:id="@+id/button_plus_rooms"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="40dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="20dp"
-                        android:text="@string/plus"
-                        android:textSize="20sp"
-                        android:layout_row="0"
-                        android:layout_column="6" />
-
-
-                </GridLayout>
-=======
-
-                <Button
-                    android:id="@+id/button_plus_guests"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_column="6"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_row="0"
-                    android:text="@string/plus"
-                    android:textSize="20sp" />
-
-
-            </GridLayout>-->
+            <!--            <TextView
+                            android:id="@+id/guest_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/max_guests"
+                            android:textColor="#2196F3"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                        <GridLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="1dp"
+                            android:gravity="center">
+                            <Button
+                                android:id="@+id/button_less_guests"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:layout_column="0"
+                                android:layout_marginLeft="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_row="0"
+                                android:text="@string/less"
+                                android:textSize="20sp" />
+                            <EditText
+                                android:id="@+id/integer_guests"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_column="1"
+                                android:layout_marginLeft="45dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_row="0"
+                                android:clickable="false"
+                                android:cursorVisible="false"
+                                android:focusable="false"
+                                android:focusableInTouchMode="false"
+                                android:gravity="center"
+                                android:hint="0"
+                                android:textColor="@color/ColorPrimary"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                            <Button
+                                android:id="@+id/button_plus_guests"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_column="6"
+                                android:layout_marginRight="40dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_row="0"
+                                android:text="@string/plus"
+                                android:textSize="20sp" />
+                        </GridLayout>-->
 
             <!-- Room Numbers -->
             <TextView
@@ -280,7 +155,6 @@
 
 
             </GridLayout>
->>>>>>> origin/master
             <!-- Free Roms -->
 
             <TextView
@@ -316,66 +190,6 @@
                     android:id="@+id/integer_free_room"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-<<<<<<< HEAD
-                    android:layout_marginTop="20dp"
-                    android:textColor="#2196F3"
-                    android:textSize="20dp"
-                    android:text="@string/free_rooms_title"
-                    android:layout_gravity="center"
-                    android:textStyle="bold" />
-
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="1dp"
-                    android:gravity="center">
-
-
-                    <Button
-                        android:id="@+id/button_less_free"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="40dp"
-                        android:text="@string/less"
-                        android:textSize="20sp"
-                        android:layout_row="0"
-                        android:layout_column="0" />
-
-                    <EditText
-                        android:id="@+id/integer_free_room"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="45dp"
-                        android:gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:hint="@string/zero_integer"
-                        android:textColor="@color/ColorPrimary"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_row="0"
-                        android:layout_column="1"
-                        android:clickable="false"
-                        android:cursorVisible="false"
-                        android:focusable="false"
-                        android:focusableInTouchMode="false"/>
-
-
-                    <Button
-                        android:id="@+id/button_plus_free"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="40dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="20dp"
-                        android:text="@string/plus"
-                        android:textSize="20sp"
-                        android:layout_row="0"
-                        android:layout_column="6" />
-
-
-                </GridLayout>
-=======
                     android:layout_column="1"
                     android:layout_marginLeft="45dp"
                     android:layout_marginTop="10dp"
@@ -405,7 +219,6 @@
 
 
             </GridLayout>
->>>>>>> origin/master
 
             <!-- Bed -->
 
@@ -442,141 +255,6 @@
                     android:id="@+id/integer_bed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-<<<<<<< HEAD
-                    android:layout_marginTop="20dp"
-                    android:textColor="#2196F3"
-                    android:textSize="20dp"
-                    android:text="@string/bed"
-                    android:layout_gravity="center"
-                    android:textStyle="bold" />
-
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="1dp"
-                    android:gravity="center">
-
-
-                    <Button
-                        android:id="@+id/button_less_bed"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="40dp"
-                        android:text="@string/less"
-                        android:textSize="20sp"
-                        android:layout_row="0"
-                        android:layout_column="0" />
-
-                    <EditText
-                        android:id="@+id/integer_bed"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="45dp"
-                        android:gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:hint="@string/zero_integer"
-                        android:textColor="@color/ColorPrimary"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_row="0"
-                        android:layout_column="1"
-                        android:clickable="false"
-                        android:cursorVisible="false"
-                        android:focusable="false"
-                        android:focusableInTouchMode="false"/>
-
-
-                    <Button
-                        android:id="@+id/button_plus_bed"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="40dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="20dp"
-                        android:text="@string/plus"
-                        android:textSize="20sp"
-                        android:layout_row="0"
-                        android:layout_column="6" />
-
-
-                </GridLayout>
-
-                <!-- WC -->
-
-                <TextView
-                    android:id="@+id/wc_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:textColor="#2196F3"
-                    android:textSize="20dp"
-                    android:text="@string/wc_number"
-                    android:layout_gravity="center"
-                    android:textStyle="bold" />
-
-                <GridLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="1dp"
-                    android:gravity="center">
-
-
-                    <Button
-                        android:id="@+id/button_less_wc"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginLeft="40dp"
-                        android:text="@string/less"
-                        android:textSize="20sp"
-                        android:layout_row="0"
-                        android:layout_column="0" />
-
-                    <EditText
-                        android:id="@+id/integer_wc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="45dp"
-                        android:gravity="center"
-                        android:layout_marginTop="20dp"
-                        android:hint="@string/zero_integer"
-                        android:textColor="@color/ColorPrimary"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:layout_row="0"
-                        android:layout_column="1"
-                        android:clickable="false"
-                        android:cursorVisible="false"
-                        android:focusable="false"
-                        android:focusableInTouchMode="false"/>
-
-
-                    <Button
-                        android:id="@+id/button_plus_wc"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="40dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="20dp"
-                        android:text="@string/plus"
-                        android:textSize="20sp"
-                        android:layout_row="0"
-                        android:layout_column="6" />
-
-
-                </GridLayout>
-
-
-            </LinearLayout>
-
-            <View
-                android:id="@+id/separator_line_2"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_below="@+id/apartment_data"
-                android:background="#dfdfdf" />
-=======
                     android:layout_column="1"
                     android:layout_marginLeft="45dp"
                     android:layout_marginTop="10dp"
@@ -607,20 +285,11 @@
             </GridLayout>
 
             <!-- WC -->
->>>>>>> origin/master
 
             <TextView
                 android:id="@+id/wc_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-<<<<<<< HEAD
-                android:layout_below="@+id/room_layout"
-                android:layout_marginTop="20dp"
-                android:layout_centerHorizontal="true"
-                android:background="#1E88E5"
-                materialdesign:rippleSpeed="50"
-                android:text="@string/button_goto_scheda2" />
-=======
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"
                 android:text="@string/wc_number"
@@ -633,7 +302,6 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="1dp"
                 android:gravity="center">
->>>>>>> origin/master
 
                 <Button
                     android:id="@+id/button_less_wc"
