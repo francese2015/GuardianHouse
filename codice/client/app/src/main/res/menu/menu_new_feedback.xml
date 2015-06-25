@@ -6,6 +6,6 @@
     <item android:id="@+id/add_feedback"
         android:icon="@drawable/ic_plus_white"
         android:title="Inserisci Feedback"
-        app:showAsAction="never"/>
+        app:showAsAction="ifRoom"/>
 
 </menu>

@@ -17,6 +17,14 @@
             android:divider="@null"
             android:dividerHeight="0dp"></ListView>
 
+        <TextView
+            android:id="@+id/empty_list"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:text="Nessun appartamento trovato" />
+
     </android.support.v4.widget.SwipeRefreshLayout>
 
 </FrameLayout>

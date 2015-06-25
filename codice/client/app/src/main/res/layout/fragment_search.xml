@@ -75,4 +75,12 @@
         android:layout_gravity="bottom|end"
         materialdesign:iconDrawable="@drawable/ic_magnify_white" />
 
+    <TextView
+        android:id="@+id/empty_list"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:text="Nessun appartamento trovato" />
+
 </FrameLayout>

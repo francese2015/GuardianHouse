@@ -3,6 +3,7 @@ package it.unisa.guardianhouse.fragments;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -50,6 +51,7 @@ public class ReviewListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_review_list, container, false);
+        setHasOptionsMenu(true);
 
         Bundle bundle = getArguments();
         aptId = bundle.getString("myAptId");
@@ -145,4 +147,19 @@ public class ReviewListFragment extends Fragment {
     public void onResume() {
         super.onResume();
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                SearchFragment searchFragment = new SearchFragment();
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchFragment, "Cerca appartamento");
+                return true;
+
+            default:
+                break;
+        }
+        return false;
+    }
+
 }

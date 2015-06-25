@@ -4,9 +4,11 @@ package it.unisa.guardianhouse.fragments;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -65,6 +67,7 @@ public class RegisterFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_register, container, false);
+        setHasOptionsMenu(true);
 
         inputEmail = (EditText) view.findViewById(R.id.editText1);
         inputUsername = (EditText) view.findViewById(R.id.editText2);
@@ -199,6 +202,19 @@ public class RegisterFragment extends Fragment {
     private void hideDialog() {
         if (pDialog.isShowing())
             pDialog.dismiss();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                SearchFragment searchFragment = new SearchFragment();
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchFragment, "Cerca appartamento");
+                return true;
+            default:
+                break;
+        }
+        return false;
     }
 
 

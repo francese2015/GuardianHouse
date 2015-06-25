@@ -1,6 +1,7 @@
 package it.unisa.guardianhouse.fragments;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,9 +9,11 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
 import it.neokree.materialtabs.MaterialTabListener;
@@ -27,6 +30,7 @@ public class ResultsFragment extends Fragment implements MaterialTabListener {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_results, container, false);
+        setHasOptionsMenu(true);
 
         bundle = getArguments();
 
@@ -131,4 +135,19 @@ public class ResultsFragment extends Fragment implements MaterialTabListener {
     public void onResume() {
         super.onResume();
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                SearchFragment searchFragment = new SearchFragment();
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchFragment, "Cerca appartamento");
+                return true;
+
+            default:
+                break;
+        }
+        return false;
+    }
+
 }

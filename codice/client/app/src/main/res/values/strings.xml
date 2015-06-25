@@ -3,7 +3,7 @@
 
     <!-- Globali -->
     <string name="app_name">Guardian House</string>
-    <string name="website_url">www.guardianhouseapp.tk</string>
+    <string name="website_url">www.guardianhouseapp.com</string>
     <string name="action_settings">Impostazioni</string>
     <string name="hello_world">Hello world!</string>
     <string name="drawer_open">Apri Navigation Drawer</string>

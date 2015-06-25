@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -16,7 +17,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RatingBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -49,6 +52,7 @@ import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 import it.unisa.guardianhouse.AppController;
 import it.unisa.guardianhouse.R;
 import it.unisa.guardianhouse.config.Config;
+import it.unisa.guardianhouse.helpers.SessionManager;
 import it.unisa.guardianhouse.models.Review;
 
 
@@ -77,11 +81,13 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
     TextView cost;
     TextView status;
     TextView addressComplete;
+    SessionManager session;
     private RatingBar ratingBar;
     private NetworkImageView thumbnail;
     private ImageLoader imageLoader = AppController.getInstance().getImageLoader();
     private Button btnShowReview;
     private Button btnInsReview;
+    private Button btnFeedbacks;
     private ArrayList<Review> reviewList = new ArrayList<Review>();
     // private TextView distanceTextView;
 
@@ -99,6 +105,7 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
         View view = inflater.inflate(R.layout.fragment_apartment, container, false);
         setHasOptionsMenu(true);
 
+        session = new SessionManager(getActivity());
         MapsInitializer.initialize(getActivity());
 
         Bundle b = getArguments();
@@ -141,6 +148,7 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
         thumbnail = (NetworkImageView) view.findViewById(R.id.thumbnailApt);
         btnShowReview = (Button) view.findViewById(R.id.button_view_reviews);
         btnInsReview = (Button) view.findViewById(R.id.button_ins_review);
+        btnFeedbacks = (Button) view.findViewById(R.id.button_feedbacks);
         //distanceTextView = (TextView) view.findViewById(R.id.distanceFromLocation);
         //DecimalFormat precision = new DecimalFormat("##.##");
         //distanceTextView.setText("Distanza: " + precision.format(distance) + " Km");
@@ -161,20 +169,33 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
             }
         });
 
-        //Insert Review
-        btnInsReview.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View view) {
-                InsertReviewFragment insertReviewFragment = new InsertReviewFragment();
-                Bundle b = new Bundle();
-                b.putString("AptId", aptId);
-                insertReviewFragment.setArguments(b);
-                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(insertReviewFragment, "Lascia una Recensione");
-            }
-        });
 
 
-        TextView txtUserInsert = (TextView) view.findViewById(R.id.inserted_by_value);
+            btnInsReview.setOnClickListener(new View.OnClickListener() {
+
+
+
+                public void onClick(View view) {
+
+                    if(!session.isLoggedIn()){
+
+                        // chiedo all'utente di inserire i dati
+                        Toast.makeText(getActivity(),
+                                "Effettua prima il Login", Toast.LENGTH_LONG)
+                                .show();
+
+                    } else {
+                    InsertReviewFragment insertReviewFragment = new InsertReviewFragment();
+                    Bundle b = new Bundle();
+                    b.putString("AptId", aptId);
+                    insertReviewFragment.setArguments(b);
+                    ((MaterialNavigationDrawer) getActivity()).setFragmentChild(insertReviewFragment, "Lascia una Recensione");
+                }}
+            });
+
+
+
+        RelativeLayout txtUserInsert = (RelativeLayout) view.findViewById(R.id.relative_inserted_by);
 
         txtUserInsert.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -188,6 +209,21 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
 
             }
         });
+
+        btnFeedbacks.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+
+                FeedbackListFragment feedbackListFragment = new FeedbackListFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("user_id", userId); //passo l'id della persona a cui si riferisce il feedback
+                bundle.putString("username", String.valueOf(username));
+                feedbackListFragment.setArguments(bundle);
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(feedbackListFragment, "Lista Feedback");
+
+            }
+        });
+
+
 
         /*
         RelativeLayout dimensionRelative = (RelativeLayout) view.findViewById(R.id.relative_dimension);
@@ -510,12 +546,11 @@ public class ApartmentFragment extends Fragment implements BaseSliderView.OnSlid
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_edit_apt:
-                // codice per modificare appartamento
+            case R.id.action_search:
+                SearchFragment searchFragment = new SearchFragment();
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchFragment, "Cerca appartamento");
                 return true;
-            case R.id.action_delete_apt:
-                // codice per eliminare appartamento
-                return true;
+
             default:
                 break;
         }

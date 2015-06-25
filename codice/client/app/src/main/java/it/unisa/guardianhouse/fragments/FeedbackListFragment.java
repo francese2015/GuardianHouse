@@ -61,7 +61,7 @@ public class FeedbackListFragment extends Fragment {
 
         session = new SessionManager(getActivity());
 
-        if (usrId != session.getUserId()) {
+        if (usrId != session.getUserId() && session.isLoggedIn()) {
             setHasOptionsMenu(true);
         } else {
             setHasOptionsMenu(false);
@@ -76,6 +76,7 @@ public class FeedbackListFragment extends Fragment {
         listView = (ListView) view.findViewById(R.id.listViewfeed);
         adapter = new FeedbackListAdapter(getActivity(),feedbacksList);
         listView.setAdapter(adapter);
+        listView.setEmptyView(view.findViewById(R.id.empty_list));
 
 
         getFeedbacks();

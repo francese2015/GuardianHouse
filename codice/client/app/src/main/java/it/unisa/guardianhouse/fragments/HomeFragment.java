@@ -84,6 +84,7 @@ public class HomeFragment extends Fragment {
         listView = (ListView) view.findViewById(R.id.listView1);
         adapter = new ApartmentListAdapter(getActivity(), apartmentList);
         listView.setAdapter(adapter);
+        listView.setEmptyView(view.findViewById(R.id.empty_list));
 
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override

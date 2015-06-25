@@ -31,6 +31,7 @@ public class ResultsListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_results_list, container, false);
+        setHasOptionsMenu(true);
 
         Bundle bundle = getArguments();
         apartmentList = bundle.getParcelableArrayList("aptData");
@@ -38,6 +39,7 @@ public class ResultsListFragment extends Fragment {
         listView = (ListView) view.findViewById(R.id.listView1);
         adapter = new ApartmentListAdapter(getActivity(), apartmentList);
         listView.setAdapter(adapter);
+        listView.setEmptyView(view.findViewById(R.id.empty_list));
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {

@@ -583,6 +583,17 @@
                     android:clickable="true"
                     android:text="m.rossi10" />
 
+                <Button
+                    android:id="@+id/button_feedbacks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@id/inserted_by_label"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginLeft="150dp"
+                    android:layout_centerVertical="true"
+                    android:text="Feedbacks"
+                    android:textSize="12dp"/>
+
 
             </RelativeLayout>
 
@@ -603,6 +614,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="28dp"
             android:text="Visualizza recensioni" />
+
 
         <Button
             android:id="@+id/button_ins_review"

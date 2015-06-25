@@ -4,6 +4,7 @@ package it.unisa.guardianhouse.fragments;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RatingBar;
@@ -57,6 +58,7 @@ public class ReviewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_review_view, container, false);
+        setHasOptionsMenu(true);
 
         txtReview = (TextView) view.findViewById(R.id.txtReview);
         ratingBarFurniture = (RatingBar) view.findViewById(R.id.ratingBarFurniture);
@@ -171,4 +173,19 @@ public class ReviewFragment extends Fragment {
     public void onResume() {
         super.onResume();
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                SearchFragment searchFragment = new SearchFragment();
+                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchFragment, "Cerca appartamento");
+                return true;
+
+            default:
+                break;
+        }
+        return false;
+    }
+
 }
