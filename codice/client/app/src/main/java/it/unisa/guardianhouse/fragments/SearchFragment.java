@@ -147,23 +147,26 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                             List<Address> list = null;
                             try {
                                 list = gc.getFromLocationName(autoCompText, 1);
+
+                                Address address = list.get(0);
+
+                                latitude = address.getLatitude();
+                                longitude = address.getLongitude();
+                                distance = seekbarRadius.getProgress();
+
+                                url = Config.SEARCH_APT_URL + "/" + latitude + "," + longitude + "," + distance;
+
+                                pDialog = new ProgressDialog(getActivity());
+                                pDialog.setMessage("Ricerca in corso...");
+                                pDialog.show();
+
+                                searchByLocation();
                             } catch (IOException e) {
-                                e.printStackTrace();
+                                Toast.makeText(getActivity(),
+                                        "L'indirizzo inserito non e' valido!", Toast.LENGTH_LONG).show();
                             }
 
-                            Address address = list.get(0);
 
-                            latitude = address.getLatitude();
-                            longitude = address.getLongitude();
-                            distance = seekbarRadius.getProgress();
-
-                            url = Config.SEARCH_APT_URL + "/" + latitude + "," + longitude + "," + distance;
-
-                            pDialog = new ProgressDialog(getActivity());
-                            pDialog.setMessage("Ricerca in corso...");
-                            pDialog.show();
-
-                            searchByLocation();
                         }
                     } else {
                         // chiedo all'utente di inserire i dati

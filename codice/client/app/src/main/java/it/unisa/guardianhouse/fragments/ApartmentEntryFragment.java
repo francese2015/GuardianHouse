@@ -138,45 +138,56 @@ public class ApartmentEntryFragment extends Fragment {
                         List<Address> list = null;
                         try {
                             list = gc.getFromLocationName(addressString, 1);
+
+                            if (list.isEmpty()) {
+                                Toast.makeText(getActivity(),
+                                        "L'indirizzo inserito non e' valido!", Toast.LENGTH_LONG).show();
+                            } else {
+
+                                Address address = list.get(0);
+
+                                latitude = address.getLatitude();
+                                longitude = address.getLongitude();
+                                postalCode = address.getPostalCode();
+                                adminAreaLevel = address.getAdminArea();
+                                subAdminAreaLevel = address.getSubAdminArea();
+                                country = address.getCountryName();
+
+                                bundle = new Bundle();
+
+                                bundle.putString("myTitle", name);
+                                bundle.putString("myDescript", description);
+                                bundle.putString("myMeters", mq);
+                                bundle.putString("myCarspot", car_place);
+                                bundle.putString("mycontract", contract_time);
+                                bundle.putString("myCost", cost);
+                                bundle.putString("myConditions", status);
+
+                                bundle.putString("myCivic", street_number);
+                                bundle.putString("myRoad", route);
+                                bundle.putString("myCity", locality);
+                                bundle.putString("myInter", intern_id);
+                                bundle.putString("postal_code", postalCode);
+                                //bundle.putString("admin_level", adminAreaLevel);
+                                //bundle.putString("sub_admin_level", subAdminAreaLevel);
+                                bundle.putString("country", country);
+
+                                bundle.putDouble("myLat", latitude);
+                                bundle.putDouble("myLong", longitude);
+
+
+                                ApartmentEntryRoomFragment apartmentEntryRoomFragment = new ApartmentEntryRoomFragment();
+                                apartmentEntryRoomFragment.setArguments(bundle);
+                                ((MaterialNavigationDrawer) getActivity()).setFragmentChild(apartmentEntryRoomFragment, "Composizione Casa");
+                            }
+
                         } catch (IOException e) {
                             e.printStackTrace();
+                            Toast.makeText(getActivity(),
+                                    "L'indirizzo inserito non e' valido!", Toast.LENGTH_LONG).show();
                         }
 
-                        Address address = list.get(0);
 
-                        latitude = address.getLatitude();
-                        longitude = address.getLongitude();
-                        postalCode = address.getPostalCode();
-                        adminAreaLevel = address.getAdminArea();
-                        subAdminAreaLevel = address.getSubAdminArea();
-                        country = address.getCountryName();
-
-                        bundle = new Bundle();
-
-                        bundle.putString("myTitle", name);
-                        bundle.putString("myDescript", description);
-                        bundle.putString("myMeters", mq);
-                        bundle.putString("myCarspot", car_place);
-                        bundle.putString("mycontract", contract_time);
-                        bundle.putString("myCost", cost);
-                        bundle.putString("myConditions", status);
-
-                        bundle.putString("myCivic", street_number);
-                        bundle.putString("myRoad", route);
-                        bundle.putString("myCity", locality);
-                        bundle.putString("myInter", intern_id);
-                        bundle.putString("postal_code", postalCode);
-                        //bundle.putString("admin_level", adminAreaLevel);
-                        //bundle.putString("sub_admin_level", subAdminAreaLevel);
-                        bundle.putString("country", country);
-
-                        bundle.putDouble("myLat", latitude);
-                        bundle.putDouble("myLong", longitude);
-
-
-                        ApartmentEntryRoomFragment apartmentEntryRoomFragment = new ApartmentEntryRoomFragment();
-                        apartmentEntryRoomFragment.setArguments(bundle);
-                        ((MaterialNavigationDrawer) getActivity()).setFragmentChild(apartmentEntryRoomFragment, "Composizione Casa");
                     }
 
                 } else {
