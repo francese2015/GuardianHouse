@@ -331,44 +331,56 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
             public void onResponse(JSONObject response) {
 
                 try {
-                    JSONArray apartmentArray = response.getJSONArray("apartments");
-                    for (int i = 0; i < apartmentArray.length(); i++) {
-                        JSONObject singleApartment = apartmentArray.getJSONObject(i);
-                        Apartment apartment = new Apartment();
 
-                        //ottengo il nome appartamento
-                        apartment.setId(singleApartment.getJSONObject("_id").getString("$id"));
-                        apartment.setThumbnailUrl(singleApartment.getJSONArray("pictures").getJSONObject(0).getString("url"));
-                        apartment.setName(singleApartment.getJSONObject("details").getString("name"));
-                        apartment.setFeatured(singleApartment.getJSONObject("details").getBoolean("featured"));
-                        apartment.setInternId(singleApartment.getJSONObject("address").getString("intern_id"));
-                        apartment.setStreetNumber(singleApartment.getJSONObject("address").getString("street_number"));
-                        apartment.setRoute(singleApartment.getJSONObject("address").getString("route"));
-                        apartment.setLocality(singleApartment.getJSONObject("address").getString("locality"));
-                        apartment.setAdminAreaLevel1(singleApartment.getJSONObject("address").getString("administrative_area_level_1"));
-                        apartment.setAdminAreaLevel2(singleApartment.getJSONObject("address").getString("administrative_area_level_2"));
-                        apartment.setPostalCode(singleApartment.getJSONObject("address").getString("postal_code"));
-                        apartment.setCountry(singleApartment.getJSONObject("address").getString("country"));
+                    Boolean error = response.getBoolean("error");
 
-                        //ottengo il rating
-                        String stringRating = singleApartment.getString("average_rating");
-                        apartment.setRating(Float.parseFloat(stringRating));
+                    if (!error) {
 
-                        apartment.setLatitude(singleApartment.getJSONObject("location").getJSONArray("coordinates").getDouble(1));
-                        apartment.setLongitude(singleApartment.getJSONObject("location").getJSONArray("coordinates").getDouble(0));
-                        apartment.setDistanceFromLocation(singleApartment.getDouble("distance"));
-                        apartmentList.add(apartment);
+                        JSONArray apartmentArray = response.getJSONArray("apartments");
+                        for (int i = 0; i < apartmentArray.length(); i++) {
+                            JSONObject singleApartment = apartmentArray.getJSONObject(i);
+                            Apartment apartment = new Apartment();
+
+                            //ottengo il nome appartamento
+                            apartment.setId(singleApartment.getJSONObject("_id").getString("$id"));
+                            apartment.setThumbnailUrl(singleApartment.getJSONArray("pictures").getJSONObject(0).getString("url"));
+                            apartment.setName(singleApartment.getJSONObject("details").getString("name"));
+                            apartment.setFeatured(singleApartment.getJSONObject("details").getBoolean("featured"));
+                            apartment.setInternId(singleApartment.getJSONObject("address").getString("intern_id"));
+                            apartment.setStreetNumber(singleApartment.getJSONObject("address").getString("street_number"));
+                            apartment.setRoute(singleApartment.getJSONObject("address").getString("route"));
+                            apartment.setLocality(singleApartment.getJSONObject("address").getString("locality"));
+                            apartment.setAdminAreaLevel1(singleApartment.getJSONObject("address").getString("administrative_area_level_1"));
+                            apartment.setAdminAreaLevel2(singleApartment.getJSONObject("address").getString("administrative_area_level_2"));
+                            apartment.setPostalCode(singleApartment.getJSONObject("address").getString("postal_code"));
+                            apartment.setCountry(singleApartment.getJSONObject("address").getString("country"));
+
+                            //ottengo il rating
+                            String stringRating = singleApartment.getString("average_rating");
+                            apartment.setRating(Float.parseFloat(stringRating));
+
+                            apartment.setLatitude(singleApartment.getJSONObject("location").getJSONArray("coordinates").getDouble(1));
+                            apartment.setLongitude(singleApartment.getJSONObject("location").getJSONArray("coordinates").getDouble(0));
+                            apartment.setDistanceFromLocation(singleApartment.getDouble("distance"));
+                            apartmentList.add(apartment);
+                        }
+                        bundle = new Bundle();
+                        bundle.putString("myAddress", autoCompText);
+                        bundle.putDouble("myLatitude", latitude);
+                        bundle.putDouble("myLongitude", longitude);
+                        bundle.putInt("distance", distance);
+                        bundle.putParcelableArrayList("aptData", apartmentList);
+
+                        ResultsFragment searchResults = new ResultsFragment();
+                        searchResults.setArguments(bundle);
+                        ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchResults, "Risultati");
+
+                    } else {
+                        // Error in search. Get the error message
+                        String errorMsg = response.getString("message");
+                        Toast.makeText(getActivity(),
+                                errorMsg, Toast.LENGTH_LONG).show();
                     }
-                    bundle = new Bundle();
-                    bundle.putString("myAddress", autoCompText);
-                    bundle.putDouble("myLatitude", latitude);
-                    bundle.putDouble("myLongitude", longitude);
-                    bundle.putInt("distance", distance);
-                    bundle.putParcelableArrayList("aptData", apartmentList);
-
-                    ResultsFragment searchResults = new ResultsFragment();
-                    searchResults.setArguments(bundle);
-                    ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchResults, "Risultati");
 
                 } catch (JSONException e) {
                     e.printStackTrace();
