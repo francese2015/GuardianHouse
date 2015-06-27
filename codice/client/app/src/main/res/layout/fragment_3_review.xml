@@ -220,7 +220,7 @@
                 <RatingBar
                     android:id="@+id/ratingBar3"
                     android:layout_width="wrap_content"
-                    android:layout_height="27dp"
+                    android:layout_height="38dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="120dp"
@@ -269,7 +269,7 @@
                 <RatingBar
                     android:id="@+id/ratingBar4"
                     android:layout_width="wrap_content"
-                    android:layout_height="27dp"
+                    android:layout_height="38dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
@@ -319,7 +319,7 @@
                 <RatingBar
                     android:id="@+id/ratingBar5"
                     android:layout_width="wrap_content"
-                    android:layout_height="27dp"
+                    android:layout_height="38dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
@@ -369,7 +369,7 @@
                 <RatingBar
                     android:id="@+id/ratingBar6"
                     android:layout_width="wrap_content"
-                    android:layout_height="27dp"
+                    android:layout_height="38dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
@@ -417,7 +417,7 @@
                 <RatingBar
                     android:id="@+id/ratingBar7"
                     android:layout_width="wrap_content"
-                    android:layout_height="27dp"
+                    android:layout_height="38dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
@@ -465,7 +465,7 @@
                 <RatingBar
                     android:id="@+id/ratingBar8"
                     android:layout_width="wrap_content"
-                    android:layout_height="27dp"
+                    android:layout_height="38dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:clickable="false"
@@ -496,6 +496,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
                     android:text="Distanza dal Centro Città"
                     android:textColor="#2196F3"
                     android:textSize="18sp"
@@ -520,7 +521,7 @@
                     android:longClickable="false"
                     android:progressDrawable="@drawable/custom_ratingbar_selector"
                     android:layout_below="@id/distance_cc_label"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="60dp"
                     android:numStars="5"
                     android:rating="4" />
 
