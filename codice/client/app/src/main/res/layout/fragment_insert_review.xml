@@ -96,7 +96,7 @@
                 <RatingBar
                     android:id="@+id/ratingBarFurniture"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="33dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="75dp"
@@ -144,7 +144,7 @@
                 <RatingBar
                     android:id="@+id/ratingBarThermic"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="33dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="75dp"
@@ -192,7 +192,7 @@
                 <RatingBar
                     android:id="@+id/ratingBarHonesty"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="33dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="75dp"
@@ -240,7 +240,7 @@
                 <RatingBar
                     android:id="@+id/ratingBarSecurity"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="33dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="75dp"
@@ -288,7 +288,7 @@
                 <RatingBar
                     android:id="@+id/ratingBarBus"
                     android:layout_width="wrap_content"
-                    android:layout_height="27dp"
+                    android:layout_height="33dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="75dp"
@@ -335,7 +335,7 @@
                 <RatingBar
                     android:id="@+id/ratingBarNeighbours"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="33dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="75dp"
@@ -382,7 +382,7 @@
                 <RatingBar
                     android:id="@+id/ratingBarConditions"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="33dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="75dp"
@@ -429,7 +429,7 @@
                 <RatingBar
                     android:id="@+id/ratingBarCcDistance"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="33dp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="75dp"
