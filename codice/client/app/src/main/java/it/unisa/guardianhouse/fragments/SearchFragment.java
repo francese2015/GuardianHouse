@@ -124,7 +124,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                 // TODO Auto-generated method stub
 
                 String strSeekVal = String.format("%s: %d %s",
-                        "Distanza", progress,"Km");
+                        "Distanza", progress, "Km");
 
                 tvRadiusText.setText(strSeekVal);
             }
@@ -147,24 +147,25 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                             List<Address> list = null;
                             try {
                                 list = gc.getFromLocationName(autoCompText, 1);
-
-                                Address address = list.get(0);
-
-                                latitude = address.getLatitude();
-                                longitude = address.getLongitude();
-                                distance = seekbarRadius.getProgress();
-
-                                url = Config.SEARCH_APT_URL + "/" + latitude + "," + longitude + "," + distance;
-
-                                pDialog = new ProgressDialog(getActivity());
-                                pDialog.setMessage("Ricerca in corso...");
-                                pDialog.show();
-
-                                searchByLocation();
                             } catch (IOException e) {
+                                e.printStackTrace();
                                 Toast.makeText(getActivity(),
-                                        "L'indirizzo inserito non e' valido!", Toast.LENGTH_LONG).show();
+                                        "Impossibile ottenere coordinate indirizzo!", Toast.LENGTH_LONG).show();
                             }
+
+                            Address address = list.get(0);
+
+                            latitude = address.getLatitude();
+                            longitude = address.getLongitude();
+                            distance = seekbarRadius.getProgress();
+
+                            url = Config.SEARCH_APT_URL + "/" + latitude + "," + longitude + "," + distance;
+
+                            pDialog = new ProgressDialog(getActivity());
+                            pDialog.setMessage("Ricerca in corso...");
+                            pDialog.show();
+
+                            searchByLocation();
 
 
                         }
@@ -237,7 +238,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
 
             URL url = new URL(sb.toString());
 
-            System.out.println("URL: "+url);
+            System.out.println("URL: " + url);
             conn = (HttpURLConnection) url.openConnection();
             InputStreamReader in = new InputStreamReader(conn.getInputStream());
 
@@ -334,11 +335,11 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
             public void onResponse(JSONObject response) {
 
                 try {
-
                     Boolean error = response.getBoolean("error");
-
-                    if (!error) {
-
+                    if (error == true) {
+                        Toast.makeText(getActivity(),
+                                response.getString("message"), Toast.LENGTH_LONG).show();
+                    } else {
                         JSONArray apartmentArray = response.getJSONArray("apartments");
                         for (int i = 0; i < apartmentArray.length(); i++) {
                             JSONObject singleApartment = apartmentArray.getJSONObject(i);
@@ -377,12 +378,6 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                         ResultsFragment searchResults = new ResultsFragment();
                         searchResults.setArguments(bundle);
                         ((MaterialNavigationDrawer) getActivity()).setFragmentChild(searchResults, "Risultati");
-
-                    } else {
-                        // Error in search. Get the error message
-                        String errorMsg = response.getString("message");
-                        Toast.makeText(getActivity(),
-                                errorMsg, Toast.LENGTH_LONG).show();
                     }
 
                 } catch (JSONException e) {
