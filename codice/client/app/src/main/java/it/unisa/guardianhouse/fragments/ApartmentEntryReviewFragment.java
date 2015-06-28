@@ -197,7 +197,7 @@ public class ApartmentEntryReviewFragment extends Fragment {
                 inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
 
                 HomeFragment homeFragment = new HomeFragment();
-                ((MaterialNavigationDrawer) getActivity()).setFragment(homeFragment, "In primo piano");
+                ((MaterialNavigationDrawer) getActivity()).setFragment(homeFragment, "Home");
 
 
             }
