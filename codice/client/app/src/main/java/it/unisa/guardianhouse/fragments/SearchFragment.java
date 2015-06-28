@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -167,6 +168,9 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
 
                             searchByLocation();
 
+                            InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                            inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+
 
                         }
                     } else {
@@ -186,6 +190,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
         // bottone search by location
         btnSearchLocation.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
+
                 if (Utils.hasConnection(getActivity()) == true) {
                     gps = new LocationTracker(getActivity());
 
@@ -203,6 +208,7 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
                         pDialog.show();
 
                         searchByLocation();
+
                     } else {
                         // can't get location
                         // GPS or Network is not enabled
@@ -223,6 +229,8 @@ public class SearchFragment extends Fragment implements AdapterView.OnItemClickL
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         String str = (String) adapterView.getItemAtPosition(position);
         //Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT).show();
+        InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
     }
 
     public static ArrayList<String> autocomplete(String input) {

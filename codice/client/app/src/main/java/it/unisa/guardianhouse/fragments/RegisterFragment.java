@@ -2,6 +2,7 @@ package it.unisa.guardianhouse.fragments;
 
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -155,6 +157,10 @@ public class RegisterFragment extends Fragment {
                         Toast.makeText(getActivity(),
                                 "Registrazione avvenuta con successo!", Toast.LENGTH_LONG)
                                 .show();
+
+                        InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                        inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+
                         LoginFragment loginFragment = new LoginFragment();
                         ((MaterialNavigationDrawer) getActivity()).setFragment(loginFragment, "Login");
 

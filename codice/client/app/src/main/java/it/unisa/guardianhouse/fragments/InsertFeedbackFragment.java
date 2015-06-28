@@ -1,6 +1,7 @@
 package it.unisa.guardianhouse.fragments;
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -150,6 +152,9 @@ public class InsertFeedbackFragment extends Fragment{
                     if (!error) {
                         Toast.makeText(getActivity(),
                                 "Feedback Inserito!", Toast.LENGTH_LONG).show();
+
+                        InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                        inputMethodManager.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
 
                         HomeFragment homeFragment = new HomeFragment();
                                 ((MaterialNavigationDrawer) getActivity()).setFragment(homeFragment, "Home");
